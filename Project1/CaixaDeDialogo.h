@@ -131,12 +131,13 @@ namespace Project1 {
 			// lb_escolaridade
 			// 
 			this->lb_escolaridade->AutoSize = true;
-			this->lb_escolaridade->Location = System::Drawing::Point(11, 152);
+			this->lb_escolaridade->Location = System::Drawing::Point(30, 152);
 			this->lb_escolaridade->Name = L"lb_escolaridade";
-			this->lb_escolaridade->Size = System::Drawing::Size(71, 13);
+			this->lb_escolaridade->Size = System::Drawing::Size(46, 13);
 			this->lb_escolaridade->TabIndex = 3;
-			this->lb_escolaridade->Text = L"Escolaridade:";
+			this->lb_escolaridade->Text = L"Função:";
 			this->lb_escolaridade->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->lb_escolaridade->Click += gcnew System::EventHandler(this, &CaixaDeDialogo::lb_escolaridade_Click);
 			// 
 			// tb_nome
 			// 
@@ -164,7 +165,7 @@ namespace Project1 {
 			// bt_ok
 			// 
 			this->bt_ok->DialogResult = System::Windows::Forms::DialogResult::OK;
-			this->bt_ok->Location = System::Drawing::Point(47, 209);
+			this->bt_ok->Location = System::Drawing::Point(47, 345);
 			this->bt_ok->Name = L"bt_ok";
 			this->bt_ok->Size = System::Drawing::Size(75, 23);
 			this->bt_ok->TabIndex = 7;
@@ -174,7 +175,7 @@ namespace Project1 {
 			// bt_cancelar
 			// 
 			this->bt_cancelar->DialogResult = System::Windows::Forms::DialogResult::Cancel;
-			this->bt_cancelar->Location = System::Drawing::Point(140, 209);
+			this->bt_cancelar->Location = System::Drawing::Point(140, 345);
 			this->bt_cancelar->Name = L"bt_cancelar";
 			this->bt_cancelar->Size = System::Drawing::Size(75, 23);
 			this->bt_cancelar->TabIndex = 8;
@@ -187,7 +188,7 @@ namespace Project1 {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->CancelButton = this->bt_cancelar;
-			this->ClientSize = System::Drawing::Size(284, 261);
+			this->ClientSize = System::Drawing::Size(284, 380);
 			this->Controls->Add(this->bt_cancelar);
 			this->Controls->Add(this->bt_ok);
 			this->Controls->Add(this->cb_escolaridade);
@@ -206,5 +207,7 @@ namespace Project1 {
 		}
 #pragma endregion
 	
+private: System::Void lb_escolaridade_Click(System::Object^  sender, System::EventArgs^  e) {
+}
 };
 }
