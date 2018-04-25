@@ -49,12 +49,13 @@ namespace Project1 {
 	private: System::Windows::Forms::Button^  bt_c_equipamento;
 	private: System::Windows::Forms::Button^  bt_c_mob;
 	private: System::Windows::Forms::Button^  bt_g_mob;
+	private: System::Windows::Forms::ListBox^  list_O;
 
 
 
 
 
-	private: System::Windows::Forms::ListBox^  listBox1;
+
 	private: System::Windows::Forms::ComboBox^  comboBox1;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Button^  bt_c_saida;
@@ -90,7 +91,7 @@ namespace Project1 {
 			this->bt_c_equipamento = (gcnew System::Windows::Forms::Button());
 			this->bt_c_mob = (gcnew System::Windows::Forms::Button());
 			this->bt_g_mob = (gcnew System::Windows::Forms::Button());
-			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
+			this->list_O = (gcnew System::Windows::Forms::ListBox());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->bt_c_saida = (gcnew System::Windows::Forms::Button());
@@ -204,14 +205,14 @@ namespace Project1 {
 			this->bt_g_mob->UseVisualStyleBackColor = true;
 			this->bt_g_mob->Click += gcnew System::EventHandler(this, &MyForm1::bt_g_mob_Click);
 			// 
-			// listBox1
+			// list_O
 			// 
-			this->listBox1->FormattingEnabled = true;
-			this->listBox1->Location = System::Drawing::Point(53, 117);
-			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(282, 290);
-			this->listBox1->TabIndex = 12;
-			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm1::listBox1_SelectedIndexChanged);
+			this->list_O->FormattingEnabled = true;
+			this->list_O->Location = System::Drawing::Point(53, 117);
+			this->list_O->Name = L"list_O";
+			this->list_O->Size = System::Drawing::Size(282, 290);
+			this->list_O->TabIndex = 12;
+			this->list_O->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm1::listBox1_SelectedIndexChanged);
 			// 
 			// comboBox1
 			// 
@@ -221,6 +222,7 @@ namespace Project1 {
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(217, 21);
 			this->comboBox1->TabIndex = 13;
+			this->comboBox1->Text = L"Selecionar";
 			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm1::comboBox1_SelectedIndexChanged);
 			// 
 			// label1
@@ -264,7 +266,7 @@ namespace Project1 {
 			this->Controls->Add(this->bt_c_saida);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->comboBox1);
-			this->Controls->Add(this->listBox1);
+			this->Controls->Add(this->list_O);
 			this->Controls->Add(this->bt_g_mob);
 			this->Controls->Add(this->bt_c_mob);
 			this->Controls->Add(this->bt_c_equipamento);
@@ -305,7 +307,7 @@ private: System::Void comboBox1_SelectedIndexChanged(System::Object^  sender, Sy
 		listBox1->Items->Add("Código 12376");
 		listBox1->Items->Add("Código 35");
 		listBox1->Items->Add("Código 13");
-		//TextBox1->Text =
+		
 	}
 	else if (comboBox1->SelectedItem == "Nesta semana") {
 		listBox1->Items->Add("Código 12376");
