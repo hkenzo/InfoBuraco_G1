@@ -1,0 +1,2 @@
+#include "gerenciarEquipamento.h"
+

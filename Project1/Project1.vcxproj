@@ -145,12 +145,20 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CaixaDeDialogo.cpp" />
+    <ClCompile Include="CriarEquipamento.cpp" />
+    <ClCompile Include="gerenciarEquipamento.cpp" />
     <ClCompile Include="Janela4.cpp" />
     <ClCompile Include="MyForm.cpp" />
-    <ClCompile Include="MyForm1.cpp" />
+    <ClCompile Include="Despachador.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CaixaDeDialogo.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CriarEquipamento.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="gerenciarEquipamento.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Janela4.h">
@@ -159,7 +167,7 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="MyForm1.h">
+    <ClInclude Include="Despachador.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -178,8 +186,8 @@
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForm1.resx">
-      <DependentUpon>MyForm1.h</DependentUpon>
+    <EmbeddedResource Include="Despachador.resx">
+      <DependentUpon>Despachador.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
