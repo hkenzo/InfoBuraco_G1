@@ -24,7 +24,13 @@
     <ClCompile Include="CaixaDeDialogo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MyForm1.cpp">
+    <ClCompile Include="Despachador.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CriarEquipamento.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gerenciarEquipamento.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,7 +44,13 @@
     <ClInclude Include="CaixaDeDialogo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MyForm1.h">
+    <ClInclude Include="Despachador.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CriarEquipamento.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gerenciarEquipamento.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -50,6 +62,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="CaixaDeDialogo.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Despachador.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

@@ -10,12 +10,12 @@ namespace Project1 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for MyForm11
+	/// Summary for gerenciarEquipamento
 	/// </summary>
-	public ref class MyForm11 : public System::Windows::Forms::Form
+	public ref class gerenciarEquipamento : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm11(void)
+		gerenciarEquipamento(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace Project1 {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~MyForm11()
+		~gerenciarEquipamento()
 		{
 			if (components)
 			{
@@ -50,7 +50,7 @@ namespace Project1 {
 		{
 			this->components = gcnew System::ComponentModel::Container();
 			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"MyForm11";
+			this->Text = L"gerenciarEquipamento";
 			this->Padding = System::Windows::Forms::Padding(0);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 		}
