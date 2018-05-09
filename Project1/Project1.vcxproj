@@ -150,7 +150,9 @@
     <ClCompile Include="Janela4.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Despachador.cpp" />
+    <ClCompile Include="ServicoComunicacao0.cpp" />
     <ClCompile Include="ServicoComunicacao1.cpp" />
+    <ClCompile Include="ServicoComunicacao2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CaixaDeDialogo.h">
@@ -171,7 +173,13 @@
     <ClInclude Include="Despachador.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ServicoComunicacao0.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ServicoComunicacao1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ServicoComunicacao2.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -192,6 +200,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Despachador.resx">
       <DependentUpon>Despachador.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServicoComunicacao0.resx">
+      <DependentUpon>ServicoComunicacao0.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServicoComunicacao1.resx">
+      <DependentUpon>ServicoComunicacao1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServicoComunicacao2.resx">
+      <DependentUpon>ServicoComunicacao2.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

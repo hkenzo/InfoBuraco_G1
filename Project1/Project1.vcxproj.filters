@@ -36,6 +36,12 @@
     <ClCompile Include="ServicoComunicacao1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ServicoComunicacao2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ServicoComunicacao0.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -59,6 +65,12 @@
     <ClInclude Include="ServicoComunicacao1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ServicoComunicacao2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ServicoComunicacao0.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
@@ -71,6 +83,12 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachador.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServicoComunicacao1.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServicoComunicacao2.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>
