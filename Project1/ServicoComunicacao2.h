@@ -38,15 +38,33 @@ namespace Project1 {
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  label4;
-	private: System::Windows::Forms::TextBox^  textBox1;
-	private: System::Windows::Forms::TextBox^  textBox2;
-	private: System::Windows::Forms::TextBox^  textBox3;
-	private: System::Windows::Forms::TextBox^  textBox4;
-	private: System::Windows::Forms::TextBox^  textBox5;
+	private: System::Windows::Forms::TextBox^  tipo_comunicacao_text;
+	private: System::Windows::Forms::TextBox^  comunicacao_text;
+	private: System::Windows::Forms::TextBox^  nome_cidadao_text;
+	private: System::Windows::Forms::TextBox^  data_contato_text;
+	private: System::Windows::Forms::TextBox^  hora_contato_text;
+
+
+
+
+
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::Label^  label5;
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::Label^  label6;
+
+
+
+
+
+
+
+
+
+
+
+
+
 	protected:
 
 	private:
@@ -66,11 +84,11 @@ namespace Project1 {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->tipo_comunicacao_text = (gcnew System::Windows::Forms::TextBox());
+			this->comunicacao_text = (gcnew System::Windows::Forms::TextBox());
+			this->nome_cidadao_text = (gcnew System::Windows::Forms::TextBox());
+			this->data_contato_text = (gcnew System::Windows::Forms::TextBox());
+			this->hora_contato_text = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
@@ -113,40 +131,40 @@ namespace Project1 {
 			this->label4->TabIndex = 3;
 			this->label4->Text = L"Data de contato";
 			// 
-			// textBox1
+			// tipo_comunicacao_text
 			// 
-			this->textBox1->Location = System::Drawing::Point(157, 60);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 20);
-			this->textBox1->TabIndex = 5;
+			this->tipo_comunicacao_text->Location = System::Drawing::Point(157, 60);
+			this->tipo_comunicacao_text->Name = L"tipo_comunicacao_text";
+			this->tipo_comunicacao_text->Size = System::Drawing::Size(100, 20);
+			this->tipo_comunicacao_text->TabIndex = 5;
 			// 
-			// textBox2
+			// comunicacao_text
 			// 
-			this->textBox2->Location = System::Drawing::Point(157, 86);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(100, 20);
-			this->textBox2->TabIndex = 6;
+			this->comunicacao_text->Location = System::Drawing::Point(157, 86);
+			this->comunicacao_text->Name = L"comunicacao_text";
+			this->comunicacao_text->Size = System::Drawing::Size(100, 20);
+			this->comunicacao_text->TabIndex = 6;
 			// 
-			// textBox3
+			// nome_cidadao_text
 			// 
-			this->textBox3->Location = System::Drawing::Point(157, 112);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(100, 20);
-			this->textBox3->TabIndex = 7;
+			this->nome_cidadao_text->Location = System::Drawing::Point(157, 112);
+			this->nome_cidadao_text->Name = L"nome_cidadao_text";
+			this->nome_cidadao_text->Size = System::Drawing::Size(100, 20);
+			this->nome_cidadao_text->TabIndex = 7;
 			// 
-			// textBox4
+			// data_contato_text
 			// 
-			this->textBox4->Location = System::Drawing::Point(157, 138);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(100, 20);
-			this->textBox4->TabIndex = 8;
+			this->data_contato_text->Location = System::Drawing::Point(157, 138);
+			this->data_contato_text->Name = L"data_contato_text";
+			this->data_contato_text->Size = System::Drawing::Size(100, 20);
+			this->data_contato_text->TabIndex = 8;
 			// 
-			// textBox5
+			// hora_contato_text
 			// 
-			this->textBox5->Location = System::Drawing::Point(157, 164);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(100, 20);
-			this->textBox5->TabIndex = 9;
+			this->hora_contato_text->Location = System::Drawing::Point(157, 164);
+			this->hora_contato_text->Name = L"hora_contato_text";
+			this->hora_contato_text->Size = System::Drawing::Size(100, 20);
+			this->hora_contato_text->TabIndex = 9;
 			// 
 			// button1
 			// 
@@ -190,16 +208,16 @@ namespace Project1 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(284, 261);
+			this->ClientSize = System::Drawing::Size(670, 256);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->button1);
-			this->Controls->Add(this->textBox5);
-			this->Controls->Add(this->textBox4);
-			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->hora_contato_text);
+			this->Controls->Add(this->data_contato_text);
+			this->Controls->Add(this->nome_cidadao_text);
+			this->Controls->Add(this->comunicacao_text);
+			this->Controls->Add(this->tipo_comunicacao_text);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);

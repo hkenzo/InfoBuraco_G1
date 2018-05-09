@@ -1,3 +1,5 @@
+#include "ServicoComunicacao2.h"
+
 #pragma once
 
 namespace Project1 {
@@ -10,12 +12,12 @@ namespace Project1 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Sumário para ServicoComunicacao
+	/// Sumário para ServicoComunicacao1
 	/// </summary>
-	public ref class ServicoComunicacao : public System::Windows::Forms::Form
+	public ref class ServicoComunicacao1 : public System::Windows::Forms::Form
 	{
 	public:
-		ServicoComunicacao(void)
+		ServicoComunicacao1(void)
 		{
 			InitializeComponent();
 			//
@@ -27,28 +29,27 @@ namespace Project1 {
 		/// <summary>
 		/// Limpar os recursos que estão sendo usados.
 		/// </summary>
-		~ServicoComunicacao()
+		~ServicoComunicacao1()
 		{
 			if (components)
 			{
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::Label^  label7;
 	protected:
-	private: System::Windows::Forms::Label^  label2;
-	private: System::Windows::Forms::Label^  label3;
-	private: System::Windows::Forms::Label^  label4;
-	private: System::Windows::Forms::Label^  label5;
-	private: System::Windows::Forms::TextBox^  textBox1;
-	private: System::Windows::Forms::TextBox^  textBox2;
-
-	private: System::Windows::Forms::TextBox^  textBox4;
-	private: System::Windows::Forms::TextBox^  textBox5;
-	private: System::Windows::Forms::TextBox^  textBox6;
-	private: System::Windows::Forms::Button^  button1;
-	private: System::Windows::Forms::Button^  button2;
-	private: System::Windows::Forms::Label^  label6;
+	private: System::Windows::Forms::Button^  ProximoCidadao;
+	private: System::Windows::Forms::Button^  AdicionarFoto;
+	private: System::Windows::Forms::TextBox^  posicao_leito_text;
+	private: System::Windows::Forms::TextBox^  tamanho_text;
+	private: System::Windows::Forms::TextBox^  regional_text;
+	private: System::Windows::Forms::TextBox^  numero_text;
+	private: System::Windows::Forms::TextBox^  Nome_da_rua_text;
+	private: System::Windows::Forms::Label^  label8;
+	private: System::Windows::Forms::Label^  label9;
+	private: System::Windows::Forms::Label^  label10;
+	private: System::Windows::Forms::Label^  label11;
+	private: System::Windows::Forms::Label^  label12;
 
 	private:
 		/// <summary>
@@ -63,161 +64,160 @@ namespace Project1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->ProximoCidadao = (gcnew System::Windows::Forms::Button());
+			this->AdicionarFoto = (gcnew System::Windows::Forms::Button());
+			this->posicao_leito_text = (gcnew System::Windows::Forms::TextBox());
+			this->tamanho_text = (gcnew System::Windows::Forms::TextBox());
+			this->regional_text = (gcnew System::Windows::Forms::TextBox());
+			this->numero_text = (gcnew System::Windows::Forms::TextBox());
+			this->Nome_da_rua_text = (gcnew System::Windows::Forms::TextBox());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
-			// label1
+			// label7
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(26, 59);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(68, 13);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Nome da rua";
-			this->label1->Click += gcnew System::EventHandler(this, &ServicoComunicacao::label1_Click);
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(26, 83);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(44, 13);
-			this->label2->TabIndex = 1;
-			this->label2->Text = L"Numero";
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(26, 109);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(135, 13);
-			this->label3->TabIndex = 2;
-			this->label3->Text = L"Posicao no leito carrocavel";
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(26, 135);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(52, 13);
-			this->label4->TabIndex = 3;
-			this->label4->Text = L"Tamanho";
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(29, 161);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(49, 13);
-			this->label5->TabIndex = 4;
-			this->label5->Text = L"Regional";
-			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(178, 56);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 20);
-			this->textBox1->TabIndex = 5;
-			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(178, 80);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(100, 20);
-			this->textBox2->TabIndex = 6;
-			// 
-			// textBox4
-			// 
-			this->textBox4->Location = System::Drawing::Point(178, 158);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(100, 20);
-			this->textBox4->TabIndex = 8;
-			// 
-			// textBox5
-			// 
-			this->textBox5->Location = System::Drawing::Point(178, 132);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(100, 20);
-			this->textBox5->TabIndex = 9;
-			// 
-			// textBox6
-			// 
-			this->textBox6->Location = System::Drawing::Point(178, 106);
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(100, 20);
-			this->textBox6->TabIndex = 10;
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(178, 184);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(100, 23);
-			this->button1->TabIndex = 11;
-			this->button1->Text = L"Adicionar foto";
-			this->button1->UseVisualStyleBackColor = true;
-			// 
-			// button2
-			// 
-			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F));
-			this->button2->Location = System::Drawing::Point(109, 213);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
-			this->button2->TabIndex = 12;
-			this->button2->Text = L"Proximo";
-			this->button2->UseVisualStyleBackColor = true;
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label7->AutoSize = true;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(95, 18);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(131, 20);
-			this->label6->TabIndex = 13;
-			this->label6->Text = L"Dados do buraco";
-			this->label6->Click += gcnew System::EventHandler(this, &ServicoComunicacao::label6_Click);
+			this->label7->Location = System::Drawing::Point(85, 21);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(131, 20);
+			this->label7->TabIndex = 40;
+			this->label7->Text = L"Dados do buraco";
 			// 
-			// ServicoComunicacao
+			// ProximoCidadao
+			// 
+			this->ProximoCidadao->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F));
+			this->ProximoCidadao->Location = System::Drawing::Point(99, 216);
+			this->ProximoCidadao->Name = L"ProximoCidadao";
+			this->ProximoCidadao->Size = System::Drawing::Size(75, 23);
+			this->ProximoCidadao->TabIndex = 39;
+			this->ProximoCidadao->Text = L"Proximo";
+			this->ProximoCidadao->UseVisualStyleBackColor = true;
+			this->ProximoCidadao->Click += gcnew System::EventHandler(this, &ServicoComunicacao1::ProximoCidadao_Click);
+			// 
+			// AdicionarFoto
+			// 
+			this->AdicionarFoto->Location = System::Drawing::Point(168, 187);
+			this->AdicionarFoto->Name = L"AdicionarFoto";
+			this->AdicionarFoto->Size = System::Drawing::Size(100, 23);
+			this->AdicionarFoto->TabIndex = 38;
+			this->AdicionarFoto->Text = L"Adicionar foto";
+			this->AdicionarFoto->UseVisualStyleBackColor = true;
+			// 
+			// posicao_leito_text
+			// 
+			this->posicao_leito_text->Location = System::Drawing::Point(168, 109);
+			this->posicao_leito_text->Name = L"posicao_leito_text";
+			this->posicao_leito_text->Size = System::Drawing::Size(100, 20);
+			this->posicao_leito_text->TabIndex = 37;
+			// 
+			// tamanho_text
+			// 
+			this->tamanho_text->Location = System::Drawing::Point(168, 135);
+			this->tamanho_text->Name = L"tamanho_text";
+			this->tamanho_text->Size = System::Drawing::Size(100, 20);
+			this->tamanho_text->TabIndex = 36;
+			// 
+			// regional_text
+			// 
+			this->regional_text->Location = System::Drawing::Point(168, 161);
+			this->regional_text->Name = L"regional_text";
+			this->regional_text->Size = System::Drawing::Size(100, 20);
+			this->regional_text->TabIndex = 35;
+			// 
+			// numero_text
+			// 
+			this->numero_text->Location = System::Drawing::Point(168, 83);
+			this->numero_text->Name = L"numero_text";
+			this->numero_text->Size = System::Drawing::Size(100, 20);
+			this->numero_text->TabIndex = 34;
+			// 
+			// Nome_da_rua_text
+			// 
+			this->Nome_da_rua_text->Location = System::Drawing::Point(168, 59);
+			this->Nome_da_rua_text->Name = L"Nome_da_rua_text";
+			this->Nome_da_rua_text->Size = System::Drawing::Size(100, 20);
+			this->Nome_da_rua_text->TabIndex = 33;
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Location = System::Drawing::Point(19, 164);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(49, 13);
+			this->label8->TabIndex = 32;
+			this->label8->Text = L"Regional";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(16, 138);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(52, 13);
+			this->label9->TabIndex = 31;
+			this->label9->Text = L"Tamanho";
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(16, 112);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(135, 13);
+			this->label10->TabIndex = 30;
+			this->label10->Text = L"Posicao no leito carrocavel";
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Location = System::Drawing::Point(16, 86);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(44, 13);
+			this->label11->TabIndex = 29;
+			this->label11->Text = L"Numero";
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Location = System::Drawing::Point(16, 62);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(68, 13);
+			this->label12->TabIndex = 28;
+			this->label12->Text = L"Nome da rua";
+			// 
+			// ServicoComunicacao1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(306, 256);
-			this->Controls->Add(this->label6);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->textBox6);
-			this->Controls->Add(this->textBox5);
-			this->Controls->Add(this->textBox4);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->label5);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
-			this->Name = L"ServicoComunicacao";
-			this->Text = L"ServicoComunicacao";
+			this->ClientSize = System::Drawing::Size(284, 261);
+			this->Controls->Add(this->label7);
+			this->Controls->Add(this->ProximoCidadao);
+			this->Controls->Add(this->AdicionarFoto);
+			this->Controls->Add(this->posicao_leito_text);
+			this->Controls->Add(this->tamanho_text);
+			this->Controls->Add(this->regional_text);
+			this->Controls->Add(this->numero_text);
+			this->Controls->Add(this->Nome_da_rua_text);
+			this->Controls->Add(this->label8);
+			this->Controls->Add(this->label9);
+			this->Controls->Add(this->label10);
+			this->Controls->Add(this->label11);
+			this->Controls->Add(this->label12);
+			this->Name = L"ServicoComunicacao1";
+			this->Text = L"ServicoComunicacao1";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void ProximoCidadao_Click(System::Object^  sender, System::EventArgs^  e) {
+		ServicoComunicacao2^ caixa = gcnew ServicoComunicacao2();
+		caixa->ShowDialog();
 	}
-private: System::Void label6_Click(System::Object^  sender, System::EventArgs^  e) {
-}
 };
 }
