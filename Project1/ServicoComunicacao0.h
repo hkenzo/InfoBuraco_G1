@@ -61,9 +61,10 @@ namespace Project1 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(42, 61);
+			this->button1->Location = System::Drawing::Point(56, 75);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(218, 64);
+			this->button1->Size = System::Drawing::Size(291, 79);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Registrar nova reclamacao";
 			this->button1->UseVisualStyleBackColor = true;
@@ -73,45 +74,52 @@ namespace Project1 {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(38, 9);
+			this->label1->Location = System::Drawing::Point(51, 11);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(222, 24);
+			this->label1->Size = System::Drawing::Size(281, 29);
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Servico de Comunicacao";
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(42, 131);
+			this->button2->Location = System::Drawing::Point(56, 161);
+			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(104, 63);
+			this->button2->Size = System::Drawing::Size(139, 78);
 			this->button2->TabIndex = 4;
 			this->button2->Text = L"Visualizar OS ativas";
 			this->button2->UseVisualStyleBackColor = true;
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(156, 131);
+			this->button3->Location = System::Drawing::Point(208, 161);
+			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(104, 63);
+			this->button3->Size = System::Drawing::Size(139, 78);
 			this->button3->TabIndex = 5;
 			this->button3->Text = L"Notificar finalizacao de OS";
 			this->button3->UseVisualStyleBackColor = true;
 			// 
 			// ServicoComunicacao0
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(298, 206);
+			this->ClientSize = System::Drawing::Size(397, 254);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button1);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"ServicoComunicacao0";
 			this->Text = L"l";
+			this->Load += gcnew System::EventHandler(this, &ServicoComunicacao0::ServicoComunicacao0_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+	private: System::Void ServicoComunicacao0_Load(System::Object^  sender, System::EventArgs^  e) {
+	}
+};
 }
