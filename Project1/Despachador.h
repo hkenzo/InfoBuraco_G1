@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+#include "gerenciarEquipamento.h"
 
 namespace Project1 {
 
@@ -38,18 +40,21 @@ namespace Project1 {
 	private: System::Windows::Forms::MenuStrip^  menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^  menuToolStripMenuItem;
 	private: System::Windows::Forms::DateTimePicker^  dateTimePicker1;
-	private: System::Windows::Forms::Button^  bt_c_equipe;
+
 	private: System::Windows::Forms::Button^  bt_g_equipe;
 	private: System::Windows::Forms::Button^  bt_g_material;
 
 
 
-	private: System::Windows::Forms::Button^  bt_c_material;
+
 	private: System::Windows::Forms::Button^  bt_g_equipamento;
-	private: System::Windows::Forms::Button^  bt_c_equipamento;
-	private: System::Windows::Forms::Button^  bt_c_mob;
+
+
 	private: System::Windows::Forms::Button^  bt_g_mob;
-	private: System::Windows::Forms::ListBox^  list_O;
+	private: System::Windows::Forms::ListBox^  listBox1;
+
+
+
 
 
 
@@ -58,7 +63,7 @@ namespace Project1 {
 
 	private: System::Windows::Forms::ComboBox^  comboBox1;
 	private: System::Windows::Forms::Label^  label1;
-	private: System::Windows::Forms::Button^  bt_c_saida;
+
 	private: System::Windows::Forms::Button^  bt_g_saida;
 
 
@@ -83,18 +88,13 @@ namespace Project1 {
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->menuToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
-			this->bt_c_equipe = (gcnew System::Windows::Forms::Button());
 			this->bt_g_equipe = (gcnew System::Windows::Forms::Button());
 			this->bt_g_material = (gcnew System::Windows::Forms::Button());
-			this->bt_c_material = (gcnew System::Windows::Forms::Button());
 			this->bt_g_equipamento = (gcnew System::Windows::Forms::Button());
-			this->bt_c_equipamento = (gcnew System::Windows::Forms::Button());
-			this->bt_c_mob = (gcnew System::Windows::Forms::Button());
 			this->bt_g_mob = (gcnew System::Windows::Forms::Button());
-			this->list_O = (gcnew System::Windows::Forms::ListBox());
+			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->bt_c_saida = (gcnew System::Windows::Forms::Button());
 			this->bt_g_saida = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
@@ -106,9 +106,10 @@ namespace Project1 {
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Padding = System::Windows::Forms::Padding(8, 2, 0, 2);
-			this->menuStrip1->Size = System::Drawing::Size(953, 28);
+			this->menuStrip1->Size = System::Drawing::Size(865, 28);
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
+			this->menuStrip1->ItemClicked += gcnew System::Windows::Forms::ToolStripItemClickedEventHandler(this, &MyForm1::menuStrip1_ItemClicked);
 			// 
 			// menuToolStripMenuItem
 			// 
@@ -122,117 +123,85 @@ namespace Project1 {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->dateTimePicker1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->dateTimePicker1->Location = System::Drawing::Point(665, 618);
-			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->dateTimePicker1->Location = System::Drawing::Point(566, 471);
+			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(4);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(271, 29);
 			this->dateTimePicker1->TabIndex = 2;
 			// 
-			// bt_c_equipe
-			// 
-			this->bt_c_equipe->Location = System::Drawing::Point(780, 119);
-			this->bt_c_equipe->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->bt_c_equipe->Name = L"bt_c_equipe";
-			this->bt_c_equipe->Size = System::Drawing::Size(157, 47);
-			this->bt_c_equipe->TabIndex = 3;
-			this->bt_c_equipe->Text = L"Criar Equipe";
-			this->bt_c_equipe->UseVisualStyleBackColor = true;
-			this->bt_c_equipe->Click += gcnew System::EventHandler(this, &MyForm1::bt_c_equipe_Click);
-			// 
 			// bt_g_equipe
 			// 
-			this->bt_g_equipe->Location = System::Drawing::Point(780, 174);
-			this->bt_g_equipe->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->bt_g_equipe->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->bt_g_equipe->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->bt_g_equipe->Location = System::Drawing::Point(680, 90);
+			this->bt_g_equipe->Margin = System::Windows::Forms::Padding(4);
 			this->bt_g_equipe->Name = L"bt_g_equipe";
 			this->bt_g_equipe->Size = System::Drawing::Size(157, 47);
 			this->bt_g_equipe->TabIndex = 4;
 			this->bt_g_equipe->Text = L"Gerenciar Equipes";
-			this->bt_g_equipe->UseVisualStyleBackColor = true;
+			this->bt_g_equipe->UseVisualStyleBackColor = false;
 			this->bt_g_equipe->Click += gcnew System::EventHandler(this, &MyForm1::bt_g_equipe_Click);
 			// 
 			// bt_g_material
 			// 
-			this->bt_g_material->Location = System::Drawing::Point(780, 284);
-			this->bt_g_material->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->bt_g_material->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->bt_g_material->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->bt_g_material->Location = System::Drawing::Point(680, 164);
+			this->bt_g_material->Margin = System::Windows::Forms::Padding(4);
 			this->bt_g_material->Name = L"bt_g_material";
 			this->bt_g_material->Size = System::Drawing::Size(157, 47);
 			this->bt_g_material->TabIndex = 5;
 			this->bt_g_material->Text = L"Gerenciar Materiais";
-			this->bt_g_material->UseVisualStyleBackColor = true;
+			this->bt_g_material->UseVisualStyleBackColor = false;
 			this->bt_g_material->Click += gcnew System::EventHandler(this, &MyForm1::bt_g_material_Click);
-			// 
-			// bt_c_material
-			// 
-			this->bt_c_material->Location = System::Drawing::Point(780, 228);
-			this->bt_c_material->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->bt_c_material->Name = L"bt_c_material";
-			this->bt_c_material->Size = System::Drawing::Size(157, 49);
-			this->bt_c_material->TabIndex = 6;
-			this->bt_c_material->Text = L"Cadastrar Material";
-			this->bt_c_material->UseVisualStyleBackColor = true;
-			this->bt_c_material->Click += gcnew System::EventHandler(this, &MyForm1::bt_c_material_Click);
 			// 
 			// bt_g_equipamento
 			// 
-			this->bt_g_equipamento->Location = System::Drawing::Point(780, 391);
-			this->bt_g_equipamento->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->bt_g_equipamento->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->bt_g_equipamento->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->bt_g_equipamento->Location = System::Drawing::Point(680, 238);
+			this->bt_g_equipamento->Margin = System::Windows::Forms::Padding(4);
 			this->bt_g_equipamento->Name = L"bt_g_equipamento";
 			this->bt_g_equipamento->Size = System::Drawing::Size(157, 47);
 			this->bt_g_equipamento->TabIndex = 7;
 			this->bt_g_equipamento->Text = L"Gerenciar Equipamentos";
-			this->bt_g_equipamento->UseVisualStyleBackColor = true;
+			this->bt_g_equipamento->UseVisualStyleBackColor = false;
 			this->bt_g_equipamento->Click += gcnew System::EventHandler(this, &MyForm1::bt_g_equipamento_Click);
-			// 
-			// bt_c_equipamento
-			// 
-			this->bt_c_equipamento->Location = System::Drawing::Point(780, 338);
-			this->bt_c_equipamento->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->bt_c_equipamento->Name = L"bt_c_equipamento";
-			this->bt_c_equipamento->Size = System::Drawing::Size(157, 46);
-			this->bt_c_equipamento->TabIndex = 9;
-			this->bt_c_equipamento->Text = L"Cadastrar Equipamento";
-			this->bt_c_equipamento->UseVisualStyleBackColor = true;
-			this->bt_c_equipamento->Click += gcnew System::EventHandler(this, &MyForm1::bt_c_equipamento_Click);
-			// 
-			// bt_c_mob
-			// 
-			this->bt_c_mob->Location = System::Drawing::Point(780, 446);
-			this->bt_c_mob->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->bt_c_mob->Name = L"bt_c_mob";
-			this->bt_c_mob->Size = System::Drawing::Size(157, 46);
-			this->bt_c_mob->TabIndex = 10;
-			this->bt_c_mob->Text = L"Cadastrar custo de mobilização";
-			this->bt_c_mob->UseVisualStyleBackColor = true;
-			this->bt_c_mob->Click += gcnew System::EventHandler(this, &MyForm1::bt_c_mob_Click);
 			// 
 			// bt_g_mob
 			// 
-			this->bt_g_mob->Location = System::Drawing::Point(780, 498);
-			this->bt_g_mob->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->bt_g_mob->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->bt_g_mob->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->bt_g_mob->Location = System::Drawing::Point(680, 312);
+			this->bt_g_mob->Margin = System::Windows::Forms::Padding(4);
 			this->bt_g_mob->Name = L"bt_g_mob";
 			this->bt_g_mob->Size = System::Drawing::Size(157, 44);
 			this->bt_g_mob->TabIndex = 11;
 			this->bt_g_mob->Text = L"Gerenciar custos de mobilização";
-			this->bt_g_mob->UseVisualStyleBackColor = true;
+			this->bt_g_mob->UseVisualStyleBackColor = false;
 			this->bt_g_mob->Click += gcnew System::EventHandler(this, &MyForm1::bt_g_mob_Click);
 			// 
-			// list_O
+			// listBox1
 			// 
-			this->list_O->FormattingEnabled = true;
-			this->list_O->ItemHeight = 16;
-			this->list_O->Location = System::Drawing::Point(71, 144);
-			this->list_O->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->list_O->Name = L"list_O";
-			this->list_O->Size = System::Drawing::Size(375, 356);
-			this->list_O->TabIndex = 12;
-			this->list_O->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm1::listBox1_SelectedIndexChanged);
+			this->listBox1->FormattingEnabled = true;
+			this->listBox1->ItemHeight = 16;
+			this->listBox1->Location = System::Drawing::Point(71, 144);
+			this->listBox1->Margin = System::Windows::Forms::Padding(4);
+			this->listBox1->Name = L"listBox1";
+			this->listBox1->Size = System::Drawing::Size(487, 356);
+			this->listBox1->TabIndex = 12;
+			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm1::listBox1_SelectedIndexChanged);
 			// 
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Hoje", L"Nesta semana", L"Neste mês" });
-			this->comboBox1->Location = System::Drawing::Point(84, 90);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->comboBox1->Location = System::Drawing::Point(71, 90);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(4);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(288, 24);
 			this->comboBox1->TabIndex = 13;
@@ -244,60 +213,48 @@ namespace Project1 {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(116, 64);
+			this->label1->Location = System::Drawing::Point(103, 62);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(221, 24);
 			this->label1->TabIndex = 14;
 			this->label1->Text = L"OS\'s a serem cumpridas:";
 			// 
-			// bt_c_saida
-			// 
-			this->bt_c_saida->Location = System::Drawing::Point(71, 585);
-			this->bt_c_saida->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->bt_c_saida->Name = L"bt_c_saida";
-			this->bt_c_saida->Size = System::Drawing::Size(157, 44);
-			this->bt_c_saida->TabIndex = 15;
-			this->bt_c_saida->Text = L"Criar Saída";
-			this->bt_c_saida->UseVisualStyleBackColor = true;
-			this->bt_c_saida->Click += gcnew System::EventHandler(this, &MyForm1::bt_c_saida_Click);
-			// 
 			// bt_g_saida
 			// 
-			this->bt_g_saida->Location = System::Drawing::Point(289, 585);
-			this->bt_g_saida->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->bt_g_saida->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->bt_g_saida->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->bt_g_saida->Location = System::Drawing::Point(680, 385);
+			this->bt_g_saida->Margin = System::Windows::Forms::Padding(4);
 			this->bt_g_saida->Name = L"bt_g_saida";
 			this->bt_g_saida->Size = System::Drawing::Size(157, 44);
 			this->bt_g_saida->TabIndex = 16;
 			this->bt_g_saida->Text = L"Gerenciar Saídas";
-			this->bt_g_saida->UseVisualStyleBackColor = true;
+			this->bt_g_saida->UseVisualStyleBackColor = false;
 			this->bt_g_saida->Click += gcnew System::EventHandler(this, &MyForm1::bt_g_saida_Click);
 			// 
 			// MyForm1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->ClientSize = System::Drawing::Size(953, 662);
+			this->BackColor = System::Drawing::SystemColors::Control;
+			this->ClientSize = System::Drawing::Size(865, 533);
 			this->Controls->Add(this->bt_g_saida);
-			this->Controls->Add(this->bt_c_saida);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->comboBox1);
-			this->Controls->Add(this->list_O);
+			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->bt_g_mob);
-			this->Controls->Add(this->bt_c_mob);
-			this->Controls->Add(this->bt_c_equipamento);
 			this->Controls->Add(this->bt_g_equipamento);
-			this->Controls->Add(this->bt_c_material);
 			this->Controls->Add(this->bt_g_material);
 			this->Controls->Add(this->bt_g_equipe);
-			this->Controls->Add(this->bt_c_equipe);
 			this->Controls->Add(this->dateTimePicker1);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"MyForm1";
 			this->Text = L"MyForm1";
+			this->Load += gcnew System::EventHandler(this, &MyForm1::MyForm1_Load);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
@@ -357,6 +314,8 @@ private: System::Void bt_g_material_Click(System::Object^  sender, System::Event
 }
 
 private: System::Void bt_g_equipamento_Click(System::Object^  sender, System::EventArgs^  e) {
+	gerenciarEquipamento^ gerenciarEquip = gcnew gerenciarEquipamento();
+	gerenciarEquip->ShowDialog();
 }
 private: System::Void bt_c_equipamento_Click(System::Object^  sender, System::EventArgs^  e) {
 }
@@ -367,6 +326,10 @@ private: System::Void bt_g_mob_Click(System::Object^  sender, System::EventArgs^
 private: System::Void bt_c_saida_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void bt_g_saida_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void MyForm1_Load(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void menuStrip1_ItemClicked(System::Object^  sender, System::Windows::Forms::ToolStripItemClickedEventArgs^  e) {
 }
 };
 }

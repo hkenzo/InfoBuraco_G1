@@ -144,14 +144,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AlterarEquipamento.cpp" />
     <ClCompile Include="CaixaDeDialogo.cpp" />
     <ClCompile Include="CriarEquipamento.cpp" />
     <ClCompile Include="gerenciarEquipamento.cpp" />
     <ClCompile Include="Janela4.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Despachador.cpp" />
+    <ClCompile Include="RemoverEquipamento.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AlterarEquipamento.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="CaixaDeDialogo.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -170,6 +175,9 @@
     <ClInclude Include="Despachador.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="RemoverEquipamento.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\dados\dados.vcxproj">
@@ -177,8 +185,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AlterarEquipamento.resx">
+      <DependentUpon>AlterarEquipamento.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CaixaDeDialogo.resx">
       <DependentUpon>CaixaDeDialogo.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CriarEquipamento.resx">
+      <DependentUpon>CriarEquipamento.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gerenciarEquipamento.resx">
+      <DependentUpon>gerenciarEquipamento.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Janela4.resx">
       <DependentUpon>Janela4.h</DependentUpon>
@@ -188,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Despachador.resx">
       <DependentUpon>Despachador.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoverEquipamento.resx">
+      <DependentUpon>RemoverEquipamento.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

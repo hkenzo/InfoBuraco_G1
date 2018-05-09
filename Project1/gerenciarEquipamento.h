@@ -1,4 +1,8 @@
 #pragma once
+#include <iostream>
+#include "CriarEquipamento.h"
+#include "RemoverEquipamento.h"
+#include "AlterarEquipamento.h"
 
 namespace Project1 {
 
@@ -34,6 +38,16 @@ namespace Project1 {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::ListBox^  listBox1;
+	private: System::Windows::Forms::Button^  create_equipt_bt;
+	protected:
+
+	private: System::Windows::Forms::Button^  remove_equipt_bt;
+
+	private: System::Windows::Forms::Button^  change_equipt_bt;
+	private: System::Windows::Forms::Button^  voltar_equipt_bt;
+
+
 
 	private:
 		/// <summary>
@@ -48,12 +62,113 @@ namespace Project1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"gerenciarEquipamento";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
+			this->create_equipt_bt = (gcnew System::Windows::Forms::Button());
+			this->remove_equipt_bt = (gcnew System::Windows::Forms::Button());
+			this->change_equipt_bt = (gcnew System::Windows::Forms::Button());
+			this->voltar_equipt_bt = (gcnew System::Windows::Forms::Button());
+			this->SuspendLayout();
+			// 
+			// listBox1
+			// 
+			this->listBox1->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->listBox1->FormattingEnabled = true;
+			this->listBox1->ItemHeight = 16;
+			this->listBox1->Location = System::Drawing::Point(29, 31);
+			this->listBox1->Name = L"listBox1";
+			this->listBox1->Size = System::Drawing::Size(495, 436);
+			this->listBox1->TabIndex = 0;
+			// 
+			// create_equipt_bt
+			// 
+			this->create_equipt_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->create_equipt_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->create_equipt_bt->Location = System::Drawing::Point(558, 55);
+			this->create_equipt_bt->Name = L"create_equipt_bt";
+			this->create_equipt_bt->Size = System::Drawing::Size(180, 49);
+			this->create_equipt_bt->TabIndex = 1;
+			this->create_equipt_bt->Text = L"Criar Equipamento";
+			this->create_equipt_bt->UseVisualStyleBackColor = false;
+			this->create_equipt_bt->Click += gcnew System::EventHandler(this, &gerenciarEquipamento::create_equipt_bt_Click);
+			// 
+			// remove_equipt_bt
+			// 
+			this->remove_equipt_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->remove_equipt_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->remove_equipt_bt->Location = System::Drawing::Point(558, 232);
+			this->remove_equipt_bt->Name = L"remove_equipt_bt";
+			this->remove_equipt_bt->Size = System::Drawing::Size(180, 49);
+			this->remove_equipt_bt->TabIndex = 2;
+			this->remove_equipt_bt->Text = L"Remover Equipamento";
+			this->remove_equipt_bt->UseVisualStyleBackColor = false;
+			this->remove_equipt_bt->Click += gcnew System::EventHandler(this, &gerenciarEquipamento::remove_equipt_bt_Click);
+			// 
+			// change_equipt_bt
+			// 
+			this->change_equipt_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->change_equipt_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->change_equipt_bt->Location = System::Drawing::Point(558, 143);
+			this->change_equipt_bt->Name = L"change_equipt_bt";
+			this->change_equipt_bt->Size = System::Drawing::Size(180, 49);
+			this->change_equipt_bt->TabIndex = 3;
+			this->change_equipt_bt->Text = L"Alterar Equipamento";
+			this->change_equipt_bt->UseVisualStyleBackColor = false;
+			this->change_equipt_bt->Click += gcnew System::EventHandler(this, &gerenciarEquipamento::change_equipt_bt_Click);
+			// 
+			// voltar_equipt_bt
+			// 
+			this->voltar_equipt_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->voltar_equipt_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->voltar_equipt_bt->Location = System::Drawing::Point(558, 323);
+			this->voltar_equipt_bt->Name = L"voltar_equipt_bt";
+			this->voltar_equipt_bt->Size = System::Drawing::Size(180, 49);
+			this->voltar_equipt_bt->TabIndex = 4;
+			this->voltar_equipt_bt->Text = L"Voltar";
+			this->voltar_equipt_bt->UseVisualStyleBackColor = false;
+			this->voltar_equipt_bt->Click += gcnew System::EventHandler(this, &gerenciarEquipamento::voltar_equipt_bt_Click);
+			// 
+			// gerenciarEquipamento
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::SystemColors::Control;
+			this->ClientSize = System::Drawing::Size(782, 500);
+			this->Controls->Add(this->voltar_equipt_bt);
+			this->Controls->Add(this->change_equipt_bt);
+			this->Controls->Add(this->remove_equipt_bt);
+			this->Controls->Add(this->create_equipt_bt);
+			this->Controls->Add(this->listBox1);
+			this->Name = L"gerenciarEquipamento";
+			this->Text = L"gerenciarEquipamento";
+			this->Load += gcnew System::EventHandler(this, &gerenciarEquipamento::gerenciarEquipamento_Load);
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
-	};
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+	}
+private: System::Void gerenciarEquipamento_Load(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void create_equipt_bt_Click(System::Object^  sender, System::EventArgs^  e) {
+	CriarEquipamento^ criaEquipt = gcnew CriarEquipamento();
+	criaEquipt->ShowDialog();
+}
+private: System::Void change_equipt_bt_Click(System::Object^  sender, System::EventArgs^  e) {
+	AlterarEquipamento^ alteraEquipt = gcnew AlterarEquipamento();
+	alteraEquipt->ShowDialog();
+}
+private: System::Void remove_equipt_bt_Click(System::Object^  sender, System::EventArgs^  e) {
+	RemoverEquipamento^ removeEquipt = gcnew RemoverEquipamento();
+	removeEquipt->ShowDialog();
+}
+private: System::Void voltar_equipt_bt_Click(System::Object^  sender, System::EventArgs^  e) {
+	this->Close();
+}
+};
 }

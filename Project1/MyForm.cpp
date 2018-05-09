@@ -1,5 +1,5 @@
 //#include "MyForm.h"
-#include "MyForm1.h"
+#include "Despachador.h"
 namespace Project1 {
 	using namespace System;
 	using namespace System::Windows::Forms;
