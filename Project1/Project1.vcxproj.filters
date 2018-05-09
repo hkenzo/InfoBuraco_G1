@@ -33,6 +33,9 @@
     <ClCompile Include="gerenciarEquipamento.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ServicoComunicacao1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -51,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="gerenciarEquipamento.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ServicoComunicacao1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
