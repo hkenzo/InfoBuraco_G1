@@ -1,3 +1,5 @@
+#pragma once
+
 namespace Project1 {
 
 	using namespace System;
