@@ -153,6 +153,7 @@
     <ClCompile Include="ServicoComunicacao0.cpp" />
     <ClCompile Include="ServicoComunicacao1.cpp" />
     <ClCompile Include="ServicoComunicacao2.cpp" />
+    <ClCompile Include="VizualizarBuracos.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CaixaDeDialogo.h">
@@ -180,6 +181,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ServicoComunicacao2.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="VizualizarBuracos.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
