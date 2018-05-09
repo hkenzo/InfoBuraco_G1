@@ -1,5 +1,3 @@
-#pragma once
-
 namespace Project1 {
 
 	using namespace System;
@@ -43,14 +41,16 @@ namespace Project1 {
 	private: System::Windows::Forms::TextBox^  nome_cidadao_text;
 	private: System::Windows::Forms::TextBox^  data_contato_text;
 	private: System::Windows::Forms::TextBox^  hora_contato_text;
+	private: System::Windows::Forms::Button^  FinalizarRegistro;
 
 
 
 
 
-	private: System::Windows::Forms::Button^  button1;
+
 	private: System::Windows::Forms::Label^  label5;
-	private: System::Windows::Forms::Button^  button2;
+	private: System::Windows::Forms::Button^  AnteriorCidadao;
+
 	private: System::Windows::Forms::Label^  label6;
 
 
@@ -89,9 +89,9 @@ namespace Project1 {
 			this->nome_cidadao_text = (gcnew System::Windows::Forms::TextBox());
 			this->data_contato_text = (gcnew System::Windows::Forms::TextBox());
 			this->hora_contato_text = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->FinalizarRegistro = (gcnew System::Windows::Forms::Button());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->AnteriorCidadao = (gcnew System::Windows::Forms::Button());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
@@ -166,14 +166,14 @@ namespace Project1 {
 			this->hora_contato_text->Size = System::Drawing::Size(100, 20);
 			this->hora_contato_text->TabIndex = 9;
 			// 
-			// button1
+			// FinalizarRegistro
 			// 
-			this->button1->Location = System::Drawing::Point(157, 204);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
-			this->button1->TabIndex = 10;
-			this->button1->Text = L"Finalizar";
-			this->button1->UseVisualStyleBackColor = true;
+			this->FinalizarRegistro->Location = System::Drawing::Point(157, 204);
+			this->FinalizarRegistro->Name = L"FinalizarRegistro";
+			this->FinalizarRegistro->Size = System::Drawing::Size(75, 23);
+			this->FinalizarRegistro->TabIndex = 10;
+			this->FinalizarRegistro->Text = L"Finalizar";
+			this->FinalizarRegistro->UseVisualStyleBackColor = true;
 			// 
 			// label5
 			// 
@@ -184,14 +184,15 @@ namespace Project1 {
 			this->label5->TabIndex = 11;
 			this->label5->Text = L"Hora de Contato";
 			// 
-			// button2
+			// AnteriorCidadao
 			// 
-			this->button2->Location = System::Drawing::Point(38, 204);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
-			this->button2->TabIndex = 12;
-			this->button2->Text = L"Anterior";
-			this->button2->UseVisualStyleBackColor = true;
+			this->AnteriorCidadao->Location = System::Drawing::Point(38, 204);
+			this->AnteriorCidadao->Name = L"AnteriorCidadao";
+			this->AnteriorCidadao->Size = System::Drawing::Size(75, 23);
+			this->AnteriorCidadao->TabIndex = 12;
+			this->AnteriorCidadao->Text = L"Anterior";
+			this->AnteriorCidadao->UseVisualStyleBackColor = true;
+			this->AnteriorCidadao->Click += gcnew System::EventHandler(this, &ServicoComunicacao2::AnteriorCidadao_Click);
 			// 
 			// label6
 			// 
@@ -208,11 +209,11 @@ namespace Project1 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(670, 256);
+			this->ClientSize = System::Drawing::Size(311, 256);
 			this->Controls->Add(this->label6);
-			this->Controls->Add(this->button2);
+			this->Controls->Add(this->AnteriorCidadao);
 			this->Controls->Add(this->label5);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->FinalizarRegistro);
 			this->Controls->Add(this->hora_contato_text);
 			this->Controls->Add(this->data_contato_text);
 			this->Controls->Add(this->nome_cidadao_text);
@@ -229,5 +230,9 @@ namespace Project1 {
 
 		}
 #pragma endregion
-	};
+	private: System::Void AnteriorCidadao_Click(System::Object^  sender, System::EventArgs^  e) {
+
+
+	}
+};
 }

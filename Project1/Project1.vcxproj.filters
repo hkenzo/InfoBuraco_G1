@@ -51,6 +51,9 @@
     <ClCompile Include="RemoverEquipamento.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Servico_Comunicacao_NotificarFinalizado.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -89,6 +92,9 @@
     <ClInclude Include="Despachador.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Servico_Comunicacao_NotificarFinalizado.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
@@ -116,6 +122,15 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="gerenciarEquipamento.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlterarEquipamento.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoverEquipamento.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VizualizarBuracos.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

@@ -48,11 +48,17 @@ namespace Project1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"VizualizarBuracos";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->SuspendLayout();
+			// 
+			// VizualizarBuracos
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(463, 332);
+			this->Name = L"VizualizarBuracos";
+			this->Text = L"VizualizarBuracos";
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
 	};
