@@ -40,11 +40,11 @@ namespace Project1 {
 
 	protected:
 
-	private: System::Windows::Forms::ComboBox^  comboBox1;
-	private: System::Windows::Forms::Label^  label1;
 
 
-	private: System::Windows::Forms::Label^  label4;
+
+
+
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Label^  label5;
@@ -54,7 +54,7 @@ namespace Project1 {
 	private: System::Windows::Forms::TextBox^  textBox1;
 	private: System::Windows::Forms::TextBox^  textBox2;
 	private: System::Windows::Forms::TextBox^  textBox3;
-	private: System::Windows::Forms::TextBox^  textBox4;
+
 
 	private:
 		/// <summary>
@@ -71,9 +71,6 @@ namespace Project1 {
 		{
 			this->Cancel_BT = (gcnew System::Windows::Forms::Button());
 			this->Confirm_Bt = (gcnew System::Windows::Forms::Button());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
@@ -81,7 +78,6 @@ namespace Project1 {
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// Cancel_BT
@@ -108,38 +104,10 @@ namespace Project1 {
 			this->Confirm_Bt->Text = L"Confirmar";
 			this->Confirm_Bt->UseVisualStyleBackColor = false;
 			// 
-			// comboBox1
-			// 
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(273, 324);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(309, 24);
-			this->comboBox1->TabIndex = 2;
-			this->comboBox1->Text = L"Selecione";
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(90, 327);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(128, 17);
-			this->label1->TabIndex = 3;
-			this->label1->Text = L"Motivo da remoção";
-			this->label1->Click += gcnew System::EventHandler(this, &RemoverEquipamento::label1_Click);
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(90, 268);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(82, 17);
-			this->label4->TabIndex = 21;
-			this->label4->Text = L"Quantidade";
-			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(90, 202);
+			this->label3->Location = System::Drawing::Point(90, 222);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(128, 17);
 			this->label3->TabIndex = 20;
@@ -148,7 +116,7 @@ namespace Project1 {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(90, 136);
+			this->label2->Location = System::Drawing::Point(90, 152);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(85, 17);
 			this->label2->TabIndex = 19;
@@ -157,7 +125,7 @@ namespace Project1 {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(90, 71);
+			this->label5->Location = System::Drawing::Point(90, 81);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(143, 17);
 			this->label5->TabIndex = 18;
@@ -178,7 +146,7 @@ namespace Project1 {
 			// textBox1
 			// 
 			this->textBox1->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->textBox1->Location = System::Drawing::Point(273, 68);
+			this->textBox1->Location = System::Drawing::Point(273, 78);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(309, 22);
 			this->textBox1->TabIndex = 25;
@@ -186,7 +154,7 @@ namespace Project1 {
 			// textBox2
 			// 
 			this->textBox2->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->textBox2->Location = System::Drawing::Point(273, 133);
+			this->textBox2->Location = System::Drawing::Point(273, 149);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(309, 22);
 			this->textBox2->TabIndex = 26;
@@ -194,18 +162,10 @@ namespace Project1 {
 			// textBox3
 			// 
 			this->textBox3->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->textBox3->Location = System::Drawing::Point(273, 199);
+			this->textBox3->Location = System::Drawing::Point(273, 219);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(309, 22);
 			this->textBox3->TabIndex = 27;
-			// 
-			// textBox4
-			// 
-			this->textBox4->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->textBox4->Location = System::Drawing::Point(273, 265);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(309, 22);
-			this->textBox4->TabIndex = 28;
 			// 
 			// RemoverEquipamento
 			// 
@@ -213,17 +173,13 @@ namespace Project1 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
 			this->ClientSize = System::Drawing::Size(634, 474);
-			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label6);
-			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label5);
-			this->Controls->Add(this->label1);
-			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->Confirm_Bt);
 			this->Controls->Add(this->Cancel_BT);
 			this->Name = L"RemoverEquipamento";

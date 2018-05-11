@@ -54,6 +54,63 @@
     <ClCompile Include="Servico_Comunicacao_NotificarFinalizado.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="criarMaterial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="criarEquipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="criarMobilizacao.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gerenciarMaterial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gerenciarEquipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gerenciarSaida.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gerenciarMobilizacao.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="removerEquipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="removerMaterial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="removerMobilizacao.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="removerSaida.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="alterarEquipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="alterarMaterial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="alterarSaida.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="alterarMobilizacao.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="saidaEquipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="saidaMaterial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="saidaEquipamento.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="saidaMobilizacao.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -95,6 +152,63 @@
     <ClInclude Include="Servico_Comunicacao_NotificarFinalizado.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="criarMaterial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="criarEquipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="criarMobilizacao.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gerenciarMaterial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gerenciarEquipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gerenciarSaida.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gerenciarMobilizacao.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="removerEquipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="removerMaterial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="removerMobilizacao.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="removerSaida.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="alterarEquipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="alterarMaterial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="alterarSaida.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="alterarMobilizacao.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="saidaEquipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="saidaMaterial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="saidaEquipamento.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="saidaMobilizacao.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
@@ -131,6 +245,48 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="VizualizarBuracos.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Servico_Comunicacao_NotificarFinalizado.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="alterarEquipe.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="alterarMaterial.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="alterarMobilizacao.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="criarEquipe.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="criarMaterial.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="criarMobilizacao.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gerenciarEquipe.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gerenciarMaterial.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gerenciarMobilizacao.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gerenciarSaida.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="removerEquipe.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="removerMaterial.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="removerMobilizacao.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

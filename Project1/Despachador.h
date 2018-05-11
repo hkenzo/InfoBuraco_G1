@@ -1,6 +1,10 @@
 #pragma once
 #include <iostream>
 #include "gerenciarEquipamento.h"
+#include "gerenciarEquipe.h"
+#include "gerenciarSaida.h"
+#include "gerenciarMobilizacao.h"
+#include "gerenciarMaterial.h"
 
 namespace Project1 {
 
@@ -12,12 +16,12 @@ namespace Project1 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for MyForm1
+	/// Summary for Despachador
 	/// </summary>
-	public ref class MyForm1 : public System::Windows::Forms::Form
+	public ref class Despachador : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm1(void)
+		Despachador(void)
 		{
 			InitializeComponent();
 			//
@@ -29,7 +33,7 @@ namespace Project1 {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~MyForm1()
+		~Despachador()
 		{
 			if (components)
 			{
@@ -109,7 +113,7 @@ namespace Project1 {
 			this->menuStrip1->Size = System::Drawing::Size(865, 28);
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
-			this->menuStrip1->ItemClicked += gcnew System::Windows::Forms::ToolStripItemClickedEventHandler(this, &MyForm1::menuStrip1_ItemClicked);
+			this->menuStrip1->ItemClicked += gcnew System::Windows::Forms::ToolStripItemClickedEventHandler(this, &Despachador::menuStrip1_ItemClicked);
 			// 
 			// menuToolStripMenuItem
 			// 
@@ -141,7 +145,7 @@ namespace Project1 {
 			this->bt_g_equipe->TabIndex = 4;
 			this->bt_g_equipe->Text = L"Gerenciar Equipes";
 			this->bt_g_equipe->UseVisualStyleBackColor = false;
-			this->bt_g_equipe->Click += gcnew System::EventHandler(this, &MyForm1::bt_g_equipe_Click);
+			this->bt_g_equipe->Click += gcnew System::EventHandler(this, &Despachador::bt_g_equipe_Click);
 			// 
 			// bt_g_material
 			// 
@@ -155,7 +159,7 @@ namespace Project1 {
 			this->bt_g_material->TabIndex = 5;
 			this->bt_g_material->Text = L"Gerenciar Materiais";
 			this->bt_g_material->UseVisualStyleBackColor = false;
-			this->bt_g_material->Click += gcnew System::EventHandler(this, &MyForm1::bt_g_material_Click);
+			this->bt_g_material->Click += gcnew System::EventHandler(this, &Despachador::bt_g_material_Click);
 			// 
 			// bt_g_equipamento
 			// 
@@ -169,7 +173,7 @@ namespace Project1 {
 			this->bt_g_equipamento->TabIndex = 7;
 			this->bt_g_equipamento->Text = L"Gerenciar Equipamentos";
 			this->bt_g_equipamento->UseVisualStyleBackColor = false;
-			this->bt_g_equipamento->Click += gcnew System::EventHandler(this, &MyForm1::bt_g_equipamento_Click);
+			this->bt_g_equipamento->Click += gcnew System::EventHandler(this, &Despachador::bt_g_equipamento_Click);
 			// 
 			// bt_g_mob
 			// 
@@ -183,7 +187,7 @@ namespace Project1 {
 			this->bt_g_mob->TabIndex = 11;
 			this->bt_g_mob->Text = L"Gerenciar custos de mobilização";
 			this->bt_g_mob->UseVisualStyleBackColor = false;
-			this->bt_g_mob->Click += gcnew System::EventHandler(this, &MyForm1::bt_g_mob_Click);
+			this->bt_g_mob->Click += gcnew System::EventHandler(this, &Despachador::bt_g_mob_Click);
 			// 
 			// listBox1
 			// 
@@ -194,7 +198,7 @@ namespace Project1 {
 			this->listBox1->Name = L"listBox1";
 			this->listBox1->Size = System::Drawing::Size(487, 356);
 			this->listBox1->TabIndex = 12;
-			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm1::listBox1_SelectedIndexChanged);
+			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Despachador::listBox1_SelectedIndexChanged);
 			// 
 			// comboBox1
 			// 
@@ -206,7 +210,7 @@ namespace Project1 {
 			this->comboBox1->Size = System::Drawing::Size(288, 24);
 			this->comboBox1->TabIndex = 13;
 			this->comboBox1->Text = L"Selecionar";
-			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm1::comboBox1_SelectedIndexChanged);
+			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Despachador::comboBox1_SelectedIndexChanged);
 			// 
 			// label1
 			// 
@@ -232,9 +236,9 @@ namespace Project1 {
 			this->bt_g_saida->TabIndex = 16;
 			this->bt_g_saida->Text = L"Gerenciar Saídas";
 			this->bt_g_saida->UseVisualStyleBackColor = false;
-			this->bt_g_saida->Click += gcnew System::EventHandler(this, &MyForm1::bt_g_saida_Click);
+			this->bt_g_saida->Click += gcnew System::EventHandler(this, &Despachador::bt_g_saida_Click);
 			// 
-			// MyForm1
+			// Despachador
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -252,9 +256,9 @@ namespace Project1 {
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Margin = System::Windows::Forms::Padding(4);
-			this->Name = L"MyForm1";
-			this->Text = L"MyForm1";
-			this->Load += gcnew System::EventHandler(this, &MyForm1::MyForm1_Load);
+			this->Name = L"Despachador";
+			this->Text = L"Despachador";
+			this->Load += gcnew System::EventHandler(this, &Despachador::Despachador_Load);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
@@ -304,30 +308,30 @@ namespace Project1 {
 		}
 
 	}
-	private: System::Void bt_c_equipe_Click(System::Object^  sender, System::EventArgs^  e) {
-	}
+
 	private: System::Void bt_g_equipe_Click(System::Object^  sender, System::EventArgs^  e) {
+		gerenciarEquipe^ gerenciar = gcnew gerenciarEquipe();
+		gerenciar->ShowDialog();
 	}
-	private: System::Void bt_c_material_Click(System::Object^  sender, System::EventArgs^  e) {
-	}
+
 	private: System::Void bt_g_material_Click(System::Object^  sender, System::EventArgs^  e) {
+		gerenciarMaterial^ gerenciar = gcnew gerenciarMaterial();
+		gerenciar->ShowDialog();
 	}
 
 	private: System::Void bt_g_equipamento_Click(System::Object^  sender, System::EventArgs^  e) {
-		gerenciarEquipamento^ gerenciarEquip = gcnew gerenciarEquipamento();
-		gerenciarEquip->ShowDialog();
-	}
-	private: System::Void bt_c_equipamento_Click(System::Object^  sender, System::EventArgs^  e) {
-	}
-	private: System::Void bt_c_mob_Click(System::Object^  sender, System::EventArgs^  e) {
+		gerenciarEquipamento^ gerenciar = gcnew gerenciarEquipamento();
+		gerenciar->ShowDialog();
 	}
 	private: System::Void bt_g_mob_Click(System::Object^  sender, System::EventArgs^  e) {
-	}
-	private: System::Void bt_c_saida_Click(System::Object^  sender, System::EventArgs^  e) {
+		gerenciarMobilizacao^ gerenciar = gcnew gerenciarMobilizacao();
+		gerenciar->ShowDialog();
 	}
 	private: System::Void bt_g_saida_Click(System::Object^  sender, System::EventArgs^  e) {
+		gerenciarSaida^ gerenciar = gcnew gerenciarSaida();
+		gerenciar->ShowDialog();
 	}
-	private: System::Void MyForm1_Load(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void Despachador_Load(System::Object^  sender, System::EventArgs^  e) {
 	}
 	private: System::Void menuStrip1_ItemClicked(System::Object^  sender, System::Windows::Forms::ToolStripItemClickedEventArgs^  e) {
 	}

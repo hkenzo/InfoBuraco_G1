@@ -34,14 +34,14 @@ namespace Project1 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TextBox^  tb_nome;
+
 	protected:
 	private: System::Windows::Forms::TextBox^  textBox1;
 	private: System::Windows::Forms::Label^  label1;
-	private: System::Windows::Forms::Label^  label2;
+
 	private: System::Windows::Forms::Label^  label3;
-	private: System::Windows::Forms::Label^  label4;
-	private: System::Windows::Forms::TextBox^  textBox2;
+
+
 
 	private: System::Windows::Forms::Button^  cancel_create_equpt_bt;
 	private: System::Windows::Forms::Button^  conf_creat_equipt_bt;
@@ -61,30 +61,18 @@ namespace Project1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->tb_nome = (gcnew System::Windows::Forms::TextBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->cancel_create_equpt_bt = (gcnew System::Windows::Forms::Button());
 			this->conf_creat_equipt_bt = (gcnew System::Windows::Forms::Button());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
-			// tb_nome
-			// 
-			this->tb_nome->Location = System::Drawing::Point(199, 146);
-			this->tb_nome->Margin = System::Windows::Forms::Padding(4);
-			this->tb_nome->Name = L"tb_nome";
-			this->tb_nome->Size = System::Drawing::Size(285, 22);
-			this->tb_nome->TabIndex = 5;
-			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(199, 212);
+			this->textBox1->Location = System::Drawing::Point(199, 172);
 			this->textBox1->Margin = System::Windows::Forms::Padding(4);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(285, 22);
@@ -100,40 +88,14 @@ namespace Project1 {
 			this->label1->Text = L"Tipo de Equipamento";
 			this->label1->Click += gcnew System::EventHandler(this, &CriarEquipamento::label1_Click);
 			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(41, 149);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(85, 17);
-			this->label2->TabIndex = 8;
-			this->label2->Text = L"Identificador";
-			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(41, 215);
+			this->label3->Location = System::Drawing::Point(41, 175);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(128, 17);
 			this->label3->TabIndex = 9;
 			this->label3->Text = L"Custo/Hora de Uso";
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(41, 281);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(82, 17);
-			this->label4->TabIndex = 10;
-			this->label4->Text = L"Quantidade";
-			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(199, 276);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(285, 22);
-			this->textBox2->TabIndex = 11;
 			// 
 			// cancel_create_equpt_bt
 			// 
@@ -188,13 +150,9 @@ namespace Project1 {
 			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->conf_creat_equipt_bt);
 			this->Controls->Add(this->cancel_create_equpt_bt);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->tb_nome);
 			this->Name = L"CriarEquipamento";
 			this->Text = L"CriarEquipamento";
 			this->Load += gcnew System::EventHandler(this, &CriarEquipamento::CriarEquipamento_Load);
