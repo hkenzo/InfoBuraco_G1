@@ -111,6 +111,9 @@
     <ClCompile Include="saidaMobilizacao.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ServicoComunicacao2_Pronto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -209,6 +212,9 @@
     <ClInclude Include="saidaMobilizacao.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ServicoComunicacao2_Pronto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
@@ -287,6 +293,15 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="removerMobilizacao.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="saidaEquipamento.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="saidaEquipe.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="saidaMaterial.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

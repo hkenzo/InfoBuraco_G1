@@ -1,6 +1,5 @@
 #include "ServicoComunicacao1.h"
 
-
 #pragma once
 
 namespace Project1 {
@@ -131,12 +130,13 @@ namespace Project1 {
 private: System::Void VisualizarOS_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void NotificarFinalizado_Click(System::Object^  sender, System::EventArgs^  e) {
+
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void RegistrarNotificacao_Click(System::Object^  sender, System::EventArgs^  e) {
-	ServicoComunicacao1^ caixa = gcnew ServicoComunicacao1();
-	caixa->ShowDialog();
+	ServicoComunicacao1^ telaNotificacao = gcnew ServicoComunicacao1();
+	telaNotificacao->ShowDialog();
 }
 };
 }

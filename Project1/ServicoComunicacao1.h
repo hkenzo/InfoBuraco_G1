@@ -216,8 +216,9 @@ namespace Project1 {
 		}
 #pragma endregion
 	private: System::Void ProximoCidadao_Click(System::Object^  sender, System::EventArgs^  e) {
-		ServicoComunicacao2 ^ caixa = gcnew ServicoComunicacao2();
-		caixa->ShowDialog();
+		ServicoComunicacao2 ^ telaNotificacaoCid = gcnew ServicoComunicacao2();
+		telaNotificacaoCid->ShowDialog();
+		this->Close();
 	}
 };
 }

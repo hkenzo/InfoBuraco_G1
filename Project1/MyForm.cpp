@@ -1,6 +1,8 @@
 //#include "MyForm.h"
 #include "Despachador.h"
 #include "ServicoComunicacao0.h"
+#include "ServicoComunicacao1.h"
+#include "ServicoComunicacao2.h"
 
 namespace Project1 {
 	using namespace System;
@@ -10,7 +12,7 @@ namespace Project1 {
 	{
 		Application::EnableVisualStyles();
 		Application::SetCompatibleTextRenderingDefault(false);
-		Application::Run(gcnew Despachador);
+		Application::Run(gcnew ServicoComunicacao0);
 		
 	}
 }

@@ -1,3 +1,5 @@
+#include "ServicoComunicacao2_Pronto.h"
+
 #pragma once
 
 namespace Project1 {
@@ -176,6 +178,7 @@ namespace Project1 {
 			this->FinalizarRegistro->TabIndex = 10;
 			this->FinalizarRegistro->Text = L"Finalizar";
 			this->FinalizarRegistro->UseVisualStyleBackColor = true;
+			this->FinalizarRegistro->Click += gcnew System::EventHandler(this, &ServicoComunicacao2::FinalizarRegistro_Click);
 			// 
 			// label5
 			// 
@@ -192,7 +195,7 @@ namespace Project1 {
 			this->AnteriorCidadao->Name = L"AnteriorCidadao";
 			this->AnteriorCidadao->Size = System::Drawing::Size(75, 23);
 			this->AnteriorCidadao->TabIndex = 12;
-			this->AnteriorCidadao->Text = L"Anterior";
+			this->AnteriorCidadao->Text = L"Cancelar";
 			this->AnteriorCidadao->UseVisualStyleBackColor = true;
 			this->AnteriorCidadao->Click += gcnew System::EventHandler(this, &ServicoComunicacao2::AnteriorCidadao_Click);
 			// 
@@ -233,8 +236,15 @@ namespace Project1 {
 		}
 #pragma endregion
 	private: System::Void AnteriorCidadao_Click(System::Object^  sender, System::EventArgs^  e) {
-
-
+		this->Close();
 	}
+private: System::Void FinalizarRegistro_Click(System::Object^  sender, System::EventArgs^  e) {		
+	//salvar dados 
+
+	ServicoComunicacao2_Pronto ^ telaNotificacaoFim = gcnew ServicoComunicacao2_Pronto();
+	telaNotificacaoFim->ShowDialog();
+
+	this->Close();
+}
 };
 }
