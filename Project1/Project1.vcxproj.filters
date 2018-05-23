@@ -114,6 +114,9 @@
     <ClCompile Include="ServicoComunicacao2_Pronto.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CadastroFuncionario.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -215,6 +218,9 @@
     <ClInclude Include="ServicoComunicacao2_Pronto.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CadastroFuncionario.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
@@ -302,6 +308,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="saidaMaterial.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServicoComunicacao2_Pronto.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

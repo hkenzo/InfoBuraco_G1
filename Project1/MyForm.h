@@ -57,8 +57,8 @@ namespace Project1 {
 	private: System::Windows::Forms::TextBox^  tb_senha;
 	private: System::Windows::Forms::Button^  bt_validar;
 	private: System::Windows::Forms::Button^  bt_limpar;
-	private: System::Windows::Forms::Label^  lb_mensagem;
-	private: System::Windows::Forms::TextBox^  tb_mensagem;
+
+
 	private: System::Windows::Forms::MenuStrip^  menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^  menuToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  aboutToolStripMenuItem;
@@ -88,8 +88,6 @@ namespace Project1 {
 			this->tb_senha = (gcnew System::Windows::Forms::TextBox());
 			this->bt_validar = (gcnew System::Windows::Forms::Button());
 			this->bt_limpar = (gcnew System::Windows::Forms::Button());
-			this->lb_mensagem = (gcnew System::Windows::Forms::Label());
-			this->tb_mensagem = (gcnew System::Windows::Forms::TextBox());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->menuToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->aboutToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -141,7 +139,7 @@ namespace Project1 {
 			this->bt_validar->Name = L"bt_validar";
 			this->bt_validar->Size = System::Drawing::Size(75, 23);
 			this->bt_validar->TabIndex = 8;
-			this->bt_validar->Text = L"Validar";
+			this->bt_validar->Text = L"Login";
 			this->bt_validar->UseVisualStyleBackColor = true;
 			this->bt_validar->Click += gcnew System::EventHandler(this, &MyForm::bt_validar_Click);
 			// 
@@ -151,33 +149,16 @@ namespace Project1 {
 			this->bt_limpar->Name = L"bt_limpar";
 			this->bt_limpar->Size = System::Drawing::Size(75, 23);
 			this->bt_limpar->TabIndex = 9;
-			this->bt_limpar->Text = L"Limpar";
+			this->bt_limpar->Text = L"Apagar";
 			this->bt_limpar->UseVisualStyleBackColor = true;
 			this->bt_limpar->Click += gcnew System::EventHandler(this, &MyForm::bt_limpar_Click);
-			// 
-			// lb_mensagem
-			// 
-			this->lb_mensagem->AutoSize = true;
-			this->lb_mensagem->Location = System::Drawing::Point(91, 197);
-			this->lb_mensagem->Name = L"lb_mensagem";
-			this->lb_mensagem->Size = System::Drawing::Size(98, 13);
-			this->lb_mensagem->TabIndex = 10;
-			this->lb_mensagem->Text = L"Mensagens de Log";
-			// 
-			// tb_mensagem
-			// 
-			this->tb_mensagem->Location = System::Drawing::Point(46, 228);
-			this->tb_mensagem->Multiline = true;
-			this->tb_mensagem->Name = L"tb_mensagem";
-			this->tb_mensagem->Size = System::Drawing::Size(241, 65);
-			this->tb_mensagem->TabIndex = 11;
 			// 
 			// menuStrip1
 			// 
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->menuToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(399, 24);
+			this->menuStrip1->Size = System::Drawing::Size(266, 24);
 			this->menuStrip1->TabIndex = 12;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -218,7 +199,7 @@ namespace Project1 {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(162, 24);
+			this->label1->Location = System::Drawing::Point(89, 24);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(115, 25);
 			this->label1->TabIndex = 13;
@@ -229,10 +210,8 @@ namespace Project1 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(399, 330);
+			this->ClientSize = System::Drawing::Size(266, 225);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->tb_mensagem);
-			this->Controls->Add(this->lb_mensagem);
 			this->Controls->Add(this->bt_limpar);
 			this->Controls->Add(this->bt_validar);
 			this->Controls->Add(this->tb_senha);

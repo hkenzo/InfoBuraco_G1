@@ -149,6 +149,7 @@
     <ClCompile Include="alterarMaterial.cpp" />
     <ClCompile Include="alterarMobilizacao.cpp" />
     <ClCompile Include="alterarSaida.cpp" />
+    <ClCompile Include="CadastroFuncionario.cpp" />
     <ClCompile Include="CaixaDeDialogo.cpp" />
     <ClCompile Include="CriarEquipamento.cpp" />
     <ClCompile Include="criarEquipe.cpp" />
@@ -192,6 +193,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="alterarSaida.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CadastroFuncionario.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CaixaDeDialogo.h">
@@ -296,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="alterarMobilizacao.resx">
       <DependentUpon>alterarMobilizacao.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroFuncionario.resx">
+      <DependentUpon>CadastroFuncionario.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CaixaDeDialogo.resx">
       <DependentUpon>CaixaDeDialogo.h</DependentUpon>
