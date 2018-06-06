@@ -6,7 +6,7 @@ equipeDAO::equipeDAO()
 {
 }
 
-void equipeDAO::criarEquipeDAO(string identificacaoEquipe, int numProfissionais, int custoHoraEquipe)
+void equipeDAO::criarEquipeDAO(int identificacaoEquipe, int numProfissionais, int custoHoraEquipe)
 {
 	string log;
 	sql::Connection * connection;
@@ -16,9 +16,9 @@ void equipeDAO::criarEquipeDAO(string identificacaoEquipe, int numProfissionais,
 	try {
 		MySQLDAO* mysqldao = MySQLDAO::getInstance();
 		connection = mysqldao->getConnection();
-		preparedStatement = connection->prepareStatement("INSERT INTO mequipe (identificacaoEquipe, numProfissionais, custoHoraEquipe) VALUES (?,?,?)");
+		preparedStatement = connection->prepareStatement("INSERT INTO equipe (identificacaoEquipe, numProfissionais, custoHoraEquipe) VALUES (?,?,?)");
 
-		preparedStatement->setString(1, identificacaoEquipe.c_str());
+		preparedStatement->setInt(1, identificacaoEquipe);
 		preparedStatement->setInt(2, numProfissionais);
 		preparedStatement->setInt(3, custoHoraEquipe);
 		resultSet = preparedStatement->executeQuery();

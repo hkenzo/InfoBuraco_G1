@@ -219,7 +219,8 @@ private: System::Void conf_creat_equipt_bt_Click(System::Object^  sender, System
 	string num = msclr::interop::marshal_as<std::string>(this->textNum->Text);
 	string custo = msclr::interop::marshal_as<std::string>(this->textCusto->Text);
 
-	equipe->criarEquipeDAO(id, std::stoi(num, nullptr, 10), std::stoi(custo, nullptr, 10));
+	equipe->criarEquipeDAO(std::stoi(id, nullptr, 10), std::stoi(num, nullptr, 10), std::stoi(custo, nullptr, 10));
+	this->Close();
 }
 private: System::Void tb_nome_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 }
