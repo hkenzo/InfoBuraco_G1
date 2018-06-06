@@ -3,6 +3,8 @@
 #include "criarEquipe.h"
 #include "removerEquipe.h"
 #include "alterarEquipe.h"
+#include <string>
+
 
 namespace Project1 {
 

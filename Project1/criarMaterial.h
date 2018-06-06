@@ -1,3 +1,8 @@
+//#include "gerenciarMaterial.h"
+#include "MaterialDAO.h"
+#include <msclr\marshal_cppstd.h>
+
+
 #pragma once
 
 namespace Project1 {
@@ -34,9 +39,12 @@ namespace Project1 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TextBox^  tb_nome;
+	private: System::Windows::Forms::TextBox^  textUnidade;
+	private: System::Windows::Forms::TextBox^  textPreco;
 	protected:
-	private: System::Windows::Forms::TextBox^  textBox1;
+
+	protected:
+
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Label^  label3;
@@ -45,7 +53,8 @@ namespace Project1 {
 
 	private: System::Windows::Forms::Button^  cancel_create_equpt_bt;
 	private: System::Windows::Forms::Button^  conf_creat_equipt_bt;
-	private: System::Windows::Forms::TextBox^  textBox3;
+	private: System::Windows::Forms::TextBox^  textTipo;
+
 	private: System::Windows::Forms::Label^  label5;
 
 
@@ -62,32 +71,32 @@ namespace Project1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->tb_nome = (gcnew System::Windows::Forms::TextBox());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textUnidade = (gcnew System::Windows::Forms::TextBox());
+			this->textPreco = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->cancel_create_equpt_bt = (gcnew System::Windows::Forms::Button());
 			this->conf_creat_equipt_bt = (gcnew System::Windows::Forms::Button());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textTipo = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
-			// tb_nome
+			// textUnidade
 			// 
-			this->tb_nome->Location = System::Drawing::Point(226, 187);
-			this->tb_nome->Margin = System::Windows::Forms::Padding(4);
-			this->tb_nome->Name = L"tb_nome";
-			this->tb_nome->Size = System::Drawing::Size(285, 22);
-			this->tb_nome->TabIndex = 5;
+			this->textUnidade->Location = System::Drawing::Point(226, 187);
+			this->textUnidade->Margin = System::Windows::Forms::Padding(4);
+			this->textUnidade->Name = L"textUnidade";
+			this->textUnidade->Size = System::Drawing::Size(285, 22);
+			this->textUnidade->TabIndex = 5;
 			// 
-			// textBox1
+			// textPreco
 			// 
-			this->textBox1->Location = System::Drawing::Point(226, 253);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(285, 22);
-			this->textBox1->TabIndex = 6;
+			this->textPreco->Location = System::Drawing::Point(226, 253);
+			this->textPreco->Margin = System::Windows::Forms::Padding(4);
+			this->textPreco->Name = L"textPreco";
+			this->textPreco->Size = System::Drawing::Size(285, 22);
+			this->textPreco->TabIndex = 6;
 			// 
 			// label1
 			// 
@@ -140,14 +149,15 @@ namespace Project1 {
 			this->conf_creat_equipt_bt->TabIndex = 14;
 			this->conf_creat_equipt_bt->Text = L"Confirmar";
 			this->conf_creat_equipt_bt->UseVisualStyleBackColor = false;
+			this->conf_creat_equipt_bt->Click += gcnew System::EventHandler(this, &criarMaterial::conf_creat_equipt_bt_Click);
 			// 
-			// textBox3
+			// textTipo
 			// 
-			this->textBox3->Location = System::Drawing::Point(226, 122);
-			this->textBox3->Margin = System::Windows::Forms::Padding(4);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(285, 22);
-			this->textBox3->TabIndex = 15;
+			this->textTipo->Location = System::Drawing::Point(226, 122);
+			this->textTipo->Margin = System::Windows::Forms::Padding(4);
+			this->textTipo->Name = L"textTipo";
+			this->textTipo->Size = System::Drawing::Size(285, 22);
+			this->textTipo->TabIndex = 15;
 			// 
 			// label5
 			// 
@@ -167,14 +177,14 @@ namespace Project1 {
 			this->BackColor = System::Drawing::SystemColors::Control;
 			this->ClientSize = System::Drawing::Size(580, 458);
 			this->Controls->Add(this->label5);
-			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->textTipo);
 			this->Controls->Add(this->conf_creat_equipt_bt);
 			this->Controls->Add(this->cancel_create_equpt_bt);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->tb_nome);
+			this->Controls->Add(this->textPreco);
+			this->Controls->Add(this->textUnidade);
 			this->Name = L"criarMaterial";
 			this->Text = L"criarMaterial";
 			this->Load += gcnew System::EventHandler(this, &criarMaterial::criarMaterial_Load);
@@ -192,5 +202,14 @@ namespace Project1 {
 	}
 	private: System::Void label4_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
-	};
+	private: System::Void conf_creat_equipt_bt_Click(System::Object^  sender, System::EventArgs^  e) {
+		/*MaterialDAO * materialdao = new MaterialDAO();
+		
+		string tipo = msclr::interop::marshal_as<std::string>(this->textTipo->Text);
+		string uni = msclr::interop::marshal_as<std::string>(this->textUnidade->Text);
+		string preco = msclr::interop::marshal_as<std::string>(this->textPreco->Text);
+
+		materialdao->criarMaterialDAO(tipo, uni, std::stoi(preco, nullptr, 10));*/
+	}
+};
 }

@@ -117,6 +117,15 @@
     <ClCompile Include="CadastroFuncionario.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MySQLDAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialDAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="equipeDAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -221,6 +230,15 @@
     <ClInclude Include="CadastroFuncionario.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MySQLDAO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialDAO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="equipeDAO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
@@ -311,6 +329,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="ServicoComunicacao2_Pronto.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroFuncionario.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>
