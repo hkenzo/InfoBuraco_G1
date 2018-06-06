@@ -101,9 +101,10 @@ namespace Project1 {
 			// lb_titulo
 			// 
 			this->lb_titulo->AutoSize = true;
-			this->lb_titulo->Location = System::Drawing::Point(96, 26);
+			this->lb_titulo->Location = System::Drawing::Point(128, 32);
+			this->lb_titulo->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lb_titulo->Name = L"lb_titulo";
-			this->lb_titulo->Size = System::Drawing::Size(83, 13);
+			this->lb_titulo->Size = System::Drawing::Size(110, 17);
 			this->lb_titulo->TabIndex = 0;
 			this->lb_titulo->Text = L"Dados Pessoais";
 			this->lb_titulo->TextAlign = System::Drawing::ContentAlignment::TopCenter;
@@ -111,9 +112,10 @@ namespace Project1 {
 			// lb_nome
 			// 
 			this->lb_nome->AutoSize = true;
-			this->lb_nome->Location = System::Drawing::Point(44, 65);
+			this->lb_nome->Location = System::Drawing::Point(59, 80);
+			this->lb_nome->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lb_nome->Name = L"lb_nome";
-			this->lb_nome->Size = System::Drawing::Size(38, 13);
+			this->lb_nome->Size = System::Drawing::Size(49, 17);
 			this->lb_nome->TabIndex = 1;
 			this->lb_nome->Text = L"Nome:";
 			this->lb_nome->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -121,9 +123,10 @@ namespace Project1 {
 			// lb_telefone
 			// 
 			this->lb_telefone->AutoSize = true;
-			this->lb_telefone->Location = System::Drawing::Point(30, 111);
+			this->lb_telefone->Location = System::Drawing::Point(40, 137);
+			this->lb_telefone->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lb_telefone->Name = L"lb_telefone";
-			this->lb_telefone->Size = System::Drawing::Size(52, 13);
+			this->lb_telefone->Size = System::Drawing::Size(68, 17);
 			this->lb_telefone->TabIndex = 2;
 			this->lb_telefone->Text = L"Telefone:";
 			this->lb_telefone->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -131,9 +134,10 @@ namespace Project1 {
 			// lb_escolaridade
 			// 
 			this->lb_escolaridade->AutoSize = true;
-			this->lb_escolaridade->Location = System::Drawing::Point(30, 152);
+			this->lb_escolaridade->Location = System::Drawing::Point(40, 187);
+			this->lb_escolaridade->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->lb_escolaridade->Name = L"lb_escolaridade";
-			this->lb_escolaridade->Size = System::Drawing::Size(46, 13);
+			this->lb_escolaridade->Size = System::Drawing::Size(59, 17);
 			this->lb_escolaridade->TabIndex = 3;
 			this->lb_escolaridade->Text = L"Função:";
 			this->lb_escolaridade->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -141,33 +145,38 @@ namespace Project1 {
 			// 
 			// tb_nome
 			// 
-			this->tb_nome->Location = System::Drawing::Point(99, 65);
+			this->tb_nome->Location = System::Drawing::Point(132, 80);
+			this->tb_nome->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tb_nome->Name = L"tb_nome";
-			this->tb_nome->Size = System::Drawing::Size(100, 20);
+			this->tb_nome->Size = System::Drawing::Size(132, 22);
 			this->tb_nome->TabIndex = 4;
+			this->tb_nome->TextChanged += gcnew System::EventHandler(this, &CaixaDeDialogo::tb_nome_TextChanged);
 			// 
 			// tb_telefone
 			// 
-			this->tb_telefone->Location = System::Drawing::Point(99, 111);
+			this->tb_telefone->Location = System::Drawing::Point(132, 137);
+			this->tb_telefone->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tb_telefone->Name = L"tb_telefone";
-			this->tb_telefone->Size = System::Drawing::Size(100, 20);
+			this->tb_telefone->Size = System::Drawing::Size(132, 22);
 			this->tb_telefone->TabIndex = 5;
 			// 
 			// cb_escolaridade
 			// 
 			this->cb_escolaridade->FormattingEnabled = true;
 			this->cb_escolaridade->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"1º Grau", L"2º Grau", L"3º Grau", L"Pós-Graduação" });
-			this->cb_escolaridade->Location = System::Drawing::Point(99, 152);
+			this->cb_escolaridade->Location = System::Drawing::Point(132, 187);
+			this->cb_escolaridade->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->cb_escolaridade->Name = L"cb_escolaridade";
-			this->cb_escolaridade->Size = System::Drawing::Size(100, 21);
+			this->cb_escolaridade->Size = System::Drawing::Size(132, 24);
 			this->cb_escolaridade->TabIndex = 6;
 			// 
 			// bt_ok
 			// 
 			this->bt_ok->DialogResult = System::Windows::Forms::DialogResult::OK;
-			this->bt_ok->Location = System::Drawing::Point(47, 345);
+			this->bt_ok->Location = System::Drawing::Point(63, 425);
+			this->bt_ok->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->bt_ok->Name = L"bt_ok";
-			this->bt_ok->Size = System::Drawing::Size(75, 23);
+			this->bt_ok->Size = System::Drawing::Size(100, 28);
 			this->bt_ok->TabIndex = 7;
 			this->bt_ok->Text = L"Ok";
 			this->bt_ok->UseVisualStyleBackColor = true;
@@ -175,9 +184,10 @@ namespace Project1 {
 			// bt_cancelar
 			// 
 			this->bt_cancelar->DialogResult = System::Windows::Forms::DialogResult::Cancel;
-			this->bt_cancelar->Location = System::Drawing::Point(140, 345);
+			this->bt_cancelar->Location = System::Drawing::Point(187, 425);
+			this->bt_cancelar->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->bt_cancelar->Name = L"bt_cancelar";
-			this->bt_cancelar->Size = System::Drawing::Size(75, 23);
+			this->bt_cancelar->Size = System::Drawing::Size(100, 28);
 			this->bt_cancelar->TabIndex = 8;
 			this->bt_cancelar->Text = L"Cancelar";
 			this->bt_cancelar->UseVisualStyleBackColor = true;
@@ -185,10 +195,10 @@ namespace Project1 {
 			// CaixaDeDialogo
 			// 
 			this->AcceptButton = this->bt_ok;
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->CancelButton = this->bt_cancelar;
-			this->ClientSize = System::Drawing::Size(284, 380);
+			this->ClientSize = System::Drawing::Size(379, 468);
 			this->Controls->Add(this->bt_cancelar);
 			this->Controls->Add(this->bt_ok);
 			this->Controls->Add(this->cb_escolaridade);
@@ -199,8 +209,10 @@ namespace Project1 {
 			this->Controls->Add(this->lb_nome);
 			this->Controls->Add(this->lb_titulo);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::Fixed3D;
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"CaixaDeDialogo";
 			this->Text = L"Dados Pessoais";
+			this->Load += gcnew System::EventHandler(this, &CaixaDeDialogo::CaixaDeDialogo_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -208,6 +220,10 @@ namespace Project1 {
 #pragma endregion
 	
 private: System::Void lb_escolaridade_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void CaixaDeDialogo_Load(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void tb_nome_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }

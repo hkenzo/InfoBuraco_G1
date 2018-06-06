@@ -104,12 +104,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <LanguageStandard>stdcpp14</LanguageStandard>
+      <AdditionalIncludeDirectories>C:\Users\Kenzo K\Documents\bibliotecas\mysql-connector-c++-8.0.11-windows-x86-64bit\include\jdbc;C:\Users\Kenzo K\Documents\bibliotecas\boost_1_67_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>mysqlcppconn.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\Kenzo K\Documents\bibliotecas\mysql-connector-c++-8.0.11-windows-x86-64bit\lib64\vs14;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -155,14 +156,17 @@
     <ClCompile Include="criarEquipe.cpp" />
     <ClCompile Include="criarMaterial.cpp" />
     <ClCompile Include="criarMobilizacao.cpp" />
+    <ClCompile Include="equipeDAO.cpp" />
     <ClCompile Include="gerenciarEquipamento.cpp" />
     <ClCompile Include="gerenciarEquipe.cpp" />
     <ClCompile Include="gerenciarMaterial.cpp" />
     <ClCompile Include="gerenciarMobilizacao.cpp" />
     <ClCompile Include="gerenciarSaida.cpp" />
     <ClCompile Include="Janela4.cpp" />
+    <ClCompile Include="MaterialDAO.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Despachador.cpp" />
+    <ClCompile Include="MySQLDAO.cpp" />
     <ClCompile Include="RemoverEquipamento.cpp" />
     <ClCompile Include="removerEquipe.cpp" />
     <ClCompile Include="removerMaterial.cpp" />
@@ -213,6 +217,7 @@
     <ClInclude Include="criarMobilizacao.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="equipeDAO.h" />
     <ClInclude Include="gerenciarEquipamento.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -231,12 +236,14 @@
     <ClInclude Include="Janela4.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MaterialDAO.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Despachador.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MySQLDAO.h" />
     <ClInclude Include="RemoverEquipamento.h">
       <FileType>CppForm</FileType>
     </ClInclude>

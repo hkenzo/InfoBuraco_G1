@@ -1,3 +1,5 @@
+#include "equipeDAO.h"
+#include <msclr\marshal_cppstd.h>
 #pragma once
 
 namespace Project1 {
@@ -34,9 +36,12 @@ namespace Project1 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TextBox^  tb_nome;
+	private: System::Windows::Forms::TextBox^  textNum;
+	private: System::Windows::Forms::TextBox^  textCusto;
 	protected:
-	private: System::Windows::Forms::TextBox^  textBox1;
+
+	protected:
+
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Label^  label3;
@@ -45,7 +50,8 @@ namespace Project1 {
 
 	private: System::Windows::Forms::Button^  cancel_create_equpt_bt;
 	private: System::Windows::Forms::Button^  conf_creat_equipt_bt;
-	private: System::Windows::Forms::TextBox^  textBox3;
+	private: System::Windows::Forms::TextBox^  textId;
+
 	private: System::Windows::Forms::Label^  label5;
 	private: System::Windows::Forms::Label^  label4;
 
@@ -62,33 +68,34 @@ namespace Project1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->tb_nome = (gcnew System::Windows::Forms::TextBox());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textNum = (gcnew System::Windows::Forms::TextBox());
+			this->textCusto = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->cancel_create_equpt_bt = (gcnew System::Windows::Forms::Button());
 			this->conf_creat_equipt_bt = (gcnew System::Windows::Forms::Button());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textId = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
-			// tb_nome
+			// textNum
 			// 
-			this->tb_nome->Location = System::Drawing::Point(199, 146);
-			this->tb_nome->Margin = System::Windows::Forms::Padding(4);
-			this->tb_nome->Name = L"tb_nome";
-			this->tb_nome->Size = System::Drawing::Size(285, 22);
-			this->tb_nome->TabIndex = 5;
+			this->textNum->Location = System::Drawing::Point(199, 146);
+			this->textNum->Margin = System::Windows::Forms::Padding(4);
+			this->textNum->Name = L"textNum";
+			this->textNum->Size = System::Drawing::Size(285, 22);
+			this->textNum->TabIndex = 5;
+			this->textNum->TextChanged += gcnew System::EventHandler(this, &criarEquipe::tb_nome_TextChanged);
 			// 
-			// textBox1
+			// textCusto
 			// 
-			this->textBox1->Location = System::Drawing::Point(199, 212);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(285, 22);
-			this->textBox1->TabIndex = 6;
+			this->textCusto->Location = System::Drawing::Point(199, 212);
+			this->textCusto->Margin = System::Windows::Forms::Padding(4);
+			this->textCusto->Name = L"textCusto";
+			this->textCusto->Size = System::Drawing::Size(285, 22);
+			this->textCusto->TabIndex = 6;
 			// 
 			// label1
 			// 
@@ -141,14 +148,15 @@ namespace Project1 {
 			this->conf_creat_equipt_bt->TabIndex = 14;
 			this->conf_creat_equipt_bt->Text = L"Confirmar";
 			this->conf_creat_equipt_bt->UseVisualStyleBackColor = false;
+			this->conf_creat_equipt_bt->Click += gcnew System::EventHandler(this, &criarEquipe::conf_creat_equipt_bt_Click);
 			// 
-			// textBox3
+			// textId
 			// 
-			this->textBox3->Location = System::Drawing::Point(199, 81);
-			this->textBox3->Margin = System::Windows::Forms::Padding(4);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(285, 22);
-			this->textBox3->TabIndex = 15;
+			this->textId->Location = System::Drawing::Point(199, 81);
+			this->textId->Margin = System::Windows::Forms::Padding(4);
+			this->textId->Name = L"textId";
+			this->textId->Size = System::Drawing::Size(285, 22);
+			this->textId->TabIndex = 15;
 			// 
 			// label5
 			// 
@@ -179,14 +187,14 @@ namespace Project1 {
 			this->ClientSize = System::Drawing::Size(546, 458);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label5);
-			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->textId);
 			this->Controls->Add(this->conf_creat_equipt_bt);
 			this->Controls->Add(this->cancel_create_equpt_bt);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->tb_nome);
+			this->Controls->Add(this->textCusto);
+			this->Controls->Add(this->textNum);
 			this->Name = L"criarEquipe";
 			this->Text = L"criarEquipe";
 			this->Load += gcnew System::EventHandler(this, &criarEquipe::criarEquipe_Load);
@@ -204,5 +212,16 @@ namespace Project1 {
 	}
 	private: System::Void label4_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
+private: System::Void conf_creat_equipt_bt_Click(System::Object^  sender, System::EventArgs^  e) {
+	equipeDAO * equipe = new equipeDAO();
+
+	string id = msclr::interop::marshal_as<std::string>(this->textId->Text);
+	string num = msclr::interop::marshal_as<std::string>(this->textNum->Text);
+	string custo = msclr::interop::marshal_as<std::string>(this->textCusto->Text);
+
+	equipe->criarEquipeDAO(id, std::stoi(num, nullptr, 10), std::stoi(custo, nullptr, 10));
+}
+private: System::Void tb_nome_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+}
 };
 }

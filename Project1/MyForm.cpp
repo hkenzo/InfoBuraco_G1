@@ -14,7 +14,7 @@ namespace Project1 {
 	{
 		Application::EnableVisualStyles();
 		Application::SetCompatibleTextRenderingDefault(false);
-		Application::Run(gcnew CadastroFuncionario);
+		Application::Run(gcnew Despachador);
 		
 	}
 }
