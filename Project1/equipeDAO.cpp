@@ -26,7 +26,7 @@ void equipeDAO::criarEquipeDAO(int identificacaoEquipe, int numProfissionais, in
 	catch (sql::SQLException e)
 	{
 		connection->close();
-		log = e.what();
+		//log = e.what();
 	}
 }
 
@@ -48,7 +48,7 @@ void equipeDAO::deletarEquipeDAO(string identificacaoEquipe)
 	catch (sql::SQLException e)
 	{
 		connection->close();
-		log = e.what();
+		//log = e.what();
 	}
 }
 
