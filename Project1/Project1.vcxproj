@@ -158,6 +158,7 @@
     <ClCompile Include="criarEquipe.cpp" />
     <ClCompile Include="criarMaterial.cpp" />
     <ClCompile Include="criarMobilizacao.cpp" />
+    <ClCompile Include="equipe.cpp" />
     <ClCompile Include="equipeDAO.cpp" />
     <ClCompile Include="gerenciarEquipamento.cpp" />
     <ClCompile Include="gerenciarEquipe.cpp" />
@@ -221,6 +222,7 @@
     <ClInclude Include="criarMobilizacao.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="equipe.h" />
     <ClInclude Include="equipeDAO.h" />
     <ClInclude Include="gerenciarEquipamento.h">
       <FileType>CppForm</FileType>

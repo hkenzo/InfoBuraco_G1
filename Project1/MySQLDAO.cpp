@@ -15,7 +15,7 @@ MySQLDAO::MySQLDAO()
 	sql::Statement *stmt;
 	sql::PreparedStatement *pstmt;
 	string log = "";
-	this->url = "143.107.102.55:3306";
+	this->url = "143.107.102.55:3306/db01";
 	this->pass = "grupo01";
 	this->user = "grupo01";
 	try

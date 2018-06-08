@@ -126,10 +126,7 @@
     <ClCompile Include="equipeDAO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="criarBuracoDAO.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="buraco.cpp">
+    <ClCompile Include="equipe.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -245,10 +242,7 @@
     <ClInclude Include="equipeDAO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="criarBuracoDAO.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="buraco.h">
+    <ClInclude Include="equipe.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
