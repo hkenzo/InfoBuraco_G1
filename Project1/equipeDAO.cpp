@@ -10,7 +10,6 @@ void equipeDAO::criarEquipeDAO(int identificacaoEquipe, int numProfissionais, in
 {
 	string log;
 	sql::Connection * connection;
-	sql::Statement* statement;
 	sql::PreparedStatement * preparedStatement;
 	sql::ResultSet *resultSet;
 	try {
@@ -26,15 +25,14 @@ void equipeDAO::criarEquipeDAO(int identificacaoEquipe, int numProfissionais, in
 	catch (sql::SQLException e)
 	{
 		connection->close();
-		//log = e.what();
+		log = e.what();
 	}
 }
 
-void equipeDAO::deletarEquipeDAO(string identificacaoEquipe)
+void equipeDAO::deletarEquipeDAO(int identificacaoEquipe)
 {
 	string log;
 	sql::Connection * connection;
-	sql::Statement* statement;
 	sql::PreparedStatement * preparedStatement;
 	sql::ResultSet *resultSet;
 	try {
@@ -42,21 +40,20 @@ void equipeDAO::deletarEquipeDAO(string identificacaoEquipe)
 		connection = mysqldao->getConnection();
 		preparedStatement = connection->prepareStatement("DELETE FROM equipe WHERE identificacaoEquipe = ?");
 
-		preparedStatement->setString(1, identificacaoEquipe.c_str());
+		preparedStatement->setInt(1, identificacaoEquipe);
 		resultSet = preparedStatement->executeQuery();
 	}
 	catch (sql::SQLException e)
 	{
 		connection->close();
-		//log = e.what();
+		log = e.what();
 	}
 }
 
-void equipeDAO::editarEquipeDAO(string identificacaoEquipe, int numProfissionais, int custoHoraEquipe)
+void equipeDAO::editarEquipeDAO(int identificacaoEquipe, int numProfissionais, int custoHoraEquipe)
 {
 string log;
 sql::Connection * connection;
-sql::Statement* statement;
 sql::PreparedStatement * preparedStatement;
 sql::ResultSet *resultSet;
 try {
@@ -66,7 +63,7 @@ preparedStatement = connection->prepareStatement("UPDATE equipe SET numProfissio
 
 preparedStatement->setInt(1, numProfissionais);
 preparedStatement->setInt(2, custoHoraEquipe);
-preparedStatement->setString(3, identificacaoEquipe.c_str());
+preparedStatement->setInt(3, identificacaoEquipe);
 
 resultSet = preparedStatement->executeQuery();
 }
@@ -77,27 +74,25 @@ log = e.what();
 }
 }
 
-/*Equipe EquipeDAO::buscarEquipe(string nomemequipe)
+vector<equipe*>* equipeDAO::buscarEquipe()
 {
 string log;
-Equipe * mequipe = nullptr;
+equipe * temp = nullptr;
+vector<equipe*> *temp2 = nullptr;
 sql::Connection * connection;
-sql::Statement* statement;
 sql::PreparedStatement * preparedStatement;
 sql::ResultSet *resultSet;
 try {
 MySQLDAO* mysqldao = MySQLDAO::getInstance();
 connection = mysqldao->getConnection();
-preparedStatement = connection->prepareStatement("SELECT nomemequipe, unidademedida, custo FROM mequipe WHERE nomemequipe = ?");
+preparedStatement = connection->prepareStatement("select identificacaoEquipe, numProfissionais, custoHoraEquipe from equipe");
 
-preparedStatement->setString(1, nomemequipe.c_str());
 resultSet = preparedStatement->executeQuery();
 
-if (resultSet->next()) {
-mequipe = new Equipe();
-mequipe->setNomeEquipe(resultSet->getString(1).c_str());
-mequipe->setUnidadeMedida(resultSet->getInt(2));
-mequipe->setCusto(resultSet->getInt(3));
+temp2 = new vector<equipe*>();
+while (resultSet->next()) {
+	temp = new equipe(resultSet->getInt(1), resultSet->getInt(2), resultSet->getInt(3));
+	temp2->push_back(temp);
 }
 }
 catch (sql::SQLException e)
@@ -105,6 +100,6 @@ catch (sql::SQLException e)
 connection->close();
 log = e.what();
 }
-return mequipe;
-}*/
+return temp2;
+}
 
