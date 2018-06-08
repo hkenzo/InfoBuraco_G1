@@ -129,6 +129,12 @@
     <ClCompile Include="equipe.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="buraco.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="criarBuracoDAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -243,6 +249,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="equipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="buraco.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="criarBuracoDAO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
