@@ -104,13 +104,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <LanguageStandard>stdcpp14</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\Kenzo K\Documents\bibliotecas\mysql-connector-c++-8.0.11-windows-x86-64bit\include\jdbc;C:\Users\Kenzo K\Documents\bibliotecas\boost_1_67_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Daniel\source\repos\mysql-connector-c++-8.0.11-windows-x86-64bit\include\jdbc;C:\Users\Daniel\source\repos\boost_1_67_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>mysqlcppconn.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
-      <AdditionalLibraryDirectories>C:\Users\Kenzo K\Documents\bibliotecas\mysql-connector-c++-8.0.11-windows-x86-64bit\lib64\vs14;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\Daniel\source\repos\mysql-connector-c++-8.0.11-windows-x86-64bit\lib64\vs14;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -150,8 +150,10 @@
     <ClCompile Include="alterarMaterial.cpp" />
     <ClCompile Include="alterarMobilizacao.cpp" />
     <ClCompile Include="alterarSaida.cpp" />
+    <ClCompile Include="buraco.cpp" />
     <ClCompile Include="CadastroFuncionario.cpp" />
     <ClCompile Include="CaixaDeDialogo.cpp" />
+    <ClCompile Include="criarBuracoDAO.cpp" />
     <ClCompile Include="CriarEquipamento.cpp" />
     <ClCompile Include="criarEquipe.cpp" />
     <ClCompile Include="criarMaterial.cpp" />
@@ -199,12 +201,14 @@
     <ClInclude Include="alterarSaida.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="buraco.h" />
     <ClInclude Include="CadastroFuncionario.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CaixaDeDialogo.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="criarBuracoDAO.h" />
     <ClInclude Include="CriarEquipamento.h">
       <FileType>CppForm</FileType>
     </ClInclude>
