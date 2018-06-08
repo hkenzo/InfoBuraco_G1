@@ -1,3 +1,5 @@
+#include "equipeDAO.h"
+#include <msclr\marshal_cppstd.h>
 #pragma once
 
 namespace Project1 {
@@ -15,12 +17,24 @@ namespace Project1 {
 	public ref class alterarEquipe : public System::Windows::Forms::Form
 	{
 	public:
+		String ^ aux1;
+		String^ aux2;
+		String^ aux3;
+
+	public:
 		alterarEquipe(void)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+		}
+		alterarEquipe(String^ str1, String^ str2, String^ str3)
+		{
+			InitializeComponent();
+			aux1 = str1;
+			aux2 = str2;
+			aux3 = str3;
 		}
 
 	protected:
@@ -35,21 +49,27 @@ namespace Project1 {
 			}
 		}
 	private: System::Windows::Forms::Label^  label5;
+	private: System::Windows::Forms::TextBox^  idbox;
 	protected:
-	private: System::Windows::Forms::TextBox^  textBox3;
+
 	private: System::Windows::Forms::Button^  conf_creat_equipt_bt;
 	private: System::Windows::Forms::Button^  cancel_create_equpt_bt;
-	private: System::Windows::Forms::TextBox^  textBox2;
+
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::Label^  Identificação;
+	private: System::Windows::Forms::TextBox^  numboxold;
 
-	private: System::Windows::Forms::Label^  label1;
-	private: System::Windows::Forms::TextBox^  textBox1;
+
+
 
 	private: System::Windows::Forms::Label^  label6;
-	private: System::Windows::Forms::TextBox^  textBox4;
-	private: System::Windows::Forms::TextBox^  textBox5;
+	private: System::Windows::Forms::TextBox^  numbox;
+	private: System::Windows::Forms::TextBox^  custobox;
+
+
 	private: System::Windows::Forms::Label^  label7;
+	private: System::Windows::Forms::TextBox^  custoboxold;
 
 	private:
 		/// <summary>
@@ -65,18 +85,18 @@ namespace Project1 {
 		void InitializeComponent(void)
 		{
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->idbox = (gcnew System::Windows::Forms::TextBox());
 			this->conf_creat_equipt_bt = (gcnew System::Windows::Forms::Button());
 			this->cancel_create_equpt_bt = (gcnew System::Windows::Forms::Button());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->Identificação = (gcnew System::Windows::Forms::Label());
+			this->numboxold = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->numbox = (gcnew System::Windows::Forms::TextBox());
+			this->custobox = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->custoboxold = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// label5
@@ -90,14 +110,14 @@ namespace Project1 {
 			this->label5->TabIndex = 27;
 			this->label5->Text = L"Alterar Equipe";
 			// 
-			// textBox3
+			// idbox
 			// 
-			this->textBox3->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->textBox3->Location = System::Drawing::Point(234, 103);
-			this->textBox3->Margin = System::Windows::Forms::Padding(4);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(285, 22);
-			this->textBox3->TabIndex = 26;
+			this->idbox->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->idbox->Location = System::Drawing::Point(234, 103);
+			this->idbox->Margin = System::Windows::Forms::Padding(4);
+			this->idbox->Name = L"idbox";
+			this->idbox->Size = System::Drawing::Size(285, 22);
+			this->idbox->TabIndex = 26;
 			// 
 			// conf_creat_equipt_bt
 			// 
@@ -109,6 +129,7 @@ namespace Project1 {
 			this->conf_creat_equipt_bt->TabIndex = 25;
 			this->conf_creat_equipt_bt->Text = L"Confirmar";
 			this->conf_creat_equipt_bt->UseVisualStyleBackColor = false;
+			this->conf_creat_equipt_bt->Click += gcnew System::EventHandler(this, &alterarEquipe::conf_creat_equipt_bt_Click);
 			// 
 			// cancel_create_equpt_bt
 			// 
@@ -122,15 +143,6 @@ namespace Project1 {
 			this->cancel_create_equpt_bt->Text = L"Cancelar";
 			this->cancel_create_equpt_bt->UseVisualStyleBackColor = false;
 			this->cancel_create_equpt_bt->Click += gcnew System::EventHandler(this, &alterarEquipe::cancel_create_equpt_bt_Click);
-			// 
-			// textBox2
-			// 
-			this->textBox2->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->textBox2->Location = System::Drawing::Point(234, 290);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(285, 22);
-			this->textBox2->TabIndex = 23;
 			// 
 			// label4
 			// 
@@ -150,23 +162,23 @@ namespace Project1 {
 			this->label3->TabIndex = 21;
 			this->label3->Text = L"Nº de Profissionais [Anterior]";
 			// 
-			// label1
+			// Identificação
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(37, 106);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(45, 17);
-			this->label1->TabIndex = 19;
-			this->label1->Text = L"Nome";
+			this->Identificação->AutoSize = true;
+			this->Identificação->Location = System::Drawing::Point(37, 106);
+			this->Identificação->Name = L"Identificação";
+			this->Identificação->Size = System::Drawing::Size(87, 17);
+			this->Identificação->TabIndex = 19;
+			this->Identificação->Text = L"Identificação";
 			// 
-			// textBox1
+			// numboxold
 			// 
-			this->textBox1->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->textBox1->Location = System::Drawing::Point(234, 169);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(285, 22);
-			this->textBox1->TabIndex = 18;
+			this->numboxold->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->numboxold->Location = System::Drawing::Point(234, 169);
+			this->numboxold->Margin = System::Windows::Forms::Padding(4);
+			this->numboxold->Name = L"numboxold";
+			this->numboxold->Size = System::Drawing::Size(285, 22);
+			this->numboxold->TabIndex = 18;
 			// 
 			// label6
 			// 
@@ -177,21 +189,21 @@ namespace Project1 {
 			this->label6->TabIndex = 29;
 			this->label6->Text = L"Nº de Profissionais [Novo]";
 			// 
-			// textBox4
+			// numbox
 			// 
-			this->textBox4->Location = System::Drawing::Point(234, 231);
-			this->textBox4->Margin = System::Windows::Forms::Padding(4);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(285, 22);
-			this->textBox4->TabIndex = 28;
+			this->numbox->Location = System::Drawing::Point(234, 231);
+			this->numbox->Margin = System::Windows::Forms::Padding(4);
+			this->numbox->Name = L"numbox";
+			this->numbox->Size = System::Drawing::Size(285, 22);
+			this->numbox->TabIndex = 28;
 			// 
-			// textBox5
+			// custobox
 			// 
-			this->textBox5->Location = System::Drawing::Point(234, 351);
-			this->textBox5->Margin = System::Windows::Forms::Padding(4);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(285, 22);
-			this->textBox5->TabIndex = 31;
+			this->custobox->Location = System::Drawing::Point(234, 351);
+			this->custobox->Margin = System::Windows::Forms::Padding(4);
+			this->custobox->Name = L"custobox";
+			this->custobox->Size = System::Drawing::Size(285, 22);
+			this->custobox->TabIndex = 31;
 			// 
 			// label7
 			// 
@@ -202,25 +214,34 @@ namespace Project1 {
 			this->label7->TabIndex = 30;
 			this->label7->Text = L"R$ / hora [Nova]";
 			// 
+			// custoboxold
+			// 
+			this->custoboxold->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->custoboxold->Location = System::Drawing::Point(234, 290);
+			this->custoboxold->Margin = System::Windows::Forms::Padding(4);
+			this->custoboxold->Name = L"custoboxold";
+			this->custoboxold->Size = System::Drawing::Size(285, 22);
+			this->custoboxold->TabIndex = 23;
+			// 
 			// alterarEquipe
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
 			this->ClientSize = System::Drawing::Size(570, 492);
-			this->Controls->Add(this->textBox5);
+			this->Controls->Add(this->custobox);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label6);
-			this->Controls->Add(this->textBox4);
+			this->Controls->Add(this->numbox);
 			this->Controls->Add(this->label5);
-			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->idbox);
 			this->Controls->Add(this->conf_creat_equipt_bt);
 			this->Controls->Add(this->cancel_create_equpt_bt);
-			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->custoboxold);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label1);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->Identificação);
+			this->Controls->Add(this->numboxold);
 			this->Name = L"alterarEquipe";
 			this->Text = L"alterarEquipe";
 			this->Load += gcnew System::EventHandler(this, &alterarEquipe::alterarEquipe_Load);
@@ -233,6 +254,27 @@ namespace Project1 {
 		this->Close();
 	}
 	private: System::Void alterarEquipe_Load(System::Object^  sender, System::EventArgs^  e) {
+		this->idbox->Text = aux1;
+		this->numboxold->Text = aux2;
+		this->custoboxold->Text = aux3;
+		this->idbox->ReadOnly = true;
+		this->numboxold->ReadOnly = true;
+		this->custoboxold->ReadOnly = true;
 	}
-	};
+
+
+	private: System::Void conf_creat_equipt_bt_Click(System::Object^  sender, System::EventArgs^  e) {
+		equipeDAO * aux = new equipeDAO();
+		string id = msclr::interop::marshal_as<std::string>(this->idbox->Text);
+		string novoNum = msclr::interop::marshal_as<std::string>(this->numbox->Text);
+		string novoCusto = msclr::interop::marshal_as<std::string>(this->custobox->Text);
+		aux->editarEquipeDAO(std::stoi(id, nullptr, 10), std::stoi(novoNum, nullptr, 10), std::stoi(novoCusto, nullptr, 10));
+		this->Close();
+	}
+
+
+
+
+
+};
 }
