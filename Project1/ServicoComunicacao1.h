@@ -1,6 +1,9 @@
 #include "ServicoComunicacao2.h"
+#include "buraco.h"
 #include <string>
 #include <msclr\marshal_cppstd.h>
+
+using namespace std;
 
 #pragma once
 
@@ -382,20 +385,20 @@ private: System::Void tamanho_text_TextChanged(System::Object^  sender, System::
 private: System::Void regional_text_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void FinalizarRegistro_Click(System::Object^  sender, System::EventArgs^  e) {
-	string nomRua = msclr::interop::marshal_as<std::string>(this->Nome_da_rua_text->Text);
-	string numRua = msclr::interop::marshal_as<std::string>(this->numero_text->Text);
-	string posRua = msclr::interop::marshal_as<std::string>(this->posicao_leito_text->Text);
-	string tamanho = msclr::interop::marshal_as<std::string>(this->tamanho_text->Text);
-	string regional = msclr::interop::marshal_as<std::string>(this->regional_text->Text);
+	string nomRua0 = msclr::interop::marshal_as<std::string>(this->Nome_da_rua_text->Text);
+	string numRua0 = msclr::interop::marshal_as<std::string>(this->numero_text->Text);
+	string posRua0 = msclr::interop::marshal_as<std::string>(this->posicao_leito_text->Text);
+	string tamanho0 = msclr::interop::marshal_as<std::string>(this->tamanho_text->Text);
+	string regional0 = msclr::interop::marshal_as<std::string>(this->regional_text->Text);
 
-	string tipoCom = msclr::interop::marshal_as<std::string>(this->tipo_comunicacao_text->Text);
-	string Com = msclr::interop::marshal_as<std::string>(this->comunicacao_text->Text);
-	string nomCid = msclr::interop::marshal_as<std::string>(this->nome_cidadao_text->Text);
-	string dataCont = msclr::interop::marshal_as<std::string>(this->data_contato_text->Text);
-	string horaCont = msclr::interop::marshal_as<std::string>(this->hora_contato_text->Text);
-
-	criarBuracoDAO(nomRua, std::stoi(numRua, nullptr, 10), posRua, std::stoi(tamanho, nullptr, 10), regional
-							tipoCom, Com, nomCid, dataCont, horaCont); 
+	string tipoCom0 = msclr::interop::marshal_as<std::string>(this->tipo_comunicacao_text->Text);
+	string Com0 = msclr::interop::marshal_as<std::string>(this->comunicacao_text->Text);
+	string nomCid0 = msclr::interop::marshal_as<std::string>(this->nome_cidadao_text->Text);
+	string dataCont0 = msclr::interop::marshal_as<std::string>(this->data_contato_text->Text);
+	string horaCont0 = msclr::interop::marshal_as<std::string>(this->hora_contato_text->Text);
+	
+	buraco *bur = new buraco;
+	bur->setBuraco(nomRua0, std::stoi(numRua0, nullptr, 10), posRua0, std::stoi(tamanho0, nullptr, 10), regional0, tipoCom0, Com0, nomCid0, dataCont0, horaCont0);
 
 	ServicoComunicacao2_Pronto ^ telaNotificacaoFim = gcnew ServicoComunicacao2_Pronto();
 	telaNotificacaoFim->ShowDialog();

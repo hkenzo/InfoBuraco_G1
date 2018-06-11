@@ -1,8 +1,18 @@
+#ifndef BURACO_H
+#define BURACO_H
+
+#include "MySQLDAO.h"
 #include <stdio.h>
 #include <string>
+#include <vector>
+#include "equipe.h" 
 
+#include "buracoDAO.h"
+
+using namespace std;
 #pragma once
-ref class buraco
+
+class buraco
 {
 public:
 	int numBuraco;
@@ -22,10 +32,10 @@ public:
 	string nomCid;
 	string dataCont;
 	string horaCont;
-
+																							
+	void setBuraco(string nomRua, int numRua, string posRua, int tamanho, string regional, string tipoCom, string Com, string nomCid, string dataCont, string horaCont, int numReclamacoes, int statusBuraco, int prioridade, int numBuraco);
+	~buraco();
 	buraco();
-
-
-	void criarBuraco(string nomRua, int nomRua, string posRua, int tamanho, string regional, string tipoCom, string Com, string nomCid, string dataCont, string horaCont);
-
 };
+
+#endif

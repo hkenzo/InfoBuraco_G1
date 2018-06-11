@@ -151,9 +151,9 @@
     <ClCompile Include="alterarMobilizacao.cpp" />
     <ClCompile Include="alterarSaida.cpp" />
     <ClCompile Include="buraco.cpp" />
+    <ClCompile Include="buracoDAO.cpp" />
     <ClCompile Include="CadastroFuncionario.cpp" />
     <ClCompile Include="CaixaDeDialogo.cpp" />
-    <ClCompile Include="criarBuracoDAO.cpp" />
     <ClCompile Include="CriarEquipamento.cpp" />
     <ClCompile Include="criarEquipe.cpp" />
     <ClCompile Include="criarMaterial.cpp" />
@@ -203,13 +203,13 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="buraco.h" />
+    <ClInclude Include="buracoDAO.h" />
     <ClInclude Include="CadastroFuncionario.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CaixaDeDialogo.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="criarBuracoDAO.h" />
     <ClInclude Include="CriarEquipamento.h">
       <FileType>CppForm</FileType>
     </ClInclude>
