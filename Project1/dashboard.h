@@ -46,11 +46,16 @@ namespace Project1 {
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::Label^  label5;
 	private: System::Windows::Forms::Label^  label6;
-	private: System::Windows::Forms::ListBox^  listBox1;
-	private: System::Windows::Forms::ListBox^  listBox2;
+
+
 	private: System::Windows::Forms::ListBox^  listBox3;
-	private: System::Windows::Forms::ListBox^  listBox4;
-	private: System::Windows::Forms::ListBox^  listBox5;
+	private: System::Windows::Forms::TextBox^  textBox1;
+	private: System::Windows::Forms::TextBox^  textBox2;
+	private: System::Windows::Forms::TextBox^  textBox3;
+	private: System::Windows::Forms::TextBox^  textBox4;
+	private: System::Windows::Forms::Button^  button3;
+
+
 
 
 
@@ -77,18 +82,19 @@ namespace Project1 {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
-			this->listBox2 = (gcnew System::Windows::Forms::ListBox());
 			this->listBox3 = (gcnew System::Windows::Forms::ListBox());
-			this->listBox4 = (gcnew System::Windows::Forms::ListBox());
-			this->listBox5 = (gcnew System::Windows::Forms::ListBox());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
 			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->button1->Location = System::Drawing::Point(381, 166);
+			this->button1->Location = System::Drawing::Point(40, 335);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(120, 50);
 			this->button1->TabIndex = 0;
@@ -99,7 +105,7 @@ namespace Project1 {
 			// 
 			this->button2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->button2->Location = System::Drawing::Point(381, 254);
+			this->button2->Location = System::Drawing::Point(174, 335);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(120, 50);
 			this->button2->TabIndex = 1;
@@ -110,7 +116,7 @@ namespace Project1 {
 			// 
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16));
-			this->label1->Location = System::Drawing::Point(235, 30);
+			this->label1->Location = System::Drawing::Point(216, 19);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(118, 26);
 			this->label1->TabIndex = 3;
@@ -120,7 +126,7 @@ namespace Project1 {
 			// 
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
-			this->label2->Location = System::Drawing::Point(34, 157);
+			this->label2->Location = System::Drawing::Point(17, 122);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(151, 15);
 			this->label2->TabIndex = 4;
@@ -130,7 +136,7 @@ namespace Project1 {
 			// 
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
-			this->label3->Location = System::Drawing::Point(71, 191);
+			this->label3->Location = System::Drawing::Point(54, 160);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(114, 15);
 			this->label3->TabIndex = 5;
@@ -140,7 +146,7 @@ namespace Project1 {
 			// 
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
-			this->label4->Location = System::Drawing::Point(53, 294);
+			this->label4->Location = System::Drawing::Point(36, 237);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(132, 15);
 			this->label4->TabIndex = 6;
@@ -150,7 +156,7 @@ namespace Project1 {
 			// 
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
-			this->label5->Location = System::Drawing::Point(101, 260);
+			this->label5->Location = System::Drawing::Point(84, 199);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(84, 15);
 			this->label5->TabIndex = 7;
@@ -160,72 +166,73 @@ namespace Project1 {
 			// 
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
-			this->label6->Location = System::Drawing::Point(89, 225);
+			this->label6->Location = System::Drawing::Point(415, 68);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(96, 15);
 			this->label6->TabIndex = 8;
 			this->label6->Text = L"Buracos abertos";
 			// 
-			// listBox1
-			// 
-			this->listBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
-			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 15;
-			this->listBox1->Location = System::Drawing::Point(209, 157);
-			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(92, 19);
-			this->listBox1->TabIndex = 9;
-			// 
-			// listBox2
-			// 
-			this->listBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
-			this->listBox2->FormattingEnabled = true;
-			this->listBox2->ItemHeight = 15;
-			this->listBox2->Location = System::Drawing::Point(209, 191);
-			this->listBox2->Name = L"listBox2";
-			this->listBox2->Size = System::Drawing::Size(92, 19);
-			this->listBox2->TabIndex = 10;
-			// 
 			// listBox3
 			// 
+			this->listBox3->BackColor = System::Drawing::SystemColors::HighlightText;
 			this->listBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
 			this->listBox3->FormattingEnabled = true;
 			this->listBox3->ItemHeight = 15;
-			this->listBox3->Location = System::Drawing::Point(209, 225);
+			this->listBox3->Location = System::Drawing::Point(364, 94);
 			this->listBox3->Name = L"listBox3";
-			this->listBox3->Size = System::Drawing::Size(92, 19);
+			this->listBox3->Size = System::Drawing::Size(201, 244);
 			this->listBox3->TabIndex = 11;
 			// 
-			// listBox4
+			// textBox1
 			// 
-			this->listBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
-			this->listBox4->FormattingEnabled = true;
-			this->listBox4->ItemHeight = 15;
-			this->listBox4->Location = System::Drawing::Point(209, 260);
-			this->listBox4->Name = L"listBox4";
-			this->listBox4->Size = System::Drawing::Size(92, 19);
-			this->listBox4->TabIndex = 12;
+			this->textBox1->Location = System::Drawing::Point(192, 119);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(100, 20);
+			this->textBox1->TabIndex = 12;
 			// 
-			// listBox5
+			// textBox2
 			// 
-			this->listBox5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
-			this->listBox5->FormattingEnabled = true;
-			this->listBox5->ItemHeight = 15;
-			this->listBox5->Location = System::Drawing::Point(209, 294);
-			this->listBox5->Name = L"listBox5";
-			this->listBox5->Size = System::Drawing::Size(92, 19);
-			this->listBox5->TabIndex = 13;
+			this->textBox2->Location = System::Drawing::Point(192, 157);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(100, 20);
+			this->textBox2->TabIndex = 13;
+			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(192, 196);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(100, 20);
+			this->textBox3->TabIndex = 14;
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(192, 233);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(100, 20);
+			this->textBox4->TabIndex = 15;
+			// 
+			// button3
+			// 
+			this->button3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
+			this->button3->Location = System::Drawing::Point(407, 353);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(120, 50);
+			this->button3->TabIndex = 16;
+			this->button3->Text = L"Alterar Prioridade";
+			this->button3->UseVisualStyleBackColor = false;
 			// 
 			// dashboard
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(608, 388);
-			this->Controls->Add(this->listBox5);
-			this->Controls->Add(this->listBox4);
+			this->ClientSize = System::Drawing::Size(592, 425);
+			this->Controls->Add(this->button3);
+			this->Controls->Add(this->textBox4);
+			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->listBox3);
-			this->Controls->Add(this->listBox2);
-			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
@@ -236,10 +243,13 @@ namespace Project1 {
 			this->Controls->Add(this->button1);
 			this->Name = L"dashboard";
 			this->Text = L"dashboard";
+			this->Load += gcnew System::EventHandler(this, &dashboard::dashboard_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+	private: System::Void dashboard_Load(System::Object^  sender, System::EventArgs^  e) {
+	}
+};
 }
