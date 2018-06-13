@@ -1,3 +1,5 @@
+#include "equipeDAO.h"
+#include <msclr\marshal_cppstd.h>
 #pragma once
 
 namespace Project1 {
@@ -15,6 +17,11 @@ namespace Project1 {
 	public ref class removerEquipe : public System::Windows::Forms::Form
 	{
 	public:
+		String^ aux1;
+		String^ aux2;
+		String^ aux3;
+
+	public:
 		removerEquipe(void)
 		{
 			InitializeComponent();
@@ -22,6 +29,14 @@ namespace Project1 {
 			//TODO: Add the constructor code here
 			//
 		}
+		removerEquipe(String^ str1, String^ str2, String^ str3)
+		{
+			InitializeComponent();
+			aux1 = str1;
+			aux2 = str2;
+			aux3 = str3;
+		}
+		
 
 	protected:
 		/// <summary>
@@ -51,9 +66,12 @@ namespace Project1 {
 
 
 	private: System::Windows::Forms::Label^  label6;
-	private: System::Windows::Forms::TextBox^  textBox1;
-	private: System::Windows::Forms::TextBox^  textBox2;
-	private: System::Windows::Forms::TextBox^  textBox3;
+	private: System::Windows::Forms::TextBox^  idbox;
+	private: System::Windows::Forms::TextBox^  numbox;
+	private: System::Windows::Forms::TextBox^  custobox;
+
+
+
 
 
 
@@ -76,9 +94,9 @@ namespace Project1 {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->idbox = (gcnew System::Windows::Forms::TextBox());
+			this->numbox = (gcnew System::Windows::Forms::TextBox());
+			this->custobox = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// Cancel_BT
@@ -104,6 +122,7 @@ namespace Project1 {
 			this->Confirm_Bt->TabIndex = 1;
 			this->Confirm_Bt->Text = L"Confirmar";
 			this->Confirm_Bt->UseVisualStyleBackColor = false;
+			this->Confirm_Bt->Click += gcnew System::EventHandler(this, &removerEquipe::Confirm_Bt_Click);
 			// 
 			// label3
 			// 
@@ -128,9 +147,9 @@ namespace Project1 {
 			this->label5->AutoSize = true;
 			this->label5->Location = System::Drawing::Point(90, 71);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(45, 17);
+			this->label5->Size = System::Drawing::Size(87, 17);
 			this->label5->TabIndex = 18;
-			this->label5->Text = L"Nome";
+			this->label5->Text = L"Identificação";
 			// 
 			// label6
 			// 
@@ -144,29 +163,29 @@ namespace Project1 {
 			this->label6->Text = L"Remoção de Equipe";
 			this->label6->Click += gcnew System::EventHandler(this, &removerEquipe::label6_Click);
 			// 
-			// textBox1
+			// idbox
 			// 
-			this->textBox1->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->textBox1->Location = System::Drawing::Point(273, 68);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(309, 22);
-			this->textBox1->TabIndex = 25;
+			this->idbox->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->idbox->Location = System::Drawing::Point(273, 68);
+			this->idbox->Name = L"idbox";
+			this->idbox->Size = System::Drawing::Size(309, 22);
+			this->idbox->TabIndex = 25;
 			// 
-			// textBox2
+			// numbox
 			// 
-			this->textBox2->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->textBox2->Location = System::Drawing::Point(273, 159);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(309, 22);
-			this->textBox2->TabIndex = 26;
+			this->numbox->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->numbox->Location = System::Drawing::Point(273, 159);
+			this->numbox->Name = L"numbox";
+			this->numbox->Size = System::Drawing::Size(309, 22);
+			this->numbox->TabIndex = 26;
 			// 
-			// textBox3
+			// custobox
 			// 
-			this->textBox3->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->textBox3->Location = System::Drawing::Point(273, 250);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(309, 22);
-			this->textBox3->TabIndex = 27;
+			this->custobox->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->custobox->Location = System::Drawing::Point(273, 250);
+			this->custobox->Name = L"custobox";
+			this->custobox->Size = System::Drawing::Size(309, 22);
+			this->custobox->TabIndex = 27;
 			// 
 			// removerEquipe
 			// 
@@ -174,9 +193,9 @@ namespace Project1 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
 			this->ClientSize = System::Drawing::Size(634, 474);
-			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->custobox);
+			this->Controls->Add(this->numbox);
+			this->Controls->Add(this->idbox);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
@@ -199,6 +218,26 @@ namespace Project1 {
 		this->Close();
 	}
 	private: System::Void removerEquipe_Load(System::Object^  sender, System::EventArgs^  e) {
+		this->idbox->Text = aux1;
+		this->numbox->Text = aux2;
+		this->custobox->Text = aux3;
+		this->idbox->ReadOnly = true;
+		this->numbox->ReadOnly = true;
+		this->custobox->ReadOnly = true;
+
 	}
-	};
+
+	
+
+private: System::Void Confirm_Bt_Click(System::Object^  sender, System::EventArgs^  e) {
+	equipeDAO * aux = new equipeDAO();
+
+	//string id = msclr::interop::marshal_as<std::string>(aux1);
+	string id = msclr::interop::marshal_as<std::string>(this->idbox->Text);
+	aux->deletarEquipeDAO(std::stoi(id, nullptr, 10));
+	this->Close();
+
+	}
+
+};
 }

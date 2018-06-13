@@ -192,8 +192,6 @@ namespace Project1 {
 			this->Load += gcnew System::EventHandler(this, &gerenciarEquipe::gerenciarEquipe_Load);
 			this->ResumeLayout(false);
 
-			atualizarDashboard();
-
 		
 		}
 #pragma endregion
@@ -202,6 +200,7 @@ namespace Project1 {
 	private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
 	private: System::Void gerenciarEquipe_Load(System::Object^  sender, System::EventArgs^  e) {
+		atualizarDashboard();
 	}
 	private: System::Void create_equipt_bt_Click(System::Object^  sender, System::EventArgs^  e) {
 		criarEquipe^ cria = gcnew criarEquipe();
@@ -209,13 +208,23 @@ namespace Project1 {
 		atualizarDashboard();
 	}
 	private: System::Void change_equipt_bt_Click(System::Object^  sender, System::EventArgs^  e) {
-		alterarEquipe^ altera = gcnew alterarEquipe();
+		String^ str1 = listView1->CheckedItems[0]->SubItems[0]->Text;
+		String^ str2 = listView1->CheckedItems[0]->SubItems[1]->Text;
+		String^ str3 = listView1->CheckedItems[0]->SubItems[2]->Text;
+		alterarEquipe^ altera = gcnew alterarEquipe(str1, str2, str3);
+
 		altera->ShowDialog();
+
 		atualizarDashboard();
 	}
 	private: System::Void remove_equipt_bt_Click(System::Object^  sender, System::EventArgs^  e) {
-		removerEquipe^ remove = gcnew removerEquipe();
+		String^ str1 = listView1->CheckedItems[0]->SubItems[0]->Text;
+		String^ str2 = listView1->CheckedItems[0]->SubItems[1]->Text;
+		String^ str3 = listView1->CheckedItems[0]->SubItems[2]->Text;
+		removerEquipe^ remove = gcnew removerEquipe(str1,str2,str3);
+
 		remove->ShowDialog();
+		
 		atualizarDashboard();
 	}
 	private: System::Void voltar_equipt_bt_Click(System::Object^  sender, System::EventArgs^  e) {
