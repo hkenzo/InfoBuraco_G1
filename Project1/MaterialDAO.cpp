@@ -50,7 +50,7 @@ void materialDAO::deletarMaterialDAO(int idMaterial)
 	}
 }
 
-void materialDAO::editarMaterialDAO(int precoUnidade, int idMaterial)
+void materialDAO::alterarMaterialDAO(int precoUnidade, int idMaterial)
 {
 	string log;
 	sql::Connection * connection;
@@ -89,7 +89,7 @@ vector<material*>* materialDAO::buscarMaterial()
 
 		temp2 = new vector<material*>();
 		while (resultSet->next()) {
-			temp = new material(resultSet->getString(1), resultSet->getString(2), resultSet->getInt(3), resultSet->getInt(4));
+			temp = new material(resultSet->getString(1).c_str(), resultSet->getString(2).c_str(), resultSet->getInt(3), resultSet->getInt(4));
 			temp2->push_back(temp);
 		}
 	}

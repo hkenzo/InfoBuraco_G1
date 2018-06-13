@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include "criarEquipe.h"
 #include "removerEquipe.h"
@@ -6,7 +5,7 @@
 #include "equipe.h"
 #include "equipeDAO.h"
 #include <string>
-
+#pragma once
 
 namespace Project1 {
 

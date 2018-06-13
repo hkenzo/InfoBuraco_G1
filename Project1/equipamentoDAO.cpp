@@ -6,7 +6,7 @@ equipamentoDAO::equipamentoDAO()
 {
 }
 
-void equipamentoDAO::criarEquipamentoDAO(string tipoEquipamento, int id, int custoHoraEquipamento)
+void equipamentoDAO::criarEquipamentoDAO(string tipoEquipamento, int custoHoraEquipamento)
 {
 	string log;
 	sql::Connection * connection;
@@ -48,7 +48,7 @@ void equipamentoDAO::deletarEquipamentoDAO(int id)
 	}
 }
 
-void equipamentoDAO::editarEquipamentoDAO(int id, int custoHoraEquipamento)
+void equipamentoDAO::alterarEquipamentoDAO(int id, int custoHoraEquipamento)
 {
 	string log;
 	sql::Connection * connection;
@@ -88,7 +88,7 @@ vector<equipamento*>* equipamentoDAO::buscarEquipamento()
 
 		temp2 = new vector<equipamento*>();
 		while (resultSet->next()) {
-			temp = new equipamento(resultSet->getString(1), resultSet->getInt(2), resultSet->getInt(3));
+			temp = new equipamento(resultSet->getString(1).c_str(), resultSet->getInt(2), resultSet->getInt(3));
 			temp2->push_back(temp);
 		}
 	}
