@@ -70,7 +70,7 @@ namespace Project1 {
 			// 
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
-			this->label2->Location = System::Drawing::Point(198, 21);
+			this->label2->Location = System::Drawing::Point(180, 21);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(166, 22);
 			this->label2->TabIndex = 1;
@@ -82,7 +82,7 @@ namespace Project1 {
 				this->columnHeader1, this->columnHeader2,
 					this->columnHeader3, this->columnHeader4
 			});
-			this->listView1->Location = System::Drawing::Point(34, 74);
+			this->listView1->Location = System::Drawing::Point(38, 73);
 			this->listView1->Name = L"listView1";
 			this->listView1->Size = System::Drawing::Size(452, 385);
 			this->listView1->TabIndex = 4;
@@ -92,10 +92,12 @@ namespace Project1 {
 			// columnHeader1
 			// 
 			this->columnHeader1->Text = L"Identificação";
+			this->columnHeader1->Width = 94;
 			// 
 			// columnHeader2
 			// 
 			this->columnHeader2->Text = L"Nº Profissionais";
+			this->columnHeader2->Width = 106;
 			// 
 			// columnHeader3
 			// 

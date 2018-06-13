@@ -14,9 +14,9 @@ class equipamentoDAO
 
 public:
 	equipamentoDAO();
-	void equipamentoDAO::criarEquipamentoDAO(string tipoEquipamento, int id, int custoHoraEquipamento);
+	void equipamentoDAO::criarEquipamentoDAO(string tipoEquipamento, int custoHoraEquipamento);
 	void equipamentoDAO::deletarEquipamentoDAO(int id);
-	void equipamentoDAO::editarEquipamentoDAO(int id, int custoHoraEquipamento);
+	void equipamentoDAO::alterarEquipamentoDAO(int id, int custoHoraEquipamento);
 	vector<equipamento*>* equipamentoDAO::buscarEquipamento();
 };
 
