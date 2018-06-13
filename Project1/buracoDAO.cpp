@@ -43,6 +43,39 @@ buracoDAO::buracoDAO(string nomRua, int numRua, string posRua, int tamanho, stri
 	}
 };
 
+int buracoDAO::buscarRua(string nomRua, int numRua)
+{
+	string log;
+	string nomRuaa;
+	int numRuaa;
+	int temp;
+	sql::Connection * connection;
+	sql::PreparedStatement * preparedStatement;
+	sql::ResultSet *resultSet;
+	try {
+		MySQLDAO* mysqldao = MySQLDAO::getInstance();
+		connection = mysqldao->getConnection();
+		preparedStatement = connection->prepareStatement("select numBuraco from buraco where nomeRua = 'ttt' and numeroRua = 33");
+
+		nomRuaa = nomRua;
+		numRuaa = numRua;
+		preparedStatement->setString(1, nomRua.c_str());
+		preparedStatement->setInt(2, numRua);
+
+		resultSet = preparedStatement->executeQuery();
+
+		temp = resultSet->getInt(1);
+	}
+	catch (sql::SQLException e)
+	{
+		connection->close();
+		log = e.what();
+	}
+	return temp;
+}
+
+
+
 
 //buracoDAO::string getString(string campo)
 //{

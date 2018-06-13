@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include "equipe.h" 
+#include "OS.h"
 
 #include "buracoDAO.h"
 

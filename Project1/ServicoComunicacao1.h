@@ -363,6 +363,7 @@ namespace Project1 {
 			this->Controls->Add(this->label12);
 			this->Name = L"ServicoComunicacao1";
 			this->Text = L"ServicoComunicacao1";
+			this->Load += gcnew System::EventHandler(this, &ServicoComunicacao1::ServicoComunicacao1_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -397,7 +398,7 @@ private: System::Void FinalizarRegistro_Click(System::Object^  sender, System::E
 	string dataHora0 = msclr::interop::marshal_as<std::string>(this->data_contato_text->Text);
 	string reclamacao = msclr::interop::marshal_as<std::string>(this->hora_contato_text->Text);
 	
-	buracos * bur = new buracos(nomRua0, std::stoi(numRua0), posRua0, std::stoi(tamanho0), regional0, tipoCom0, Com0, nomCid0, dataHora0, reclamacao);
+	buracos * bura = new buracos(nomRua0, std::stoi(numRua0), posRua0, std::stoi(tamanho0), regional0, tipoCom0, Com0, nomCid0, dataHora0, reclamacao);
 
 	ServicoComunicacao2_Pronto ^ telaNotificacaoFim = gcnew ServicoComunicacao2_Pronto();
 	telaNotificacaoFim->ShowDialog();
@@ -417,6 +418,8 @@ private: System::Void nome_cidadao_text_TextChanged(System::Object^  sender, Sys
 private: System::Void data_contato_text_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void hora_contato_text_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void ServicoComunicacao1_Load(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }
