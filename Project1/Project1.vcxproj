@@ -158,6 +158,8 @@
     <ClCompile Include="criarEquipe.cpp" />
     <ClCompile Include="criarMaterial.cpp" />
     <ClCompile Include="criarMobilizacao.cpp" />
+    <ClCompile Include="equipamento.cpp" />
+    <ClCompile Include="equipamentoDAO.cpp" />
     <ClCompile Include="equipe.cpp" />
     <ClCompile Include="equipeDAO.cpp" />
     <ClCompile Include="gerenciarEquipamento.cpp" />
@@ -166,7 +168,9 @@
     <ClCompile Include="gerenciarMobilizacao.cpp" />
     <ClCompile Include="gerenciarSaida.cpp" />
     <ClCompile Include="Janela4.cpp" />
+    <ClCompile Include="material.cpp" />
     <ClCompile Include="MaterialDAO.cpp" />
+    <ClCompile Include="mobilizacao.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Despachador.cpp" />
     <ClCompile Include="MySQLDAO.cpp" />
@@ -222,6 +226,8 @@
     <ClInclude Include="criarMobilizacao.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="equipamento.h" />
+    <ClInclude Include="equipamentoDAO.h" />
     <ClInclude Include="equipe.h" />
     <ClInclude Include="equipeDAO.h" />
     <ClInclude Include="gerenciarEquipamento.h">
@@ -242,7 +248,9 @@
     <ClInclude Include="Janela4.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="material.h" />
     <ClInclude Include="MaterialDAO.h" />
+    <ClInclude Include="mobilizacao.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
