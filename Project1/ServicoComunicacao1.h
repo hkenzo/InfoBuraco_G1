@@ -1,5 +1,5 @@
 #include "ServicoComunicacao2.h"
-#include "buraco.h"
+#include "buracos.h"
 #include <string>
 #include <msclr\marshal_cppstd.h>
 
@@ -220,9 +220,9 @@ namespace Project1 {
 			this->label5->AutoSize = true;
 			this->label5->Location = System::Drawing::Point(19, 371);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(85, 13);
+			this->label5->Size = System::Drawing::Size(67, 13);
 			this->label5->TabIndex = 50;
-			this->label5->Text = L"Hora de Contato";
+			this->label5->Text = L"Reclamacao";
 			// 
 			// hora_contato_text
 			// 
@@ -313,7 +313,7 @@ namespace Project1 {
 			// 
 			// CancelaReg
 			// 
-			this->CancelaReg->Location = System::Drawing::Point(49, 410);
+			this->CancelaReg->Location = System::Drawing::Point(16, 410);
 			this->CancelaReg->Name = L"CancelaReg";
 			this->CancelaReg->Size = System::Drawing::Size(75, 23);
 			this->CancelaReg->TabIndex = 53;
@@ -394,11 +394,10 @@ private: System::Void FinalizarRegistro_Click(System::Object^  sender, System::E
 	string tipoCom0 = msclr::interop::marshal_as<std::string>(this->tipo_comunicacao_text->Text);
 	string Com0 = msclr::interop::marshal_as<std::string>(this->comunicacao_text->Text);
 	string nomCid0 = msclr::interop::marshal_as<std::string>(this->nome_cidadao_text->Text);
-	string dataCont0 = msclr::interop::marshal_as<std::string>(this->data_contato_text->Text);
-	string horaCont0 = msclr::interop::marshal_as<std::string>(this->hora_contato_text->Text);
+	string dataHora0 = msclr::interop::marshal_as<std::string>(this->data_contato_text->Text);
+	string reclamacao = msclr::interop::marshal_as<std::string>(this->hora_contato_text->Text);
 	
-	buraco *bur = new buraco;
-	bur->setBuraco(nomRua0, std::stoi(numRua0, nullptr, 10), posRua0, std::stoi(tamanho0, nullptr, 10), regional0, tipoCom0, Com0, nomCid0, dataCont0, horaCont0);
+	buracos * bur = new buracos(nomRua0, std::stoi(numRua0), posRua0, std::stoi(tamanho0), regional0, tipoCom0, Com0, nomCid0, dataHora0, reclamacao);
 
 	ServicoComunicacao2_Pronto ^ telaNotificacaoFim = gcnew ServicoComunicacao2_Pronto();
 	telaNotificacaoFim->ShowDialog();

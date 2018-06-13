@@ -132,7 +132,7 @@
     <ClCompile Include="buracoDAO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="buraco.cpp">
+    <ClCompile Include="buracos.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -254,7 +254,7 @@
     <ClInclude Include="buracoDAO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="buraco.h">
+    <ClInclude Include="buracos.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
