@@ -1,4 +1,4 @@
-#include "equipamentoDAO.h"equipe
+#include "equipamentoDAO.h"
 
 using namespace std;
 
