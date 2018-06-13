@@ -61,7 +61,7 @@ void materialDAO::alterarMaterialDAO(int precoUnidade, int idMaterial)
 		connection = mysqldao->getConnection();
 		preparedStatement = connection->prepareStatement("UPDATE material SET precoUnidade = ? WHERE sequencialMaterial = ?");
 		preparedStatement->setInt(1, precoUnidade);
-		preparedStatement->setInt(1, idMaterial);
+		preparedStatement->setInt(2, idMaterial);
 
 		resultSet = preparedStatement->executeQuery();
 	}
