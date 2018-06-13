@@ -22,8 +22,9 @@ buracos::buracos(string nomRua, int numRua, string posRua, int tamanho, string r
 
 	this->numBuraco = 0;
 
-	buracoDAO * bur = new buracoDAO(nomRua, numRua, posRua, tamanho, regional, tipoCom, Com, nomCid, dataHora, 0, 0, 0, 0, reclamacao); // no começo vou mandar 0, mas vai mudar na criação
+	buracoDAO * bur = new buracoDAO(nomRua, numRua, posRua, tamanho, regional, tipoCom, Com, nomCid, dataHora, numReclamacoes, statusBuraco, prioridade, 0, reclamacao); // no começo vou mandar 0, mas vai mudar na criação
 
+	// depois do buraco registrado, deve criar OS
 }
 
 
