@@ -1,7 +1,7 @@
 #include "buracoDAO.h"
 
 
-buracoDAO::buracoDAO(string nomRua, int numRua, string posRua, int tamanho, string regional, string tipoCom, string Com, string nomCid, string dataHora, int numReclamacoes, int statusBuraco, int prioridade, int numBuraco, string reclamacao)
+buracoDAO::buracoDAO(int numBuraco, string nomeRua, int numeroRua, int tamanho, string posicao, string regional, int prioridade, int numReclamacoes, int satusBuraco, string nomeCidadao, string canalCidadao, string dadoCanal, string dataHora, string reclamacao)
 {
 	string log;
 	sql::Connection * connection;
@@ -16,20 +16,20 @@ buracoDAO::buracoDAO(string nomRua, int numRua, string posRua, int tamanho, stri
 		//preparedStatement = connection->prepareStatement("INSERT INTO buraco (numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco, nomeCidadao, canalCidadao, dadoCanal, dataHora, reclamacao)	VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); ");
 		preparedStatement = connection->prepareStatement("INSERT INTO buraco (numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco, nomeCidadao, canalCidadao, dadoCanal, dataHora, reclamacao)	VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?); ");
 
-		preparedStatement->setInt(1, numBuraco); 
-		preparedStatement->setString(2, nomRua.c_str());
-		preparedStatement->setInt(3, numRua);
+		preparedStatement->setInt(1, numBuraco);
+		preparedStatement->setString(2, nomeRua.c_str());
+		preparedStatement->setInt(3, numeroRua);
 		preparedStatement->setInt(4, tamanho);
-		preparedStatement->setString(5, posRua.c_str());
+		preparedStatement->setString(5, posicao.c_str());
 		preparedStatement->setString(6, regional.c_str());
 
 		preparedStatement->setInt(7, prioridade);
 		preparedStatement->setInt(8, numReclamacoes);
 		preparedStatement->setInt(9, statusBuraco);
 
-		preparedStatement->setString(10, nomCid.c_str());
-		preparedStatement->setString(11, tipoCom.c_str());
-		preparedStatement->setString(12, Com.c_str());
+		preparedStatement->setString(10, nomeCidadao.c_str());
+		preparedStatement->setString(11, canalCidadao.c_str());
+		preparedStatement->setString(12, dadoCanal.c_str());
 		preparedStatement->setString(13, dataHora.c_str());
 		preparedStatement->setString(14, reclamacao.c_str());
 		
@@ -55,12 +55,10 @@ int buracoDAO::buscarRua(string nomRua, int numRua)
 	try {
 		MySQLDAO* mysqldao = MySQLDAO::getInstance();
 		connection = mysqldao->getConnection();
-		preparedStatement = connection->prepareStatement("select numBuraco from buraco where nomeRua = 'ttt' and numeroRua = 33");
+		preparedStatement = connection->prepareStatement("select numBuraco from buraco where nomeRua = 'fisica'");
 
-		nomRuaa = nomRua;
-		numRuaa = numRua;
-		preparedStatement->setString(1, nomRua.c_str());
-		preparedStatement->setInt(2, numRua);
+		//preparedStatement->setString(1, nomRua.c_str());
+		//preparedStatement->setInt(2, numRua);
 
 		resultSet = preparedStatement->executeQuery();
 

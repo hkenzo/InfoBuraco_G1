@@ -2,18 +2,18 @@
 
 
 
-buracos::buracos(string nomRua, int numRua, string posRua, int tamanho, string regional, string tipoCom, string Com, string nomCid, string dataHora, string reclamacao)
+buracos::buracos(int numBuraco, string nomeRua, int numeroRua, int tamanho, string posicao, string regional, int prioridade, int numReclamacoes, int satusBuraco, string nomeCidadao, string canalCidadao, string dadoCanal, string dataHora, string reclamacao)
 {
 	//if check buraco = 0 (buraco não existe)
-	this->nomRua = nomRua;
-	this->numRua = numRua;
-	this->posRua = posRua;
+	this->nomeRua = nomeRua;
+	this->numeroRua = numeroRua;
+	this->posicao = posicao;
 	this->tamanho = tamanho;
 	this->regional = regional;
 
-	this->tipoCom = tipoCom;
-	this->Com = Com;
-	this->nomCid = nomCid;
+	this->canalCidadao = canalCidadao;
+	this->dadoCanal = dadoCanal;
+	this->nomeCidadao = nomeCidadao;
 	this->dataHora = dataHora;
 	this->reclamacao = reclamacao;
 
@@ -23,11 +23,12 @@ buracos::buracos(string nomRua, int numRua, string posRua, int tamanho, string r
 
 	this->numBuraco = 0;
 
-	buracoDAO * bur = new buracoDAO(nomRua, numRua, posRua, tamanho, regional, tipoCom, Com, nomCid, dataHora, numReclamacoes, statusBuraco, prioridade, 0, reclamacao); // no começo vou mandar 0, mas vai mudar na criação
-	
+	buracoDAO * bur = new buracoDAO(numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, satusBuraco, nomeCidadao, canalCidadao, dadoCanal, dataHora, reclamacao);
+	// no começo vou mandar 0, mas vai mudar na criação
+
 	// this -> numBuraco = pega no db
-	this->numBuraco = bur->buscarRua(this->nomRua, this->numRua);
-	int estimativaHoras = tamanho * 3;
+	//this->numBuraco = bur->buscarRua(this->nomRua, this->numRua);
+	//int estimativaHoras = tamanho * 3;
 
 	// depois do buraco registrado, deve criar OS
 	// gera os parametros da OS
@@ -36,7 +37,7 @@ buracos::buracos(string nomRua, int numRua, string posRua, int tamanho, string r
 	int estimativaMaterial = tamanho * 40;
 
 	//cria OS
-	OS * geraOS = new OS(0, estimativaHoras, estimativaEquipamento, estimativaMaterial, 0, numBuraco);
+//	OS * geraOS = new OS(0, estimativaHoras, estimativaEquipamento, estimativaMaterial, 0, numBuraco);
 
 
 	//if check buraco = 1 (buraco existe) -> atualizar no reclamacoes

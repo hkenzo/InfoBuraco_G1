@@ -129,6 +129,7 @@ namespace Project1 {
 			this->AdicionarFoto->TabIndex = 38;
 			this->AdicionarFoto->Text = L"Adicionar foto";
 			this->AdicionarFoto->UseVisualStyleBackColor = true;
+			this->AdicionarFoto->Click += gcnew System::EventHandler(this, &ServicoComunicacao1::AdicionarFoto_Click);
 			// 
 			// posicao_leito_text
 			// 
@@ -398,7 +399,7 @@ private: System::Void FinalizarRegistro_Click(System::Object^  sender, System::E
 	string dataHora0 = msclr::interop::marshal_as<std::string>(this->data_contato_text->Text);
 	string reclamacao = msclr::interop::marshal_as<std::string>(this->hora_contato_text->Text);
 	
-	buracos * bura = new buracos(nomRua0, std::stoi(numRua0), posRua0, std::stoi(tamanho0), regional0, tipoCom0, Com0, nomCid0, dataHora0, reclamacao);
+	buracos * bura = new buracos(0, nomRua0, std::stoi(numRua0), std::stoi(tamanho0), posRua0, regional0, 1, 1, 0, nomCid0, tipoCom0, Com0,  dataHora0, reclamacao);
 
 	ServicoComunicacao2_Pronto ^ telaNotificacaoFim = gcnew ServicoComunicacao2_Pronto();
 	telaNotificacaoFim->ShowDialog();
@@ -420,6 +421,8 @@ private: System::Void data_contato_text_TextChanged(System::Object^  sender, Sys
 private: System::Void hora_contato_text_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void ServicoComunicacao1_Load(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void AdicionarFoto_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }
