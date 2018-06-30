@@ -1,12 +1,12 @@
-#include "materialDAO.h"
+#include "mobilizacaoDAO.h"
 
 using namespace std;
 
-materialDAO::materialDAO()
+mobilizacaoDAO::mobilizacaoDAO()
 {
 }
 
-void materialDAO::criarMaterialDAO(string tipoMaterial, string unidadeMaterial, int precoUnidade)
+void mobilizacaoDAO::criarMobilizacaoDAO(int custoKM )
 {
 	string log;
 	sql::Connection * connection;
@@ -15,11 +15,9 @@ void materialDAO::criarMaterialDAO(string tipoMaterial, string unidadeMaterial, 
 	try {
 		MySQLDAO* mysqldao = MySQLDAO::getInstance();
 		connection = mysqldao->getConnection();
-		preparedStatement = connection->prepareStatement("INSERT INTO material (tipoMaterial, unidade, precoUnidade) VALUES (?,?,?)");
+		preparedStatement = connection->prepareStatement("INSERT INTO mobilizacao (custoKM) VALUES (?)");
 
-		preparedStatement->setString(1, tipoMaterial.c_str());
-		preparedStatement->setString(2, unidadeMaterial.c_str());
-		preparedStatement->setInt(3, precoUnidade);
+		preparedStatement->setInt(1, custoKM);
 		resultSet = preparedStatement->executeQuery();
 	}
 	catch (sql::SQLException e)
@@ -29,7 +27,7 @@ void materialDAO::criarMaterialDAO(string tipoMaterial, string unidadeMaterial, 
 	}
 }
 
-void materialDAO::deletarMaterialDAO(int idMaterial)
+void mobilizacaoDAO::deletarMobilizacaoDAO(int idMob)
 {
 	string log;
 	sql::Connection * connection;
@@ -38,9 +36,9 @@ void materialDAO::deletarMaterialDAO(int idMaterial)
 	try {
 		MySQLDAO* mysqldao = MySQLDAO::getInstance();
 		connection = mysqldao->getConnection();
-		preparedStatement = connection->prepareStatement("DELETE FROM material WHERE sequencialMaterial = ?");
+		preparedStatement = connection->prepareStatement("DELETE FROM mobilizacao WHERE sequencialMobilizacao = ?");
 
-		preparedStatement->setInt(1, idMaterial);
+		preparedStatement->setInt(1, idMob);
 		resultSet = preparedStatement->executeQuery();
 	}
 	catch (sql::SQLException e)
@@ -50,7 +48,7 @@ void materialDAO::deletarMaterialDAO(int idMaterial)
 	}
 }
 
-void materialDAO::alterarMaterialDAO(int precoUnidade, int idMaterial)
+void mobilizacaoDAO::alterarMobilizacaoDAO(int custoKM, int idMob)
 {
 	string log;
 	sql::Connection * connection;
@@ -59,9 +57,9 @@ void materialDAO::alterarMaterialDAO(int precoUnidade, int idMaterial)
 	try {
 		MySQLDAO* mysqldao = MySQLDAO::getInstance();
 		connection = mysqldao->getConnection();
-		preparedStatement = connection->prepareStatement("UPDATE material SET precoUnidade = ? WHERE sequencialMaterial = ?");
-		preparedStatement->setInt(1, precoUnidade);
-		preparedStatement->setInt(2, idMaterial);
+		preparedStatement = connection->prepareStatement("UPDATE mobilizacao SET custoKM = ? WHERE sequencialMobilizacao = ?");
+		preparedStatement->setInt(1, custoKM);
+		preparedStatement->setInt(2, idMob);
 
 		resultSet = preparedStatement->executeQuery();
 	}
@@ -72,24 +70,24 @@ void materialDAO::alterarMaterialDAO(int precoUnidade, int idMaterial)
 	}
 }
 
-vector<material*>* materialDAO::buscarMaterial()
+vector<mobilizacao*>* mobilizacaoDAO::buscarMobilizacao()
 {
 	string log;
-	material * temp = nullptr;
-	vector<material*> *temp2 = nullptr;
+	mobilizacao * temp = nullptr;
+	vector<mobilizacao*> *temp2 = nullptr;
 	sql::Connection * connection;
 	sql::PreparedStatement * preparedStatement;
 	sql::ResultSet *resultSet;
 	try {
 		MySQLDAO* mysqldao = MySQLDAO::getInstance();
 		connection = mysqldao->getConnection();
-		preparedStatement = connection->prepareStatement("select tipoMaterial, unidade, precoUnidade, sequencialMaterial from material");
+		preparedStatement = connection->prepareStatement("select custoKM, sequencialMobilizacao from mobilizacao");
 
 		resultSet = preparedStatement->executeQuery();
 
-		temp2 = new vector<material*>();
+		temp2 = new vector<mobilizacao*>();
 		while (resultSet->next()) {
-			temp = new material(resultSet->getString(1).c_str(), resultSet->getString(2).c_str(), resultSet->getInt(3), resultSet->getInt(4));
+			temp = new mobilizacao(resultSet->getInt(1), resultSet->getInt(2));
 			temp2->push_back(temp);
 		}
 	}

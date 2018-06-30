@@ -14,7 +14,7 @@ class materialDAO
 
 public:
 	materialDAO();
-	void materialDAO::criarMaterialDAO(string tipoMaterial, string unidadeMaterial, int precoUnidade, int idMaterial);
+	void materialDAO::criarMaterialDAO(string tipoMaterial, string unidadeMaterial, int precoUnidade);
 	void materialDAO::deletarMaterialDAO(int idMaterial);
 	void materialDAO::alterarMaterialDAO(int precoUnidade, int idMaterial);
 	vector<material*>* materialDAO::buscarMaterial();

@@ -18,7 +18,7 @@ buracos::buracos(int numBuraco, string nomeRua, int numeroRua, int tamanho, stri
 	this->reclamacao = reclamacao;
 
 	this->numReclamacoes = 1;
-	this->statusBuraco = 0; //registrado e não finalizado; 1 = finalizado;
+	//this->statusBuraco = 0; //registrado e não finalizado; 1 = finalizado;
 	this->prioridade = tamanho;//calculo com base nos dados informadosnumBuraco = 3//numero dado ou pelo banco de dados (automatico) ou por um contador no programa;
 
 	this->numBuraco = 0;

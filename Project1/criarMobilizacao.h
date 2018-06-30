@@ -1,3 +1,5 @@
+#include "MobilizacaoDAO.h"
+#include <msclr\marshal_cppstd.h>
 #pragma once
 
 namespace Project1 {
@@ -34,9 +36,11 @@ namespace Project1 {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::TextBox^  custobox;
+	protected:
 
 	protected:
-	private: System::Windows::Forms::TextBox^  textBox1;
+
 
 
 	private: System::Windows::Forms::Label^  label3;
@@ -62,29 +66,29 @@ namespace Project1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->custobox = (gcnew System::Windows::Forms::TextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->cancel_create_equpt_bt = (gcnew System::Windows::Forms::Button());
 			this->conf_creat_equipt_bt = (gcnew System::Windows::Forms::Button());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
-			// textBox1
+			// custobox
 			// 
-			this->textBox1->Location = System::Drawing::Point(201, 89);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(285, 22);
-			this->textBox1->TabIndex = 6;
+			this->custobox->Location = System::Drawing::Point(201, 89);
+			this->custobox->Margin = System::Windows::Forms::Padding(4);
+			this->custobox->Name = L"custobox";
+			this->custobox->Size = System::Drawing::Size(285, 22);
+			this->custobox->TabIndex = 6;
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
 			this->label3->Location = System::Drawing::Point(43, 92);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(142, 17);
+			this->label3->Size = System::Drawing::Size(93, 17);
 			this->label3->TabIndex = 9;
-			this->label3->Text = L"Custo da Mobilização";
+			this->label3->Text = L"Custo por Km";
 			// 
 			// cancel_create_equpt_bt
 			// 
@@ -109,6 +113,7 @@ namespace Project1 {
 			this->conf_creat_equipt_bt->TabIndex = 14;
 			this->conf_creat_equipt_bt->Text = L"Confirmar";
 			this->conf_creat_equipt_bt->UseVisualStyleBackColor = false;
+			this->conf_creat_equipt_bt->Click += gcnew System::EventHandler(this, &criarMobilizacao::conf_creat_equipt_bt_Click);
 			// 
 			// label5
 			// 
@@ -131,7 +136,7 @@ namespace Project1 {
 			this->Controls->Add(this->conf_creat_equipt_bt);
 			this->Controls->Add(this->cancel_create_equpt_bt);
 			this->Controls->Add(this->label3);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->custobox);
 			this->Name = L"criarMobilizacao";
 			this->Text = L"criarMobilizacao";
 			this->Load += gcnew System::EventHandler(this, &criarMobilizacao::criarMobilizacao_Load);
@@ -149,5 +154,13 @@ namespace Project1 {
 	}
 	private: System::Void label4_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
-	};
+	private: System::Void conf_creat_equipt_bt_Click(System::Object^  sender, System::EventArgs^  e) {
+		mobilizacaoDAO * mob = new mobilizacaoDAO();
+
+		string custo = msclr::interop::marshal_as<std::string>(this->custobox->Text);
+
+		mob->criarMobilizacaoDAO(std::stoi(custo, nullptr, 10));
+		this->Close();
+	}
+};
 }
