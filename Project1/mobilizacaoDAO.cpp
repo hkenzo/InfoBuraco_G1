@@ -107,7 +107,7 @@ void mobilizacaoDAO::criarMobilizacaoSaidaDAO(int sequencial, string data, int n
 	try {
 		MySQLDAO* mysqldao = MySQLDAO::getInstance();
 		connection = mysqldao->getConnection();
-		preparedStatement = connection->prepareStatement("INSERT INTO equipamento_saida (identificacaoEquipe, data, numOS) VALUES (?,?,?)");
+		preparedStatement = connection->prepareStatement("INSERT INTO mobilizacao_saida (sequencialMobilizacao, data, numOS) VALUES (?,?,?)");
 		
 		preparedStatement->setInt(1, sequencial);
 		preparedStatement->setString(2, data.c_str());

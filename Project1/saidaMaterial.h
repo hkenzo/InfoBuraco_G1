@@ -1,9 +1,12 @@
-#pragma once
-
+#include <iostream>
+#include "saida.h"
+#include <string>
+#include "saidaDAO.h"
+#include "materialDAO.h"
+#include <msclr\marshal_cppstd.h>
 #include "criarMaterial.h"
 #include "saidaMobilizacao.h"
-#include "saidaEquipamento.h"
-
+#pragma once
 namespace Project1 {
 
 	using namespace System;
@@ -19,12 +22,21 @@ namespace Project1 {
 	public ref class saidaMaterial : public System::Windows::Forms::Form
 	{
 	public:
+		String^ aux1;
+		String^ aux2;
+	public:
 		saidaMaterial(void)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+		}
+		saidaMaterial(String^ str1, String^ str2)
+		{
+			InitializeComponent();
+			aux1 = str1;
+			aux2 = str2;
 		}
 
 	protected:
@@ -38,6 +50,7 @@ namespace Project1 {
 				delete components;
 			}
 		}
+		System::Windows::Forms::ListViewItem^ listViewItem;
 	private: System::Windows::Forms::Label^  label6;
 	protected:
 
@@ -191,9 +204,24 @@ namespace Project1 {
 		//next->ShowDialog();
 	}
 	private: System::Void Confirm_Bt_Click(System::Object^  sender, System::EventArgs^  e) {
-		//saidaMobilizacao^ next = gcnew saidaMobilizacao();
+		//
 		//this->Close();
 		//next->ShowDialog();
+		materialDAO * temp = new materialDAO();
+
+		for (int i = 0; i < listView1->CheckedIndices->Count; i++) {
+			String^ str1 = listView1->CheckedItems[i]->SubItems[3]->Text;
+			String^ str2 = aux1;
+			String^ str3 = aux2;
+
+			string id = msclr::interop::marshal_as<std::string>(str1);
+			string data = msclr::interop::marshal_as<std::string>(str2);
+			string num = msclr::interop::marshal_as<std::string>(str3);
+			temp->criarMaterialSaidaDAO(data, std::stoi(num, nullptr, 10), std::stoi(id, nullptr, 10));
+		}
+		saidaMobilizacao^ next = gcnew saidaMobilizacao(aux1, aux2);
+		next->ShowDialog();
+		this->Close();
 	}
 	private: System::Void create_BT_Click(System::Object^  sender, System::EventArgs^  e) {
 		criarMaterial^ cria = gcnew criarMaterial();
@@ -207,8 +235,30 @@ namespace Project1 {
 	private: System::Void remove_BT_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
 	private: System::Void saidaMaterial_Load(System::Object^  sender, System::EventArgs^  e) {
+		atualizarDashboard();
 	}
-private: System::Void checked(System::Object^  sender, System::Windows::Forms::ItemCheckedEventArgs^  e) {
-}
+	private: System::Void checked(System::Object^  sender, System::Windows::Forms::ItemCheckedEventArgs^  e) {
+	}
+
+	private: Void atualizarDashboard() {
+		materialDAO * aux = new materialDAO();
+		vector<material*>* temp2;
+		this->listView1->Items->Clear();
+		temp2 = aux->buscarMaterial();
+		for (int j = 0; j < temp2->size(); j++) {
+			String^ str1 = gcnew String((temp2->at(j)->getTipo()).c_str());
+			String^ str2 = gcnew String((temp2->at(j)->getUnidade()).c_str());
+			String^ str3 = gcnew String(std::to_string(temp2->at(j)->getPreco()).c_str());
+			String^ str4 = gcnew String(std::to_string(temp2->at(j)->getId()).c_str());
+
+			listViewItem = gcnew Windows::Forms::ListViewItem(str1);
+			listViewItem->SubItems->Add(str2);
+			listViewItem->SubItems->Add(str3);
+			listViewItem->SubItems->Add(str4);
+			this->listView1->Items->Add(this->listViewItem);
+
+		}
+	}
+
 };
 }

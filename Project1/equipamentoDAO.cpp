@@ -108,7 +108,7 @@ void equipamentoDAO::criarEquipamentoSaidaDAO(string data, int numOS, int sequen
 	try {
 		MySQLDAO* mysqldao = MySQLDAO::getInstance();
 		connection = mysqldao->getConnection();
-		preparedStatement = connection->prepareStatement("INSERT INTO equipamento_saida (identificacaoEquipe, data, numOS) VALUES (?,?,?)");
+		preparedStatement = connection->prepareStatement("INSERT INTO equipamento_saida (data, numOS, sequencialEquipamento) VALUES (?,?,?)");
 
 		preparedStatement->setString(1, data.c_str());
 		preparedStatement->setInt(2, numOS);

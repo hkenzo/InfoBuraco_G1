@@ -1,9 +1,12 @@
-#pragma once
-
 #include <iostream>
 #include "criarEquipe.h"
 #include "saidaEquipamento.h"
-
+#include "saida.h"
+#include <string>
+#include "saidaDAO.h"
+#include "equipeDAO.h"
+#include <msclr\marshal_cppstd.h>
+#pragma once
 namespace Project1 {
 
 	using namespace System;
@@ -19,12 +22,21 @@ namespace Project1 {
 	public ref class saidaEquipe : public System::Windows::Forms::Form
 	{
 	public:
+		String ^ aux1;
+		String^ aux2;
+	public:
 		saidaEquipe(void)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+		}
+		saidaEquipe(String^ str1, String^ str2)
+		{
+		InitializeComponent();
+		aux1 = str1;
+		aux2 = str2;
 		}
 
 	protected:
@@ -38,6 +50,7 @@ namespace Project1 {
 				delete components;
 			}
 		}
+		System::Windows::Forms::ListViewItem^ listViewItem;
 	private: System::Windows::Forms::Label^  label6;
 	protected:
 
@@ -91,7 +104,7 @@ namespace Project1 {
 			this->Confirm_Bt->Name = L"Confirm_Bt";
 			this->Confirm_Bt->Size = System::Drawing::Size(185, 54);
 			this->Confirm_Bt->TabIndex = 28;
-			this->Confirm_Bt->Text = L"Próximo";
+			this->Confirm_Bt->Text = L"Selecionar Equipamentos";
 			this->Confirm_Bt->UseVisualStyleBackColor = false;
 			this->Confirm_Bt->Click += gcnew System::EventHandler(this, &saidaEquipe::Confirm_Bt_Click);
 			// 
@@ -173,16 +186,51 @@ namespace Project1 {
 		this->Close();
 	}
 	private: System::Void Confirm_Bt_Click(System::Object^  sender, System::EventArgs^  e) {
-		saidaEquipamento^ next = gcnew saidaEquipamento();
+		equipeDAO * temp = new equipeDAO();
+		
+		for (int i = 0; i < listView1->CheckedIndices->Count; i++) {
+			String^ str1 = listView1->CheckedItems[i]->SubItems[0]->Text;
+			String^ str2 = aux1;
+			String^ str3 = aux2;
+
+			string id = msclr::interop::marshal_as<std::string>(str1);
+			string data = msclr::interop::marshal_as<std::string>(str2);
+			string num = msclr::interop::marshal_as<std::string>(str3);
+			temp->criarEquipeSaidaDAO(std::stoi(id, nullptr, 10), data, std::stoi(num, nullptr, 10));
+		}
+		saidaEquipamento^ next = gcnew saidaEquipamento(aux1, aux2);
 		next->ShowDialog();
+		this->Close();
 	}
 	private: System::Void create_BT_Click(System::Object^  sender, System::EventArgs^  e) {
 		criarEquipe^ cria = gcnew criarEquipe();
 		cria->ShowDialog();
 	}
 	private: System::Void saidaEquipe_Load(System::Object^  sender, System::EventArgs^  e) {
+		atualizarDashboard();
 	}
-private: System::Void checked(System::Object^  sender, System::Windows::Forms::ItemCheckedEventArgs^  e) {
-}
+	private: System::Void checked(System::Object^  sender, System::Windows::Forms::ItemCheckedEventArgs^  e) {
+	}
+		private: Void atualizarDashboard() {
+			equipeDAO * aux = new equipeDAO();
+			vector<equipe*>* temp2;
+			this->listView1->Items->Clear();
+			temp2 = aux->buscarEquipe();
+			for (int j = 0; j < temp2->size(); j++) {
+				String^ str1 = gcnew String(std::to_string(temp2->at(j)->getId()).c_str());
+				String^ str2 = gcnew String(std::to_string(temp2->at(j)->getNum()).c_str());
+				String^ str3 = gcnew String(std::to_string(temp2->at(j)->getCusto()).c_str());
+
+				listViewItem = gcnew Windows::Forms::ListViewItem(str1);
+				listViewItem->SubItems->Add(str2);
+				listViewItem->SubItems->Add(str3);
+				this->listView1->Items->Add(this->listViewItem);
+
+			}
+		}
+
+
+
+
 };
 }

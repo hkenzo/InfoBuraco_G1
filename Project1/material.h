@@ -26,7 +26,4 @@ public:
 	int getPreco();
 
 };
-
-
-
 #endif

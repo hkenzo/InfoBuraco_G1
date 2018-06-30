@@ -1,3 +1,10 @@
+#include <iostream>
+#include "criarMobilizacao.h"
+#include "saida.h"
+#include <string>
+#include "saidaDAO.h"
+#include "mobilizacaoDAO.h"
+#include <msclr\marshal_cppstd.h>
 #pragma once
 
 namespace Project1 {
@@ -14,6 +21,9 @@ namespace Project1 {
 	/// </summary>
 	public ref class saidaMobilizacao : public System::Windows::Forms::Form
 	{
+	public: 
+		String ^ aux1;
+		String^ aux2;
 	public:
 		saidaMobilizacao(void)
 		{
@@ -21,6 +31,12 @@ namespace Project1 {
 			//
 			//TODO: Add the constructor code here
 			//
+		}
+		saidaMobilizacao(String^ str1, String^ str2)
+		{
+			InitializeComponent();
+			aux1 = str1;
+			aux2 = str2;
 		}
 
 	protected:
@@ -34,6 +50,7 @@ namespace Project1 {
 				delete components;
 			}
 		}
+		System::Windows::Forms::ListViewItem^ listViewItem;
 	private: System::Windows::Forms::Button^  create_BT;
 	protected:
 	private: System::Windows::Forms::Button^  Confirm_Bt;
@@ -74,6 +91,7 @@ namespace Project1 {
 			this->create_BT->TabIndex = 32;
 			this->create_BT->Text = L"Criar Mobilização";
 			this->create_BT->UseVisualStyleBackColor = false;
+			this->create_BT->Click += gcnew System::EventHandler(this, &saidaMobilizacao::create_BT_Click);
 			// 
 			// Confirm_Bt
 			// 
@@ -83,8 +101,9 @@ namespace Project1 {
 			this->Confirm_Bt->Name = L"Confirm_Bt";
 			this->Confirm_Bt->Size = System::Drawing::Size(185, 54);
 			this->Confirm_Bt->TabIndex = 31;
-			this->Confirm_Bt->Text = L"Próximo";
+			this->Confirm_Bt->Text = L"Finalizar";
 			this->Confirm_Bt->UseVisualStyleBackColor = false;
+			this->Confirm_Bt->Click += gcnew System::EventHandler(this, &saidaMobilizacao::Confirm_Bt_Click);
 			// 
 			// Cancel_BT
 			// 
@@ -97,6 +116,7 @@ namespace Project1 {
 			this->Cancel_BT->TabIndex = 30;
 			this->Cancel_BT->Text = L"Voltar";
 			this->Cancel_BT->UseVisualStyleBackColor = false;
+			this->Cancel_BT->Click += gcnew System::EventHandler(this, &saidaMobilizacao::Cancel_BT_Click);
 			// 
 			// listView1
 			// 
@@ -131,11 +151,54 @@ namespace Project1 {
 			this->Controls->Add(this->Cancel_BT);
 			this->Name = L"saidaMobilizacao";
 			this->Text = L"saidaMobilizacao";
+			this->Load += gcnew System::EventHandler(this, &saidaMobilizacao::saidaMobilizacao_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 	private: System::Void checked(System::Object^  sender, System::Windows::Forms::ItemCheckedEventArgs^  e) {
+	}
+	private: System::Void saidaMobilizacao_Load(System::Object^  sender, System::EventArgs^  e) {
+		atualizarDashboard();
+	}
+	private: Void atualizarDashboard() {
+		mobilizacaoDAO * aux = new mobilizacaoDAO();
+		vector<mobilizacao*>* temp2;
+		this->listView1->Items->Clear();
+		temp2 = aux->buscarMobilizacao();
+		for (int j = 0; j < temp2->size(); j++) {
+			String^ str1 = gcnew String(std::to_string(temp2->at(j)->getCusto()).c_str());
+			String^ str2 = gcnew String(std::to_string(temp2->at(j)->getId()).c_str());
+
+			listViewItem = gcnew Windows::Forms::ListViewItem(str1);
+			listViewItem->SubItems->Add(str2);
+
+			this->listView1->Items->Add(this->listViewItem);
+
+		}
+	}
+	private: System::Void create_BT_Click(System::Object^  sender, System::EventArgs^  e) {
+		criarMobilizacao^ cria = gcnew criarMobilizacao();
+		cria->ShowDialog();
+		atualizarDashboard();
+	}
+	private: System::Void Cancel_BT_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->Close();
+	}
+	private: System::Void Confirm_Bt_Click(System::Object^  sender, System::EventArgs^  e) {
+		mobilizacaoDAO * temp = new mobilizacaoDAO();
+
+		for (int i = 0; i < listView1->CheckedIndices->Count; i++) {
+			String^ str1 = listView1->CheckedItems[i]->SubItems[1]->Text;
+			String^ str2 = aux1;
+			String^ str3 = aux2;
+
+			string id = msclr::interop::marshal_as<std::string>(str1);
+			string data = msclr::interop::marshal_as<std::string>(str2);
+			string num = msclr::interop::marshal_as<std::string>(str3);
+			temp->criarMobilizacaoSaidaDAO(std::stoi(id, nullptr, 10), data, std::stoi(num, nullptr, 10));
+		}
+		this->Close();
 	}
 };
 }

@@ -109,7 +109,7 @@ void materialDAO::criarMaterialSaidaDAO(string data, int numOS, int sequencial) 
 	try {
 		MySQLDAO* mysqldao = MySQLDAO::getInstance();
 		connection = mysqldao->getConnection();
-		preparedStatement = connection->prepareStatement("INSERT INTO equipamento_saida (identificacaoEquipe, data, numOS) VALUES (?,?,?)");
+		preparedStatement = connection->prepareStatement("INSERT INTO Material_saida (data, numOS, sequencialMaterial) VALUES (?,?,?)");
 
 		preparedStatement->setString(1, data.c_str());
 		preparedStatement->setInt(2, numOS);

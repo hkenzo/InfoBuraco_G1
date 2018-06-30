@@ -182,6 +182,8 @@
     <ClCompile Include="removerMaterial.cpp" />
     <ClCompile Include="removerMobilizacao.cpp" />
     <ClCompile Include="removerSaida.cpp" />
+    <ClCompile Include="saida.cpp" />
+    <ClCompile Include="saidaDAO.cpp" />
     <ClCompile Include="saidaEquipamento.cpp" />
     <ClCompile Include="saidaEquipe.cpp" />
     <ClCompile Include="saidaMaterial.cpp" />
@@ -284,6 +286,8 @@
     <ClInclude Include="removerSaida.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="saida.h" />
+    <ClInclude Include="saidaDAO.h" />
     <ClInclude Include="saidaEquipamento.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -394,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="removerMobilizacao.resx">
       <DependentUpon>removerMobilizacao.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="removerSaida.resx">
+      <DependentUpon>removerSaida.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="saidaEquipamento.resx">
       <DependentUpon>saidaEquipamento.h</DependentUpon>
