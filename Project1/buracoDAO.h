@@ -32,7 +32,7 @@ public:
 	buracoDAO();
 	int buscarRua(string nomeRua, int numeroRua);
 	//void criarBuracoDAO
-	vector<buracos*>* buscarRuae();//(int numBuraco, string nomeRua, int numeroRua, int tamanho, string posicao, string regional, int prioridade, int numReclamacoes, int statusBuraco, string nomeCidadao, string canalCidadao, string dadoCanal, string dataHora, string reclamacao);
+//	vector<buracos*>* buscarRuae();//(int numBuraco, string nomeRua, int numeroRua, int tamanho, string posicao, string regional, int prioridade, int numReclamacoes, int statusBuraco, string nomeCidadao, string canalCidadao, string dadoCanal, string dataHora, string reclamacao);
 };
 
 #endif // !BURACODAO_H

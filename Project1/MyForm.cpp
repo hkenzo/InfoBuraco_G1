@@ -4,6 +4,7 @@
 #include "ServicoComunicacao1.h"
 #include "ServicoComunicacao2.h"
 #include "CadastroFuncionario.h"
+#include "login.h"
 
 
 namespace Project1 {
@@ -14,7 +15,7 @@ namespace Project1 {
 	{
 		Application::EnableVisualStyles();
 		Application::SetCompatibleTextRenderingDefault(false);
-		Application::Run(gcnew Despachador);
+		Application::Run(gcnew login);
 		
 	}
 }

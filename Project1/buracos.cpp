@@ -27,7 +27,7 @@ buracos::buracos(int numBuraco, string nomeRua, int numeroRua, int tamanho, stri
 	// no começo vou mandar 0, mas vai mudar na criação
 
 	// this -> numBuraco = pega no db
-	vector<buracoDAO*>* temp2 = burDAO->buscarRuae();//(numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco, nomeCidadao, canalCidadao, dadoCanal, dataHora, reclamacao);
+	//vector<buracoDAO*>* temp2 = burDAO->buscarRuae();//(numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco, nomeCidadao, canalCidadao, dadoCanal, dataHora, reclamacao);
 	//this->numBuraco = bur->buscarRua(this->nomeRua, this->numeroRua);
 	//int estimativaHoras = tamanho * 3;
 

@@ -156,6 +156,15 @@
     <ClCompile Include="saidaOS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="usuario.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="usuarioDAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="login.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -299,6 +308,15 @@
     <ClInclude Include="saidaOS.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="usuario.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="usuarioDAO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="login.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
@@ -392,6 +410,12 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="CadastroFuncionario.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="saidaMobilizacao.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="saidaOS.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

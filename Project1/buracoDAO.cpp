@@ -117,7 +117,7 @@ int buracoDAO::buscarRua(string nomeRua, int numeroRua)
 
 
 
-vector<buracos*>* buracoDAO::buscarRuae()//(int numBuraco, string nomeRua, int numeroRua, int tamanho, string posicao, string regional, int prioridade, int numReclamacoes, int statusBuraco, string nomeCidadao, string canalCidadao, string dadoCanal, string dataHora, string reclamacao)
+/*vector<buracos*>* buracoDAO::buscarRuae()//(int numBuraco, string nomeRua, int numeroRua, int tamanho, string posicao, string regional, int prioridade, int numReclamacoes, int statusBuraco, string nomeCidadao, string canalCidadao, string dadoCanal, string dataHora, string reclamacao)
 {
 	string log;
 	buracos * temp = nullptr;
@@ -144,7 +144,7 @@ vector<buracos*>* buracoDAO::buscarRuae()//(int numBuraco, string nomeRua, int n
 		log = e.what();
 	}
 	return temp2;
-}
+}*/
 
 //buracoDAO::string getString(string campo)
 //{

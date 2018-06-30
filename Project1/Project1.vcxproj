@@ -168,6 +168,7 @@
     <ClCompile Include="gerenciarMobilizacao.cpp" />
     <ClCompile Include="gerenciarSaida.cpp" />
     <ClCompile Include="Janela4.cpp" />
+    <ClCompile Include="login.cpp" />
     <ClCompile Include="material.cpp" />
     <ClCompile Include="MaterialDAO.cpp" />
     <ClCompile Include="mobilizacao.cpp" />
@@ -191,6 +192,8 @@
     <ClCompile Include="ServicoComunicacao2.cpp" />
     <ClCompile Include="ServicoComunicacao2_Pronto.cpp" />
     <ClCompile Include="Servico_Comunicacao_NotificarFinalizado.cpp" />
+    <ClCompile Include="usuario.cpp" />
+    <ClCompile Include="usuarioDAO.cpp" />
     <ClCompile Include="VizualizarBuracos.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -251,6 +254,9 @@
     <ClInclude Include="Janela4.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="login.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="material.h" />
     <ClInclude Include="MaterialDAO.h" />
     <ClInclude Include="mobilizacao.h" />
@@ -308,6 +314,8 @@
     <ClInclude Include="Servico_Comunicacao_NotificarFinalizado.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="usuario.h" />
+    <ClInclude Include="usuarioDAO.h" />
     <ClInclude Include="VizualizarBuracos.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -365,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Janela4.resx">
       <DependentUpon>Janela4.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
