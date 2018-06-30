@@ -25,7 +25,7 @@ public:
 	string regional;
 	int prioridade;
 	int numReclamacoes;
-	int satusBuraco;
+	int statusBuraco;
 	string nomeCidadao;
 	string canalCidadao;
 	string dadoCanal;

@@ -2,7 +2,7 @@
 
 
 
-buracos::buracos(int numBuraco, string nomeRua, int numeroRua, int tamanho, string posicao, string regional, int prioridade, int numReclamacoes, int satusBuraco, string nomeCidadao, string canalCidadao, string dadoCanal, string dataHora, string reclamacao)
+buracos::buracos(int numBuraco, string nomeRua, int numeroRua, int tamanho, string posicao, string regional, int prioridade, int numReclamacoes, int statusBuraco, string nomeCidadao, string canalCidadao, string dadoCanal, string dataHora, string reclamacao)
 {
 	//if check buraco = 0 (buraco não existe)
 	this->nomeRua = nomeRua;
@@ -22,12 +22,13 @@ buracos::buracos(int numBuraco, string nomeRua, int numeroRua, int tamanho, stri
 	this->prioridade = tamanho;//calculo com base nos dados informadosnumBuraco = 3//numero dado ou pelo banco de dados (automatico) ou por um contador no programa;
 
 	this->numBuraco = 0;
-
-	buracoDAO * bur = new buracoDAO(numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, satusBuraco, nomeCidadao, canalCidadao, dadoCanal, dataHora, reclamacao);
+	
+	buracoDAO * burDAO = new buracoDAO(numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco, nomeCidadao, canalCidadao, dadoCanal, dataHora, reclamacao);
 	// no começo vou mandar 0, mas vai mudar na criação
 
 	// this -> numBuraco = pega no db
-	//this->numBuraco = bur->buscarRua(this->nomRua, this->numRua);
+	vector<buracoDAO*>* temp2 = burDAO->buscarRuae();//(numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco, nomeCidadao, canalCidadao, dadoCanal, dataHora, reclamacao);
+	//this->numBuraco = bur->buscarRua(this->nomeRua, this->numeroRua);
 	//int estimativaHoras = tamanho * 3;
 
 	// depois do buraco registrado, deve criar OS
