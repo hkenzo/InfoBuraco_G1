@@ -173,9 +173,10 @@ namespace Project1 {
 			// 
 			// tipobox
 			// 
+			this->tipobox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->tipobox->FormattingEnabled = true;
 			this->tipobox->Items->AddRange(gcnew cli::array< System::Object^  >(4) {
-				L"Serviço de Comunicação", L"Gestor", L"Despachador",
+				L"Servico de Comunicacao", L"Gestor", L"Despachador",
 					L"Chefe da Equipe"
 			});
 			this->tipobox->Location = System::Drawing::Point(199, 227);

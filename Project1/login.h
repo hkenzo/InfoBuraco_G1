@@ -276,7 +276,7 @@ namespace Project1 {
 				string tipo = temp2->at(j)->getTipo();
 				if (str2 == this->senhabox->Text) {
 					this->erroSenha->Visible = false;
-					if (tipo == "Serviço de Comunicação") {
+					if (tipo == "Servico de Comunicacao") {
 						ServicoComunicacao0^ aux = gcnew ServicoComunicacao0();
 						aux->ShowDialog();
 						this->Close();
