@@ -1,3 +1,8 @@
+#include <iostream>
+#include <stdio.h>
+#include "mobilizacao.h"
+#include "mobilizacaoDAO.h"
+#include <msclr\marshal_cppstd.h>
 #pragma once
 
 namespace Project1 {
@@ -15,12 +20,21 @@ namespace Project1 {
 	public ref class removerMobilizacao : public System::Windows::Forms::Form
 	{
 	public:
+		String ^ aux1;
+		String^ aux2;
+	public:
 		removerMobilizacao(void)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+		}
+		removerMobilizacao(String^ str1, String^ str2)
+		{
+			InitializeComponent();
+			aux1 = str1;
+			aux2 = str2;
 		}
 
 	protected:
@@ -51,7 +65,10 @@ namespace Project1 {
 
 
 	private: System::Windows::Forms::Label^  label6;
-	private: System::Windows::Forms::TextBox^  textBox1;
+	private: System::Windows::Forms::TextBox^  custobox;
+	private: System::Windows::Forms::TextBox^  idbox;
+	private: System::Windows::Forms::Label^  label1;
+
 
 
 
@@ -74,7 +91,9 @@ namespace Project1 {
 			this->Confirm_Bt = (gcnew System::Windows::Forms::Button());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->custobox = (gcnew System::Windows::Forms::TextBox());
+			this->idbox = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// Cancel_BT
@@ -82,7 +101,7 @@ namespace Project1 {
 			this->Cancel_BT->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->Cancel_BT->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->Cancel_BT->Location = System::Drawing::Point(83, 128);
+			this->Cancel_BT->Location = System::Drawing::Point(94, 195);
 			this->Cancel_BT->Name = L"Cancel_BT";
 			this->Cancel_BT->Size = System::Drawing::Size(185, 54);
 			this->Cancel_BT->TabIndex = 0;
@@ -94,21 +113,22 @@ namespace Project1 {
 			// 
 			this->Confirm_Bt->BackColor = System::Drawing::Color::PowderBlue;
 			this->Confirm_Bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->Confirm_Bt->Location = System::Drawing::Point(379, 128);
+			this->Confirm_Bt->Location = System::Drawing::Point(390, 195);
 			this->Confirm_Bt->Name = L"Confirm_Bt";
 			this->Confirm_Bt->Size = System::Drawing::Size(185, 54);
 			this->Confirm_Bt->TabIndex = 1;
 			this->Confirm_Bt->Text = L"Confirmar";
 			this->Confirm_Bt->UseVisualStyleBackColor = false;
+			this->Confirm_Bt->Click += gcnew System::EventHandler(this, &removerMobilizacao::Confirm_Bt_Click);
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(90, 71);
+			this->label5->Location = System::Drawing::Point(101, 138);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(142, 17);
+			this->label5->Size = System::Drawing::Size(93, 17);
 			this->label5->TabIndex = 18;
-			this->label5->Text = L"Custo da Mobilização";
+			this->label5->Text = L"Custo por Km";
 			// 
 			// label6
 			// 
@@ -122,21 +142,40 @@ namespace Project1 {
 			this->label6->Text = L"Remoção de Mobilizacao";
 			this->label6->Click += gcnew System::EventHandler(this, &removerMobilizacao::label6_Click);
 			// 
-			// textBox1
+			// custobox
 			// 
-			this->textBox1->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->textBox1->Location = System::Drawing::Point(273, 68);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(309, 22);
-			this->textBox1->TabIndex = 25;
+			this->custobox->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->custobox->Location = System::Drawing::Point(284, 135);
+			this->custobox->Name = L"custobox";
+			this->custobox->Size = System::Drawing::Size(309, 22);
+			this->custobox->TabIndex = 25;
+			// 
+			// idbox
+			// 
+			this->idbox->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->idbox->Location = System::Drawing::Point(284, 79);
+			this->idbox->Name = L"idbox";
+			this->idbox->Size = System::Drawing::Size(309, 22);
+			this->idbox->TabIndex = 27;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(101, 82);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(78, 17);
+			this->label1->TabIndex = 26;
+			this->label1->Text = L"Sequencial";
 			// 
 			// removerMobilizacao
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
-			this->ClientSize = System::Drawing::Size(634, 205);
-			this->Controls->Add(this->textBox1);
+			this->ClientSize = System::Drawing::Size(696, 295);
+			this->Controls->Add(this->idbox);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->custobox);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->Confirm_Bt);
@@ -157,6 +196,17 @@ namespace Project1 {
 		this->Close();
 	}
 	private: System::Void removerMobilizacao_Load(System::Object^  sender, System::EventArgs^  e) {
+		this->custobox->Text = aux1;
+		this->idbox->Text = aux2;
+		this->idbox->ReadOnly = true;
+		this->custobox->ReadOnly = true;
 	}
-	};
+	private: System::Void Confirm_Bt_Click(System::Object^  sender, System::EventArgs^  e) {
+		mobilizacaoDAO * aux = new mobilizacaoDAO();
+
+		string id = msclr::interop::marshal_as<std::string>(this->idbox->Text);
+		aux->deletarMobilizacaoDAO(std::stoi(id, nullptr, 10));
+		this->Close();
+	}
+};
 }

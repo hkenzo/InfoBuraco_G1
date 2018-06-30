@@ -150,6 +150,9 @@
     <ClCompile Include="OS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="mobilizacaoDAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -285,6 +288,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="OS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mobilizacaoDAO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

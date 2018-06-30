@@ -171,6 +171,7 @@
     <ClCompile Include="material.cpp" />
     <ClCompile Include="MaterialDAO.cpp" />
     <ClCompile Include="mobilizacao.cpp" />
+    <ClCompile Include="mobilizacaoDAO.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Despachador.cpp" />
     <ClCompile Include="MySQLDAO.cpp" />
@@ -252,6 +253,7 @@
     <ClInclude Include="material.h" />
     <ClInclude Include="MaterialDAO.h" />
     <ClInclude Include="mobilizacao.h" />
+    <ClInclude Include="mobilizacaoDAO.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>

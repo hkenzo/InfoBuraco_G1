@@ -49,7 +49,7 @@ buracoDAO::buracoDAO(int numBuraco, string nomeRua, int numeroRua, int tamanho, 
 
 		preparedStatement->setInt(7, prioridade);
 		preparedStatement->setInt(8, numReclamacoes);
-		preparedStatement->setInt(9, statusBuraco);
+		//preparedStatement->setInt(9, statusBuraco);
 
 		preparedStatement->setString(10, nomeCidadao.c_str());
 		preparedStatement->setString(11, canalCidadao.c_str());

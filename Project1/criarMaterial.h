@@ -1,8 +1,6 @@
 //#include "gerenciarMaterial.h"
 #include "MaterialDAO.h"
 #include <msclr\marshal_cppstd.h>
-
-
 #pragma once
 
 namespace Project1 {
@@ -203,13 +201,14 @@ namespace Project1 {
 	private: System::Void label4_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
 	private: System::Void conf_creat_equipt_bt_Click(System::Object^  sender, System::EventArgs^  e) {
-		/*MaterialDAO * materialdao = new MaterialDAO();
-		
+		materialDAO * material = new materialDAO();
+
 		string tipo = msclr::interop::marshal_as<std::string>(this->textTipo->Text);
 		string uni = msclr::interop::marshal_as<std::string>(this->textUnidade->Text);
 		string preco = msclr::interop::marshal_as<std::string>(this->textPreco->Text);
 
-		materialdao->criarMaterialDAO(tipo, uni, std::stoi(preco, nullptr, 10));*/
+		material->criarMaterialDAO(tipo, uni, std::stoi(preco, nullptr, 10));
+		this->Close();
 	}
 };
 }
