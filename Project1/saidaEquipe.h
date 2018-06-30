@@ -40,10 +40,14 @@ namespace Project1 {
 		}
 	private: System::Windows::Forms::Label^  label6;
 	protected:
-	private: System::Windows::Forms::CheckedListBox^  checkedListBox1;
+
 	private: System::Windows::Forms::Button^  Confirm_Bt;
 	private: System::Windows::Forms::Button^  Cancel_BT;
 	private: System::Windows::Forms::Button^  create_BT;
+	private: System::Windows::Forms::ListView^  listView1;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader1;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader2;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader3;
 
 	private:
 		/// <summary>
@@ -59,10 +63,13 @@ namespace Project1 {
 		void InitializeComponent(void)
 		{
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->checkedListBox1 = (gcnew System::Windows::Forms::CheckedListBox());
 			this->Confirm_Bt = (gcnew System::Windows::Forms::Button());
 			this->Cancel_BT = (gcnew System::Windows::Forms::Button());
 			this->create_BT = (gcnew System::Windows::Forms::Button());
+			this->listView1 = (gcnew System::Windows::Forms::ListView());
+			this->columnHeader1 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader2 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader3 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->SuspendLayout();
 			// 
 			// label6
@@ -75,14 +82,6 @@ namespace Project1 {
 			this->label6->Size = System::Drawing::Size(177, 25);
 			this->label6->TabIndex = 25;
 			this->label6->Text = L"Seleção de Equipe";
-			// 
-			// checkedListBox1
-			// 
-			this->checkedListBox1->FormattingEnabled = true;
-			this->checkedListBox1->Location = System::Drawing::Point(24, 97);
-			this->checkedListBox1->Name = L"checkedListBox1";
-			this->checkedListBox1->Size = System::Drawing::Size(333, 327);
-			this->checkedListBox1->TabIndex = 26;
 			// 
 			// Confirm_Bt
 			// 
@@ -122,15 +121,45 @@ namespace Project1 {
 			this->create_BT->UseVisualStyleBackColor = false;
 			this->create_BT->Click += gcnew System::EventHandler(this, &saidaEquipe::create_BT_Click);
 			// 
+			// listView1
+			// 
+			this->listView1->CheckBoxes = true;
+			this->listView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(3) {
+				this->columnHeader1, this->columnHeader2,
+					this->columnHeader3
+			});
+			this->listView1->Location = System::Drawing::Point(16, 67);
+			this->listView1->Name = L"listView1";
+			this->listView1->Size = System::Drawing::Size(666, 385);
+			this->listView1->TabIndex = 30;
+			this->listView1->UseCompatibleStateImageBehavior = false;
+			this->listView1->View = System::Windows::Forms::View::Details;
+			this->listView1->ItemChecked += gcnew System::Windows::Forms::ItemCheckedEventHandler(this, &saidaEquipe::checked);
+			// 
+			// columnHeader1
+			// 
+			this->columnHeader1->Text = L"id.";
+			this->columnHeader1->Width = 61;
+			// 
+			// columnHeader2
+			// 
+			this->columnHeader2->Text = L"num. profissionais";
+			this->columnHeader2->Width = 128;
+			// 
+			// columnHeader3
+			// 
+			this->columnHeader3->Text = L"custo/Hora/Equipe";
+			this->columnHeader3->Width = 178;
+			// 
 			// saidaEquipe
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(978, 468);
+			this->Controls->Add(this->listView1);
 			this->Controls->Add(this->create_BT);
 			this->Controls->Add(this->Confirm_Bt);
 			this->Controls->Add(this->Cancel_BT);
-			this->Controls->Add(this->checkedListBox1);
 			this->Controls->Add(this->label6);
 			this->Name = L"saidaEquipe";
 			this->Text = L"saidaEquipe";
@@ -153,5 +182,7 @@ namespace Project1 {
 	}
 	private: System::Void saidaEquipe_Load(System::Object^  sender, System::EventArgs^  e) {
 	}
+private: System::Void checked(System::Object^  sender, System::Windows::Forms::ItemCheckedEventArgs^  e) {
+}
 };
 }

@@ -185,6 +185,7 @@
     <ClCompile Include="saidaEquipe.cpp" />
     <ClCompile Include="saidaMaterial.cpp" />
     <ClCompile Include="saidaMobilizacao.cpp" />
+    <ClCompile Include="saidaOS.cpp" />
     <ClCompile Include="ServicoComunicacao0.cpp" />
     <ClCompile Include="ServicoComunicacao1.cpp" />
     <ClCompile Include="ServicoComunicacao2.cpp" />
@@ -289,6 +290,9 @@
     <ClInclude Include="saidaMobilizacao.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="saidaOS.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ServicoComunicacao0.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -388,6 +392,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="saidaMaterial.resx">
       <DependentUpon>saidaMaterial.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="saidaMobilizacao.resx">
+      <DependentUpon>saidaMobilizacao.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="saidaOS.resx">
+      <DependentUpon>saidaOS.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ServicoComunicacao0.resx">
       <DependentUpon>ServicoComunicacao0.h</DependentUpon>

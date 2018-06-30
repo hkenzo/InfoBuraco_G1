@@ -38,7 +38,7 @@ namespace Project1 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::ListBox^  listBox1;
+
 	private: System::Windows::Forms::Button^  create_Saida_bt;
 	private: System::Windows::Forms::Button^  remove_Saida_bt;
 
@@ -49,6 +49,9 @@ namespace Project1 {
 
 
 	private: System::Windows::Forms::Button^  voltar_equipt_bt;
+	private: System::Windows::Forms::ListView^  listView1;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader1;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader2;
 
 
 
@@ -65,27 +68,19 @@ namespace Project1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->create_Saida_bt = (gcnew System::Windows::Forms::Button());
 			this->remove_Saida_bt = (gcnew System::Windows::Forms::Button());
 			this->change_Saida_bt = (gcnew System::Windows::Forms::Button());
 			this->voltar_equipt_bt = (gcnew System::Windows::Forms::Button());
+			this->listView1 = (gcnew System::Windows::Forms::ListView());
+			this->columnHeader1 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader2 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->SuspendLayout();
-			// 
-			// listBox1
-			// 
-			this->listBox1->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 16;
-			this->listBox1->Location = System::Drawing::Point(29, 31);
-			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(495, 436);
-			this->listBox1->TabIndex = 0;
 			// 
 			// create_Saida_bt
 			// 
-			this->create_Saida_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->create_Saida_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->create_Saida_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->create_Saida_bt->Location = System::Drawing::Point(558, 55);
 			this->create_Saida_bt->Name = L"create_Saida_bt";
@@ -97,8 +92,8 @@ namespace Project1 {
 			// 
 			// remove_Saida_bt
 			// 
-			this->remove_Saida_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->remove_Saida_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->remove_Saida_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->remove_Saida_bt->Location = System::Drawing::Point(558, 232);
 			this->remove_Saida_bt->Name = L"remove_Saida_bt";
@@ -110,8 +105,8 @@ namespace Project1 {
 			// 
 			// change_Saida_bt
 			// 
-			this->change_Saida_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->change_Saida_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->change_Saida_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->change_Saida_bt->Location = System::Drawing::Point(558, 143);
 			this->change_Saida_bt->Name = L"change_Saida_bt";
@@ -134,17 +129,39 @@ namespace Project1 {
 			this->voltar_equipt_bt->UseVisualStyleBackColor = false;
 			this->voltar_equipt_bt->Click += gcnew System::EventHandler(this, &gerenciarSaida::voltar_equipt_bt_Click);
 			// 
+			// listView1
+			// 
+			this->listView1->CheckBoxes = true;
+			this->listView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(2) { this->columnHeader1, this->columnHeader2 });
+			this->listView1->Location = System::Drawing::Point(22, 39);
+			this->listView1->Name = L"listView1";
+			this->listView1->Size = System::Drawing::Size(507, 431);
+			this->listView1->TabIndex = 5;
+			this->listView1->UseCompatibleStateImageBehavior = false;
+			this->listView1->View = System::Windows::Forms::View::Details;
+			this->listView1->ItemChecked += gcnew System::Windows::Forms::ItemCheckedEventHandler(this, &gerenciarSaida::checked);
+			// 
+			// columnHeader1
+			// 
+			this->columnHeader1->Text = L"Data";
+			this->columnHeader1->Width = 121;
+			// 
+			// columnHeader2
+			// 
+			this->columnHeader2->Text = L"Número da OS";
+			this->columnHeader2->Width = 175;
+			// 
 			// gerenciarSaida
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
 			this->ClientSize = System::Drawing::Size(782, 500);
+			this->Controls->Add(this->listView1);
 			this->Controls->Add(this->voltar_equipt_bt);
 			this->Controls->Add(this->change_Saida_bt);
 			this->Controls->Add(this->remove_Saida_bt);
 			this->Controls->Add(this->create_Saida_bt);
-			this->Controls->Add(this->listBox1);
 			this->Name = L"gerenciarSaida";
 			this->Text = L"gerenciarSaida";
 			this->Load += gcnew System::EventHandler(this, &gerenciarSaida::gerenciarSaida_Load);
@@ -173,5 +190,7 @@ namespace Project1 {
 	private: System::Void voltar_equipt_bt_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Close();
 	}
-	};
+	private: System::Void checked(System::Object^  sender, System::Windows::Forms::ItemCheckedEventArgs^  e) {
+	}
+};
 }

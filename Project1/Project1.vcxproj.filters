@@ -153,6 +153,9 @@
     <ClCompile Include="mobilizacaoDAO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="saidaOS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -291,6 +294,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mobilizacaoDAO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="saidaOS.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -10,12 +10,12 @@ namespace Project1 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for saidaMobilizacao
+	/// Summary for saidaOS
 	/// </summary>
-	public ref class saidaMobilizacao : public System::Windows::Forms::Form
+	public ref class saidaOS : public System::Windows::Forms::Form
 	{
 	public:
-		saidaMobilizacao(void)
+		saidaOS(void)
 		{
 			InitializeComponent();
 			//
@@ -27,20 +27,23 @@ namespace Project1 {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~saidaMobilizacao()
+		~saidaOS()
 		{
 			if (components)
 			{
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^  create_BT;
-	protected:
 	private: System::Windows::Forms::Button^  Confirm_Bt;
+	protected:
 	private: System::Windows::Forms::Button^  Cancel_BT;
 	private: System::Windows::Forms::ListView^  listView1;
-	private: System::Windows::Forms::ColumnHeader^  columnHeader1;
-	private: System::Windows::Forms::ColumnHeader^  columnHeader2;
+	private: System::Windows::Forms::ColumnHeader^  estimativaHoras;
+	private: System::Windows::Forms::ColumnHeader^  estimativaEquipamento;
+	private: System::Windows::Forms::ColumnHeader^  estimativaMaterial;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader4;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader5;
+	private: System::Windows::Forms::ColumnHeader^  columnHeader6;
 
 	private:
 		/// <summary>
@@ -55,31 +58,22 @@ namespace Project1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->create_BT = (gcnew System::Windows::Forms::Button());
 			this->Confirm_Bt = (gcnew System::Windows::Forms::Button());
 			this->Cancel_BT = (gcnew System::Windows::Forms::Button());
 			this->listView1 = (gcnew System::Windows::Forms::ListView());
-			this->columnHeader1 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader2 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->estimativaHoras = (gcnew System::Windows::Forms::ColumnHeader());
+			this->estimativaEquipamento = (gcnew System::Windows::Forms::ColumnHeader());
+			this->estimativaMaterial = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader4 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader5 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader6 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->SuspendLayout();
-			// 
-			// create_BT
-			// 
-			this->create_BT->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
-				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->create_BT->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->create_BT->Location = System::Drawing::Point(693, 135);
-			this->create_BT->Name = L"create_BT";
-			this->create_BT->Size = System::Drawing::Size(180, 49);
-			this->create_BT->TabIndex = 32;
-			this->create_BT->Text = L"Criar Mobilização";
-			this->create_BT->UseVisualStyleBackColor = false;
 			// 
 			// Confirm_Bt
 			// 
 			this->Confirm_Bt->BackColor = System::Drawing::Color::PowderBlue;
 			this->Confirm_Bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->Confirm_Bt->Location = System::Drawing::Point(693, 248);
+			this->Confirm_Bt->Location = System::Drawing::Point(877, 106);
 			this->Confirm_Bt->Name = L"Confirm_Bt";
 			this->Confirm_Bt->Size = System::Drawing::Size(185, 54);
 			this->Confirm_Bt->TabIndex = 31;
@@ -91,7 +85,7 @@ namespace Project1 {
 			this->Cancel_BT->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->Cancel_BT->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->Cancel_BT->Location = System::Drawing::Point(693, 359);
+			this->Cancel_BT->Location = System::Drawing::Point(877, 282);
 			this->Cancel_BT->Name = L"Cancel_BT";
 			this->Cancel_BT->Size = System::Drawing::Size(185, 54);
 			this->Cancel_BT->TabIndex = 30;
@@ -101,41 +95,63 @@ namespace Project1 {
 			// listView1
 			// 
 			this->listView1->CheckBoxes = true;
-			this->listView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(2) { this->columnHeader1, this->columnHeader2 });
-			this->listView1->Location = System::Drawing::Point(14, 53);
+			this->listView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(6) {
+				this->estimativaHoras,
+					this->estimativaEquipamento, this->estimativaMaterial, this->columnHeader4, this->columnHeader5, this->columnHeader6
+			});
+			this->listView1->Location = System::Drawing::Point(2, 16);
 			this->listView1->Name = L"listView1";
-			this->listView1->Size = System::Drawing::Size(664, 457);
-			this->listView1->TabIndex = 33;
+			this->listView1->Size = System::Drawing::Size(862, 459);
+			this->listView1->TabIndex = 32;
 			this->listView1->UseCompatibleStateImageBehavior = false;
 			this->listView1->View = System::Windows::Forms::View::Details;
-			this->listView1->ItemChecked += gcnew System::Windows::Forms::ItemCheckedEventHandler(this, &saidaMobilizacao::checked);
+			this->listView1->ItemChecked += gcnew System::Windows::Forms::ItemCheckedEventHandler(this, &saidaOS::checked);
 			// 
-			// columnHeader1
+			// estimativaHoras
 			// 
-			this->columnHeader1->Text = L"custo/Km";
-			this->columnHeader1->Width = 246;
+			this->estimativaHoras->Text = L"estimativaHoras";
+			this->estimativaHoras->Width = 117;
 			// 
-			// columnHeader2
+			// estimativaEquipamento
 			// 
-			this->columnHeader2->Text = L"Sequencial";
-			this->columnHeader2->Width = 174;
+			this->estimativaEquipamento->Text = L"estimativaEquipamento";
+			this->estimativaEquipamento->Width = 156;
 			// 
-			// saidaMobilizacao
+			// estimativaMaterial
+			// 
+			this->estimativaMaterial->Text = L"estimativaMaterial";
+			this->estimativaMaterial->Width = 128;
+			// 
+			// columnHeader4
+			// 
+			this->columnHeader4->Text = L"numOS";
+			this->columnHeader4->Width = 58;
+			// 
+			// columnHeader5
+			// 
+			this->columnHeader5->Text = L"statusOS";
+			this->columnHeader5->Width = 70;
+			// 
+			// columnHeader6
+			// 
+			this->columnHeader6->Text = L"numBuraco";
+			this->columnHeader6->Width = 93;
+			// 
+			// saidaOS
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(917, 548);
+			this->ClientSize = System::Drawing::Size(1074, 492);
 			this->Controls->Add(this->listView1);
-			this->Controls->Add(this->create_BT);
 			this->Controls->Add(this->Confirm_Bt);
 			this->Controls->Add(this->Cancel_BT);
-			this->Name = L"saidaMobilizacao";
-			this->Text = L"saidaMobilizacao";
+			this->Name = L"saidaOS";
+			this->Text = L"saidaOS";
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 	private: System::Void checked(System::Object^  sender, System::Windows::Forms::ItemCheckedEventArgs^  e) {
 	}
-};
+	};
 }

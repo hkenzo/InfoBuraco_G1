@@ -84,7 +84,7 @@ namespace Project1 {
 			// senhabox
 			// 
 			this->senhabox->Location = System::Drawing::Point(199, 269);
-			this->senhabox->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->senhabox->Margin = System::Windows::Forms::Padding(4);
 			this->senhabox->Name = L"senhabox";
 			this->senhabox->Size = System::Drawing::Size(285, 22);
 			this->senhabox->TabIndex = 6;
@@ -96,7 +96,7 @@ namespace Project1 {
 			this->Usuario->Name = L"Usuario";
 			this->Usuario->Size = System::Drawing::Size(57, 17);
 			this->Usuario->TabIndex = 7;
-			this->Usuario->Text = L"Usuario";
+			this->Usuario->Text = L"Usuário";
 			this->Usuario->Click += gcnew System::EventHandler(this, &CadastroFuncionario::label1_Click);
 			// 
 			// Senha
@@ -138,7 +138,7 @@ namespace Project1 {
 			// userbox
 			// 
 			this->userbox->Location = System::Drawing::Point(199, 102);
-			this->userbox->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->userbox->Margin = System::Windows::Forms::Padding(4);
 			this->userbox->Name = L"userbox";
 			this->userbox->Size = System::Drawing::Size(285, 22);
 			this->userbox->TabIndex = 15;
@@ -207,6 +207,7 @@ namespace Project1 {
 		this->Close();
 	}
 	private: System::Void conf_cadastro_bt_Click(System::Object^  sender, System::EventArgs^  e) {
+
 	}
 };
 }
