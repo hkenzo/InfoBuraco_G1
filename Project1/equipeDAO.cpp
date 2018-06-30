@@ -103,3 +103,24 @@ log = e.what();
 return temp2;
 }
 
+void equipeDAO::criarEquipeSaidaDAO(int identificacaoEquipe, string data, int numOS) {
+	string log;
+	sql::Connection * connection;
+	sql::PreparedStatement * preparedStatement;
+	sql::ResultSet *resultSet;
+	try {
+		MySQLDAO* mysqldao = MySQLDAO::getInstance();
+		connection = mysqldao->getConnection();
+		preparedStatement = connection->prepareStatement("INSERT INTO equipe_saida (identificacaoEquipe, data, numOS) VALUES (?,?,?)");
+		
+		preparedStatement->setInt(1, identificacaoEquipe);
+		preparedStatement->setString(2, data.c_str());
+		preparedStatement->setInt(3, numOS);
+		resultSet = preparedStatement->executeQuery();
+	}
+	catch (sql::SQLException e)
+	{
+		connection->close();
+		log = e.what();
+	}
+}

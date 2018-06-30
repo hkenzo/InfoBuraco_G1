@@ -100,3 +100,25 @@ vector<material*>* materialDAO::buscarMaterial()
 	}
 	return temp2;
 }
+
+void materialDAO::criarMaterialSaidaDAO(string data, int numOS, int sequencial) {
+	string log;
+	sql::Connection * connection;
+	sql::PreparedStatement * preparedStatement;
+	sql::ResultSet *resultSet;
+	try {
+		MySQLDAO* mysqldao = MySQLDAO::getInstance();
+		connection = mysqldao->getConnection();
+		preparedStatement = connection->prepareStatement("INSERT INTO equipamento_saida (identificacaoEquipe, data, numOS) VALUES (?,?,?)");
+
+		preparedStatement->setString(1, data.c_str());
+		preparedStatement->setInt(2, numOS);
+		preparedStatement->setInt(3, sequencial);
+		resultSet = preparedStatement->executeQuery();
+	}
+	catch (sql::SQLException e)
+	{
+		connection->close();
+		log = e.what();
+	}
+}

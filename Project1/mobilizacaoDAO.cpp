@@ -98,3 +98,26 @@ vector<mobilizacao*>* mobilizacaoDAO::buscarMobilizacao()
 	}
 	return temp2;
 }
+
+void mobilizacaoDAO::criarMobilizacaoSaidaDAO(int sequencial, string data, int numOS) {
+	string log;
+	sql::Connection * connection;
+	sql::PreparedStatement * preparedStatement;
+	sql::ResultSet *resultSet;
+	try {
+		MySQLDAO* mysqldao = MySQLDAO::getInstance();
+		connection = mysqldao->getConnection();
+		preparedStatement = connection->prepareStatement("INSERT INTO equipamento_saida (identificacaoEquipe, data, numOS) VALUES (?,?,?)");
+		
+		preparedStatement->setInt(1, sequencial);
+		preparedStatement->setString(2, data.c_str());
+		preparedStatement->setInt(3, numOS);
+		
+		resultSet = preparedStatement->executeQuery();
+	}
+	catch (sql::SQLException e)
+	{
+		connection->close();
+		log = e.what();
+	}
+}
