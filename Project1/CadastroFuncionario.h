@@ -93,6 +93,7 @@ namespace Project1 {
 			this->senhabox->Location = System::Drawing::Point(199, 297);
 			this->senhabox->Margin = System::Windows::Forms::Padding(4);
 			this->senhabox->Name = L"senhabox";
+			this->senhabox->PasswordChar = '*';
 			this->senhabox->Size = System::Drawing::Size(285, 22);
 			this->senhabox->TabIndex = 6;
 			// 

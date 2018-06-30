@@ -1,5 +1,6 @@
 #include "usuarioDAO.h"
 #include "Despachador.h"
+#include "ServicoComunicacao0.h"
 #include "CadastroFuncionario.h"
 #include <msclr\marshal_cppstd.h>
 #pragma once
@@ -61,6 +62,10 @@ namespace Project1 {
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::TextBox^  userbox;
 	private: System::Windows::Forms::Button^  change_Mobilizacao_bt;
+	private: System::Windows::Forms::Label^  erroSenha;
+	private: System::Windows::Forms::Label^  erroUser;
+
+
 
 
 
@@ -89,13 +94,16 @@ namespace Project1 {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->userbox = (gcnew System::Windows::Forms::TextBox());
 			this->change_Mobilizacao_bt = (gcnew System::Windows::Forms::Button());
+			this->erroSenha = (gcnew System::Windows::Forms::Label());
+			this->erroUser = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// senhabox
 			// 
-			this->senhabox->Location = System::Drawing::Point(256, 191);
+			this->senhabox->Location = System::Drawing::Point(210, 191);
 			this->senhabox->Margin = System::Windows::Forms::Padding(4);
 			this->senhabox->Name = L"senhabox";
+			this->senhabox->PasswordChar = '*';
 			this->senhabox->Size = System::Drawing::Size(285, 22);
 			this->senhabox->TabIndex = 6;
 			this->senhabox->TextChanged += gcnew System::EventHandler(this, &login::senhabox_TextChanged);
@@ -103,7 +111,7 @@ namespace Project1 {
 			// Usuario
 			// 
 			this->Usuario->AutoSize = true;
-			this->Usuario->Location = System::Drawing::Point(98, 128);
+			this->Usuario->Location = System::Drawing::Point(52, 128);
 			this->Usuario->Name = L"Usuario";
 			this->Usuario->Size = System::Drawing::Size(57, 17);
 			this->Usuario->TabIndex = 7;
@@ -113,7 +121,7 @@ namespace Project1 {
 			// Senha
 			// 
 			this->Senha->AutoSize = true;
-			this->Senha->Location = System::Drawing::Point(98, 194);
+			this->Senha->Location = System::Drawing::Point(52, 194);
 			this->Senha->Name = L"Senha";
 			this->Senha->Size = System::Drawing::Size(49, 17);
 			this->Senha->TabIndex = 9;
@@ -172,7 +180,7 @@ namespace Project1 {
 			// 
 			// userbox
 			// 
-			this->userbox->Location = System::Drawing::Point(256, 125);
+			this->userbox->Location = System::Drawing::Point(210, 125);
 			this->userbox->Margin = System::Windows::Forms::Padding(4);
 			this->userbox->Name = L"userbox";
 			this->userbox->Size = System::Drawing::Size(285, 22);
@@ -191,12 +199,40 @@ namespace Project1 {
 			this->change_Mobilizacao_bt->UseVisualStyleBackColor = false;
 			this->change_Mobilizacao_bt->Click += gcnew System::EventHandler(this, &login::change_Mobilizacao_bt_Click);
 			// 
+			// erroSenha
+			// 
+			this->erroSenha->AutoSize = true;
+			this->erroSenha->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->erroSenha->ForeColor = System::Drawing::Color::Red;
+			this->erroSenha->Location = System::Drawing::Point(511, 194);
+			this->erroSenha->Name = L"erroSenha";
+			this->erroSenha->Size = System::Drawing::Size(124, 17);
+			this->erroSenha->TabIndex = 19;
+			this->erroSenha->Text = L"Senha Incorreta";
+			this->erroSenha->Click += gcnew System::EventHandler(this, &login::label2_Click);
+			// 
+			// erroUser
+			// 
+			this->erroUser->AutoSize = true;
+			this->erroUser->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->erroUser->ForeColor = System::Drawing::Color::Red;
+			this->erroUser->Location = System::Drawing::Point(511, 125);
+			this->erroUser->Name = L"erroUser";
+			this->erroUser->Size = System::Drawing::Size(183, 17);
+			this->erroUser->TabIndex = 20;
+			this->erroUser->Text = L"Usuário não encontrado";
+			this->erroUser->Click += gcnew System::EventHandler(this, &login::label3_Click);
+			// 
 			// login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
-			this->ClientSize = System::Drawing::Size(655, 340);
+			this->ClientSize = System::Drawing::Size(700, 340);
+			this->Controls->Add(this->erroUser);
+			this->Controls->Add(this->erroSenha);
 			this->Controls->Add(this->change_Mobilizacao_bt);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->label5);
@@ -218,6 +254,8 @@ namespace Project1 {
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
 	private: System::Void login_Load(System::Object^  sender, System::EventArgs^  e) {
+		this->erroUser->Visible = false;
+		this->erroSenha->Visible = false;
 	}
 	private: System::Void cancel_cadastro_bt_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Close();
@@ -228,30 +266,40 @@ namespace Project1 {
 		string user = msclr::interop::marshal_as<std::string>(this->userbox->Text);
 
 		temp2 = temp->buscarUsuario(user);
-
-		for (int j = 0; j < temp2->size(); j++) {
-			String^ str2 = gcnew String((temp2->at(j)->getSenha()).c_str());
-			string tipo = temp2->at(j)->getTipo();
-			if (str2 == this->senhabox->Text) {
-				if (tipo == "Serviço de Comunicação") {
-				}
-				else if (tipo == "Gestor") {
-
-				}
-				else if (tipo == "Chefe da Equipe") {
-
-				}
-				else if (tipo == "Despachador") {
-					
-					Despachador^ aux = gcnew Despachador();
-					aux->ShowDialog();
-					this->Close();
-				}
-
-			}
-			
+		if (temp2->size() == 0) {
+			this->erroUser->Visible = true;
 		}
-		this->Close();
+		else {
+			this->erroUser->Visible = false;
+			for (int j = 0; j < temp2->size(); j++) {
+				String^ str2 = gcnew String((temp2->at(j)->getSenha()).c_str());
+				string tipo = temp2->at(j)->getTipo();
+				if (str2 == this->senhabox->Text) {
+					this->erroSenha->Visible = false;
+					if (tipo == "Serviço de Comunicação") {
+						ServicoComunicacao0^ aux = gcnew ServicoComunicacao0();
+						aux->ShowDialog();
+						this->Close();
+					}
+					else if (tipo == "Gestor") {
+
+					}
+					else if (tipo == "Chefe da Equipe") {
+
+					}
+					else if (tipo == "Despachador") {
+						Despachador^ aux = gcnew Despachador();
+						aux->ShowDialog();
+						this->Close();
+						
+					}
+
+				}
+				else {
+					this->erroSenha->Visible = true;
+				}
+			}
+		}
 	}
 
 
@@ -264,6 +312,10 @@ private: System::Void label5_Click(System::Object^  sender, System::EventArgs^  
 private: System::Void change_Mobilizacao_bt_Click(System::Object^  sender, System::EventArgs^  e) {
 	CadastroFuncionario^ aux = gcnew CadastroFuncionario();
 	aux->ShowDialog();
+}
+private: System::Void label2_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void label3_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }
