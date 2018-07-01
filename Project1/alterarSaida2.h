@@ -47,6 +47,9 @@ namespace Project1 {
 	private: System::Windows::Forms::Label^  label4;
 
 
+
+
+
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -76,7 +79,7 @@ namespace Project1 {
 			// 
 			this->Confirm_Bt->BackColor = System::Drawing::Color::PowderBlue;
 			this->Confirm_Bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->Confirm_Bt->Location = System::Drawing::Point(449, 166);
+			this->Confirm_Bt->Location = System::Drawing::Point(338, 144);
 			this->Confirm_Bt->Margin = System::Windows::Forms::Padding(2);
 			this->Confirm_Bt->Name = L"Confirm_Bt";
 			this->Confirm_Bt->Size = System::Drawing::Size(94, 46);
@@ -89,12 +92,12 @@ namespace Project1 {
 			this->button3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button3->Location = System::Drawing::Point(449, 105);
+			this->button3->Location = System::Drawing::Point(338, 83);
 			this->button3->Margin = System::Windows::Forms::Padding(2);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(94, 43);
 			this->button3->TabIndex = 57;
-			this->button3->Text = L"Próximo";
+			this->button3->Text = L"Finalizar";
 			this->button3->UseVisualStyleBackColor = false;
 			// 
 			// cancel_create_equpt_bt
@@ -102,7 +105,7 @@ namespace Project1 {
 			this->cancel_create_equpt_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->cancel_create_equpt_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->cancel_create_equpt_bt->Location = System::Drawing::Point(449, 237);
+			this->cancel_create_equpt_bt->Location = System::Drawing::Point(338, 215);
 			this->cancel_create_equpt_bt->Margin = System::Windows::Forms::Padding(2);
 			this->cancel_create_equpt_bt->Name = L"cancel_create_equpt_bt";
 			this->cancel_create_equpt_bt->Size = System::Drawing::Size(94, 43);
@@ -114,7 +117,7 @@ namespace Project1 {
 			// 
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
-			this->label1->Location = System::Drawing::Point(231, 9);
+			this->label1->Location = System::Drawing::Point(175, 9);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(116, 24);
 			this->label1->TabIndex = 59;
@@ -125,7 +128,7 @@ namespace Project1 {
 			// 
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
-			this->label2->Location = System::Drawing::Point(26, 118);
+			this->label2->Location = System::Drawing::Point(29, 87);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(125, 15);
 			this->label2->TabIndex = 60;
@@ -134,7 +137,7 @@ namespace Project1 {
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(167, 116);
+			this->comboBox1->Location = System::Drawing::Point(170, 85);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(141, 21);
 			this->comboBox1->TabIndex = 61;
@@ -143,7 +146,7 @@ namespace Project1 {
 			// 
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
-			this->label3->Location = System::Drawing::Point(44, 197);
+			this->label3->Location = System::Drawing::Point(47, 158);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(107, 15);
 			this->label3->TabIndex = 62;
@@ -152,14 +155,14 @@ namespace Project1 {
 			// textBox1
 			// 
 			this->textBox1->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->textBox1->Location = System::Drawing::Point(167, 197);
+			this->textBox1->Location = System::Drawing::Point(170, 158);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(65, 20);
 			this->textBox1->TabIndex = 63;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(167, 240);
+			this->textBox2->Location = System::Drawing::Point(170, 201);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(65, 20);
 			this->textBox2->TabIndex = 65;
@@ -168,7 +171,7 @@ namespace Project1 {
 			// 
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
-			this->label4->Location = System::Drawing::Point(44, 241);
+			this->label4->Location = System::Drawing::Point(47, 202);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(108, 15);
 			this->label4->TabIndex = 64;
@@ -179,7 +182,7 @@ namespace Project1 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(575, 371);
+			this->ClientSize = System::Drawing::Size(462, 282);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->textBox1);

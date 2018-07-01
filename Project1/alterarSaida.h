@@ -136,12 +136,12 @@ namespace Project1 {
 			// 
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
-			this->label1->Location = System::Drawing::Point(274, 89);
+			this->label1->Location = System::Drawing::Point(280, 89);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(100, 15);
+			this->label1->Size = System::Drawing::Size(86, 15);
 			this->label1->TabIndex = 40;
-			this->label1->Text = L"OS selecionadas";
+			this->label1->Text = L"OS ordenadas";
 			this->label1->Click += gcnew System::EventHandler(this, &alterarSaida::label1_Click);
 			// 
 			// label2

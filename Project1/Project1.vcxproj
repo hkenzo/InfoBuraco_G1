@@ -163,7 +163,9 @@
     <ClCompile Include="criarMaterial.cpp" />
     <ClCompile Include="criarMobilizacao.cpp" />
     <ClCompile Include="criarSaida.cpp" />
-    <ClCompile Include="dashboard.cpp" />
+    <ClCompile Include="criarSaida1.cpp" />
+    <ClCompile Include="criarSaida2.cpp" />
+    <ClCompile Include="dashboardRegional.cpp" />
     <ClCompile Include="equipamento.cpp" />
     <ClCompile Include="equipamentoDAO.cpp" />
     <ClCompile Include="equipe.cpp" />
@@ -263,7 +265,13 @@
     <ClInclude Include="criarSaida.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="dashboard.h">
+    <ClInclude Include="criarSaida1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="criarSaida2.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="dashboardRegional.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="equipamento.h" />
@@ -399,6 +407,9 @@
     <EmbeddedResource Include="alterarPrioridade.resx">
       <DependentUpon>alterarPrioridade.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="alterarSaida.resx">
+      <DependentUpon>alterarSaida.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="alterarSaida1.resx">
       <DependentUpon>alterarSaida1.h</DependentUpon>
     </EmbeddedResource>
@@ -426,8 +437,17 @@
     <EmbeddedResource Include="criarMobilizacao.resx">
       <DependentUpon>criarMobilizacao.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="dashboard.resx">
-      <DependentUpon>dashboard.h</DependentUpon>
+    <EmbeddedResource Include="criarSaida.resx">
+      <DependentUpon>criarSaida.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="criarSaida1.resx">
+      <DependentUpon>criarSaida1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="criarSaida2.resx">
+      <DependentUpon>criarSaida2.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dashboardRegional.resx">
+      <DependentUpon>dashboardRegional.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gerenciarEquipamento.resx">
       <DependentUpon>gerenciarEquipamento.h</DependentUpon>
