@@ -154,6 +154,7 @@
     <ClCompile Include="buracos.cpp" />
     <ClCompile Include="CadastroFuncionario.cpp" />
     <ClCompile Include="CaixaDeDialogo.cpp" />
+    <ClCompile Include="ChefeEquipeTrabalho.cpp" />
     <ClCompile Include="CriarEquipamento.cpp" />
     <ClCompile Include="criarEquipe.cpp" />
     <ClCompile Include="criarMaterial.cpp" />
@@ -221,6 +222,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CaixaDeDialogo.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ChefeEquipeTrabalho.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CriarEquipamento.h">
@@ -349,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CaixaDeDialogo.resx">
       <DependentUpon>CaixaDeDialogo.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChefeEquipeTrabalho.resx">
+      <DependentUpon>ChefeEquipeTrabalho.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CriarEquipamento.resx">
       <DependentUpon>CriarEquipamento.h</DependentUpon>

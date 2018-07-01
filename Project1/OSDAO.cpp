@@ -1,6 +1,11 @@
 #include "OSDAO.h"
 
 
+OSDAO::OSDAO()
+{
+
+
+}
 
 OSDAO::OSDAO(int numOS, int estimativaHoras, int estimativaEquipamento, int estimativaMaterial, int statusOS, int numBuraco)
 {
@@ -32,3 +37,8 @@ OSDAO::OSDAO(int numOS, int estimativaHoras, int estimativaEquipamento, int esti
 		log = e.what();
 	}
 }
+
+//OSDAO::setStatus(int status, int numOS)
+//{
+
+//}

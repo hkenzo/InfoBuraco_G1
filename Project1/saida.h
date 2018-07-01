@@ -8,7 +8,7 @@ class saida
 {
 private:
 
-	string data
+	string data;
 	int numOS;
 
 
