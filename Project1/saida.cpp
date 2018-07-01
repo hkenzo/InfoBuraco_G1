@@ -2,12 +2,12 @@
 
 saida::saida(string data, int numOS) {
 	this->data = data;
-	this->getNumOS = numOS;
+	this->numOS = numOS;
 }
 
 
 int saida::getNumOS() {
-	return this->getNumOS;
+	return this->numOS;
 }
 string saida::getData() {
 	return this->data;

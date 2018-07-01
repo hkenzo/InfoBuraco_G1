@@ -174,40 +174,7 @@
     <ClCompile Include="ServicoComunicacaoNotificar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dashboard.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="alterarPriorade.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="alterarSaida1.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="alterarSaida2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="criarSaida.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="historicoBuraco.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MyForm1.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MyForm11.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MyForm12.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MyForm13.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="regionalOS.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="telaEquipe.cpp">
+    <ClCompile Include="ChefeEquipeTrabalho.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -371,40 +338,7 @@
     <ClInclude Include="ServicoComunicacaoNotificar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="dashboard.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="alterarPrioridade.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="alterarSaida1.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="alterarSaida2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="criarSaida.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="historicoBuraco.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MyForm1.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MyForm11.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MyForm12.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MyForm13.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="regionalOS.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="telaEquipe.h">
+    <ClInclude Include="ChefeEquipeTrabalho.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -512,18 +446,6 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="ServicoComunicacaoNotificar.resx">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
-    <EmbeddedResource Include="dashboard.resx">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
-    <EmbeddedResource Include="alterarPrioridade.resx">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
-    <EmbeddedResource Include="alterarSaida1.resx">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
-    <EmbeddedResource Include="alterarSaida2.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

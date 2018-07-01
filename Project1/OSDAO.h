@@ -11,5 +11,7 @@ class OSDAO
 {
 public:
 	OSDAO(int numOS, int estimativaHoras, int estimativaEquipamento, int estimativaMaterial, int statusOS, int numBuraco);
+	OSDAO();
+	//setStatus(int status, int numOS);
 };
 

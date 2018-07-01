@@ -1,6 +1,9 @@
 #pragma once
 #include "buracos.h"
 #include "buracoDAO.h"
+#include <msclr/marshal.h>
+#include <msclr/marshal_cppstd.h>
+#include <stdlib.h>
 
 namespace Project1 {
 
@@ -137,6 +140,7 @@ namespace Project1 {
 			this->listView1->TabIndex = 6;
 			this->listView1->UseCompatibleStateImageBehavior = false;
 			this->listView1->View = System::Windows::Forms::View::Details;
+			this->listView1->ItemChecked += gcnew System::Windows::Forms::ItemCheckedEventHandler(this, &ServicoComunicacaoNotificar::listView1_ItemChecked);
 			this->listView1->SelectedIndexChanged += gcnew System::EventHandler(this, &ServicoComunicacaoNotificar::listView1_SelectedIndexChanged_1);
 			// 
 			// columnHeader1
@@ -186,6 +190,7 @@ namespace Project1 {
 		this->Close();
 	}
 	private: System::Void listView1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+
 	}
 
 
@@ -218,9 +223,30 @@ private: System::Void bt_atualizar_Click(System::Object^  sender, System::EventA
 	atualizar();
 }
 private: System::Void bt_notificado_Click(System::Object^  sender, System::EventArgs^  e) {
+	String^ str1 = listView1->CheckedItems[0]->SubItems[0]->Text;
+	String^ str2 = listView1->CheckedItems[0]->SubItems[1]->Text;
+	String^ str3 = listView1->CheckedItems[0]->SubItems[2]->Text;
+	String^ str4 = listView1->CheckedItems[0]->SubItems[3]->Text;
+	String^ str5 = listView1->CheckedItems[0]->SubItems[4]->Text;
+	String^ str6 = listView1->CheckedItems[0]->SubItems[5]->Text;
 
+	std::string nome = msclr::interop::marshal_as<std::string>(str5);
+	std::string numS = msclr::interop::marshal_as<std::string>(str6);
+	int num = std::stoi(numS);
+	buracoDAO* aux = new buracoDAO();
+	aux->setStatusBuraco(2, nome, num);
+	
+	atualizar();
 }
 private: System::Void listView1_SelectedIndexChanged_1(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void listView1_ItemChecked(System::Object^  sender, System::Windows::Forms::ItemCheckedEventArgs^  e) {
+	if (listView1->CheckedIndices->Count != 1) {
+		this->bt_notificado->Enabled = false;
+	}
+	else {
+		this->bt_notificado->Enabled = true;
+	}
 }
 };
 }

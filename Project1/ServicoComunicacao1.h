@@ -420,8 +420,8 @@ private: System::Void FinalizarRegistro_Click(System::Object^  sender, System::E
 		temp->aumentaReclamacao(aux2->at(found)->getRua(), aux2->at(found)->getRuaNum());
 	}
 	else {
-		buracos * bura = new buracos(0, nomRua0, std::stoi(numRua0), std::stoi(tamanho0), posRua0, regional0, 1, 1, 0, nomCid0, tipoCom0, Com0, dataHora0, reclamacao);
-		buracoDAO * burDAO = new buracoDAO(0, nomRua0, std::stoi(numRua0), std::stoi(tamanho0), posRua0, regional0, 1, 1, 0, nomCid0, tipoCom0, Com0, dataHora0, reclamacao);
+		buracos * bura = new buracos(0, nomRua0, std::stoi(numRua0), std::stoi(tamanho0), posRua0, regional0, std::stoi(tamanho0), 1, 0, nomCid0, tipoCom0, Com0, dataHora0, reclamacao);
+		buracoDAO * burDAO = new buracoDAO(0, nomRua0, std::stoi(numRua0), std::stoi(tamanho0), posRua0, regional0, std::stoi(tamanho0), 1, 0, nomCid0, tipoCom0, Com0, dataHora0, reclamacao);
 
 		// no começo vou mandar 0, mas vai mudar na criação
 

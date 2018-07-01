@@ -33,7 +33,7 @@ public:
 	buracos* buscarRua(string nomeRua, int numeroRua);
 
 	vector<buracos*>* buracoDAO::buscarBuracos();
-	void buracoDAO::setStatusBuraco(int status);
+	void buracoDAO::setStatusBuraco(int statusBuraco, string rua, int num);
 	void aumentaReclamacao(string rua, int num);
 
 };

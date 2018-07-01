@@ -2,6 +2,7 @@
 #include "Despachador.h"
 #include "ServicoComunicacao0.h"
 #include "CadastroFuncionario.h"
+#include "ChefeEquipeTrabalho.h"
 #include <msclr\marshal_cppstd.h>
 #pragma once
 
@@ -285,7 +286,9 @@ namespace Project1 {
 
 					}
 					else if (tipo == "Chefe da Equipe") {
-
+						ChefeEquipeTrabalho^ aux = gcnew ChefeEquipeTrabalho();
+						aux->ShowDialog();
+						this->Close();
 					}
 					else if (tipo == "Despachador") {
 						Despachador^ aux = gcnew Despachador();
