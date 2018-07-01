@@ -1,6 +1,9 @@
 #include "OS.h"
 
+OS::OS()
+{
 
+}
 
 OS::OS(int numOS, int estimativaHoras, int estimativaEquipamento, int estimativaMaterial, int statusOS, int numBuraco)
 {

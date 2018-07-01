@@ -2,6 +2,9 @@
 #include "buracos.h"
 #include <string>
 #include <msclr\marshal_cppstd.h>
+#include "buracoDAO.h"
+#include "OS.h"
+#include "OSDAO.h"
 
 using namespace std;
 
@@ -399,11 +402,50 @@ private: System::Void FinalizarRegistro_Click(System::Object^  sender, System::E
 	string dataHora0 = msclr::interop::marshal_as<std::string>(this->data_contato_text->Text);
 	string reclamacao = msclr::interop::marshal_as<std::string>(this->hora_contato_text->Text);
 	
-	buracos * bura = new buracos(0, nomRua0, std::stoi(numRua0), std::stoi(tamanho0), posRua0, regional0, 1, 1, 0, nomCid0, tipoCom0, Com0,  dataHora0, reclamacao);
+	buracoDAO * temp = new buracoDAO();
+	buracos * aux;
+	vector<buracos*> * aux2;
+	int found = -1;
+
+	aux2 = temp->buscarBuracos();
+
+	for (int i = 0; i < aux2->size(); i++) {
+		if (aux2->at(i)->getRua() == nomRua0 && aux2->at(i)->getRuaNum() == std::stoi(numRua0)) {
+			found = i;
+			break;
+		}
+	}
+
+	if (found != -1) {
+		temp->aumentaReclamacao(aux2->at(found)->getRua(), aux2->at(found)->getRuaNum());
+	}
+	else {
+		buracos * bura = new buracos(0, nomRua0, std::stoi(numRua0), std::stoi(tamanho0), posRua0, regional0, 1, 1, 0, nomCid0, tipoCom0, Com0, dataHora0, reclamacao);
+		buracoDAO * burDAO = new buracoDAO(0, nomRua0, std::stoi(numRua0), std::stoi(tamanho0), posRua0, regional0, 1, 1, 0, nomCid0, tipoCom0, Com0, dataHora0, reclamacao);
+
+		// no começo vou mandar 0, mas vai mudar na criação
+
+		//PEGA NUMERO DO BURACO NO DB(gerado automaticamente)
+		aux = burDAO->buscarRua(nomRua0, std::stoi(numRua0));
+		int numeroBur = aux->getNum();
+		bura->setNum(numeroBur);
+
+		
+		//gera uma OS
+		//Contas para parâmetros da OS - feitas a partir dos dados e experiência da empresa de buracos
+		int estimativaHoras = std::stoi(tamanho0) * 3;
+		int estimativaEquipamento = std::stoi(tamanho0) * 30;
+		int estimativaMaterial = std::stoi(tamanho0) * 50;
+		
+		OS * os1 = new OS(0, estimativaHoras, estimativaEquipamento, estimativaMaterial, 0, numeroBur);
+		OSDAO * osd = new OSDAO(0, estimativaHoras, estimativaEquipamento, estimativaMaterial, 0,numeroBur);
+
+	}
 
 	ServicoComunicacao2_Pronto ^ telaNotificacaoFim = gcnew ServicoComunicacao2_Pronto();
 	telaNotificacaoFim->ShowDialog();
-
+	
+	delete aux; delete aux2; delete temp;
 	this->Close();
 }
 private: System::Void CancelaReg_Click(System::Object^  sender, System::EventArgs^  e) {

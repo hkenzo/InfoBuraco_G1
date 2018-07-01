@@ -153,6 +153,18 @@
     <ClCompile Include="mobilizacaoDAO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MyForm14.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="equipeTrabalho.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="telaEquipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OSDAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -293,6 +305,15 @@
     <ClInclude Include="mobilizacaoDAO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MyForm14.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="telaEquipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OSDAO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
@@ -386,6 +407,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="CadastroFuncionario.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaEquipe.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

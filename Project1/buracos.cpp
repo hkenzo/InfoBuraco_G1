@@ -1,6 +1,10 @@
 #include "buracos.h"
 
-
+buracos::buracos(int a, string b)
+{
+	this->numBuraco = a;
+	this->nomeRua = b;
+}
 
 buracos::buracos(int numBuraco, string nomeRua, int numeroRua, int tamanho, string posicao, string regional, int prioridade, int numReclamacoes, int statusBuraco, string nomeCidadao, string canalCidadao, string dadoCanal, string dataHora, string reclamacao)
 {
@@ -23,11 +27,11 @@ buracos::buracos(int numBuraco, string nomeRua, int numeroRua, int tamanho, stri
 
 	this->numBuraco = 0;
 	
-	buracoDAO * burDAO = new buracoDAO(numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco, nomeCidadao, canalCidadao, dadoCanal, dataHora, reclamacao);
+//	buracoDAO * burDAO = new buracoDAO(numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco, nomeCidadao, canalCidadao, dadoCanal, dataHora, reclamacao);
 	// no começo vou mandar 0, mas vai mudar na criação
 
 	// this -> numBuraco = pega no db
-	vector<buracoDAO*>* temp2 = burDAO->buscarRuae();//(numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco, nomeCidadao, canalCidadao, dadoCanal, dataHora, reclamacao);
+//	vector<buracoDAO*>* temp2 = burDAO->buscarRuae();//(numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco, nomeCidadao, canalCidadao, dadoCanal, dataHora, reclamacao);
 	//this->numBuraco = bur->buscarRua(this->nomeRua, this->numeroRua);
 	//int estimativaHoras = tamanho * 3;
 
@@ -51,3 +55,24 @@ buracos::~buracos()
 
 //void buracos::criarBuraco
 //};
+
+int buracos::getNum()
+{
+	return this->numBuraco;
+}
+
+void buracos::setNum(int numero)
+{
+	this->numBuraco = numero;
+}
+
+string buracos::getRua() 
+{
+	return this->nomeRua;
+}
+int buracos::getRuaNum() 
+{
+	return this->numeroRua;
+ }
+
+
