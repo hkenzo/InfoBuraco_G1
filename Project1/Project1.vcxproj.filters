@@ -153,16 +153,22 @@
     <ClCompile Include="mobilizacaoDAO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MyForm14.cpp">
+    <ClCompile Include="saidaOS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="equipeTrabalho.cpp">
+    <ClCompile Include="usuario.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="telaEquipe.cpp">
+    <ClCompile Include="usuarioDAO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OSDAO.cpp">
+    <ClCompile Include="login.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="saidaDAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="saida.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -305,13 +311,22 @@
     <ClInclude Include="mobilizacaoDAO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MyForm14.h">
+    <ClInclude Include="saidaOS.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="telaEquipe.h">
+    <ClInclude Include="usuario.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OSDAO.h">
+    <ClInclude Include="usuarioDAO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="login.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="saidaDAO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="saida.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -409,7 +424,10 @@
     <EmbeddedResource Include="CadastroFuncionario.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
-    <EmbeddedResource Include="telaEquipe.resx">
+    <EmbeddedResource Include="saidaMobilizacao.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="saidaOS.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>
