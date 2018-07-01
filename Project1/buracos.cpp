@@ -74,5 +74,21 @@ int buracos::getRuaNum()
 {
 	return this->numeroRua;
  }
+string buracos::getNomeCid() {
+	return this->nomeCidadao;
+}
 
+
+string buracos::getCanalCid()
+{
+	return this->canalCidadao;
+}
+string buracos::getDadoCanal()
+{
+	return this->dadoCanal;
+}
+string buracos::getDataHora()
+{
+	return this->dataHora;
+}
 

@@ -51,9 +51,6 @@
     <ClCompile Include="RemoverEquipamento.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Servico_Comunicacao_NotificarFinalizado.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="criarMaterial.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -171,6 +168,12 @@
     <ClCompile Include="saida.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="OSDAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ServicoComunicacaoNotificar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -207,9 +210,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Despachador.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Servico_Comunicacao_NotificarFinalizado.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="criarMaterial.h">
@@ -329,6 +329,12 @@
     <ClInclude Include="saida.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="OSDAO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ServicoComunicacaoNotificar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
@@ -428,6 +434,12 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="saidaOS.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="removerSaida.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

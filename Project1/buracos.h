@@ -40,6 +40,10 @@ public:
 	int buracos::getRuaNum();
 	~buracos();
 
+	string getNomeCid();
+	string getCanalCid();
+	string getDadoCanal();
+	string getDataHora();
 	//void criarBuraco(string nomRua, int numRua, string posRua, int tamanho, string regional, string tipoCom, string Com, string nomCid, string dataCont, string horaCont);
 
 };

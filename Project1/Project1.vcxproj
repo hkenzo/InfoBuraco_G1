@@ -177,6 +177,7 @@
     <ClCompile Include="Despachador.cpp" />
     <ClCompile Include="MySQLDAO.cpp" />
     <ClCompile Include="OS.cpp" />
+    <ClCompile Include="OSDAO.cpp" />
     <ClCompile Include="RemoverEquipamento.cpp" />
     <ClCompile Include="removerEquipe.cpp" />
     <ClCompile Include="removerMaterial.cpp" />
@@ -193,7 +194,7 @@
     <ClCompile Include="ServicoComunicacao1.cpp" />
     <ClCompile Include="ServicoComunicacao2.cpp" />
     <ClCompile Include="ServicoComunicacao2_Pronto.cpp" />
-    <ClCompile Include="Servico_Comunicacao_NotificarFinalizado.cpp" />
+    <ClCompile Include="ServicoComunicacaoNotificar.cpp" />
     <ClCompile Include="usuario.cpp" />
     <ClCompile Include="usuarioDAO.cpp" />
     <ClCompile Include="VizualizarBuracos.cpp" />
@@ -271,6 +272,7 @@
     </ClInclude>
     <ClInclude Include="MySQLDAO.h" />
     <ClInclude Include="OS.h" />
+    <ClInclude Include="OSDAO.h" />
     <ClInclude Include="RemoverEquipamento.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -315,7 +317,7 @@
     <ClInclude Include="ServicoComunicacao2_Pronto.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Servico_Comunicacao_NotificarFinalizado.h">
+    <ClInclude Include="ServicoComunicacaoNotificar.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="usuario.h" />
@@ -429,8 +431,8 @@
     <EmbeddedResource Include="ServicoComunicacao2_Pronto.resx">
       <DependentUpon>ServicoComunicacao2_Pronto.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Servico_Comunicacao_NotificarFinalizado.resx">
-      <DependentUpon>Servico_Comunicacao_NotificarFinalizado.h</DependentUpon>
+    <EmbeddedResource Include="ServicoComunicacaoNotificar.resx">
+      <DependentUpon>ServicoComunicacaoNotificar.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VizualizarBuracos.resx">
       <DependentUpon>VizualizarBuracos.h</DependentUpon>
