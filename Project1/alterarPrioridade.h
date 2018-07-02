@@ -81,9 +81,10 @@ namespace Project1 {
 			// 
 			this->bt_confirmarPrioridade->BackColor = System::Drawing::Color::PowderBlue;
 			this->bt_confirmarPrioridade->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->bt_confirmarPrioridade->Location = System::Drawing::Point(202, 210);
+			this->bt_confirmarPrioridade->Location = System::Drawing::Point(269, 258);
+			this->bt_confirmarPrioridade->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->bt_confirmarPrioridade->Name = L"bt_confirmarPrioridade";
-			this->bt_confirmarPrioridade->Size = System::Drawing::Size(103, 46);
+			this->bt_confirmarPrioridade->Size = System::Drawing::Size(137, 57);
 			this->bt_confirmarPrioridade->TabIndex = 0;
 			this->bt_confirmarPrioridade->Text = L"Confirmar";
 			this->bt_confirmarPrioridade->UseVisualStyleBackColor = false;
@@ -92,9 +93,10 @@ namespace Project1 {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(28, 112);
+			this->label1->Location = System::Drawing::Point(37, 138);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(81, 13);
+			this->label1->Size = System::Drawing::Size(106, 17);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"Escolha buraco";
 			this->label1->Click += gcnew System::EventHandler(this, &MyForm1::label1_Click);
@@ -102,34 +104,38 @@ namespace Project1 {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(55, 146);
+			this->label2->Location = System::Drawing::Point(73, 180);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(54, 13);
+			this->label2->Size = System::Drawing::Size(73, 17);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"Prioridade";
 			// 
 			// prioridadeTextBox
 			// 
-			this->prioridadeTextBox->Location = System::Drawing::Point(117, 143);
+			this->prioridadeTextBox->Location = System::Drawing::Point(156, 176);
+			this->prioridadeTextBox->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->prioridadeTextBox->Name = L"prioridadeTextBox";
-			this->prioridadeTextBox->Size = System::Drawing::Size(44, 20);
+			this->prioridadeTextBox->Size = System::Drawing::Size(57, 22);
 			this->prioridadeTextBox->TabIndex = 3;
 			// 
 			// BuracoComboBox
 			// 
 			this->BuracoComboBox->FormattingEnabled = true;
-			this->BuracoComboBox->Location = System::Drawing::Point(117, 109);
+			this->BuracoComboBox->Location = System::Drawing::Point(156, 134);
+			this->BuracoComboBox->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->BuracoComboBox->Name = L"BuracoComboBox";
-			this->BuracoComboBox->Size = System::Drawing::Size(70, 21);
+			this->BuracoComboBox->Size = System::Drawing::Size(92, 24);
 			this->BuracoComboBox->TabIndex = 4;
 			// 
 			// bt_calcelarPrioridade
 			// 
 			this->bt_calcelarPrioridade->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->bt_calcelarPrioridade->Location = System::Drawing::Point(34, 210);
+			this->bt_calcelarPrioridade->Location = System::Drawing::Point(45, 258);
+			this->bt_calcelarPrioridade->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->bt_calcelarPrioridade->Name = L"bt_calcelarPrioridade";
-			this->bt_calcelarPrioridade->Size = System::Drawing::Size(107, 46);
+			this->bt_calcelarPrioridade->Size = System::Drawing::Size(143, 57);
 			this->bt_calcelarPrioridade->TabIndex = 5;
 			this->bt_calcelarPrioridade->Text = L"Cancelar";
 			this->bt_calcelarPrioridade->UseVisualStyleBackColor = false;
@@ -138,17 +144,18 @@ namespace Project1 {
 			// 
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
-			this->label3->Location = System::Drawing::Point(54, 22);
+			this->label3->Location = System::Drawing::Point(72, 27);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(208, 20);
+			this->label3->Size = System::Drawing::Size(256, 25);
 			this->label3->TabIndex = 24;
 			this->label3->Text = L"Alterar Prioridade do Buraco";
 			// 
 			// MyForm1
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(317, 268);
+			this->ClientSize = System::Drawing::Size(423, 330);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->bt_calcelarPrioridade);
 			this->Controls->Add(this->BuracoComboBox);
@@ -156,8 +163,10 @@ namespace Project1 {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->bt_confirmarPrioridade);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"MyForm1";
 			this->Text = L"Aterar Prioridade";
+			this->Load += gcnew System::EventHandler(this, &MyForm1::MyForm1_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -170,5 +179,7 @@ namespace Project1 {
 
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
-	};
+	private: System::Void MyForm1_Load(System::Object^  sender, System::EventArgs^  e) {
+	}
+};
 }

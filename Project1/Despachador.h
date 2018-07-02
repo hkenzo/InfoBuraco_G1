@@ -267,33 +267,9 @@ namespace Project1 {
 	}
 	private: System::Void label1_Click_1(System::Object^  sender, System::EventArgs^  e) {
 	}
-	private: System::Void comboBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-		if (comboBox1->SelectedItem == "Hoje") {
-			listBox1->Items->Add("Código 12376");
-			listBox1->Items->Add("Código 35");
-			listBox1->Items->Add("Código 13");
+	
 
-		}
-		else if (comboBox1->SelectedItem == "Nesta semana") {
-			listBox1->Items->Add("Código 12376");
-			listBox1->Items->Add("Código 35");
-			listBox1->Items->Add("Código 13");
-			listBox1->Items->Add("Código 1476");
-			listBox1->Items->Add("Código 3225");
-
-		}
-
-		else if (comboBox1->SelectedItem == "Neste mês") {
-			listBox1->Items->Add("Código 12376");
-			listBox1->Items->Add("Código 35");
-			listBox1->Items->Add("Código 13");
-			listBox1->Items->Add("Código 1476");
-			listBox1->Items->Add("Código 3225");
-			listBox1->Items->Add("Código 5576");
-			listBox1->Items->Add("Código 55625");
-		}
-
-	}
+	
 
 	private: System::Void bt_g_equipe_Click(System::Object^  sender, System::EventArgs^  e) {
 		gerenciarEquipe^ gerenciar = gcnew gerenciarEquipe();
