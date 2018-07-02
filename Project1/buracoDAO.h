@@ -35,6 +35,7 @@ public:
 	vector<buracos*>* buracoDAO::buscarBuracos();
 	void buracoDAO::setStatusBuraco(int statusBuraco, string rua, int num);
 	void aumentaReclamacao(string rua, int num);
+	void setPrioridadeBuraco(int prioridade, string rua, int num);
 
 };
 

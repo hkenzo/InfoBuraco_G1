@@ -259,3 +259,29 @@ void buracoDAO::setStatusBuraco(int statusBuraco, string rua, int num)
 		log = e.what();
 	}
 }
+void buracoDAO::setPrioridadeBuraco(int prioridade, string rua, int num)
+{
+	int pri = prioridade;
+	string nome = rua;
+	int numero = num;
+	string log;
+	sql::Connection * connection;
+	sql::Statement* statement;
+	sql::PreparedStatement * preparedStatement;
+	sql::ResultSet *resultSet;
+	try {
+		MySQLDAO* mysqldao = MySQLDAO::getInstance();
+		connection = mysqldao->getConnection();
+		preparedStatement = connection->prepareStatement("UPDATE buraco SET prioridade = ? WHERE nomeRua = ? and numeroRua = ?");
+
+		preparedStatement->setInt(1, pri);
+		preparedStatement->setString(2, nome.c_str());
+		preparedStatement->setInt(3, numero);
+		resultSet = preparedStatement->executeQuery();
+	}
+	catch (sql::SQLException e)
+	{
+		connection->close();
+		log = e.what();
+	}
+}

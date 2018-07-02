@@ -1,3 +1,10 @@
+#include <iostream>
+#include <string>
+#include "alterarPrioridade.h"
+#include "buracos.h"
+#include "buracoDAO.h"
+#include "OS.h"
+#include "OSDAO.h"
 #pragma once
 
 namespace Project1 {
@@ -44,6 +51,8 @@ namespace Project1 {
 	private: System::Windows::Forms::ColumnHeader^  columnHeader3;
 	private: System::Windows::Forms::ColumnHeader^  columnHeader4;
 	private: System::Windows::Forms::Button^  create_Mobilizacao_bt;
+
+
 
 
 	private:
@@ -123,6 +132,7 @@ namespace Project1 {
 			this->create_Mobilizacao_bt->TabIndex = 5;
 			this->create_Mobilizacao_bt->Text = L"Alterar Prioridade";
 			this->create_Mobilizacao_bt->UseVisualStyleBackColor = false;
+			this->create_Mobilizacao_bt->Click += gcnew System::EventHandler(this, &regionalOS::create_Mobilizacao_bt_Click);
 			// 
 			// regionalOS
 			// 
@@ -139,5 +149,9 @@ namespace Project1 {
 
 		}
 #pragma endregion
-	};
+	private: System::Void create_Mobilizacao_bt_Click(System::Object^  sender, System::EventArgs^  e) {
+		alterarPrioridade^ altera = gcnew alterarPrioridade();
+		altera->ShowDialog();
+	}
+};
 }

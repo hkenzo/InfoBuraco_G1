@@ -6,13 +6,12 @@ using namespace std;
 
 class saida
 {
-private:
+public:
 
 	string data;
 	int numOS;
 
 
-public:
 
 	saida(string data, int numOS);
 	virtual ~saida();

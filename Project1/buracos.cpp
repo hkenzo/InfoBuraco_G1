@@ -120,3 +120,7 @@ string buracos::getReclamacao()
 {
 	return this->reclamacao;
 }
+void buracos::setPrioridade(int novaPri)
+{
+	this->prioridade = novaPri;
+}

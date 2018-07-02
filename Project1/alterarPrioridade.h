@@ -1,3 +1,7 @@
+#include <iostream>
+#include <string>
+#include "buracos.h"
+#include "buracoDAO.h"
 #pragma once
 
 namespace Project1 {
@@ -160,6 +164,8 @@ namespace Project1 {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		buracoDAO * aux = new buracoDAO;
+
 	}
 
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {

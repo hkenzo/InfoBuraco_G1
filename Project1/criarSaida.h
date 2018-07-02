@@ -34,15 +34,25 @@ namespace Project1 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^  label1;
-	private: System::Windows::Forms::Button^  button3;
-	private: System::Windows::Forms::ListBox^  listBox2;
-	private: System::Windows::Forms::Label^  label2;
-	private: System::Windows::Forms::Label^  label3;
-	private: System::Windows::Forms::Button^  button2;
-	private: System::Windows::Forms::Button^  button1;
-	private: System::Windows::Forms::ListBox^  listBox1;
-	private: System::Windows::Forms::Button^  cancel_create_equpt_bt;
+	private: System::Windows::Forms::Label^  label_criarSaida;
+	protected:
+
+	private: System::Windows::Forms::Button^  bt_proximo;
+	private: System::Windows::Forms::ListBox^  listBox_ordenadasOS;
+	private: System::Windows::Forms::Label^  label_disponiveisOS;
+	private: System::Windows::Forms::Label^  label_ordenadasOS;
+
+
+
+
+	private: System::Windows::Forms::Button^  bt_removerOS;
+
+	private: System::Windows::Forms::Button^  bt_incluirOS;
+
+	private: System::Windows::Forms::ListBox^  listBox_disponiveisOS;
+
+	private: System::Windows::Forms::Button^  bt_cancelar;
+
 	protected:
 
 	private:
@@ -58,131 +68,131 @@ namespace Project1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->listBox2 = (gcnew System::Windows::Forms::ListBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
-			this->cancel_create_equpt_bt = (gcnew System::Windows::Forms::Button());
+			this->label_criarSaida = (gcnew System::Windows::Forms::Label());
+			this->bt_proximo = (gcnew System::Windows::Forms::Button());
+			this->listBox_ordenadasOS = (gcnew System::Windows::Forms::ListBox());
+			this->label_disponiveisOS = (gcnew System::Windows::Forms::Label());
+			this->label_ordenadasOS = (gcnew System::Windows::Forms::Label());
+			this->bt_removerOS = (gcnew System::Windows::Forms::Button());
+			this->bt_incluirOS = (gcnew System::Windows::Forms::Button());
+			this->listBox_disponiveisOS = (gcnew System::Windows::Forms::ListBox());
+			this->bt_cancelar = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
-			// label1
+			// label_criarSaida
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
-			this->label1->Location = System::Drawing::Point(232, 21);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(101, 24);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Criar Saída";
+			this->label_criarSaida->AutoSize = true;
+			this->label_criarSaida->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
+			this->label_criarSaida->Location = System::Drawing::Point(232, 21);
+			this->label_criarSaida->Name = L"label_criarSaida";
+			this->label_criarSaida->Size = System::Drawing::Size(101, 24);
+			this->label_criarSaida->TabIndex = 0;
+			this->label_criarSaida->Text = L"Criar Saída";
 			// 
-			// button3
+			// bt_proximo
 			// 
-			this->button3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+			this->bt_proximo->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button3->Location = System::Drawing::Point(438, 215);
-			this->button3->Margin = System::Windows::Forms::Padding(2);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(95, 41);
-			this->button3->TabIndex = 51;
-			this->button3->Text = L"Próximo";
-			this->button3->UseVisualStyleBackColor = false;
+			this->bt_proximo->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->bt_proximo->Location = System::Drawing::Point(438, 215);
+			this->bt_proximo->Margin = System::Windows::Forms::Padding(2);
+			this->bt_proximo->Name = L"bt_proximo";
+			this->bt_proximo->Size = System::Drawing::Size(95, 41);
+			this->bt_proximo->TabIndex = 51;
+			this->bt_proximo->Text = L"Próximo";
+			this->bt_proximo->UseVisualStyleBackColor = false;
 			// 
-			// listBox2
+			// listBox_ordenadasOS
 			// 
-			this->listBox2->FormattingEnabled = true;
-			this->listBox2->Location = System::Drawing::Point(247, 115);
-			this->listBox2->Name = L"listBox2";
-			this->listBox2->Size = System::Drawing::Size(149, 329);
-			this->listBox2->TabIndex = 50;
+			this->listBox_ordenadasOS->FormattingEnabled = true;
+			this->listBox_ordenadasOS->Location = System::Drawing::Point(247, 115);
+			this->listBox_ordenadasOS->Name = L"listBox_ordenadasOS";
+			this->listBox_ordenadasOS->Size = System::Drawing::Size(149, 329);
+			this->listBox_ordenadasOS->TabIndex = 50;
 			// 
-			// label2
+			// label_disponiveisOS
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
-			this->label2->Location = System::Drawing::Point(60, 84);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(88, 15);
-			this->label2->TabIndex = 49;
-			this->label2->Text = L"OS disponíveis";
+			this->label_disponiveisOS->AutoSize = true;
+			this->label_disponiveisOS->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
+			this->label_disponiveisOS->Location = System::Drawing::Point(60, 84);
+			this->label_disponiveisOS->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label_disponiveisOS->Name = L"label_disponiveisOS";
+			this->label_disponiveisOS->Size = System::Drawing::Size(88, 15);
+			this->label_disponiveisOS->TabIndex = 49;
+			this->label_disponiveisOS->Text = L"OS disponíveis";
 			// 
-			// label3
+			// label_ordenadasOS
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
-			this->label3->Location = System::Drawing::Point(281, 84);
-			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(86, 15);
-			this->label3->TabIndex = 48;
-			this->label3->Text = L"OS ordenadas";
+			this->label_ordenadasOS->AutoSize = true;
+			this->label_ordenadasOS->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
+			this->label_ordenadasOS->Location = System::Drawing::Point(281, 84);
+			this->label_ordenadasOS->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label_ordenadasOS->Name = L"label_ordenadasOS";
+			this->label_ordenadasOS->Size = System::Drawing::Size(86, 15);
+			this->label_ordenadasOS->TabIndex = 48;
+			this->label_ordenadasOS->Text = L"OS ordenadas";
 			// 
-			// button2
+			// bt_removerOS
 			// 
-			this->button2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+			this->bt_removerOS->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button2->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->button2->Location = System::Drawing::Point(191, 282);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(42, 20);
-			this->button2->TabIndex = 47;
-			this->button2->Text = L"<<";
-			this->button2->UseVisualStyleBackColor = false;
+			this->bt_removerOS->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->bt_removerOS->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->bt_removerOS->Location = System::Drawing::Point(191, 282);
+			this->bt_removerOS->Name = L"bt_removerOS";
+			this->bt_removerOS->Size = System::Drawing::Size(42, 20);
+			this->bt_removerOS->TabIndex = 47;
+			this->bt_removerOS->Text = L"<<";
+			this->bt_removerOS->UseVisualStyleBackColor = false;
 			// 
-			// button1
+			// bt_incluirOS
 			// 
-			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+			this->bt_incluirOS->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button1->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->button1->Location = System::Drawing::Point(191, 240);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(42, 20);
-			this->button1->TabIndex = 46;
-			this->button1->Text = L">>";
-			this->button1->UseVisualStyleBackColor = false;
+			this->bt_incluirOS->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->bt_incluirOS->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->bt_incluirOS->Location = System::Drawing::Point(191, 240);
+			this->bt_incluirOS->Name = L"bt_incluirOS";
+			this->bt_incluirOS->Size = System::Drawing::Size(42, 20);
+			this->bt_incluirOS->TabIndex = 46;
+			this->bt_incluirOS->Text = L">>";
+			this->bt_incluirOS->UseVisualStyleBackColor = false;
 			// 
-			// listBox1
+			// listBox_disponiveisOS
 			// 
-			this->listBox1->FormattingEnabled = true;
-			this->listBox1->Location = System::Drawing::Point(28, 115);
-			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(149, 329);
-			this->listBox1->TabIndex = 45;
+			this->listBox_disponiveisOS->FormattingEnabled = true;
+			this->listBox_disponiveisOS->Location = System::Drawing::Point(28, 115);
+			this->listBox_disponiveisOS->Name = L"listBox_disponiveisOS";
+			this->listBox_disponiveisOS->Size = System::Drawing::Size(149, 329);
+			this->listBox_disponiveisOS->TabIndex = 45;
 			// 
-			// cancel_create_equpt_bt
+			// bt_cancelar
 			// 
-			this->cancel_create_equpt_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
-				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->cancel_create_equpt_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->cancel_create_equpt_bt->Location = System::Drawing::Point(438, 301);
-			this->cancel_create_equpt_bt->Margin = System::Windows::Forms::Padding(2);
-			this->cancel_create_equpt_bt->Name = L"cancel_create_equpt_bt";
-			this->cancel_create_equpt_bt->Size = System::Drawing::Size(95, 41);
-			this->cancel_create_equpt_bt->TabIndex = 44;
-			this->cancel_create_equpt_bt->Text = L"Cancelar";
-			this->cancel_create_equpt_bt->UseVisualStyleBackColor = false;
+			this->bt_cancelar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->bt_cancelar->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->bt_cancelar->Location = System::Drawing::Point(438, 301);
+			this->bt_cancelar->Margin = System::Windows::Forms::Padding(2);
+			this->bt_cancelar->Name = L"bt_cancelar";
+			this->bt_cancelar->Size = System::Drawing::Size(95, 41);
+			this->bt_cancelar->TabIndex = 44;
+			this->bt_cancelar->Text = L"Cancelar";
+			this->bt_cancelar->UseVisualStyleBackColor = false;
 			// 
 			// criarSaida
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(565, 500);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->listBox2);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->listBox1);
-			this->Controls->Add(this->cancel_create_equpt_bt);
-			this->Controls->Add(this->label1);
+			this->Controls->Add(this->bt_proximo);
+			this->Controls->Add(this->listBox_ordenadasOS);
+			this->Controls->Add(this->label_disponiveisOS);
+			this->Controls->Add(this->label_ordenadasOS);
+			this->Controls->Add(this->bt_removerOS);
+			this->Controls->Add(this->bt_incluirOS);
+			this->Controls->Add(this->listBox_disponiveisOS);
+			this->Controls->Add(this->bt_cancelar);
+			this->Controls->Add(this->label_criarSaida);
 			this->Name = L"criarSaida";
 			this->Text = L"criarSaida";
 			this->ResumeLayout(false);

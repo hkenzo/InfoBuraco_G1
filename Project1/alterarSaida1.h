@@ -34,16 +34,28 @@ namespace Project1 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^  label5;
-	private: System::Windows::Forms::DateTimePicker^  dateTimePicker1;
-	private: System::Windows::Forms::Label^  label3;
-	private: System::Windows::Forms::Label^  label1;
-	private: System::Windows::Forms::TextBox^  textBox1;
-	private: System::Windows::Forms::TextBox^  textBox2;
-	private: System::Windows::Forms::Label^  label2;
-	private: System::Windows::Forms::Button^  button3;
-	private: System::Windows::Forms::Button^  cancel_create_equpt_bt;
-	private: System::Windows::Forms::Button^  Confirm_Bt;
+	private: System::Windows::Forms::Label^  label_alterarSaida;
+	private: System::Windows::Forms::DateTimePicker^  dateTimePicker_Saida;
+	protected:
+
+
+	private: System::Windows::Forms::Label^  lb_dataSaida;
+	private: System::Windows::Forms::Label^  lb_equipeAtual;
+	private: System::Windows::Forms::TextBox^  textBox_equipeAtual;
+	private: System::Windows::Forms::TextBox^  textBox_equipeNova;
+
+
+
+
+
+	private: System::Windows::Forms::Label^  lb_equipeNova;
+	private: System::Windows::Forms::Button^  bt_proximo;
+	private: System::Windows::Forms::Button^  bt_cancelar;
+
+
+
+	private: System::Windows::Forms::Button^  bt_confirmar;
+
 	protected:
 
 	private:
@@ -59,138 +71,138 @@ namespace Project1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->cancel_create_equpt_bt = (gcnew System::Windows::Forms::Button());
-			this->Confirm_Bt = (gcnew System::Windows::Forms::Button());
+			this->label_alterarSaida = (gcnew System::Windows::Forms::Label());
+			this->dateTimePicker_Saida = (gcnew System::Windows::Forms::DateTimePicker());
+			this->lb_dataSaida = (gcnew System::Windows::Forms::Label());
+			this->lb_equipeAtual = (gcnew System::Windows::Forms::Label());
+			this->textBox_equipeAtual = (gcnew System::Windows::Forms::TextBox());
+			this->textBox_equipeNova = (gcnew System::Windows::Forms::TextBox());
+			this->lb_equipeNova = (gcnew System::Windows::Forms::Label());
+			this->bt_proximo = (gcnew System::Windows::Forms::Button());
+			this->bt_cancelar = (gcnew System::Windows::Forms::Button());
+			this->bt_confirmar = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
-			// label5
+			// label_alterarSaida
 			// 
-			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
-			this->label5->Location = System::Drawing::Point(231, 9);
-			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(116, 24);
-			this->label5->TabIndex = 35;
-			this->label5->Text = L"Alterar Saída";
+			this->label_alterarSaida->AutoSize = true;
+			this->label_alterarSaida->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14));
+			this->label_alterarSaida->Location = System::Drawing::Point(231, 9);
+			this->label_alterarSaida->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label_alterarSaida->Name = L"label_alterarSaida";
+			this->label_alterarSaida->Size = System::Drawing::Size(116, 24);
+			this->label_alterarSaida->TabIndex = 35;
+			this->label_alterarSaida->Text = L"Alterar Saída";
 			// 
-			// dateTimePicker1
+			// dateTimePicker_Saida
 			// 
-			this->dateTimePicker1->Location = System::Drawing::Point(192, 80);
-			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(229, 20);
-			this->dateTimePicker1->TabIndex = 47;
+			this->dateTimePicker_Saida->Location = System::Drawing::Point(192, 80);
+			this->dateTimePicker_Saida->Name = L"dateTimePicker_Saida";
+			this->dateTimePicker_Saida->Size = System::Drawing::Size(229, 20);
+			this->dateTimePicker_Saida->TabIndex = 47;
 			// 
-			// label3
+			// lb_dataSaida
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
-			this->label3->Location = System::Drawing::Point(136, 80);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(38, 17);
-			this->label3->TabIndex = 46;
-			this->label3->Text = L"Data";
-			this->label3->Click += gcnew System::EventHandler(this, &alterarSaida1::label3_Click);
+			this->lb_dataSaida->AutoSize = true;
+			this->lb_dataSaida->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->lb_dataSaida->Location = System::Drawing::Point(136, 80);
+			this->lb_dataSaida->Name = L"lb_dataSaida";
+			this->lb_dataSaida->Size = System::Drawing::Size(38, 17);
+			this->lb_dataSaida->TabIndex = 46;
+			this->lb_dataSaida->Text = L"Data";
+			this->lb_dataSaida->Click += gcnew System::EventHandler(this, &alterarSaida1::label3_Click);
 			// 
-			// label1
+			// lb_equipeAtual
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
-			this->label1->Location = System::Drawing::Point(27, 139);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(147, 15);
-			this->label1->TabIndex = 48;
-			this->label1->Text = L"Equipe de trabalho [Atual]";
+			this->lb_equipeAtual->AutoSize = true;
+			this->lb_equipeAtual->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
+			this->lb_equipeAtual->Location = System::Drawing::Point(27, 139);
+			this->lb_equipeAtual->Name = L"lb_equipeAtual";
+			this->lb_equipeAtual->Size = System::Drawing::Size(147, 15);
+			this->lb_equipeAtual->TabIndex = 48;
+			this->lb_equipeAtual->Text = L"Equipe de trabalho [Atual]";
 			// 
-			// textBox1
+			// textBox_equipeAtual
 			// 
-			this->textBox1->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->textBox1->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->textBox1->Location = System::Drawing::Point(192, 138);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(77, 20);
-			this->textBox1->TabIndex = 49;
+			this->textBox_equipeAtual->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->textBox_equipeAtual->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->textBox_equipeAtual->Location = System::Drawing::Point(192, 138);
+			this->textBox_equipeAtual->Name = L"textBox_equipeAtual";
+			this->textBox_equipeAtual->Size = System::Drawing::Size(77, 20);
+			this->textBox_equipeAtual->TabIndex = 49;
 			// 
-			// textBox2
+			// textBox_equipeNova
 			// 
-			this->textBox2->BackColor = System::Drawing::SystemColors::HighlightText;
-			this->textBox2->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->textBox2->Location = System::Drawing::Point(192, 194);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(77, 20);
-			this->textBox2->TabIndex = 51;
+			this->textBox_equipeNova->BackColor = System::Drawing::SystemColors::HighlightText;
+			this->textBox_equipeNova->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->textBox_equipeNova->Location = System::Drawing::Point(192, 194);
+			this->textBox_equipeNova->Name = L"textBox_equipeNova";
+			this->textBox_equipeNova->Size = System::Drawing::Size(77, 20);
+			this->textBox_equipeNova->TabIndex = 51;
 			// 
-			// label2
+			// lb_equipeNova
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
-			this->label2->Location = System::Drawing::Point(27, 195);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(148, 15);
-			this->label2->TabIndex = 50;
-			this->label2->Text = L"Equipe de trabalho [Novo]";
+			this->lb_equipeNova->AutoSize = true;
+			this->lb_equipeNova->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9));
+			this->lb_equipeNova->Location = System::Drawing::Point(27, 195);
+			this->lb_equipeNova->Name = L"lb_equipeNova";
+			this->lb_equipeNova->Size = System::Drawing::Size(148, 15);
+			this->lb_equipeNova->TabIndex = 50;
+			this->lb_equipeNova->Text = L"Equipe de trabalho [Novo]";
 			// 
-			// button3
+			// bt_proximo
 			// 
-			this->button3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+			this->bt_proximo->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button3->Location = System::Drawing::Point(462, 84);
-			this->button3->Margin = System::Windows::Forms::Padding(2);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(94, 43);
-			this->button3->TabIndex = 54;
-			this->button3->Text = L"Próximo";
-			this->button3->UseVisualStyleBackColor = false;
+			this->bt_proximo->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->bt_proximo->Location = System::Drawing::Point(462, 84);
+			this->bt_proximo->Margin = System::Windows::Forms::Padding(2);
+			this->bt_proximo->Name = L"bt_proximo";
+			this->bt_proximo->Size = System::Drawing::Size(94, 43);
+			this->bt_proximo->TabIndex = 54;
+			this->bt_proximo->Text = L"Próximo";
+			this->bt_proximo->UseVisualStyleBackColor = false;
 			// 
-			// cancel_create_equpt_bt
+			// bt_cancelar
 			// 
-			this->cancel_create_equpt_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
-				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->cancel_create_equpt_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->cancel_create_equpt_bt->Location = System::Drawing::Point(462, 216);
-			this->cancel_create_equpt_bt->Margin = System::Windows::Forms::Padding(2);
-			this->cancel_create_equpt_bt->Name = L"cancel_create_equpt_bt";
-			this->cancel_create_equpt_bt->Size = System::Drawing::Size(94, 43);
-			this->cancel_create_equpt_bt->TabIndex = 52;
-			this->cancel_create_equpt_bt->Text = L"Cancelar";
-			this->cancel_create_equpt_bt->UseVisualStyleBackColor = false;
+			this->bt_cancelar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->bt_cancelar->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->bt_cancelar->Location = System::Drawing::Point(462, 216);
+			this->bt_cancelar->Margin = System::Windows::Forms::Padding(2);
+			this->bt_cancelar->Name = L"bt_cancelar";
+			this->bt_cancelar->Size = System::Drawing::Size(94, 43);
+			this->bt_cancelar->TabIndex = 52;
+			this->bt_cancelar->Text = L"Cancelar";
+			this->bt_cancelar->UseVisualStyleBackColor = false;
 			// 
-			// Confirm_Bt
+			// bt_confirmar
 			// 
-			this->Confirm_Bt->BackColor = System::Drawing::Color::PowderBlue;
-			this->Confirm_Bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->Confirm_Bt->Location = System::Drawing::Point(462, 145);
-			this->Confirm_Bt->Margin = System::Windows::Forms::Padding(2);
-			this->Confirm_Bt->Name = L"Confirm_Bt";
-			this->Confirm_Bt->Size = System::Drawing::Size(94, 46);
-			this->Confirm_Bt->TabIndex = 55;
-			this->Confirm_Bt->Text = L"Voltar";
-			this->Confirm_Bt->UseVisualStyleBackColor = false;
+			this->bt_confirmar->BackColor = System::Drawing::Color::PowderBlue;
+			this->bt_confirmar->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->bt_confirmar->Location = System::Drawing::Point(462, 145);
+			this->bt_confirmar->Margin = System::Windows::Forms::Padding(2);
+			this->bt_confirmar->Name = L"bt_confirmar";
+			this->bt_confirmar->Size = System::Drawing::Size(94, 46);
+			this->bt_confirmar->TabIndex = 55;
+			this->bt_confirmar->Text = L"Voltar";
+			this->bt_confirmar->UseVisualStyleBackColor = false;
 			// 
 			// alterarSaida1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(579, 280);
-			this->Controls->Add(this->Confirm_Bt);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->cancel_create_equpt_bt);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->label1);
-			this->Controls->Add(this->dateTimePicker1);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label5);
+			this->Controls->Add(this->bt_confirmar);
+			this->Controls->Add(this->bt_proximo);
+			this->Controls->Add(this->bt_cancelar);
+			this->Controls->Add(this->textBox_equipeNova);
+			this->Controls->Add(this->lb_equipeNova);
+			this->Controls->Add(this->textBox_equipeAtual);
+			this->Controls->Add(this->lb_equipeAtual);
+			this->Controls->Add(this->dateTimePicker_Saida);
+			this->Controls->Add(this->lb_dataSaida);
+			this->Controls->Add(this->label_alterarSaida);
 			this->Name = L"alterarSaida1";
 			this->Text = L"alterarSaida1";
 			this->Load += gcnew System::EventHandler(this, &alterarSaida1::alterarSaida1_Load);

@@ -51,6 +51,7 @@ public:
 	string getDadoCanal();
 	string getDataHora();
 	string getReclamacao();
+	void setPrioridade(int novaPri);
 	//void criarBuraco(string nomRua, int numRua, string posRua, int tamanho, string regional, string tipoCom, string Com, string nomCid, string dataCont, string horaCont);
 
 };
