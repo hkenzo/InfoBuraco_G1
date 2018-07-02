@@ -221,12 +221,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MyForm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Janela4.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CaixaDeDialogo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -398,18 +392,6 @@
     <ClInclude Include="historicoBuraco.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MyForm1.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MyForm11.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MyForm12.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MyForm13.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="regionalOS.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -563,6 +545,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="dashboardRegional.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="criarSaida2.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

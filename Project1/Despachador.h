@@ -65,7 +65,7 @@ namespace Project1 {
 
 
 
-	private: System::Windows::Forms::ComboBox^  comboBox1;
+
 	private: System::Windows::Forms::Label^  label1;
 
 	private: System::Windows::Forms::Button^  bt_g_saida;
@@ -97,7 +97,6 @@ namespace Project1 {
 			this->bt_g_equipamento = (gcnew System::Windows::Forms::Button());
 			this->bt_g_mob = (gcnew System::Windows::Forms::Button());
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->bt_g_saida = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1->SuspendLayout();
@@ -200,18 +199,6 @@ namespace Project1 {
 			this->listBox1->TabIndex = 12;
 			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Despachador::listBox1_SelectedIndexChanged);
 			// 
-			// comboBox1
-			// 
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Hoje", L"Nesta semana", L"Neste mês" });
-			this->comboBox1->Location = System::Drawing::Point(71, 90);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(4);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(288, 24);
-			this->comboBox1->TabIndex = 13;
-			this->comboBox1->Text = L"Selecionar";
-			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Despachador::comboBox1_SelectedIndexChanged);
-			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
@@ -220,9 +207,9 @@ namespace Project1 {
 			this->label1->Location = System::Drawing::Point(103, 62);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(221, 24);
+			this->label1->Size = System::Drawing::Size(216, 24);
 			this->label1->TabIndex = 14;
-			this->label1->Text = L"OS\'s a serem cumpridas:";
+			this->label1->Text = L"OS\'s a serem cumpridas";
 			// 
 			// bt_g_saida
 			// 
@@ -246,7 +233,6 @@ namespace Project1 {
 			this->ClientSize = System::Drawing::Size(865, 533);
 			this->Controls->Add(this->bt_g_saida);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->bt_g_mob);
 			this->Controls->Add(this->bt_g_equipamento);

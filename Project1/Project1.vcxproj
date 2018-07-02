@@ -296,9 +296,6 @@
     <ClInclude Include="historicoBuraco.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Janela4.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -306,22 +303,7 @@
     <ClInclude Include="MaterialDAO.h" />
     <ClInclude Include="mobilizacao.h" />
     <ClInclude Include="mobilizacaoDAO.h" />
-    <ClInclude Include="MyForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="Despachador.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="MyForm1.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="MyForm11.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="MyForm12.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="MyForm13.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MySQLDAO.h" />
@@ -467,14 +449,8 @@
     <EmbeddedResource Include="historicoBuraco.resx">
       <DependentUpon>historicoBuraco.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Janela4.resx">
-      <DependentUpon>Janela4.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyForm.resx">
-      <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Despachador.resx">
       <DependentUpon>Despachador.h</DependentUpon>
