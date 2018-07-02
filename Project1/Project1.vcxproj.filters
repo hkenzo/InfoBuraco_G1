@@ -192,18 +192,6 @@
     <ClCompile Include="historicoBuraco.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MyForm1.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MyForm11.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MyForm12.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MyForm13.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="regionalOS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -409,12 +397,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MyForm.resx">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Janela4.resx">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
     <EmbeddedResource Include="CaixaDeDialogo.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
