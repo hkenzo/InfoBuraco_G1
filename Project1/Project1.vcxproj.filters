@@ -51,9 +51,6 @@
     <ClCompile Include="RemoverEquipamento.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Servico_Comunicacao_NotificarFinalizado.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="criarMaterial.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -171,6 +168,57 @@
     <ClCompile Include="saida.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="OSDAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ServicoComunicacaoNotificar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChefeEquipeTrabalho.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="alterarPriorade.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="alterarSaida1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="alterarSaida2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="criarSaida.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="historicoBuraco.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyForm1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyForm11.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyForm12.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyForm13.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="regionalOS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="telaEquipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="criarSaida1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="criarSaida2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dashboardRegional.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -207,9 +255,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Despachador.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Servico_Comunicacao_NotificarFinalizado.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="criarMaterial.h">
@@ -329,6 +374,57 @@
     <ClInclude Include="saida.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="OSDAO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ServicoComunicacaoNotificar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChefeEquipeTrabalho.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="alterarPrioridade.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="alterarSaida1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="alterarSaida2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="criarSaida.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="historicoBuraco.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyForm1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyForm11.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyForm12.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyForm13.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="regionalOS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="telaEquipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="criarSaida1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="criarSaida2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dashboardRegional.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
@@ -365,9 +461,6 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="VizualizarBuracos.resx">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Servico_Comunicacao_NotificarFinalizado.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="alterarEquipe.resx">
@@ -428,6 +521,48 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="saidaOS.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="removerSaida.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServicoComunicacaoNotificar.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="alterarPrioridade.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="alterarSaida1.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="alterarSaida2.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChefeEquipeTrabalho.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="historicoBuraco.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="regionalOS.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaEquipe.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="criarSaida.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="alterarSaida.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="criarSaida1.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dashboardRegional.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

@@ -74,6 +74,7 @@ buracos * buracoDAO::buscarRua(string nomeRua, int numeroRua)
 	string log;
 	buracos * buraco;
 	string band = nomeRua;
+	int num = numeroRua;
 	sql::Connection * connection;
 	sql::Statement* statement;
 	sql::PreparedStatement * preparedStatement;
@@ -81,9 +82,10 @@ buracos * buracoDAO::buscarRua(string nomeRua, int numeroRua)
 	try {
 		MySQLDAO* mysqldao = MySQLDAO::getInstance();
 		connection = mysqldao->getConnection();
-		preparedStatement = connection->prepareStatement("select numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco,nomeCidadao,canalCidadao,dadoCanal, dataHora,reclamacao from buraco where nomeRua = ?;");
+		preparedStatement = connection->prepareStatement("select numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco,nomeCidadao,canalCidadao,dadoCanal, dataHora,reclamacao from buraco where nomeRua = ? and numeroRua = ?;");
 
 		preparedStatement->setString(1, band.c_str());
+		preparedStatement->setInt(2, num);
 		resultSet = preparedStatement->executeQuery();
 
 		if (resultSet->next()) {
@@ -162,6 +164,8 @@ vector<buracos*>* buracoDAO::buscarBuracos()
 		temp2 = new vector<buracos*>();
 		while (resultSet->next()) {
 			temp = new buracos(resultSet->getInt(1), resultSet->getString(2).c_str(), resultSet->getInt(3), resultSet->getInt(4), resultSet->getString(5).c_str(), resultSet->getString(6).c_str(), resultSet->getInt(7), resultSet->getInt(8), resultSet->getInt(9), resultSet->getString(10).c_str(), resultSet->getString(11).c_str(), resultSet->getString(12).c_str(), resultSet->getString(13).c_str(), resultSet->getString(14).c_str());
+			int i = resultSet->getInt(1);
+
 			temp2->push_back(temp);
 		}
 	}
@@ -173,55 +177,6 @@ vector<buracos*>* buracoDAO::buscarBuracos()
 	return temp2;
 }
 
-
-
-
-
-buracos** buracoDAO::getAll()//(int numBuraco, string nomeRua, int numeroRua, int tamanho, string posicao, string regional, int prioridade, int numReclamacoes, int statusBuraco, string nomeCidadao, string canalCidadao, string dadoCanal, string dataHora, string reclamacao)
-{
-	string log;
-	
-	vector<buracos*>* temp2;
-	buracos ** tempo;
-	sql::Connection * connection;
-	sql::Statement* statement;
-	sql::PreparedStatement * preparedStatement;
-	sql::ResultSet *resultSet;
-	try {
-		MySQLDAO* mysqldao = MySQLDAO::getInstance();
-		connection = mysqldao->getConnection();
-		preparedStatement = connection->prepareStatement("select numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco,nomeCidadao,canalCidadao,dadoCanal, dataHora,reclamacao from buraco;");
-		resultSet = preparedStatement->executeQuery();
-		int n = resultSet->rowsCount() + 1;
-		tempo = new buracos*[n];
-		int j = 0;
-		//temp2 = new vector<buracos*>();
-		while (resultSet->next()) {
-			buracos *b = new buracos(resultSet->getInt(1), resultSet->getString(2).c_str(), resultSet->getInt(3), resultSet->getInt(4), resultSet->getString(5).c_str(), resultSet->getString(6).c_str(), resultSet->getInt(7), resultSet->getInt(8), resultSet->getInt(9), resultSet->getString(10).c_str(), resultSet->getString(11).c_str(), resultSet->getString(12).c_str(), resultSet->getString(13).c_str(), resultSet->getString(14).c_str());
-			tempo[j] = b;
-			j++;
-			//buracos* temp = new buracos(resultSet->getInt(1), resultSet->getString(2), resultSet->getInt(3), resultSet->getInt(4), resultSet->getString(5), resultSet->getString(6), resultSet->getInt(7), resultSet->getInt(8), resultSet->getInt(9), resultSet->getString(10), resultSet->getString(11), resultSet->getString(12), resultSet->getString(13), resultSet->getString(14));
-			//temp2->push_back(temp);
-			//delete temp;
-		}
-	}
-	catch (sql::SQLException e)
-	{
-		connection->close();
-		log = e.what();
-	}
-	return tempo;
-}
-
-//buracoDAO::string getString(string campo)
-//{
-
-//}
-
-//buracoDAO::int getInt(string campo)
-//{
-
-//}
 
 void buracoDAO::aumentaReclamacao(string rua, int num)
 {
@@ -247,4 +202,60 @@ void buracoDAO::aumentaReclamacao(string rua, int num)
 		log = e.what();
 	}
 
+}
+
+vector<buracos*>* buracoDAO::getCidadaoNotificar()
+{
+	string log;
+	buracos * temp = nullptr;
+	vector<buracos*> *temp2 = nullptr;
+	sql::Connection * connection;
+	sql::PreparedStatement * preparedStatement;
+	sql::ResultSet *resultSet;
+	try {
+		MySQLDAO* mysqldao = MySQLDAO::getInstance();
+		connection = mysqldao->getConnection();
+		preparedStatement = connection->prepareStatement("select numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco,nomeCidadao,canalCidadao,dadoCanal, dataHora,reclamacao from buraco where statusBuraco = 1;");
+
+		resultSet = preparedStatement->executeQuery();
+
+		temp2 = new vector<buracos*>();
+		while (resultSet->next()) {
+			temp = new buracos(resultSet->getInt(1), resultSet->getString(2).c_str(), resultSet->getInt(3), resultSet->getInt(4), resultSet->getString(5).c_str(), resultSet->getString(6).c_str(), resultSet->getInt(7), resultSet->getInt(8), resultSet->getInt(9), resultSet->getString(10).c_str(), resultSet->getString(11).c_str(), resultSet->getString(12).c_str(), resultSet->getString(13).c_str(), resultSet->getString(14).c_str());
+			temp2->push_back(temp);
+		}
+	}
+	catch (sql::SQLException e)
+	{
+		connection->close();
+		log = e.what();
+	}
+	return temp2;
+}
+
+void buracoDAO::setStatusBuraco(int statusBuraco, string rua, int num)
+{
+	string nome = rua;
+	int numer = num;
+	int status = statusBuraco;
+	string log;
+	sql::Connection * connection;
+	sql::Statement* statement;
+	sql::PreparedStatement * preparedStatement;
+	sql::ResultSet *resultSet;
+	try {
+		MySQLDAO* mysqldao = MySQLDAO::getInstance();
+		connection = mysqldao->getConnection();
+		preparedStatement = connection->prepareStatement("UPDATE buraco SET statusBuraco = ? WHERE nomeRua = ? and numeroRua = ?");
+		
+		preparedStatement->setInt(1, status);
+		preparedStatement->setString(2, nome.c_str());
+		preparedStatement->setInt(3, numer);
+		resultSet = preparedStatement->executeQuery();
+	}
+	catch (sql::SQLException e)
+	{
+		connection->close();
+		log = e.what();
+	}
 }

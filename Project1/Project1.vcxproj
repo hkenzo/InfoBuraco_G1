@@ -149,15 +149,23 @@
     <ClCompile Include="alterarEquipe.cpp" />
     <ClCompile Include="alterarMaterial.cpp" />
     <ClCompile Include="alterarMobilizacao.cpp" />
+    <ClCompile Include="alterarPriorade.cpp" />
     <ClCompile Include="alterarSaida.cpp" />
+    <ClCompile Include="alterarSaida1.cpp" />
+    <ClCompile Include="alterarSaida2.cpp" />
     <ClCompile Include="buracoDAO.cpp" />
     <ClCompile Include="buracos.cpp" />
     <ClCompile Include="CadastroFuncionario.cpp" />
     <ClCompile Include="CaixaDeDialogo.cpp" />
+    <ClCompile Include="ChefeEquipeTrabalho.cpp" />
     <ClCompile Include="CriarEquipamento.cpp" />
     <ClCompile Include="criarEquipe.cpp" />
     <ClCompile Include="criarMaterial.cpp" />
     <ClCompile Include="criarMobilizacao.cpp" />
+    <ClCompile Include="criarSaida.cpp" />
+    <ClCompile Include="criarSaida1.cpp" />
+    <ClCompile Include="criarSaida2.cpp" />
+    <ClCompile Include="dashboardRegional.cpp" />
     <ClCompile Include="equipamento.cpp" />
     <ClCompile Include="equipamentoDAO.cpp" />
     <ClCompile Include="equipe.cpp" />
@@ -167,6 +175,7 @@
     <ClCompile Include="gerenciarMaterial.cpp" />
     <ClCompile Include="gerenciarMobilizacao.cpp" />
     <ClCompile Include="gerenciarSaida.cpp" />
+    <ClCompile Include="historicoBuraco.cpp" />
     <ClCompile Include="Janela4.cpp" />
     <ClCompile Include="login.cpp" />
     <ClCompile Include="material.cpp" />
@@ -175,8 +184,14 @@
     <ClCompile Include="mobilizacaoDAO.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Despachador.cpp" />
+    <ClCompile Include="MyForm1.cpp" />
+    <ClCompile Include="MyForm11.cpp" />
+    <ClCompile Include="MyForm12.cpp" />
+    <ClCompile Include="MyForm13.cpp" />
     <ClCompile Include="MySQLDAO.cpp" />
     <ClCompile Include="OS.cpp" />
+    <ClCompile Include="OSDAO.cpp" />
+    <ClCompile Include="regionalOS.cpp" />
     <ClCompile Include="RemoverEquipamento.cpp" />
     <ClCompile Include="removerEquipe.cpp" />
     <ClCompile Include="removerMaterial.cpp" />
@@ -193,7 +208,8 @@
     <ClCompile Include="ServicoComunicacao1.cpp" />
     <ClCompile Include="ServicoComunicacao2.cpp" />
     <ClCompile Include="ServicoComunicacao2_Pronto.cpp" />
-    <ClCompile Include="Servico_Comunicacao_NotificarFinalizado.cpp" />
+    <ClCompile Include="ServicoComunicacaoNotificar.cpp" />
+    <ClCompile Include="telaEquipe.cpp" />
     <ClCompile Include="usuario.cpp" />
     <ClCompile Include="usuarioDAO.cpp" />
     <ClCompile Include="VizualizarBuracos.cpp" />
@@ -211,7 +227,16 @@
     <ClInclude Include="alterarMobilizacao.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="alterarPrioridade.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="alterarSaida.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="alterarSaida1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="alterarSaida2.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="buracoDAO.h" />
@@ -220,6 +245,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CaixaDeDialogo.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ChefeEquipeTrabalho.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CriarEquipamento.h">
@@ -232,6 +260,18 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="criarMobilizacao.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="criarSaida.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="criarSaida1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="criarSaida2.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="dashboardRegional.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="equipamento.h" />
@@ -253,6 +293,9 @@
     <ClInclude Include="gerenciarSaida.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="historicoBuraco.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Janela4.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -269,8 +312,24 @@
     <ClInclude Include="Despachador.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MyForm1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyForm11.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyForm12.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyForm13.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MySQLDAO.h" />
     <ClInclude Include="OS.h" />
+    <ClInclude Include="OSDAO.h" />
+    <ClInclude Include="regionalOS.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="RemoverEquipamento.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -315,7 +374,10 @@
     <ClInclude Include="ServicoComunicacao2_Pronto.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Servico_Comunicacao_NotificarFinalizado.h">
+    <ClInclude Include="ServicoComunicacaoNotificar.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="telaEquipe.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="usuario.h" />
@@ -342,11 +404,26 @@
     <EmbeddedResource Include="alterarMobilizacao.resx">
       <DependentUpon>alterarMobilizacao.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="alterarPrioridade.resx">
+      <DependentUpon>alterarPrioridade.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="alterarSaida.resx">
+      <DependentUpon>alterarSaida.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="alterarSaida1.resx">
+      <DependentUpon>alterarSaida1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="alterarSaida2.resx">
+      <DependentUpon>alterarSaida2.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CadastroFuncionario.resx">
       <DependentUpon>CadastroFuncionario.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CaixaDeDialogo.resx">
       <DependentUpon>CaixaDeDialogo.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChefeEquipeTrabalho.resx">
+      <DependentUpon>ChefeEquipeTrabalho.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CriarEquipamento.resx">
       <DependentUpon>CriarEquipamento.h</DependentUpon>
@@ -359,6 +436,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="criarMobilizacao.resx">
       <DependentUpon>criarMobilizacao.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="criarSaida.resx">
+      <DependentUpon>criarSaida.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="criarSaida1.resx">
+      <DependentUpon>criarSaida1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="criarSaida2.resx">
+      <DependentUpon>criarSaida2.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dashboardRegional.resx">
+      <DependentUpon>dashboardRegional.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gerenciarEquipamento.resx">
       <DependentUpon>gerenciarEquipamento.h</DependentUpon>
@@ -375,6 +464,9 @@
     <EmbeddedResource Include="gerenciarSaida.resx">
       <DependentUpon>gerenciarSaida.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="historicoBuraco.resx">
+      <DependentUpon>historicoBuraco.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Janela4.resx">
       <DependentUpon>Janela4.h</DependentUpon>
     </EmbeddedResource>
@@ -386,6 +478,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Despachador.resx">
       <DependentUpon>Despachador.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="regionalOS.resx">
+      <DependentUpon>regionalOS.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RemoverEquipamento.resx">
       <DependentUpon>RemoverEquipamento.h</DependentUpon>
@@ -429,8 +524,11 @@
     <EmbeddedResource Include="ServicoComunicacao2_Pronto.resx">
       <DependentUpon>ServicoComunicacao2_Pronto.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Servico_Comunicacao_NotificarFinalizado.resx">
-      <DependentUpon>Servico_Comunicacao_NotificarFinalizado.h</DependentUpon>
+    <EmbeddedResource Include="ServicoComunicacaoNotificar.resx">
+      <DependentUpon>ServicoComunicacaoNotificar.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaEquipe.resx">
+      <DependentUpon>telaEquipe.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VizualizarBuracos.resx">
       <DependentUpon>VizualizarBuracos.h</DependentUpon>

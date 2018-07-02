@@ -90,9 +90,10 @@ namespace Project1 {
 			this->create_Material_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->create_Material_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->create_Material_bt->Location = System::Drawing::Point(820, 109);
+			this->create_Material_bt->Location = System::Drawing::Point(615, 89);
+			this->create_Material_bt->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->create_Material_bt->Name = L"create_Material_bt";
-			this->create_Material_bt->Size = System::Drawing::Size(180, 49);
+			this->create_Material_bt->Size = System::Drawing::Size(135, 40);
 			this->create_Material_bt->TabIndex = 1;
 			this->create_Material_bt->Text = L"Criar Material";
 			this->create_Material_bt->UseVisualStyleBackColor = false;
@@ -103,9 +104,10 @@ namespace Project1 {
 			this->remove_Material_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->remove_Material_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->remove_Material_bt->Location = System::Drawing::Point(820, 286);
+			this->remove_Material_bt->Location = System::Drawing::Point(615, 232);
+			this->remove_Material_bt->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->remove_Material_bt->Name = L"remove_Material_bt";
-			this->remove_Material_bt->Size = System::Drawing::Size(180, 49);
+			this->remove_Material_bt->Size = System::Drawing::Size(135, 40);
 			this->remove_Material_bt->TabIndex = 2;
 			this->remove_Material_bt->Text = L"Remover Material";
 			this->remove_Material_bt->UseVisualStyleBackColor = false;
@@ -116,9 +118,10 @@ namespace Project1 {
 			this->change_Material_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->change_Material_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->change_Material_bt->Location = System::Drawing::Point(820, 197);
+			this->change_Material_bt->Location = System::Drawing::Point(615, 160);
+			this->change_Material_bt->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->change_Material_bt->Name = L"change_Material_bt";
-			this->change_Material_bt->Size = System::Drawing::Size(180, 49);
+			this->change_Material_bt->Size = System::Drawing::Size(135, 40);
 			this->change_Material_bt->TabIndex = 3;
 			this->change_Material_bt->Text = L"Alterar Material";
 			this->change_Material_bt->UseVisualStyleBackColor = false;
@@ -129,9 +132,10 @@ namespace Project1 {
 			this->voltar_equipt_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->voltar_equipt_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->voltar_equipt_bt->Location = System::Drawing::Point(820, 377);
+			this->voltar_equipt_bt->Location = System::Drawing::Point(615, 306);
+			this->voltar_equipt_bt->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->voltar_equipt_bt->Name = L"voltar_equipt_bt";
-			this->voltar_equipt_bt->Size = System::Drawing::Size(180, 49);
+			this->voltar_equipt_bt->Size = System::Drawing::Size(135, 40);
 			this->voltar_equipt_bt->TabIndex = 4;
 			this->voltar_equipt_bt->Text = L"Voltar";
 			this->voltar_equipt_bt->UseVisualStyleBackColor = false;
@@ -144,9 +148,10 @@ namespace Project1 {
 				this->columnHeader1, this->columnHeader2,
 					this->columnHeader3, this->columnHeader4
 			});
-			this->listView1->Location = System::Drawing::Point(25, 55);
+			this->listView1->Location = System::Drawing::Point(19, 45);
+			this->listView1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->listView1->Name = L"listView1";
-			this->listView1->Size = System::Drawing::Size(772, 425);
+			this->listView1->Size = System::Drawing::Size(580, 346);
 			this->listView1->TabIndex = 5;
 			this->listView1->UseCompatibleStateImageBehavior = false;
 			this->listView1->View = System::Windows::Forms::View::Details;
@@ -175,15 +180,16 @@ namespace Project1 {
 			// 
 			// gerenciarMaterial
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
-			this->ClientSize = System::Drawing::Size(1024, 570);
+			this->ClientSize = System::Drawing::Size(768, 463);
 			this->Controls->Add(this->listView1);
 			this->Controls->Add(this->voltar_equipt_bt);
 			this->Controls->Add(this->change_Material_bt);
 			this->Controls->Add(this->remove_Material_bt);
 			this->Controls->Add(this->create_Material_bt);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"gerenciarMaterial";
 			this->Text = L"gerenciarMaterial";
 			this->Load += gcnew System::EventHandler(this, &gerenciarMaterial::gerenciarMaterial_Load);

@@ -27,13 +27,14 @@ public:
 	string dataHora;
 	string reclamacao;
 
+	vector<buracos*>* buracoDAO::getCidadaoNotificar();
 	buracoDAO(int numBuraco, string nomeRua, int numeroRua, int tamanho, string posicao, string regional, int prioridade, int numReclamacoes, int statusBuraco, string nomeCidadao, string canalCidadao, string dadoCanal, string dataHora, string reclamacao);
 	buracoDAO();
 	buracos* buscarRua(string nomeRua, int numeroRua);
-	//void criarBuracoDAO
-	vector<buracos*>* buracoDAO::buscarBuracos();
 
+	vector<buracos*>* buracoDAO::buscarBuracos();
+	void buracoDAO::setStatusBuraco(int statusBuraco, string rua, int num);
 	void aumentaReclamacao(string rua, int num);
-	buracos** getAll();//(int numBuraco, string nomeRua, int numeroRua, int tamanho, string posicao, string regional, int prioridade, int numReclamacoes, int statusBuraco, string nomeCidadao, string canalCidadao, string dadoCanal, string dataHora, string reclamacao);
+
 };
 

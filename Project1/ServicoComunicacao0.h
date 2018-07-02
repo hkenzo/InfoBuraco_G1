@@ -1,5 +1,6 @@
 #include "ServicoComunicacao1.h"
-#include "Servico_Comunicacao_NotificarFinalizado.h"
+#include "ServicoComunicacaoNotificar.h"
+#include "VizualizarBuracos.h"
 
 #pragma once
 
@@ -88,7 +89,7 @@ namespace Project1 {
 			this->VisualizarOS->Name = L"VisualizarOS";
 			this->VisualizarOS->Size = System::Drawing::Size(104, 63);
 			this->VisualizarOS->TabIndex = 4;
-			this->VisualizarOS->Text = L"Visualizar OS ativas";
+			this->VisualizarOS->Text = L"Visualizar buracos";
 			this->VisualizarOS->UseVisualStyleBackColor = true;
 			this->VisualizarOS->Click += gcnew System::EventHandler(this, &ServicoComunicacao0::VisualizarOS_Click);
 			// 
@@ -129,9 +130,11 @@ namespace Project1 {
 		}
 #pragma endregion
 private: System::Void VisualizarOS_Click(System::Object^  sender, System::EventArgs^  e) {
+	VizualizarBuracos^ tela = gcnew VizualizarBuracos();
+	tela->ShowDialog();
 }
 private: System::Void NotificarFinalizado_Click(System::Object^  sender, System::EventArgs^  e) {
-	Servico_Comunicacao_NotificarFinalizado ^ telaNotificar = gcnew Servico_Comunicacao_NotificarFinalizado();
+	ServicoComunicacaoNotificar ^ telaNotificar = gcnew ServicoComunicacaoNotificar();
 	telaNotificar->ShowDialog();
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
