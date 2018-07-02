@@ -14,12 +14,12 @@ namespace Project1 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for MyForm1
+	/// Summary for alterarPrioridade
 	/// </summary>
-	public ref class MyForm1 : public System::Windows::Forms::Form
+	public ref class alterarPrioridade : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm1(void)
+		alterarPrioridade(void)
 		{
 			InitializeComponent();
 			//
@@ -31,7 +31,7 @@ namespace Project1 {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~MyForm1()
+		~alterarPrioridade()
 		{
 			if (components)
 			{
@@ -87,7 +87,7 @@ namespace Project1 {
 			this->bt_confirmarPrioridade->TabIndex = 0;
 			this->bt_confirmarPrioridade->Text = L"Confirmar";
 			this->bt_confirmarPrioridade->UseVisualStyleBackColor = false;
-			this->bt_confirmarPrioridade->Click += gcnew System::EventHandler(this, &MyForm1::button1_Click);
+			this->bt_confirmarPrioridade->Click += gcnew System::EventHandler(this, &alterarPrioridade::button1_Click);
 			// 
 			// label1
 			// 
@@ -97,7 +97,7 @@ namespace Project1 {
 			this->label1->Size = System::Drawing::Size(81, 13);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"Escolha buraco";
-			this->label1->Click += gcnew System::EventHandler(this, &MyForm1::label1_Click);
+			this->label1->Click += gcnew System::EventHandler(this, &alterarPrioridade::label1_Click);
 			// 
 			// label2
 			// 
@@ -144,7 +144,7 @@ namespace Project1 {
 			this->label3->TabIndex = 24;
 			this->label3->Text = L"Alterar Prioridade do Buraco";
 			// 
-			// MyForm1
+			// alterarPrioridade
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -156,8 +156,9 @@ namespace Project1 {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->bt_confirmarPrioridade);
-			this->Name = L"MyForm1";
+			this->Name = L"alterarPrioridade";
 			this->Text = L"Aterar Prioridade";
+			this->Load += gcnew System::EventHandler(this, &alterarPrioridade::MyForm1_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -170,5 +171,7 @@ namespace Project1 {
 
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
-	};
+	private: System::Void MyForm1_Load(System::Object^  sender, System::EventArgs^  e) {
+	}
+};
 }

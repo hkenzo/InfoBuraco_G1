@@ -144,6 +144,7 @@ namespace Project1 {
 			this->Controls->Add(this->label2);
 			this->Name = L"regionalOS";
 			this->Text = L"regionalOS";
+			this->Load += gcnew System::EventHandler(this, &regionalOS::regionalOS_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -153,5 +154,7 @@ namespace Project1 {
 		alterarPrioridade^ altera = gcnew alterarPrioridade();
 		altera->ShowDialog();
 	}
+private: System::Void regionalOS_Load(System::Object^  sender, System::EventArgs^  e) {
+}
 };
 }

@@ -177,9 +177,6 @@
     <ClCompile Include="ChefeEquipeTrabalho.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="alterarPriorade.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="alterarSaida1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -217,6 +214,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="dashboardRegional.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="alterarPrioridade.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -409,12 +409,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MyForm.resx">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Janela4.resx">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
     <EmbeddedResource Include="CaixaDeDialogo.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
