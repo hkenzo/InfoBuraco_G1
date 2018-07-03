@@ -108,8 +108,7 @@ namespace Project1 {
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->menuToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Padding = System::Windows::Forms::Padding(8, 2, 0, 2);
-			this->menuStrip1->Size = System::Drawing::Size(865, 28);
+			this->menuStrip1->Size = System::Drawing::Size(649, 24);
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
 			this->menuStrip1->ItemClicked += gcnew System::Windows::Forms::ToolStripItemClickedEventHandler(this, &Despachador::menuStrip1_ItemClicked);
@@ -117,7 +116,7 @@ namespace Project1 {
 			// menuToolStripMenuItem
 			// 
 			this->menuToolStripMenuItem->Name = L"menuToolStripMenuItem";
-			this->menuToolStripMenuItem->Size = System::Drawing::Size(58, 24);
+			this->menuToolStripMenuItem->Size = System::Drawing::Size(50, 20);
 			this->menuToolStripMenuItem->Text = L"Menu";
 			// 
 			// dateTimePicker1
@@ -126,10 +125,9 @@ namespace Project1 {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->dateTimePicker1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->dateTimePicker1->Location = System::Drawing::Point(566, 471);
-			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(4);
+			this->dateTimePicker1->Location = System::Drawing::Point(424, 383);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(271, 29);
+			this->dateTimePicker1->Size = System::Drawing::Size(204, 24);
 			this->dateTimePicker1->TabIndex = 2;
 			// 
 			// bt_g_equipe
@@ -137,10 +135,9 @@ namespace Project1 {
 			this->bt_g_equipe->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->bt_g_equipe->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->bt_g_equipe->Location = System::Drawing::Point(680, 90);
-			this->bt_g_equipe->Margin = System::Windows::Forms::Padding(4);
+			this->bt_g_equipe->Location = System::Drawing::Point(510, 73);
 			this->bt_g_equipe->Name = L"bt_g_equipe";
-			this->bt_g_equipe->Size = System::Drawing::Size(157, 47);
+			this->bt_g_equipe->Size = System::Drawing::Size(118, 38);
 			this->bt_g_equipe->TabIndex = 4;
 			this->bt_g_equipe->Text = L"Gerenciar Equipes";
 			this->bt_g_equipe->UseVisualStyleBackColor = false;
@@ -151,10 +148,9 @@ namespace Project1 {
 			this->bt_g_material->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->bt_g_material->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->bt_g_material->Location = System::Drawing::Point(680, 164);
-			this->bt_g_material->Margin = System::Windows::Forms::Padding(4);
+			this->bt_g_material->Location = System::Drawing::Point(510, 133);
 			this->bt_g_material->Name = L"bt_g_material";
-			this->bt_g_material->Size = System::Drawing::Size(157, 47);
+			this->bt_g_material->Size = System::Drawing::Size(118, 38);
 			this->bt_g_material->TabIndex = 5;
 			this->bt_g_material->Text = L"Gerenciar Materiais";
 			this->bt_g_material->UseVisualStyleBackColor = false;
@@ -165,10 +161,9 @@ namespace Project1 {
 			this->bt_g_equipamento->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->bt_g_equipamento->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->bt_g_equipamento->Location = System::Drawing::Point(680, 238);
-			this->bt_g_equipamento->Margin = System::Windows::Forms::Padding(4);
+			this->bt_g_equipamento->Location = System::Drawing::Point(510, 193);
 			this->bt_g_equipamento->Name = L"bt_g_equipamento";
-			this->bt_g_equipamento->Size = System::Drawing::Size(157, 47);
+			this->bt_g_equipamento->Size = System::Drawing::Size(118, 38);
 			this->bt_g_equipamento->TabIndex = 7;
 			this->bt_g_equipamento->Text = L"Gerenciar Equipamentos";
 			this->bt_g_equipamento->UseVisualStyleBackColor = false;
@@ -179,10 +174,9 @@ namespace Project1 {
 			this->bt_g_mob->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->bt_g_mob->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->bt_g_mob->Location = System::Drawing::Point(680, 312);
-			this->bt_g_mob->Margin = System::Windows::Forms::Padding(4);
+			this->bt_g_mob->Location = System::Drawing::Point(510, 254);
 			this->bt_g_mob->Name = L"bt_g_mob";
-			this->bt_g_mob->Size = System::Drawing::Size(157, 44);
+			this->bt_g_mob->Size = System::Drawing::Size(118, 36);
 			this->bt_g_mob->TabIndex = 11;
 			this->bt_g_mob->Text = L"Gerenciar custos de mobilização";
 			this->bt_g_mob->UseVisualStyleBackColor = false;
@@ -191,11 +185,9 @@ namespace Project1 {
 			// listBox1
 			// 
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 16;
-			this->listBox1->Location = System::Drawing::Point(71, 144);
-			this->listBox1->Margin = System::Windows::Forms::Padding(4);
+			this->listBox1->Location = System::Drawing::Point(53, 117);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(487, 356);
+			this->listBox1->Size = System::Drawing::Size(366, 290);
 			this->listBox1->TabIndex = 12;
 			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &Despachador::listBox1_SelectedIndexChanged);
 			// 
@@ -204,10 +196,9 @@ namespace Project1 {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(103, 62);
-			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label1->Location = System::Drawing::Point(77, 50);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(216, 24);
+			this->label1->Size = System::Drawing::Size(172, 18);
 			this->label1->TabIndex = 14;
 			this->label1->Text = L"OS\'s a serem cumpridas";
 			// 
@@ -216,10 +207,9 @@ namespace Project1 {
 			this->bt_g_saida->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->bt_g_saida->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->bt_g_saida->Location = System::Drawing::Point(680, 385);
-			this->bt_g_saida->Margin = System::Windows::Forms::Padding(4);
+			this->bt_g_saida->Location = System::Drawing::Point(510, 313);
 			this->bt_g_saida->Name = L"bt_g_saida";
-			this->bt_g_saida->Size = System::Drawing::Size(157, 44);
+			this->bt_g_saida->Size = System::Drawing::Size(118, 36);
 			this->bt_g_saida->TabIndex = 16;
 			this->bt_g_saida->Text = L"Gerenciar Saídas";
 			this->bt_g_saida->UseVisualStyleBackColor = false;
@@ -227,10 +217,10 @@ namespace Project1 {
 			// 
 			// Despachador
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
-			this->ClientSize = System::Drawing::Size(865, 533);
+			this->ClientSize = System::Drawing::Size(649, 433);
 			this->Controls->Add(this->bt_g_saida);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->listBox1);
@@ -241,7 +231,6 @@ namespace Project1 {
 			this->Controls->Add(this->dateTimePicker1);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
-			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Despachador";
 			this->Text = L"Despachador";
 			this->Load += gcnew System::EventHandler(this, &Despachador::Despachador_Load);

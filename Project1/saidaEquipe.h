@@ -196,7 +196,7 @@ namespace Project1 {
 			string id = msclr::interop::marshal_as<std::string>(str1);
 			string data = msclr::interop::marshal_as<std::string>(str2);
 			string num = msclr::interop::marshal_as<std::string>(str3);
-			temp->criarEquipeSaidaDAO(std::stoi(id, nullptr, 10), data, std::stoi(num, nullptr, 10));
+			temp->criarEquipeSaidaDAO(id, data, std::stoi(num, nullptr, 10));
 		}
 		saidaEquipamento^ next = gcnew saidaEquipamento(aux1, aux2);
 		next->ShowDialog();
@@ -211,23 +211,24 @@ namespace Project1 {
 	}
 	private: System::Void checked(System::Object^  sender, System::Windows::Forms::ItemCheckedEventArgs^  e) {
 	}
-		private: Void atualizarDashboard() {
-			equipeDAO * aux = new equipeDAO();
-			vector<equipe*>* temp2;
-			this->listView1->Items->Clear();
-			temp2 = aux->buscarEquipe();
-			for (int j = 0; j < temp2->size(); j++) {
-				String^ str1 = gcnew String(std::to_string(temp2->at(j)->getId()).c_str());
-				String^ str2 = gcnew String(std::to_string(temp2->at(j)->getNum()).c_str());
-				String^ str3 = gcnew String(std::to_string(temp2->at(j)->getCusto()).c_str());
+	
+	private: Void atualizarDashboard() {
+		equipeDAO * aux = new equipeDAO();
+		vector<equipe*>* temp2;
+		this->listView1->Items->Clear();
+		temp2 = aux->buscarEquipe();
+		for (int j = 0; j < temp2->size(); j++) {
+			String^ str1 = gcnew String((temp2->at(j)->getId()).c_str());
+			String^ str2 = gcnew String(std::to_string(temp2->at(j)->getNum()).c_str());
+			String^ str3 = gcnew String(std::to_string(temp2->at(j)->getCusto()).c_str());
 
-				listViewItem = gcnew Windows::Forms::ListViewItem(str1);
-				listViewItem->SubItems->Add(str2);
-				listViewItem->SubItems->Add(str3);
-				this->listView1->Items->Add(this->listViewItem);
+			listViewItem = gcnew Windows::Forms::ListViewItem(str1);
+			listViewItem->SubItems->Add(str2);
+			listViewItem->SubItems->Add(str3);
+			this->listView1->Items->Add(this->listViewItem);
 
-			}
 		}
+	}
 
 
 

@@ -234,7 +234,7 @@ private: System::Void Confirm_Bt_Click(System::Object^  sender, System::EventArg
 
 	//string id = msclr::interop::marshal_as<std::string>(aux1);
 	string id = msclr::interop::marshal_as<std::string>(this->idbox->Text);
-	aux->deletarEquipeDAO(std::stoi(id, nullptr, 10));
+	aux->deletarEquipeDAO(id);
 	this->Close();
 
 	}

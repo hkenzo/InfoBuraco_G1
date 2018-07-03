@@ -1,7 +1,9 @@
 #include <iostream>
 #include <string>
+#include <stdio.h>
 #include "buracos.h"
 #include "buracoDAO.h"
+#include <msclr\marshal_cppstd.h>
 #pragma once
 
 namespace Project1 {
@@ -18,13 +20,24 @@ namespace Project1 {
 	/// </summary>
 	public ref class alterarPrioridade : public System::Windows::Forms::Form
 	{
+
+
 	public:
+		String^ aux1;
+		String^ aux2;
+
 		alterarPrioridade(void)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+		}
+		alterarPrioridade(String^ str1, String^ str2)
+		{
+			InitializeComponent();
+			aux1 = str1;
+			aux2 = str2;
 		}
 
 	protected:
@@ -38,7 +51,6 @@ namespace Project1 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^  bt_confirmarPrioridade;
 	protected:
 
 	private: System::Windows::Forms::Label^  label1;
@@ -46,6 +58,7 @@ namespace Project1 {
 	private: System::Windows::Forms::TextBox^  prioridadeTextBox;
 	private: System::Windows::Forms::ComboBox^  BuracoComboBox;
 	private: System::Windows::Forms::Button^  bt_calcelarPrioridade;
+	private: System::Windows::Forms::Button^  bt_confirmarPrioridade;
 
 
 
@@ -133,6 +146,7 @@ namespace Project1 {
 			this->bt_calcelarPrioridade->TabIndex = 5;
 			this->bt_calcelarPrioridade->Text = L"Cancelar";
 			this->bt_calcelarPrioridade->UseVisualStyleBackColor = false;
+			this->bt_calcelarPrioridade->Click += gcnew System::EventHandler(this, &alterarPrioridade::bt_calcelarPrioridade_Click);
 			// 
 			// label3
 			// 
@@ -166,12 +180,20 @@ namespace Project1 {
 #pragma endregion
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		buracoDAO * aux = new buracoDAO;
-
+		string prioridade = msclr::interop::marshal_as<std::string>(this->prioridadeTextBox->Text);
+		string buraco = msclr::interop::marshal_as<std::string>(this->BuracoComboBox->Text);
+		aux->editarBuracoDAO(std::stoi(prioridade, nullptr, 10), std::stoi(buraco, nullptr, 10));
+		this->Close();
 	}
 
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
-	private: System::Void MyForm1_Load(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void bt_calcelarPrioridade_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->Close();
+	}
+	private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^  e) {
+		this->prioridadeTextBox->Text = aux1;
+		this->BuracoComboBox->Text = aux2;
 	}
 };
 }
