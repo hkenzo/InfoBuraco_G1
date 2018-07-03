@@ -36,7 +36,7 @@ OSDAO::OSDAO(int estimativaHoras, int estimativaEquipamento, int estimativaMater
 		connection->close();
 		log = e.what();
 	}
-}
+};
 
 vector <OS*>* OSDAO::getOS()
 {
@@ -66,8 +66,38 @@ vector <OS*>* OSDAO::getOS()
 		log = e.what();
 	}
 	return temp2;
-}
+};
 
+vector <OS*>* OSDAO::getOSEquip(string nome)
+{
+	string log;
+	string nom = nome;
+	OS * temp = nullptr;
+	vector<OS*> *temp2 = nullptr;
+	sql::Connection * connection;
+	sql::PreparedStatement * preparedStatement;
+	sql::ResultSet *resultSet;
+	try {
+		MySQLDAO* mysqldao = MySQLDAO::getInstance();
+		connection = mysqldao->getConnection();
+		preparedStatement = connection->prepareStatement("select estimativaHoras, estimativaEquipamento, estimativaMaterial, numOS, statusOS, numBuraco from OS where numOS in (select numOS from equipe_saida where identificacaoEquipe = ?);");
+		preparedStatement->setString(1, nom.c_str());
+
+		resultSet = preparedStatement->executeQuery();
+
+		temp2 = new vector<OS*>();
+		while (resultSet->next()) {
+			temp = new OS(resultSet->getInt(1), resultSet->getInt(2), resultSet->getInt(3), resultSet->getInt(4), resultSet->getInt(5), resultSet->getInt(6));
+			temp2->push_back(temp);
+		}
+	}
+	catch (sql::SQLException e)
+	{
+		connection->close();
+		log = e.what();
+	}
+	return temp2;
+};
 
 void OSDAO::setStatusD(int status, int numOS)
 {
@@ -93,3 +123,4 @@ void OSDAO::setStatusD(int status, int numOS)
 		log = e.what();
 	}
 }
+

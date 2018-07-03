@@ -6,6 +6,7 @@
 #include "CadastroFuncionario.h"
 #include "login.h"
 #include "dashboardRegional.h"
+#include "ChefeEquipeTrabalho.h"
 
 
 namespace Project1 {
@@ -16,7 +17,7 @@ namespace Project1 {
 	{
 		Application::EnableVisualStyles();
 		Application::SetCompatibleTextRenderingDefault(false);
-		Application::Run(gcnew dashboard);
+		Application::Run(gcnew login);
 		
 	}
 }

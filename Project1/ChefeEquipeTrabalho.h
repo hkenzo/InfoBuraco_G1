@@ -22,9 +22,19 @@ namespace Project1 {
 	public ref class ChefeEquipeTrabalho : public System::Windows::Forms::Form
 	{
 	public:
+		String ^ nomeEquipe;
 		ChefeEquipeTrabalho(void)
 		{
 			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+		}
+
+		ChefeEquipeTrabalho(String^ str1)
+		{
+			InitializeComponent();
+			nomeEquipe = str1;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -239,7 +249,8 @@ private: System::Void atualizar_bt_Click(System::Object^  sender, System::EventA
 	OSDAO * aux = new OSDAO();
 	vector<OS*>* temp2;
 	this->listView1->Items->Clear();
-	temp2 = aux->getOS();
+	string nom = "nome";
+	temp2 = aux->getOSEquip(nom);
 
 	for (int j = 0; j < temp2->size(); j++) {
 		String^ str1 = gcnew String(std::to_string(temp2->at(j)->getEstimativaHoras()).c_str());
