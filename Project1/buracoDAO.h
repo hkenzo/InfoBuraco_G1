@@ -38,6 +38,8 @@ public:
 	void aumentaReclamacao(string rua, int num);
 	void setPrioridadeBuraco(int prioridade, string rua, int num);
 	buracos* getBuraco(int numeroBuraco);
+	void editarBuracoDAO(int prioridade, int numeroBuraco);
+
 
 };
 
