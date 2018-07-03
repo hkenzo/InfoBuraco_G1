@@ -17,6 +17,8 @@ public:
 	void saidaDAO::criarSaidaDAO(string data, int numOS);
 	void saidaDAO::deletarSaidaDAO(string data, int numOS);
 	vector<saida*>* saidaDAO::buscarSaida();
+	vector<saida*>* saidaDAO::buscarSaidaEquipe(string nome);
+
 };
 
 #endif

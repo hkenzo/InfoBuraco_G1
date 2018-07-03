@@ -286,7 +286,7 @@ void buracoDAO::setPrioridadeBuraco(int prioridade, string rua, int num)
 	}
 }
 
-buracos* getBuraco(int numeroBuraco)
+buracos*  buracoDAO::getBuraco(int numeroBuraco)
 {
 	string log;
 	buracos * buraco;
@@ -300,7 +300,7 @@ buracos* getBuraco(int numeroBuraco)
 		connection = mysqldao->getConnection();
 		preparedStatement = connection->prepareStatement("select numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco,nomeCidadao,canalCidadao,dadoCanal, dataHora,reclamacao from buraco where numeroBuraco = ?;");
 
-		preparedStatement->setInt(2, num);
+		preparedStatement->setInt(1, num);
 		resultSet = preparedStatement->executeQuery();
 
 		if (resultSet->next()) {

@@ -210,6 +210,24 @@
     <ClCompile Include="VisualizarOS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="VisualizarUmBuraco.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChefeFinalizado.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChefeFinalizarMobilizacao.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChefeFinalizarQuantidade.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChefeFinalizarEquipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChefeFinalizarEquipamento.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CaixaDeDialogo.h">
@@ -401,6 +419,24 @@
     <ClInclude Include="VisualizarOS.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="VisualizarUmBuraco.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChefeFinalizado.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChefeFinalizarMobilizacao.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChefeFinalizarQuantidade.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChefeFinalizarEquipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChefeFinalizarEquipamento.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CaixaDeDialogo.resx">
@@ -536,6 +572,12 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="criarSaida2.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisualizarOS.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisualizarUmBuraco.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

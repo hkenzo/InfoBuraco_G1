@@ -81,3 +81,33 @@ vector<saida*>* saidaDAO::buscarSaida()
 	return temp2;
 }
 
+vector<saida*>* saidaDAO::buscarSaidaEquipe(string nome)
+{
+	string log;
+	string nom = nome;
+	saida * temp = nullptr;
+	vector<saida*> *temp2 = nullptr;
+	sql::Connection * connection;
+	sql::PreparedStatement * preparedStatement;
+	sql::ResultSet *resultSet;
+	try {
+		MySQLDAO* mysqldao = MySQLDAO::getInstance();
+		connection = mysqldao->getConnection();
+		preparedStatement = connection->prepareStatement("select numOS, data from saida where numOS in (select numOS from equipe_saida where identificacaoEquipe = ?);");
+		preparedStatement->setString(1, nom.c_str());
+
+		resultSet = preparedStatement->executeQuery();
+
+		temp2 = new vector<saida*>();
+		while (resultSet->next()) {
+			temp = new saida(resultSet->getString(1).c_str(), resultSet->getInt(2));
+			temp2->push_back(temp);
+		}
+	}
+	catch (sql::SQLException e)
+	{
+		connection->close();
+		log = e.what();
+	}
+	return temp2;
+}

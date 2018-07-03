@@ -19,6 +19,8 @@ public:
 	void equipamentoDAO::deletarEquipamentoDAO(int id);
 	void equipamentoDAO::alterarEquipamentoDAO(int id, int custoHoraEquipamento);
 	vector<equipamento*>* equipamentoDAO::buscarEquipamento();
+	vector<equipamento*>* equipamentoDAO::buscarEquipamentoSaida(int idE, string dataE);
+	void setHorasUso();
 };
 
 #endif

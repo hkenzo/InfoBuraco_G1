@@ -3,6 +3,13 @@
 #include "OSDAO.h"
 #include "buracos.h"
 #include "buracoDAO.h"
+#include "saidaDAO.h"
+#include "saida.h"
+#include "VisualizarUmBuraco.h"
+#include "ChefeFinalizarEquipamento.h"
+#include "ChefeFinalizarEquipe.h"
+#include "ChefeFinalizarMobilizacao.h"
+#include "ChefeFinalizarQuantidade.h"
 #include <msclr/marshal.h>
 #include <msclr/marshal_cppstd.h>
 #include <stdlib.h>
@@ -57,13 +64,13 @@ namespace Project1 {
 	protected:
 	private: System::Windows::Forms::ColumnHeader^  columnHeader12;
 	private: System::Windows::Forms::ColumnHeader^  columnHeader13;
-	private: System::Windows::Forms::ColumnHeader^  columnHeader14;
+
 	private: System::Windows::Forms::Button^  fechar_bt;
 	private: System::Windows::Forms::Button^  alterarStatus_bt;
 	private: System::Windows::Forms::Button^  atualizar_bt;
-	private: System::Windows::Forms::ColumnHeader^  columnHeader1;
-	private: System::Windows::Forms::ColumnHeader^  columnHeader2;
-	private: System::Windows::Forms::ColumnHeader^  columnHeader3;
+
+
+
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::Button^  buraco_bt;
 
@@ -84,10 +91,6 @@ namespace Project1 {
 			this->listView1 = (gcnew System::Windows::Forms::ListView());
 			this->columnHeader12 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader13 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader14 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader1 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader2 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader3 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->fechar_bt = (gcnew System::Windows::Forms::Button());
 			this->alterarStatus_bt = (gcnew System::Windows::Forms::Button());
 			this->atualizar_bt = (gcnew System::Windows::Forms::Button());
@@ -98,15 +101,12 @@ namespace Project1 {
 			// listView1
 			// 
 			this->listView1->CheckBoxes = true;
-			this->listView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(6) {
-				this->columnHeader12, this->columnHeader13,
-					this->columnHeader14, this->columnHeader1, this->columnHeader2, this->columnHeader3
-			});
+			this->listView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(2) { this->columnHeader12, this->columnHeader13 });
 			this->listView1->HeaderStyle = System::Windows::Forms::ColumnHeaderStyle::Nonclickable;
 			this->listView1->Location = System::Drawing::Point(2, 8);
 			this->listView1->Margin = System::Windows::Forms::Padding(2);
 			this->listView1->Name = L"listView1";
-			this->listView1->Size = System::Drawing::Size(492, 223);
+			this->listView1->Size = System::Drawing::Size(228, 223);
 			this->listView1->TabIndex = 10;
 			this->listView1->UseCompatibleStateImageBehavior = false;
 			this->listView1->View = System::Windows::Forms::View::Details;
@@ -115,38 +115,20 @@ namespace Project1 {
 			// 
 			// columnHeader12
 			// 
-			this->columnHeader12->Text = L"EstimativaHoras";
-			this->columnHeader12->Width = 90;
+			this->columnHeader12->Text = L"Data";
+			this->columnHeader12->Width = 105;
 			// 
 			// columnHeader13
 			// 
-			this->columnHeader13->Text = L"EstimativaEquip";
+			this->columnHeader13->Text = L"Numero OS";
 			this->columnHeader13->Width = 89;
-			// 
-			// columnHeader14
-			// 
-			this->columnHeader14->Text = L"EstimativaMaterial";
-			this->columnHeader14->Width = 96;
-			// 
-			// columnHeader1
-			// 
-			this->columnHeader1->Text = L"NumeroOS";
-			// 
-			// columnHeader2
-			// 
-			this->columnHeader2->Text = L"StatusOS";
-			// 
-			// columnHeader3
-			// 
-			this->columnHeader3->Text = L"NumeroBuraco";
-			this->columnHeader3->Width = 93;
 			// 
 			// fechar_bt
 			// 
 			this->fechar_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->fechar_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->fechar_bt->Location = System::Drawing::Point(498, 191);
+			this->fechar_bt->Location = System::Drawing::Point(234, 191);
 			this->fechar_bt->Margin = System::Windows::Forms::Padding(2);
 			this->fechar_bt->Name = L"fechar_bt";
 			this->fechar_bt->Size = System::Drawing::Size(135, 40);
@@ -161,7 +143,7 @@ namespace Project1 {
 				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->alterarStatus_bt->Enabled = false;
 			this->alterarStatus_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->alterarStatus_bt->Location = System::Drawing::Point(498, 147);
+			this->alterarStatus_bt->Location = System::Drawing::Point(234, 147);
 			this->alterarStatus_bt->Margin = System::Windows::Forms::Padding(2);
 			this->alterarStatus_bt->Name = L"alterarStatus_bt";
 			this->alterarStatus_bt->Size = System::Drawing::Size(135, 40);
@@ -175,7 +157,7 @@ namespace Project1 {
 			this->atualizar_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->atualizar_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->atualizar_bt->Location = System::Drawing::Point(498, 15);
+			this->atualizar_bt->Location = System::Drawing::Point(234, 15);
 			this->atualizar_bt->Margin = System::Windows::Forms::Padding(2);
 			this->atualizar_bt->Name = L"atualizar_bt";
 			this->atualizar_bt->Size = System::Drawing::Size(135, 40);
@@ -190,7 +172,7 @@ namespace Project1 {
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->button1->Enabled = false;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button1->Location = System::Drawing::Point(498, 103);
+			this->button1->Location = System::Drawing::Point(234, 103);
 			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(135, 40);
@@ -205,7 +187,7 @@ namespace Project1 {
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->buraco_bt->Enabled = false;
 			this->buraco_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->buraco_bt->Location = System::Drawing::Point(498, 59);
+			this->buraco_bt->Location = System::Drawing::Point(234, 59);
 			this->buraco_bt->Margin = System::Windows::Forms::Padding(2);
 			this->buraco_bt->Name = L"buraco_bt";
 			this->buraco_bt->Size = System::Drawing::Size(135, 40);
@@ -218,7 +200,7 @@ namespace Project1 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(644, 242);
+			this->ClientSize = System::Drawing::Size(389, 242);
 			this->Controls->Add(this->buraco_bt);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->listView1);
@@ -246,39 +228,44 @@ private: System::Void listView1_ItemChecked(System::Object^  sender, System::Win
 	}
 }
 private: System::Void atualizar_bt_Click(System::Object^  sender, System::EventArgs^  e) {
-	OSDAO * aux = new OSDAO();
-	vector<OS*>* temp2;
+	saidaDAO * aux = new saidaDAO();
+	vector<saida*>* temp2;
 	this->listView1->Items->Clear();
 	String^ str11 = nomeEquipe;
 	std::string nom = msclr::interop::marshal_as<std::string>(str11);
-	temp2 = aux->getOSEquip(nom);
+	temp2 = aux->buscarSaidaEquipe(nom);
 	
 	for (int j = 0; j < temp2->size(); j++) {
-		String^ str1 = gcnew String(std::to_string(temp2->at(j)->getEstimativaHoras()).c_str());
-		String^ str2 = gcnew String(std::to_string(temp2->at(j)->getEstimativaEquipamento()).c_str());
-		String^ str3 = gcnew String(std::to_string(temp2->at(j)->getEstimativaMaterial()).c_str());
-		String^ str4 = gcnew String(std::to_string(temp2->at(j)->getNumOS()).c_str());
-		String^ str5 = gcnew String(std::to_string(temp2->at(j)->getStatusOS()).c_str());
-		String^ str6 = gcnew String(std::to_string(temp2->at(j)->getNumBuraco()).c_str());
+		String^ str1 = gcnew String((temp2->at(j)->getNumOS()).c_str());
+		String^ str2 = gcnew String(std::to_string(temp2->at(j)->getData()).c_str());
+
 
 		listViewItem = gcnew Windows::Forms::ListViewItem(str1);
 		listViewItem->SubItems->Add(str2);
-		listViewItem->SubItems->Add(str3);
-		listViewItem->SubItems->Add(str4);
-		listViewItem->SubItems->Add(str5);
-		listViewItem->SubItems->Add(str6);
+
 		this->listView1->Items->Add(this->listViewItem);
 	}
 }
 private: System::Void alterarStatus_bt_Click(System::Object^  sender, System::EventArgs^  e) {
-	String^ str = listView1->CheckedItems[0]->SubItems[4]->Text;
-	String^ str2 = listView1->CheckedItems[0]->SubItems[6]->Text;
+	String^ str = listView1->CheckedItems[0]->SubItems[3]->Text;
+	String^ str2 = listView1->CheckedItems[0]->SubItems[5]->Text;
 	std::string nume = msclr::interop::marshal_as<std::string>(str);
 	std::string numeb = msclr::interop::marshal_as<std::string>(str2);
 
 	int num = std::stoi(nume);
 	int num2 = std::stoi(numeb);
-
+	//equipamento
+	ChefeFinalizarEquipamento^ tela = gcnew ChefeFinalizarEquipamento();
+	tela->ShowDialog();
+	this->Close();
+	//equipe
+	ChefeFinalizarEquipe^ tela2 = gcnew ChefeFinalizarEquipe();
+	tela2->ShowDialog();
+	this->Close();
+	//material
+	//mobilizacao
+//#include "ChefeFinalizarMobilizacao.h"
+//#include "ChefeFinalizarQuantidade.h"
 	buracoDAO* aux2 = new buracoDAO();
 	OSDAO* aux = new OSDAO();
 	aux->setStatusD(2, num);
@@ -290,21 +277,20 @@ private: System::Void fechar_bt_Click(System::Object^  sender, System::EventArgs
 }
 
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	String^ str = listView1->CheckedItems[0]->SubItems[4]->Text;
+	String^ str = listView1->CheckedItems[0]->SubItems[3]->Text;
 	std::string nume = msclr::interop::marshal_as<std::string>(str);
 
 	int num = std::stoi(nume);
 	OSDAO* aux = new OSDAO();
+
 	aux->setStatusD(1, num);
 }
 private: System::Void buraco_bt_Click(System::Object^  sender, System::EventArgs^  e) {
-	String^ str = listView1->CheckedItems[0]->SubItems[6]->Text;
-	std::string nume = msclr::interop::marshal_as<std::string>(str);
+	String^ str = listView1->CheckedItems[0]->SubItems[5]->Text;
+	
+	VisualizarUmBuraco^ tela = gcnew VisualizarUmBuraco(str);
+	tela->ShowDialog();
 
-	int num = std::stoi(nume);
-	buracoDAO* aux = new buracoDAO();
-	buracos * buraco;
-//	buraco = aux->getBuraco(num);
 }
 };
 }

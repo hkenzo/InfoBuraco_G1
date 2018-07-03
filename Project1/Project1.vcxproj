@@ -158,6 +158,11 @@
     <ClCompile Include="CadastroFuncionario.cpp" />
     <ClCompile Include="CaixaDeDialogo.cpp" />
     <ClCompile Include="ChefeEquipeTrabalho.cpp" />
+    <ClCompile Include="ChefeFinalizado.cpp" />
+    <ClCompile Include="ChefeFinalizarEquipamento.cpp" />
+    <ClCompile Include="ChefeFinalizarEquipe.cpp" />
+    <ClCompile Include="ChefeFinalizarMobilizacao.cpp" />
+    <ClCompile Include="ChefeFinalizarQuantidade.cpp" />
     <ClCompile Include="CriarEquipamento.cpp" />
     <ClCompile Include="criarEquipe.cpp" />
     <ClCompile Include="criarMaterial.cpp" />
@@ -209,6 +214,7 @@
     <ClCompile Include="usuario.cpp" />
     <ClCompile Include="usuarioDAO.cpp" />
     <ClCompile Include="VisualizarOS.cpp" />
+    <ClCompile Include="VisualizarUmBuraco.cpp" />
     <ClCompile Include="VizualizarBuracos.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -245,6 +251,21 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ChefeEquipeTrabalho.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ChefeFinalizado.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ChefeFinalizarEquipamento.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ChefeFinalizarEquipe.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ChefeFinalizarMobilizacao.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ChefeFinalizarQuantidade.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CriarEquipamento.h">
@@ -364,6 +385,9 @@
     <ClInclude Include="VisualizarOS.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="VisualizarUmBuraco.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="VizualizarBuracos.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -406,6 +430,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChefeEquipeTrabalho.resx">
       <DependentUpon>ChefeEquipeTrabalho.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChefeFinalizarEquipamento.resx">
+      <DependentUpon>ChefeFinalizarEquipamento.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CriarEquipamento.resx">
       <DependentUpon>CriarEquipamento.h</DependentUpon>
@@ -508,6 +535,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VisualizarOS.resx">
       <DependentUpon>VisualizarOS.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisualizarUmBuraco.resx">
+      <DependentUpon>VisualizarUmBuraco.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VizualizarBuracos.resx">
       <DependentUpon>VizualizarBuracos.h</DependentUpon>
