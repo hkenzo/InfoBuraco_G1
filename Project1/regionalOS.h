@@ -150,8 +150,8 @@ namespace Project1 {
 		}
 #pragma endregion
 	private: System::Void create_Mobilizacao_bt_Click(System::Object^  sender, System::EventArgs^  e) {
-		alterarPrioridade^ altera = gcnew alterarPrioridade();
-		altera->ShowDialog();
+		//alterarPrioridade^ altera = gcnew alterarPrioridade();
+		//altera->ShowDialog();
 	}
 };
 }
