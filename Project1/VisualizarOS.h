@@ -40,6 +40,7 @@ namespace Project1 {
 				delete components;
 			}
 		}
+		System::Windows::Forms::ListViewItem^ listViewItem;
 	private: System::Windows::Forms::ListView^  listView1;
 	private: System::Windows::Forms::Button^  bt_atualizar;
 	private: System::Windows::Forms::Button^  finalizarConsulta;
@@ -163,18 +164,31 @@ namespace Project1 {
 	private: System::Void finalizarConsulta_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Close();
 	}
-	//private: Void atualizarOS() {
-	//	OSDAO * aux = new OSDAO();
-	//	vector<OS*>* temp2;
-	//	this->listView1->Items->Clear();
-	//	temp2 = aux->buscarOS();
-	//	for (int j = 0; j < temp2->size(); j++) {
-	//		String^ str1 = gcnew String(std::to_string(temp2->at(j)->getNum()).c_str());
-	//		String^ str2 = gcnew String((temp2->at(j)->getRua()).c_str());
-	//		String^ str3 = gcnew String(std::to_string(temp2->at(j)->getRuaNum()).c_str());
-	//		String^ str4 = gcnew String(std::to_string(temp2->at(j)->getTamanho()).c_str());
-	//		String^ str5 = gcnew String((temp2->at(j)->getPosicao()).c_str());
-	//		String^ str6 = gcnew String((temp2->at(j)->getRegional()).c_str());
-	//}
+	private: Void atualizarOS() {
+		OSDAO * aux = new OSDAO();
+		vector<OS*>* temp2;
+		this->listView1->Items->Clear();
+		temp2 = aux->getOS();
+		for (int j = 0; j < temp2->size(); j++) {
+			String^ str1 = gcnew String(std::to_string(temp2->at(j)->getNumOS()).c_str());
+			String^ str2 = gcnew String(std::to_string(temp2->at(j)->getEstimativaHoras()).c_str());
+			String^ str3 = gcnew String(std::to_string(temp2->at(j)->getEstimativaMaterial()).c_str());
+			String^ str4 = gcnew String(std::to_string(temp2->at(j)->getEstimativaEquipamento()).c_str());
+			String^ str5 = gcnew String(std::to_string(temp2->at(j)->getStatusOS()).c_str());
+			String^ str6 = gcnew String(std::to_string(temp2->at(j)->getNumBuraco()).c_str());
+
+			listViewItem = gcnew Windows::Forms::ListViewItem(str1);
+			listViewItem->SubItems->Add(str2);
+			listViewItem->SubItems->Add(str3);
+			listViewItem->SubItems->Add(str4);
+			listViewItem->SubItems->Add(str5);
+			listViewItem->SubItems->Add(str6);
+			this->listView1->Items->Add(this->listViewItem);
+
+		}
+	}
+	private: System::Void bt_atualizar_Click(System::Object^  sender, System::EventArgs^  e) {
+		atualizarOS();
+	}
 	};
 }

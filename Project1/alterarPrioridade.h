@@ -182,7 +182,7 @@ namespace Project1 {
 		buracoDAO * aux = new buracoDAO;
 		string prioridade = msclr::interop::marshal_as<std::string>(this->prioridadeTextBox->Text);
 		string buraco = msclr::interop::marshal_as<std::string>(this->BuracoComboBox->Text);
-//		aux->editarBuracoDAO(std::stoi(prioridade, nullptr, 10), std::stoi(buraco, nullptr, 10));
+		aux->editarBuracoDAO(std::stoi(prioridade, nullptr, 10), std::stoi(buraco, nullptr, 10));
 		this->Close();
 	}
 

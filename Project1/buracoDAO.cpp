@@ -31,7 +31,6 @@ buracoDAO::buracoDAO(int numBuraco, string nomeRua, int numeroRua, int tamanho, 
 
 	string log;
 	sql::Connection * connection;
-	sql::Statement* statement;
 	sql::PreparedStatement * preparedStatement;
 	sql::ResultSet *resultSet;
 	try {
@@ -76,7 +75,6 @@ buracos * buracoDAO::buscarRua(string nomeRua, int numeroRua)
 	string band = nomeRua;
 	int num = numeroRua;
 	sql::Connection * connection;
-	sql::Statement* statement;
 	sql::PreparedStatement * preparedStatement;
 	sql::ResultSet *resultSet;
 	try {
@@ -110,7 +108,6 @@ buracos * buracoDAO::buscarRua(string nomeRua, int numeroRua)
 	int temp2;
 	int temp3;
 	sql::Connection * connection;
-	sql::Statement* statement;
 	sql::PreparedStatement * preparedStatement;
 	sql::ResultSet *resultSet;
 
@@ -184,7 +181,6 @@ void buracoDAO::aumentaReclamacao(string rua, int num)
 	int numer = num;
 	string log;
 	sql::Connection * connection;
-	sql::Statement* statement;
 	sql::PreparedStatement * preparedStatement;
 	sql::ResultSet *resultSet;
 	try {
@@ -240,7 +236,6 @@ void buracoDAO::setStatusBuraco(int statusBuraco, string nomeRua, int numRua)
 	string nome = nomeRua;
 	string log;
 	sql::Connection * connection;
-	sql::Statement* statement;
 	sql::PreparedStatement * preparedStatement;
 	sql::ResultSet *resultSet;
 	try {
@@ -266,7 +261,6 @@ void buracoDAO::setPrioridadeBuraco(int prioridade, string rua, int num)
 	int numero = num;
 	string log;
 	sql::Connection * connection;
-	sql::Statement* statement;
 	sql::PreparedStatement * preparedStatement;
 	sql::ResultSet *resultSet;
 	try {
@@ -292,7 +286,6 @@ buracos*  buracoDAO::getBuraco(int numeroBuraco)
 	buracos * buraco;
 	int num = numeroBuraco;
 	sql::Connection * connection;
-	sql::Statement* statement;
 	sql::PreparedStatement * preparedStatement;
 	sql::ResultSet *resultSet;
 	try {
@@ -323,7 +316,6 @@ void buracoDAO::setStatusBur(int statusBuraco, int numeroBuraco)
 	int status = statusBuraco;
 	string log;
 	sql::Connection * connection;
-	sql::Statement* statement;
 	sql::PreparedStatement * preparedStatement;
 	sql::ResultSet *resultSet;
 	try {
@@ -333,6 +325,29 @@ void buracoDAO::setStatusBur(int statusBuraco, int numeroBuraco)
 
 		preparedStatement->setInt(1, status);
 		preparedStatement->setInt(2, numer);
+		resultSet = preparedStatement->executeQuery();
+	}
+	catch (sql::SQLException e)
+	{
+		connection->close();
+		log = e.what();
+	}
+}
+
+void buracoDAO::editarBuracoDAO(int prioridade, int numeroBuraco) {
+	int num = numeroBuraco;
+	int pri = prioridade;
+	string log;
+	sql::Connection * connection;
+	sql::PreparedStatement * preparedStatement;
+	sql::ResultSet *resultSet;
+	try {
+		MySQLDAO* mysqldao = MySQLDAO::getInstance();
+		connection = mysqldao->getConnection();
+		preparedStatement = connection->prepareStatement("UPDATE buraco SET prioridade = ? WHERE numBuraco = ?");
+
+		preparedStatement->setInt(1, pri);
+		preparedStatement->setInt(2, num);
 		resultSet = preparedStatement->executeQuery();
 	}
 	catch (sql::SQLException e)
