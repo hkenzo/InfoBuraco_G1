@@ -90,9 +90,10 @@ namespace Project1 {
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(236, 20);
+			this->label6->Location = System::Drawing::Point(177, 16);
+			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(177, 25);
+			this->label6->Size = System::Drawing::Size(143, 20);
 			this->label6->TabIndex = 25;
 			this->label6->Text = L"Seleção de Equipe";
 			// 
@@ -100,9 +101,10 @@ namespace Project1 {
 			// 
 			this->Confirm_Bt->BackColor = System::Drawing::Color::PowderBlue;
 			this->Confirm_Bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->Confirm_Bt->Location = System::Drawing::Point(733, 210);
+			this->Confirm_Bt->Location = System::Drawing::Point(550, 171);
+			this->Confirm_Bt->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Confirm_Bt->Name = L"Confirm_Bt";
-			this->Confirm_Bt->Size = System::Drawing::Size(185, 54);
+			this->Confirm_Bt->Size = System::Drawing::Size(139, 44);
 			this->Confirm_Bt->TabIndex = 28;
 			this->Confirm_Bt->Text = L"Selecionar Equipamentos";
 			this->Confirm_Bt->UseVisualStyleBackColor = false;
@@ -113,9 +115,10 @@ namespace Project1 {
 			this->Cancel_BT->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->Cancel_BT->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->Cancel_BT->Location = System::Drawing::Point(733, 321);
+			this->Cancel_BT->Location = System::Drawing::Point(550, 261);
+			this->Cancel_BT->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Cancel_BT->Name = L"Cancel_BT";
-			this->Cancel_BT->Size = System::Drawing::Size(185, 54);
+			this->Cancel_BT->Size = System::Drawing::Size(139, 44);
 			this->Cancel_BT->TabIndex = 27;
 			this->Cancel_BT->Text = L"Voltar";
 			this->Cancel_BT->UseVisualStyleBackColor = false;
@@ -126,9 +129,10 @@ namespace Project1 {
 			this->create_BT->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->create_BT->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->create_BT->Location = System::Drawing::Point(733, 97);
+			this->create_BT->Location = System::Drawing::Point(550, 79);
+			this->create_BT->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->create_BT->Name = L"create_BT";
-			this->create_BT->Size = System::Drawing::Size(180, 49);
+			this->create_BT->Size = System::Drawing::Size(135, 40);
 			this->create_BT->TabIndex = 29;
 			this->create_BT->Text = L"Criar Equipe";
 			this->create_BT->UseVisualStyleBackColor = false;
@@ -141,13 +145,15 @@ namespace Project1 {
 				this->columnHeader1, this->columnHeader2,
 					this->columnHeader3
 			});
-			this->listView1->Location = System::Drawing::Point(16, 67);
+			this->listView1->Location = System::Drawing::Point(12, 54);
+			this->listView1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->listView1->Name = L"listView1";
-			this->listView1->Size = System::Drawing::Size(666, 385);
+			this->listView1->Size = System::Drawing::Size(500, 314);
 			this->listView1->TabIndex = 30;
 			this->listView1->UseCompatibleStateImageBehavior = false;
 			this->listView1->View = System::Windows::Forms::View::Details;
 			this->listView1->ItemChecked += gcnew System::Windows::Forms::ItemCheckedEventHandler(this, &saidaEquipe::checked);
+			this->listView1->SelectedIndexChanged += gcnew System::EventHandler(this, &saidaEquipe::listView1_SelectedIndexChanged);
 			// 
 			// columnHeader1
 			// 
@@ -166,14 +172,15 @@ namespace Project1 {
 			// 
 			// saidaEquipe
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(978, 468);
+			this->ClientSize = System::Drawing::Size(734, 380);
 			this->Controls->Add(this->listView1);
 			this->Controls->Add(this->create_BT);
 			this->Controls->Add(this->Confirm_Bt);
 			this->Controls->Add(this->Cancel_BT);
 			this->Controls->Add(this->label6);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"saidaEquipe";
 			this->Text = L"saidaEquipe";
 			this->Load += gcnew System::EventHandler(this, &saidaEquipe::saidaEquipe_Load);
@@ -240,5 +247,7 @@ namespace Project1 {
 
 
 
+private: System::Void listView1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+}
 };
 }

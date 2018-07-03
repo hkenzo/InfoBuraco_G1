@@ -249,9 +249,10 @@ private: System::Void atualizar_bt_Click(System::Object^  sender, System::EventA
 	OSDAO * aux = new OSDAO();
 	vector<OS*>* temp2;
 	this->listView1->Items->Clear();
-	string nom = "nome";
+	String^ str11 = nomeEquipe;
+	std::string nom = msclr::interop::marshal_as<std::string>(str11);
 	temp2 = aux->getOSEquip(nom);
-
+	
 	for (int j = 0; j < temp2->size(); j++) {
 		String^ str1 = gcnew String(std::to_string(temp2->at(j)->getEstimativaHoras()).c_str());
 		String^ str2 = gcnew String(std::to_string(temp2->at(j)->getEstimativaEquipamento()).c_str());

@@ -1,4 +1,5 @@
 #include "usuarioDAO.h"
+#include "equipeDAO.h"
 #include <msclr\marshal_cppstd.h>
 #pragma once
 
@@ -243,6 +244,13 @@ namespace Project1 {
 		string senha = msclr::interop::marshal_as<std::string>(this->senhabox->Text);
 
 		temp->criarUsuarioDAO(user, tipo, senha, nome);
+
+		if (tipo == "Chefe da Equipe") {
+			equipeDAO * aux2 = new equipeDAO();
+			aux2->criarEquipeDAO(user, 10, 50);
+		}
+
+
 		this->Close();
 	}
 
