@@ -208,6 +208,7 @@
     <ClCompile Include="telaEquipe.cpp" />
     <ClCompile Include="usuario.cpp" />
     <ClCompile Include="usuarioDAO.cpp" />
+    <ClCompile Include="VisualizarOS.cpp" />
     <ClCompile Include="VizualizarBuracos.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -360,6 +361,9 @@
     </ClInclude>
     <ClInclude Include="usuario.h" />
     <ClInclude Include="usuarioDAO.h" />
+    <ClInclude Include="VisualizarOS.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="VizualizarBuracos.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -501,6 +505,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="telaEquipe.resx">
       <DependentUpon>telaEquipe.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisualizarOS.resx">
+      <DependentUpon>VisualizarOS.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VizualizarBuracos.resx">
       <DependentUpon>VizualizarBuracos.h</DependentUpon>

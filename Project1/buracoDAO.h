@@ -36,6 +36,7 @@ public:
 	void buracoDAO::setStatusBuraco(int statusBuraco, string rua, int num);
 	void aumentaReclamacao(string rua, int num);
 	void setPrioridadeBuraco(int prioridade, string rua, int num);
+	void editarBuracoDAO(int numBuraco, int prioridade);
 
 };
 

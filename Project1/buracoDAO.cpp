@@ -1,5 +1,7 @@
-
-
+#include "MySQLDAO.h"
+#include <stdio.h>
+#include <string>
+#include <vector>
 #include "buracoDAO.h"
 
 buracoDAO::buracoDAO()
@@ -277,6 +279,30 @@ void buracoDAO::setPrioridadeBuraco(int prioridade, string rua, int num)
 		preparedStatement->setInt(1, pri);
 		preparedStatement->setString(2, nome.c_str());
 		preparedStatement->setInt(3, numero);
+		resultSet = preparedStatement->executeQuery();
+	}
+	catch (sql::SQLException e)
+	{
+		connection->close();
+		log = e.what();
+	}
+}
+void buracoDAO::editarBuracoDAO(int numBuraco, int prioridade) {
+	
+	int pri = prioridade;
+	int buraco = numBuraco;
+	string log;
+	sql::Connection * connection;
+	sql::Statement* statement;
+	sql::PreparedStatement * preparedStatement;
+	sql::ResultSet *resultSet;
+	try {
+		MySQLDAO* mysqldao = MySQLDAO::getInstance();
+		connection = mysqldao->getConnection();
+		preparedStatement = connection->prepareStatement("UPDATE buraco SET prioridade = ? WHERE numBuraco = ?");
+
+		preparedStatement->setInt(1, pri);
+		preparedStatement->setInt(2, buraco);
 		resultSet = preparedStatement->executeQuery();
 	}
 	catch (sql::SQLException e)

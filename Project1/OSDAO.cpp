@@ -1,3 +1,7 @@
+#include "MySQLDAO.h"
+#include <stdio.h>
+#include <string>
+#include <vector>
 #include "OSDAO.h"
 
 
@@ -38,7 +42,29 @@ OSDAO::OSDAO(int numOS, int estimativaHoras, int estimativaEquipamento, int esti
 	}
 }
 
-//OSDAO::setStatus(int status, int numOS)
-//{
 
-//}
+
+void OSDAO::setStatusOS(int statusOS, int numOS)
+{
+	int nOS = numOS;
+	int status = statusOS;
+	string log;
+	sql::Connection * connection;
+	sql::Statement* statement;
+	sql::PreparedStatement * preparedStatement;
+	sql::ResultSet *resultSet;
+	try {
+		MySQLDAO* mysqldao = MySQLDAO::getInstance();
+		connection = mysqldao->getConnection();
+		preparedStatement = connection->prepareStatement("UPDATE OS SET statusOS = ? WHERE numOS = ? ");
+
+		preparedStatement->setInt(1, status);
+		preparedStatement->setInt(2, nOS);
+		resultSet = preparedStatement->executeQuery();
+	}
+	catch (sql::SQLException e)
+	{
+		connection->close();
+		log = e.what();
+	}
+}
