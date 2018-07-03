@@ -226,6 +226,7 @@ namespace Project1 {
 	private: System::Void create_BT_Click(System::Object^  sender, System::EventArgs^  e) {
 		criarMaterial^ cria = gcnew criarMaterial();
 		cria->ShowDialog();
+		atualizarDashboard();
 	}
 	
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -238,6 +239,12 @@ namespace Project1 {
 		atualizarDashboard();
 	}
 	private: System::Void checked(System::Object^  sender, System::Windows::Forms::ItemCheckedEventArgs^  e) {
+		if (listView1->CheckedIndices->Count < 1) {
+			this->Confirm_Bt->Enabled = false;
+		}
+		else {
+			this->Confirm_Bt->Enabled = true;
+		}
 	}
 
 	private: Void atualizarDashboard() {

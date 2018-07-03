@@ -1,6 +1,8 @@
 #include "saida.h"
 #include "saidaDAO.h"
 #include "saidaEquipe.h"
+#include "OS.h"
+#include "OSDAO.h"
 #include <msclr\marshal_cppstd.h>
 #pragma once
 
@@ -204,10 +206,11 @@ namespace Project1 {
 		}
 	}
 	private: System::Void saidaOS_Load(System::Object^  sender, System::EventArgs^  e) {
+		atualizarDashboard();
 	}
 	private: System::Void Confirm_Bt_Click(System::Object^  sender, System::EventArgs^  e) {
 		saidaDAO * aux = new saidaDAO();
-		
+
 		string data = msclr::interop::marshal_as<std::string>(this->databox->Text);
 		string num = msclr::interop::marshal_as<std::string>(listView1->CheckedItems[0]->SubItems[3]->Text);
 		saidaEquipe ^ aux2 = gcnew saidaEquipe(this->databox->Text, listView1->CheckedItems[0]->SubItems[3]->Text);
@@ -215,5 +218,33 @@ namespace Project1 {
 		aux2->ShowDialog();
 		this->Close();
 	}
-};
+
+	private: Void atualizarDashboard() {
+		OSDAO * aux = new OSDAO();
+		vector<OS*>* temp2;
+		this->listView1->Items->Clear();
+		temp2 = aux->getOS();
+		for (int j = 0; j < temp2->size(); j++) {
+			String^ str1 = gcnew String(std::to_string(temp2->at(j)->getEstimativaHoras()).c_str());
+			String^ str2 = gcnew String(std::to_string(temp2->at(j)->getEstimativaEquipamento()).c_str());
+			String^ str3 = gcnew String(std::to_string(temp2->at(j)->getEstimativaMaterial()).c_str());
+			String^ str4 = gcnew String(std::to_string(temp2->at(j)->getNumOS()).c_str());
+			String^ str5 = gcnew String(std::to_string(temp2->at(j)->getStatusOS()).c_str());
+			String^ str6 = gcnew String(std::to_string(temp2->at(j)->getNumBuraco()).c_str());
+			
+			if (temp2->at(j)->getStatusOS() < 2) {
+				listViewItem = gcnew Windows::Forms::ListViewItem(str1);
+				listViewItem->SubItems->Add(str2);
+				listViewItem->SubItems->Add(str3);
+				listViewItem->SubItems->Add(str4);
+				listViewItem->SubItems->Add(str5);
+				listViewItem->SubItems->Add(str6);
+				this->listView1->Items->Add(this->listViewItem);
+			}
+
+		}
+	}
+
+
+	};
 }
