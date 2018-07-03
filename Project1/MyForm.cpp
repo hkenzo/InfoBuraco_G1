@@ -16,7 +16,7 @@ namespace Project1 {
 	{
 		Application::EnableVisualStyles();
 		Application::SetCompatibleTextRenderingDefault(false);
-		Application::Run(gcnew dashboard);
+		Application::Run(gcnew login);
 		
 	}
 }

@@ -229,6 +229,12 @@ namespace Project1 {
 		atualizarDashboard();
 	}
 	private: System::Void checked(System::Object^  sender, System::Windows::Forms::ItemCheckedEventArgs^  e) {
+		if (listView1->CheckedIndices->Count < 1) {
+			this->Confirm_Bt->Enabled = false;
+		}
+		else {
+			this->Confirm_Bt->Enabled = true;
+		}
 	}
 
 		 private: Void atualizarDashboard() {

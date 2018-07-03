@@ -4,6 +4,7 @@
 #include "alterarSaida.h"
 #include "saida.h"
 #include "saidaDAO.h"
+#include "saidaOS.h"
 #include <msclr\marshal_cppstd.h>
 #pragma once
 namespace Project1 {
@@ -42,7 +43,7 @@ namespace Project1 {
 		}
 		System::Windows::Forms::ListViewItem^ listViewItem;
 	private: System::Windows::Forms::Button^  create_Saida_bt;
-	private: System::Windows::Forms::Button^  remove_Saida_bt;
+
 
 	protected:
 
@@ -54,7 +55,9 @@ namespace Project1 {
 	private: System::Windows::Forms::ListView^  listView1;
 	private: System::Windows::Forms::ColumnHeader^  columnHeader1;
 	private: System::Windows::Forms::ColumnHeader^  columnHeader2;
-	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::Button^  remove_Saida_bt;
+
+
 
 
 
@@ -72,12 +75,11 @@ namespace Project1 {
 		void InitializeComponent(void)
 		{
 			this->create_Saida_bt = (gcnew System::Windows::Forms::Button());
-			this->remove_Saida_bt = (gcnew System::Windows::Forms::Button());
 			this->voltar_equipt_bt = (gcnew System::Windows::Forms::Button());
 			this->listView1 = (gcnew System::Windows::Forms::ListView());
 			this->columnHeader1 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader2 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->remove_Saida_bt = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// create_Saida_bt
@@ -85,38 +87,24 @@ namespace Project1 {
 			this->create_Saida_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->create_Saida_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->create_Saida_bt->Location = System::Drawing::Point(418, 78);
-			this->create_Saida_bt->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->create_Saida_bt->Location = System::Drawing::Point(557, 172);
+			this->create_Saida_bt->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->create_Saida_bt->Name = L"create_Saida_bt";
-			this->create_Saida_bt->Size = System::Drawing::Size(135, 40);
+			this->create_Saida_bt->Size = System::Drawing::Size(180, 49);
 			this->create_Saida_bt->TabIndex = 1;
 			this->create_Saida_bt->Text = L"Criar Saida";
 			this->create_Saida_bt->UseVisualStyleBackColor = false;
 			this->create_Saida_bt->Click += gcnew System::EventHandler(this, &gerenciarSaida::create_equipt_bt_Click);
-			// 
-			// remove_Saida_bt
-			// 
-			this->remove_Saida_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
-				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->remove_Saida_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->remove_Saida_bt->Location = System::Drawing::Point(418, 223);
-			this->remove_Saida_bt->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->remove_Saida_bt->Name = L"remove_Saida_bt";
-			this->remove_Saida_bt->Size = System::Drawing::Size(135, 40);
-			this->remove_Saida_bt->TabIndex = 2;
-			this->remove_Saida_bt->Text = L"Remover Saida";
-			this->remove_Saida_bt->UseVisualStyleBackColor = false;
-			this->remove_Saida_bt->Click += gcnew System::EventHandler(this, &gerenciarSaida::remove_equipt_bt_Click);
 			// 
 			// voltar_equipt_bt
 			// 
 			this->voltar_equipt_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->voltar_equipt_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->voltar_equipt_bt->Location = System::Drawing::Point(418, 297);
-			this->voltar_equipt_bt->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->voltar_equipt_bt->Location = System::Drawing::Point(557, 366);
+			this->voltar_equipt_bt->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->voltar_equipt_bt->Name = L"voltar_equipt_bt";
-			this->voltar_equipt_bt->Size = System::Drawing::Size(135, 40);
+			this->voltar_equipt_bt->Size = System::Drawing::Size(180, 49);
 			this->voltar_equipt_bt->TabIndex = 4;
 			this->voltar_equipt_bt->Text = L"Voltar";
 			this->voltar_equipt_bt->UseVisualStyleBackColor = false;
@@ -126,10 +114,10 @@ namespace Project1 {
 			// 
 			this->listView1->CheckBoxes = true;
 			this->listView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::ColumnHeader^  >(2) { this->columnHeader1, this->columnHeader2 });
-			this->listView1->Location = System::Drawing::Point(16, 32);
-			this->listView1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->listView1->Location = System::Drawing::Point(21, 39);
+			this->listView1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->listView1->Name = L"listView1";
-			this->listView1->Size = System::Drawing::Size(381, 351);
+			this->listView1->Size = System::Drawing::Size(507, 431);
 			this->listView1->TabIndex = 5;
 			this->listView1->UseCompatibleStateImageBehavior = false;
 			this->listView1->View = System::Windows::Forms::View::Details;
@@ -145,31 +133,31 @@ namespace Project1 {
 			this->columnHeader2->Text = L"Número da OS";
 			this->columnHeader2->Width = 175;
 			// 
-			// button1
+			// remove_Saida_bt
 			// 
-			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+			this->remove_Saida_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button1->Location = System::Drawing::Point(418, 149);
-			this->button1->Margin = System::Windows::Forms::Padding(2);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(135, 40);
-			this->button1->TabIndex = 6;
-			this->button1->Text = L"Alterar Saida";
-			this->button1->UseVisualStyleBackColor = false;
+			this->remove_Saida_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->remove_Saida_bt->Location = System::Drawing::Point(557, 274);
+			this->remove_Saida_bt->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->remove_Saida_bt->Name = L"remove_Saida_bt";
+			this->remove_Saida_bt->Size = System::Drawing::Size(180, 49);
+			this->remove_Saida_bt->TabIndex = 2;
+			this->remove_Saida_bt->Text = L"Remover Saida";
+			this->remove_Saida_bt->UseVisualStyleBackColor = false;
+			this->remove_Saida_bt->Click += gcnew System::EventHandler(this, &gerenciarSaida::remove_equipt_bt_Click);
 			// 
 			// gerenciarSaida
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
-			this->ClientSize = System::Drawing::Size(586, 406);
-			this->Controls->Add(this->button1);
+			this->ClientSize = System::Drawing::Size(781, 500);
 			this->Controls->Add(this->listView1);
 			this->Controls->Add(this->voltar_equipt_bt);
 			this->Controls->Add(this->remove_Saida_bt);
 			this->Controls->Add(this->create_Saida_bt);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"gerenciarSaida";
 			this->Text = L"gerenciarSaida";
 			this->Load += gcnew System::EventHandler(this, &gerenciarSaida::gerenciarSaida_Load);
@@ -185,7 +173,7 @@ namespace Project1 {
 		atualizarDashboard();
 	}
 	private: System::Void create_equipt_bt_Click(System::Object^  sender, System::EventArgs^  e) {
-		saidaEquipe^ cria = gcnew saidaEquipe();
+		saidaOS^ cria = gcnew saidaOS();
 		cria->ShowDialog();
 		atualizarDashboard();
 	}
