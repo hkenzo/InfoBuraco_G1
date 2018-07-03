@@ -11,19 +11,8 @@ using namespace std;
 class OSDAO
 {
 public:
-
-	int numOS;
-	int estimativaHoras;
-	int estimativaEquipamento;
-	int estimativaMaterial;
-	int statusOS;
-	int numBuraco;
-	//int prioridadeOS;
-
-	OSDAO(int numOS, int estimativaHoras, int estimativaEquipamento, int estimativaMaterial, int statusOS, int numBuraco);
+	OSDAO(int estimativaHoras, int estimativaEquipamento, int estimativaMaterial, int numOS, int statusOS, int numBuraco);
 	OSDAO();
-	
-	vector<OS*>* OSDAO::buscarOS();
-	void setStatusOS(int statusOS, int numOS);
+	void setStatusD(int status, int numOS);
+	vector <OS*>* getOS();
 };
-
