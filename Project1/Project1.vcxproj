@@ -149,7 +149,7 @@
     <ClCompile Include="alterarEquipe.cpp" />
     <ClCompile Include="alterarMaterial.cpp" />
     <ClCompile Include="alterarMobilizacao.cpp" />
-    <ClCompile Include="alterarPriorade.cpp" />
+    <ClCompile Include="alterarPrioridade.cpp" />
     <ClCompile Include="alterarSaida.cpp" />
     <ClCompile Include="alterarSaida1.cpp" />
     <ClCompile Include="alterarSaida2.cpp" />
