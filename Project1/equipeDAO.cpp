@@ -6,7 +6,7 @@ equipeDAO::equipeDAO()
 {
 }
 
-void equipeDAO::criarEquipeDAO(int identificacaoEquipe, int numProfissionais, int custoHoraEquipe)
+void equipeDAO::criarEquipeDAO(string identificacaoEquipe, int numProfissionais, int custoHoraEquipe)
 {
 	string log;
 	sql::Connection * connection;
@@ -17,7 +17,7 @@ void equipeDAO::criarEquipeDAO(int identificacaoEquipe, int numProfissionais, in
 		connection = mysqldao->getConnection();
 		preparedStatement = connection->prepareStatement("INSERT INTO equipe (identificacaoEquipe, numProfissionais, custoHoraEquipe) VALUES (?,?,?)");
 
-		preparedStatement->setInt(1, identificacaoEquipe);
+		preparedStatement->setString(1, identificacaoEquipe.c_str());
 		preparedStatement->setInt(2, numProfissionais);
 		preparedStatement->setInt(3, custoHoraEquipe);
 		resultSet = preparedStatement->executeQuery();
@@ -29,7 +29,7 @@ void equipeDAO::criarEquipeDAO(int identificacaoEquipe, int numProfissionais, in
 	}
 }
 
-void equipeDAO::deletarEquipeDAO(int identificacaoEquipe)
+void equipeDAO::deletarEquipeDAO(string identificacaoEquipe)
 {
 	string log;
 	sql::Connection * connection;
@@ -40,7 +40,7 @@ void equipeDAO::deletarEquipeDAO(int identificacaoEquipe)
 		connection = mysqldao->getConnection();
 		preparedStatement = connection->prepareStatement("DELETE FROM equipe WHERE identificacaoEquipe = ?");
 
-		preparedStatement->setInt(1, identificacaoEquipe);
+		preparedStatement->setString(1, identificacaoEquipe.c_str());
 		resultSet = preparedStatement->executeQuery();
 	}
 	catch (sql::SQLException e)
@@ -50,7 +50,7 @@ void equipeDAO::deletarEquipeDAO(int identificacaoEquipe)
 	}
 }
 
-void equipeDAO::editarEquipeDAO(int identificacaoEquipe, int numProfissionais, int custoHoraEquipe)
+void equipeDAO::editarEquipeDAO(string identificacaoEquipe, int numProfissionais, int custoHoraEquipe)
 {
 string log;
 sql::Connection * connection;
@@ -63,7 +63,7 @@ preparedStatement = connection->prepareStatement("UPDATE equipe SET numProfissio
 
 preparedStatement->setInt(1, numProfissionais);
 preparedStatement->setInt(2, custoHoraEquipe);
-preparedStatement->setInt(3, identificacaoEquipe);
+preparedStatement->setString(3, identificacaoEquipe.c_str());
 
 resultSet = preparedStatement->executeQuery();
 }
@@ -91,7 +91,7 @@ resultSet = preparedStatement->executeQuery();
 
 temp2 = new vector<equipe*>();
 while (resultSet->next()) {
-	temp = new equipe(resultSet->getInt(1), resultSet->getInt(2), resultSet->getInt(3));
+	temp = new equipe(resultSet->getString(1).c_str(), resultSet->getInt(2), resultSet->getInt(3));
 	temp2->push_back(temp);
 }
 }
@@ -103,7 +103,7 @@ log = e.what();
 return temp2;
 }
 
-void equipeDAO::criarEquipeSaidaDAO(int identificacaoEquipe, string data, int numOS) {
+void equipeDAO::criarEquipeSaidaDAO(string identificacaoEquipe, string data, int numOS) {
 	string log;
 	sql::Connection * connection;
 	sql::PreparedStatement * preparedStatement;
@@ -113,7 +113,7 @@ void equipeDAO::criarEquipeSaidaDAO(int identificacaoEquipe, string data, int nu
 		connection = mysqldao->getConnection();
 		preparedStatement = connection->prepareStatement("INSERT INTO equipe_saida (identificacaoEquipe, data, numOS) VALUES (?,?,?)");
 		
-		preparedStatement->setInt(1, identificacaoEquipe);
+		preparedStatement->setString(1, identificacaoEquipe.c_str());
 		preparedStatement->setString(2, data.c_str());
 		preparedStatement->setInt(3, numOS);
 		resultSet = preparedStatement->executeQuery();

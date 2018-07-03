@@ -8,19 +8,19 @@ class equipe
 {
 private:
 
-	int identificacaoEquipe;
+	string identificacaoEquipe;
 	int numProfissionais;
 	int custoHoraEquipe;
 
 
 public:
 
-	equipe(int identificacaoEquipe, int numProfissionais, int custoHoraEquipe);
+	equipe(string identificacaoEquipe, int numProfissionais, int custoHoraEquipe);
 	virtual ~equipe();
 
 	void setNumProfissionais(int novoNum);
 	void setCusto(int novoCusto);
-	int getId();
+	string getId();
 	int getNum();
 	int getCusto();
 

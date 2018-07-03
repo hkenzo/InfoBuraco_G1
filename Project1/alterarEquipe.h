@@ -268,7 +268,7 @@ namespace Project1 {
 		string id = msclr::interop::marshal_as<std::string>(this->idbox->Text);
 		string novoNum = msclr::interop::marshal_as<std::string>(this->numbox->Text);
 		string novoCusto = msclr::interop::marshal_as<std::string>(this->custobox->Text);
-		aux->editarEquipeDAO(std::stoi(id, nullptr, 10), std::stoi(novoNum, nullptr, 10), std::stoi(novoCusto, nullptr, 10));
+		aux->editarEquipeDAO(id, std::stoi(novoNum, nullptr, 10), std::stoi(novoCusto, nullptr, 10));
 		this->Close();
 	}
 

@@ -238,7 +238,7 @@ namespace Project1 {
 		this->listView1->Items->Clear();
 		temp2 = aux->buscarEquipe();
 		for (int j = 0; j < temp2->size(); j++) {
-			String^ str1 = gcnew String(std::to_string(temp2->at(j)->getId()).c_str());
+			String^ str1 = gcnew String((temp2->at(j)->getId()).c_str());
 			String^ str2 = gcnew String(std::to_string(temp2->at(j)->getNum()).c_str());
 			String^ str3 = gcnew String(std::to_string(temp2->at(j)->getCusto()).c_str());
 			

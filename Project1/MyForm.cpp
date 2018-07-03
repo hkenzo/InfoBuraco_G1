@@ -17,6 +17,7 @@ namespace Project1 {
 		Application::EnableVisualStyles();
 		Application::SetCompatibleTextRenderingDefault(false);
 		Application::Run(gcnew alterarPrioridade);
+		//Application::Run(gcnew login);
 		
 	}
 }
