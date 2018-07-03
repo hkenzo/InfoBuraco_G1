@@ -1,3 +1,10 @@
+#include <iostream>
+#include <string>
+#include "alterarPrioridade.h"
+#include "buracos.h"
+#include "OS.h"
+#include "VizualizarBuracos.h"
+#include "VisualizarOS.h"
 #pragma once
 
 namespace Project1 {
@@ -34,7 +41,7 @@ namespace Project1 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^  btVisualizarOS;
+
 	private: System::Windows::Forms::Button^  btVisualizarBuraco;
 	protected:
 
@@ -56,7 +63,9 @@ namespace Project1 {
 	private: System::Windows::Forms::TextBox^  numReparos;
 	private: System::Windows::Forms::TextBox^  previsaoAtual;
 	private: System::Windows::Forms::TextBox^  custoReparoMedio;
-	private: System::Windows::Forms::Button^  btAlterarPrioridade;
+	private: System::Windows::Forms::Button^  bt_AlterarPrioridade;
+	private: System::Windows::Forms::Button^  btVisualizarOS;
+
 
 
 
@@ -82,7 +91,6 @@ namespace Project1 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->btVisualizarOS = (gcnew System::Windows::Forms::Button());
 			this->btVisualizarBuraco = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -95,19 +103,9 @@ namespace Project1 {
 			this->numReparos = (gcnew System::Windows::Forms::TextBox());
 			this->previsaoAtual = (gcnew System::Windows::Forms::TextBox());
 			this->custoReparoMedio = (gcnew System::Windows::Forms::TextBox());
-			this->btAlterarPrioridade = (gcnew System::Windows::Forms::Button());
+			this->bt_AlterarPrioridade = (gcnew System::Windows::Forms::Button());
+			this->btVisualizarOS = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
-			// 
-			// btVisualizarOS
-			// 
-			this->btVisualizarOS->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
-				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->btVisualizarOS->Location = System::Drawing::Point(40, 335);
-			this->btVisualizarOS->Name = L"btVisualizarOS";
-			this->btVisualizarOS->Size = System::Drawing::Size(120, 50);
-			this->btVisualizarOS->TabIndex = 0;
-			this->btVisualizarOS->Text = L"Visualizar OS";
-			this->btVisualizarOS->UseVisualStyleBackColor = false;
 			// 
 			// btVisualizarBuraco
 			// 
@@ -119,6 +117,7 @@ namespace Project1 {
 			this->btVisualizarBuraco->TabIndex = 1;
 			this->btVisualizarBuraco->Text = L"Visualizar Buraco";
 			this->btVisualizarBuraco->UseVisualStyleBackColor = false;
+			this->btVisualizarBuraco->Click += gcnew System::EventHandler(this, &dashboard::btVisualizarBuraco_Click);
 			// 
 			// label1
 			// 
@@ -227,23 +226,36 @@ namespace Project1 {
 			this->custoReparoMedio->Size = System::Drawing::Size(100, 20);
 			this->custoReparoMedio->TabIndex = 15;
 			// 
-			// btAlterarPrioridade
+			// bt_AlterarPrioridade
 			// 
-			this->btAlterarPrioridade->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+			this->bt_AlterarPrioridade->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->btAlterarPrioridade->Location = System::Drawing::Point(407, 353);
-			this->btAlterarPrioridade->Name = L"btAlterarPrioridade";
-			this->btAlterarPrioridade->Size = System::Drawing::Size(120, 50);
-			this->btAlterarPrioridade->TabIndex = 16;
-			this->btAlterarPrioridade->Text = L"Alterar Prioridade";
-			this->btAlterarPrioridade->UseVisualStyleBackColor = false;
+			this->bt_AlterarPrioridade->Location = System::Drawing::Point(407, 353);
+			this->bt_AlterarPrioridade->Name = L"bt_AlterarPrioridade";
+			this->bt_AlterarPrioridade->Size = System::Drawing::Size(120, 50);
+			this->bt_AlterarPrioridade->TabIndex = 16;
+			this->bt_AlterarPrioridade->Text = L"Alterar Prioridade";
+			this->bt_AlterarPrioridade->UseVisualStyleBackColor = false;
+			this->bt_AlterarPrioridade->Click += gcnew System::EventHandler(this, &dashboard::bt_AlterarPrioridade_Click);
+			// 
+			// btVisualizarOS
+			// 
+			this->btVisualizarOS->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->btVisualizarOS->Location = System::Drawing::Point(40, 335);
+			this->btVisualizarOS->Name = L"btVisualizarOS";
+			this->btVisualizarOS->Size = System::Drawing::Size(120, 50);
+			this->btVisualizarOS->TabIndex = 0;
+			this->btVisualizarOS->Text = L"Visualizar OS";
+			this->btVisualizarOS->UseVisualStyleBackColor = false;
+			this->btVisualizarOS->Click += gcnew System::EventHandler(this, &dashboard::btVisualizarOS_Click);
 			// 
 			// dashboard
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(592, 425);
-			this->Controls->Add(this->btAlterarPrioridade);
+			this->Controls->Add(this->bt_AlterarPrioridade);
 			this->Controls->Add(this->custoReparoMedio);
 			this->Controls->Add(this->previsaoAtual);
 			this->Controls->Add(this->numReparos);
@@ -267,5 +279,21 @@ namespace Project1 {
 #pragma endregion
 	private: System::Void dashboard_Load(System::Object^  sender, System::EventArgs^  e) {
 	}
+private: System::Void bt_AlterarPrioridade_Click(System::Object^  sender, System::EventArgs^  e) {
+	alterarPrioridade^ alterar = gcnew alterarPrioridade();
+	alterar->ShowDialog();
+}
+
+private: System::Void btVisualizarBuraco_Click(System::Object^  sender, System::EventArgs^  e) {
+	VizualizarBuracos^ verBuracos = gcnew VizualizarBuracos();
+	verBuracos->ShowDialog();
+}
+//private: System::Void btVisualizarOS(System::Object^  sender, System::EventArgs^  e) {
+//
+//}
+private: System::Void btVisualizarOS_Click(System::Object^  sender, System::EventArgs^  e) {
+	VisualizarOS^ verOS = gcnew VisualizarOS();
+	verOS->ShowDialog();
+}
 };
 }

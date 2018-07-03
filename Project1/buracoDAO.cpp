@@ -1,5 +1,7 @@
-
-
+#include "MySQLDAO.h"
+#include <stdio.h>
+#include <string>
+#include <vector>
 #include "buracoDAO.h"
 
 buracoDAO::buracoDAO()
@@ -233,11 +235,11 @@ vector<buracos*>* buracoDAO::getCidadaoNotificar()
 	return temp2;
 }
 
-void buracoDAO::setStatusBuraco(int statusBuraco, string nomeRua, int numRua)
+void buracoDAO::setStatusBuraco(int statusBuraco, string rua, int num)
 {
-	int numer = numRua;
+	string nome = rua;
+	int numer = num;
 	int status = statusBuraco;
-	string nome = nomeRua;
 	string log;
 	sql::Connection * connection;
 	sql::Statement* statement;
@@ -285,42 +287,10 @@ void buracoDAO::setPrioridadeBuraco(int prioridade, string rua, int num)
 		log = e.what();
 	}
 }
-
-buracos* getBuraco(int numeroBuraco)
-{
-	string log;
-	buracos * buraco;
-	int num = numeroBuraco;
-	sql::Connection * connection;
-	sql::Statement* statement;
-	sql::PreparedStatement * preparedStatement;
-	sql::ResultSet *resultSet;
-	try {
-		MySQLDAO* mysqldao = MySQLDAO::getInstance();
-		connection = mysqldao->getConnection();
-		preparedStatement = connection->prepareStatement("select numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco,nomeCidadao,canalCidadao,dadoCanal, dataHora,reclamacao from buraco where numeroBuraco = ?;");
-
-		preparedStatement->setInt(2, num);
-		resultSet = preparedStatement->executeQuery();
-
-		if (resultSet->next()) {
-			buraco = new buracos(resultSet->getInt(1), resultSet->getString(2).c_str(), resultSet->getInt(3), resultSet->getInt(4), resultSet->getString(5).c_str(), resultSet->getString(6).c_str(), resultSet->getInt(7), resultSet->getInt(8), resultSet->getInt(9), resultSet->getString(10).c_str(), resultSet->getString(11).c_str(), resultSet->getString(12).c_str(), resultSet->getString(13).c_str(), resultSet->getString(14).c_str());
-
-		}
-	}
-	catch (sql::SQLException e)
-	{
-		connection->close();
-		log = e.what();
-	}
-	return buraco;
-
-}
-
-void buracoDAO::setStatusBur(int statusBuraco, int numeroBuraco)
-{
-	int numer = numeroBuraco;
-	int status = statusBuraco;
+void buracoDAO::editarBuracoDAO(int numBuraco, int prioridade) {
+	
+	int pri = prioridade;
+	int buraco = numBuraco;
 	string log;
 	sql::Connection * connection;
 	sql::Statement* statement;
@@ -329,10 +299,10 @@ void buracoDAO::setStatusBur(int statusBuraco, int numeroBuraco)
 	try {
 		MySQLDAO* mysqldao = MySQLDAO::getInstance();
 		connection = mysqldao->getConnection();
-		preparedStatement = connection->prepareStatement("UPDATE buraco SET statusBuraco = ? WHERE noumeroBuraco = ?");
+		preparedStatement = connection->prepareStatement("UPDATE buraco SET prioridade = ? WHERE numBuraco = ?");
 
-		preparedStatement->setInt(1, status);
-		preparedStatement->setInt(2, numer);
+		preparedStatement->setInt(1, pri);
+		preparedStatement->setInt(2, buraco);
 		resultSet = preparedStatement->executeQuery();
 	}
 	catch (sql::SQLException e)

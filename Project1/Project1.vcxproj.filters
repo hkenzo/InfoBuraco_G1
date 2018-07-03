@@ -168,13 +168,13 @@
     <ClCompile Include="saida.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="OSDAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="ServicoComunicacaoNotificar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ChefeEquipeTrabalho.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="alterarPriorade.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="alterarSaida1.cpp">
@@ -204,7 +204,10 @@
     <ClCompile Include="dashboardRegional.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OSDAO.cpp">
+    <ClCompile Include="alterarPrioridade.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualizarOS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -356,6 +359,9 @@
     <ClInclude Include="saida.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="OSDAO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="ServicoComunicacaoNotificar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -392,7 +398,7 @@
     <ClInclude Include="dashboardRegional.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OSDAO.h">
+    <ClInclude Include="VisualizarOS.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

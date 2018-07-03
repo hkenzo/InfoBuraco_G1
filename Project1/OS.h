@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <string>
 #include <vector>
+#include "buracos.h"
 
 using namespace std;
 
@@ -16,18 +17,20 @@ public:
 	int estimativaMaterial;
 	int statusOS;
 	int numBuraco;
+	//int prioridadeOS;
 
-	int getNumOS();
-	int getEstimativaHoras();
-	int getEstimativaEquipamento();
-	int getEstimativaMaterial();
-	int getStatusOS();
-	int getNumBuraco();
-
-	OS( int estimativaHoras, int estimativaEquipamento, int estimativaMaterial, int numOS, int statusOS, int numBuraco);
+	OS(int numOS, int estimativaHoras, int estimativaEquipamento, int estimativaMaterial, int statusOS, int numBuraco);
+	//OS(int numOS, int estimativaHoras, int estimativaEquipamento, int estimativaMaterial, int statusOS, int numBuraco, int prioridadeOS);
 	
 	~OS();
 
 	OS();
+
+	int getNumOS();
+	int getEstHoras();
+	int getEstMat();
+	int getEstEquipam();
+	int getStatusOS();
+	int getNumBuraco();
 };
 

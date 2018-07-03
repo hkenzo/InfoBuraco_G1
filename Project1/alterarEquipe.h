@@ -104,28 +104,29 @@ namespace Project1 {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(199, 30);
+			this->label5->Location = System::Drawing::Point(149, 24);
+			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(135, 25);
+			this->label5->Size = System::Drawing::Size(110, 20);
 			this->label5->TabIndex = 27;
 			this->label5->Text = L"Alterar Equipe";
 			// 
 			// idbox
 			// 
 			this->idbox->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->idbox->Location = System::Drawing::Point(234, 103);
-			this->idbox->Margin = System::Windows::Forms::Padding(4);
+			this->idbox->Location = System::Drawing::Point(176, 84);
 			this->idbox->Name = L"idbox";
-			this->idbox->Size = System::Drawing::Size(285, 22);
+			this->idbox->Size = System::Drawing::Size(215, 20);
 			this->idbox->TabIndex = 26;
 			// 
 			// conf_creat_equipt_bt
 			// 
 			this->conf_creat_equipt_bt->BackColor = System::Drawing::Color::PowderBlue;
 			this->conf_creat_equipt_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->conf_creat_equipt_bt->Location = System::Drawing::Point(332, 419);
+			this->conf_creat_equipt_bt->Location = System::Drawing::Point(249, 340);
+			this->conf_creat_equipt_bt->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->conf_creat_equipt_bt->Name = L"conf_creat_equipt_bt";
-			this->conf_creat_equipt_bt->Size = System::Drawing::Size(171, 36);
+			this->conf_creat_equipt_bt->Size = System::Drawing::Size(128, 29);
 			this->conf_creat_equipt_bt->TabIndex = 25;
 			this->conf_creat_equipt_bt->Text = L"Confirmar";
 			this->conf_creat_equipt_bt->UseVisualStyleBackColor = false;
@@ -136,9 +137,10 @@ namespace Project1 {
 			this->cancel_create_equpt_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->cancel_create_equpt_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->cancel_create_equpt_bt->Location = System::Drawing::Point(91, 419);
+			this->cancel_create_equpt_bt->Location = System::Drawing::Point(68, 340);
+			this->cancel_create_equpt_bt->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->cancel_create_equpt_bt->Name = L"cancel_create_equpt_bt";
-			this->cancel_create_equpt_bt->Size = System::Drawing::Size(171, 36);
+			this->cancel_create_equpt_bt->Size = System::Drawing::Size(128, 29);
 			this->cancel_create_equpt_bt->TabIndex = 24;
 			this->cancel_create_equpt_bt->Text = L"Cancelar";
 			this->cancel_create_equpt_bt->UseVisualStyleBackColor = false;
@@ -147,88 +149,89 @@ namespace Project1 {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(37, 290);
+			this->label4->Location = System::Drawing::Point(28, 236);
+			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(129, 17);
+			this->label4->Size = System::Drawing::Size(98, 13);
 			this->label4->TabIndex = 22;
 			this->label4->Text = L"R$ / hora [Anterior]";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(37, 172);
+			this->label3->Location = System::Drawing::Point(28, 140);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(189, 17);
+			this->label3->Size = System::Drawing::Size(140, 13);
 			this->label3->TabIndex = 21;
 			this->label3->Text = L"Nº de Profissionais [Anterior]";
 			// 
 			// Identificação
 			// 
 			this->Identificação->AutoSize = true;
-			this->Identificação->Location = System::Drawing::Point(37, 106);
+			this->Identificação->Location = System::Drawing::Point(28, 86);
+			this->Identificação->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Identificação->Name = L"Identificação";
-			this->Identificação->Size = System::Drawing::Size(87, 17);
+			this->Identificação->Size = System::Drawing::Size(68, 13);
 			this->Identificação->TabIndex = 19;
 			this->Identificação->Text = L"Identificação";
 			// 
 			// numboxold
 			// 
 			this->numboxold->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->numboxold->Location = System::Drawing::Point(234, 169);
-			this->numboxold->Margin = System::Windows::Forms::Padding(4);
+			this->numboxold->Location = System::Drawing::Point(176, 137);
 			this->numboxold->Name = L"numboxold";
-			this->numboxold->Size = System::Drawing::Size(285, 22);
+			this->numboxold->Size = System::Drawing::Size(215, 20);
 			this->numboxold->TabIndex = 18;
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(37, 234);
+			this->label6->Location = System::Drawing::Point(28, 190);
+			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(172, 17);
+			this->label6->Size = System::Drawing::Size(130, 13);
 			this->label6->TabIndex = 29;
 			this->label6->Text = L"Nº de Profissionais [Novo]";
 			// 
 			// numbox
 			// 
-			this->numbox->Location = System::Drawing::Point(234, 231);
-			this->numbox->Margin = System::Windows::Forms::Padding(4);
+			this->numbox->Location = System::Drawing::Point(176, 188);
 			this->numbox->Name = L"numbox";
-			this->numbox->Size = System::Drawing::Size(285, 22);
+			this->numbox->Size = System::Drawing::Size(215, 20);
 			this->numbox->TabIndex = 28;
 			// 
 			// custobox
 			// 
-			this->custobox->Location = System::Drawing::Point(234, 351);
-			this->custobox->Margin = System::Windows::Forms::Padding(4);
+			this->custobox->Location = System::Drawing::Point(176, 285);
 			this->custobox->Name = L"custobox";
-			this->custobox->Size = System::Drawing::Size(285, 22);
+			this->custobox->Size = System::Drawing::Size(215, 20);
 			this->custobox->TabIndex = 31;
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(37, 351);
+			this->label7->Location = System::Drawing::Point(28, 285);
+			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(112, 17);
+			this->label7->Size = System::Drawing::Size(88, 13);
 			this->label7->TabIndex = 30;
 			this->label7->Text = L"R$ / hora [Nova]";
 			// 
 			// custoboxold
 			// 
 			this->custoboxold->BackColor = System::Drawing::SystemColors::ScrollBar;
-			this->custoboxold->Location = System::Drawing::Point(234, 290);
-			this->custoboxold->Margin = System::Windows::Forms::Padding(4);
+			this->custoboxold->Location = System::Drawing::Point(176, 236);
 			this->custoboxold->Name = L"custoboxold";
-			this->custoboxold->Size = System::Drawing::Size(285, 22);
+			this->custoboxold->Size = System::Drawing::Size(215, 20);
 			this->custoboxold->TabIndex = 23;
 			// 
 			// alterarEquipe
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
-			this->ClientSize = System::Drawing::Size(570, 492);
+			this->ClientSize = System::Drawing::Size(428, 400);
 			this->Controls->Add(this->custobox);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label6);
@@ -242,6 +245,7 @@ namespace Project1 {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->Identificação);
 			this->Controls->Add(this->numboxold);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"alterarEquipe";
 			this->Text = L"alterarEquipe";
 			this->Load += gcnew System::EventHandler(this, &alterarEquipe::alterarEquipe_Load);
