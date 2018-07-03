@@ -437,8 +437,8 @@ private: System::Void FinalizarRegistro_Click(System::Object^  sender, System::E
 		int estimativaEquipamento = std::stoi(tamanho0) * 30;
 		int estimativaMaterial = std::stoi(tamanho0) * 50;
 		
-		OS * os1 = new OS(0, estimativaHoras, estimativaEquipamento, estimativaMaterial, 0, numeroBur);
-		OSDAO * osd = new OSDAO(0, estimativaHoras, estimativaEquipamento, estimativaMaterial, 0,numeroBur);
+		OS * os1 = new OS(estimativaHoras, estimativaEquipamento, estimativaMaterial, 0, 0, numeroBur);
+		OSDAO * osd = new OSDAO(estimativaHoras, estimativaEquipamento, estimativaMaterial, 0, 0,numeroBur);
 
 	}
 

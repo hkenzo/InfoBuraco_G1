@@ -1,12 +1,11 @@
 #include "OS.h"
 
-
 OS::OS()
 {
 
 }
 
-OS::OS(int numOS, int estimativaHoras, int estimativaEquipamento, int estimativaMaterial, int statusOS, int numBuraco)
+OS::OS(int estimativaHoras, int estimativaEquipamento, int estimativaMaterial, int numOS, int statusOS, int numBuraco)
 {
 	this->numOS = numOS;
 	this->estimativaHoras = estimativaHoras;
@@ -14,51 +13,35 @@ OS::OS(int numOS, int estimativaHoras, int estimativaEquipamento, int estimativa
 	this->estimativaMaterial = estimativaMaterial;
 	this->statusOS = statusOS;
 	this->numBuraco = numBuraco;
-	//this->prioridadeOS = 0; // valor default
 
 }
 
-//OS::OS(int numOS, int estimativaHoras, int estimativaEquipamento, int estimativaMaterial, int statusOS, int numBuraco, int prioridadeOS)
-//{
-//	this->numOS = numOS;
-//	this->estimativaHoras = estimativaHoras;
-//	this->estimativaEquipamento = estimativaEquipamento;
-//	this->estimativaMaterial = estimativaMaterial;
-//	this->statusOS = statusOS;
-//	this->numBuraco = numBuraco;
-//	this->prioridadeOS = prioridadeOS;
-//
-//}
 
 OS::~OS()
 {
 }
 
-int OS::getNumOS() 
+
+int OS::getNumOS()
 {
 	return this->numOS;
 }
-
-int OS::getEstHoras()
+int OS::getEstimativaHoras()
 {
 	return this->estimativaHoras;
 }
-
-int OS::getEstMat()
-{
-	return this->estimativaMaterial;
-}
-
-int OS::getEstEquipam()
+int OS::getEstimativaEquipamento()
 {
 	return this->estimativaEquipamento;
 }
-
+int OS::getEstimativaMaterial()
+{
+	return this->estimativaMaterial;
+}
 int OS::getStatusOS()
 {
 	return this->statusOS;
 }
-
 int OS::getNumBuraco()
 {
 	return this->numBuraco;

@@ -27,25 +27,6 @@ buracos::buracos(int numBuraco, string nomeRua, int numeroRua, int tamanho, stri
 
 	this->numBuraco = numBuraco;
 	
-//	buracoDAO * burDAO = new buracoDAO(numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco, nomeCidadao, canalCidadao, dadoCanal, dataHora, reclamacao);
-	// no começo vou mandar 0, mas vai mudar na criação
-
-	// this -> numBuraco = pega no db
-//	vector<buracoDAO*>* temp2 = burDAO->buscarRuae();//(numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco, nomeCidadao, canalCidadao, dadoCanal, dataHora, reclamacao);
-	//this->numBuraco = bur->buscarRua(this->nomeRua, this->numeroRua);
-	//int estimativaHoras = tamanho * 3;
-
-	// depois do buraco registrado, deve criar OS
-	// gera os parametros da OS
-	
-	int estimativaEquipamento = tamanho * 50;
-	int estimativaMaterial = tamanho * 40;
-
-	//cria OS
-//	OS * geraOS = new OS(0, estimativaHoras, estimativaEquipamento, estimativaMaterial, 0, numBuraco);
-
-
-	//if check buraco = 1 (buraco existe) -> atualizar no reclamacoes
 }
 
 

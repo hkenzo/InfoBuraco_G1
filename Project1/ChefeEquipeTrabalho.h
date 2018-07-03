@@ -3,6 +3,9 @@
 #include "OSDAO.h"
 #include "buracos.h"
 #include "buracoDAO.h"
+#include <msclr/marshal.h>
+#include <msclr/marshal_cppstd.h>
+#include <stdlib.h>
 
 namespace Project1 {
 
@@ -38,6 +41,8 @@ namespace Project1 {
 				delete components;
 			}
 		}
+		System::Windows::Forms::ListViewItem^ listViewItem;
+
 	private: System::Windows::Forms::ListView^  listView1;
 	protected:
 	private: System::Windows::Forms::ColumnHeader^  columnHeader12;
@@ -70,12 +75,12 @@ namespace Project1 {
 			this->columnHeader12 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader13 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader14 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->fechar_bt = (gcnew System::Windows::Forms::Button());
-			this->alterarStatus_bt = (gcnew System::Windows::Forms::Button());
-			this->atualizar_bt = (gcnew System::Windows::Forms::Button());
 			this->columnHeader1 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader2 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader3 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->fechar_bt = (gcnew System::Windows::Forms::Button());
+			this->alterarStatus_bt = (gcnew System::Windows::Forms::Button());
+			this->atualizar_bt = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->buraco_bt = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
@@ -113,6 +118,19 @@ namespace Project1 {
 			this->columnHeader14->Text = L"EstimativaMaterial";
 			this->columnHeader14->Width = 96;
 			// 
+			// columnHeader1
+			// 
+			this->columnHeader1->Text = L"NumeroOS";
+			// 
+			// columnHeader2
+			// 
+			this->columnHeader2->Text = L"StatusOS";
+			// 
+			// columnHeader3
+			// 
+			this->columnHeader3->Text = L"NumeroBuraco";
+			this->columnHeader3->Width = 93;
+			// 
 			// fechar_bt
 			// 
 			this->fechar_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
@@ -138,9 +156,9 @@ namespace Project1 {
 			this->alterarStatus_bt->Name = L"alterarStatus_bt";
 			this->alterarStatus_bt->Size = System::Drawing::Size(135, 40);
 			this->alterarStatus_bt->TabIndex = 8;
-			this->alterarStatus_bt->Text = L"Status Finalizado";
+			this->alterarStatus_bt->Text = L"Marcar finalizado";
 			this->alterarStatus_bt->UseVisualStyleBackColor = false;
-			this->alterarStatus_bt->Click += gcnew System::EventHandler(this, &ChefeEquipeTrabalho::alterarStatus_bt_Click_1);
+			this->alterarStatus_bt->Click += gcnew System::EventHandler(this, &ChefeEquipeTrabalho::alterarStatus_bt_Click);
 			// 
 			// atualizar_bt
 			// 
@@ -156,19 +174,6 @@ namespace Project1 {
 			this->atualizar_bt->UseVisualStyleBackColor = false;
 			this->atualizar_bt->Click += gcnew System::EventHandler(this, &ChefeEquipeTrabalho::atualizar_bt_Click);
 			// 
-			// columnHeader1
-			// 
-			this->columnHeader1->Text = L"NumeroOS";
-			// 
-			// columnHeader2
-			// 
-			this->columnHeader2->Text = L"StatusOS";
-			// 
-			// columnHeader3
-			// 
-			this->columnHeader3->Text = L"NumeroBuraco";
-			this->columnHeader3->Width = 93;
-			// 
 			// button1
 			// 
 			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
@@ -180,7 +185,7 @@ namespace Project1 {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(135, 40);
 			this->button1->TabIndex = 11;
-			this->button1->Text = L"Status Incompleto";
+			this->button1->Text = L"Marcar incompleto";
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &ChefeEquipeTrabalho::button1_Click);
 			// 
@@ -197,6 +202,7 @@ namespace Project1 {
 			this->buraco_bt->TabIndex = 12;
 			this->buraco_bt->Text = L"Ver Buraco";
 			this->buraco_bt->UseVisualStyleBackColor = false;
+			this->buraco_bt->Click += gcnew System::EventHandler(this, &ChefeEquipeTrabalho::buraco_bt_Click);
 			// 
 			// ChefeEquipeTrabalho
 			// 
@@ -218,20 +224,75 @@ namespace Project1 {
 	private: System::Void listView1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 	}
 private: System::Void listView1_ItemChecked(System::Object^  sender, System::Windows::Forms::ItemCheckedEventArgs^  e) {
+	if (listView1->CheckedIndices->Count != 1) {
+		this->button1->Enabled = false;
+		this->alterarStatus_bt->Enabled = false;
+		this->buraco_bt->Enabled = false;
+	}
+	else {
+		this->button1->Enabled = true;
+		this->alterarStatus_bt->Enabled = true;
+		this->buraco_bt->Enabled = true;
+	}
 }
 private: System::Void atualizar_bt_Click(System::Object^  sender, System::EventArgs^  e) {
+	OSDAO * aux = new OSDAO();
+	vector<OS*>* temp2;
+	this->listView1->Items->Clear();
+	temp2 = aux->getOS();
+
+	for (int j = 0; j < temp2->size(); j++) {
+		String^ str1 = gcnew String(std::to_string(temp2->at(j)->getEstimativaHoras()).c_str());
+		String^ str2 = gcnew String(std::to_string(temp2->at(j)->getEstimativaEquipamento()).c_str());
+		String^ str3 = gcnew String(std::to_string(temp2->at(j)->getEstimativaMaterial()).c_str());
+		String^ str4 = gcnew String(std::to_string(temp2->at(j)->getNumOS()).c_str());
+		String^ str5 = gcnew String(std::to_string(temp2->at(j)->getStatusOS()).c_str());
+		String^ str6 = gcnew String(std::to_string(temp2->at(j)->getNumBuraco()).c_str());
+
+		listViewItem = gcnew Windows::Forms::ListViewItem(str1);
+		listViewItem->SubItems->Add(str2);
+		listViewItem->SubItems->Add(str3);
+		listViewItem->SubItems->Add(str4);
+		listViewItem->SubItems->Add(str5);
+		listViewItem->SubItems->Add(str6);
+		this->listView1->Items->Add(this->listViewItem);
+	}
 }
 private: System::Void alterarStatus_bt_Click(System::Object^  sender, System::EventArgs^  e) {
+	String^ str = listView1->CheckedItems[0]->SubItems[4]->Text;
+	String^ str2 = listView1->CheckedItems[0]->SubItems[6]->Text;
+	std::string nume = msclr::interop::marshal_as<std::string>(str);
+	std::string numeb = msclr::interop::marshal_as<std::string>(str2);
+
+	int num = std::stoi(nume);
+	int num2 = std::stoi(numeb);
+
+	buracoDAO* aux2 = new buracoDAO();
+	OSDAO* aux = new OSDAO();
+	aux->setStatusD(2, num);
+	aux2->setStatusBur(1, num2);
+
 }
 private: System::Void fechar_bt_Click(System::Object^  sender, System::EventArgs^  e) {
 	this->Close();
 }
-private: System::Void alterarStatus_bt_Click_1(System::Object^  sender, System::EventArgs^  e) {
 
-}
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	String^ str = listView1->CheckedItems[0]->SubItems[4]->Text;
+	std::string nume = msclr::interop::marshal_as<std::string>(str);
+
+	int num = std::stoi(nume);
 	OSDAO* aux = new OSDAO();
-	//aux->setStatus(1, )
+	aux->setStatusD(1, num);
+}
+private: System::Void buraco_bt_Click(System::Object^  sender, System::EventArgs^  e) {
+	String^ str = listView1->CheckedItems[0]->SubItems[6]->Text;
+	std::string nume = msclr::interop::marshal_as<std::string>(str);
+
+	int num = std::stoi(nume);
+	buracoDAO* aux = new buracoDAO();
+	buracos * buraco;
+//	buraco = aux->getBuraco(num);
 }
 };
 }

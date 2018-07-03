@@ -33,10 +33,11 @@ public:
 	buracos* buscarRua(string nomeRua, int numeroRua);
 
 	vector<buracos*>* buracoDAO::buscarBuracos();
-	void buracoDAO::setStatusBuraco(int statusBuraco, string rua, int num);
+	void buracoDAO::setStatusBur(int statusBuraco, int numeroBuraco);
+	void buracoDAO::setStatusBuraco(int statusBuraco, string nomeRua, int numRua);
 	void aumentaReclamacao(string rua, int num);
 	void setPrioridadeBuraco(int prioridade, string rua, int num);
-	void editarBuracoDAO(int numBuraco, int prioridade);
+	buracos* getBuraco(int numeroBuraco);
 
 };
 
