@@ -236,8 +236,8 @@ private: System::Void atualizar_bt_Click(System::Object^  sender, System::EventA
 	temp2 = aux->buscarSaidaEquipe(nom);
 	
 	for (int j = 0; j < temp2->size(); j++) {
-		String^ str1 = gcnew String((temp2->at(j)->getNumOS()).c_str());
-		String^ str2 = gcnew String(std::to_string(temp2->at(j)->getData()).c_str());
+		String^ str1 = gcnew String(std::to_string(temp2->at(j)->getNumOS()).c_str());
+		String^ str2 = gcnew String((temp2->at(j)->getData()).c_str());
 
 
 		listViewItem = gcnew Windows::Forms::ListViewItem(str1);

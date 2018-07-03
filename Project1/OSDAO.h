@@ -15,6 +15,6 @@ public:
 	OSDAO();
 	void setStatusD(int status, int numOS);
 	vector <OS*>* getOSEquip(string nome);
-
+	vector <OS*>* OSDAO::getOSEquipS(string nome);
 	vector <OS*>* getOS();
 };

@@ -1,4 +1,8 @@
 #pragma once
+#include "equipamento.h"
+#include "equipamentoDAO.h"
+#include <msclr/marshal.h>
+#include <msclr/marshal_cppstd.h>
 
 namespace Project1 {
 
@@ -170,7 +174,7 @@ namespace Project1 {
 				 equipamentoDAO * aux = new equipamentoDAO();
 				 vector<equipamento*>* temp2;
 				 this->listView1->Items->Clear();
-				 temp2 = aux->buscarEquipamentoSaida();
+				 temp2 = aux->buscarEquipamentoSaida(1, "1");
 				 for (int j = 0; j < temp2->size(); j++) {
 					 String^ str1 = gcnew String((temp2->at(j)->getTipo()).c_str());
 					 String^ str2 = gcnew String(std::to_string(temp2->at(j)->getId()).c_str());
