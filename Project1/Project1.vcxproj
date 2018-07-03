@@ -184,10 +184,6 @@
     <ClCompile Include="mobilizacaoDAO.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Despachador.cpp" />
-    <ClCompile Include="MyForm1.cpp" />
-    <ClCompile Include="MyForm11.cpp" />
-    <ClCompile Include="MyForm12.cpp" />
-    <ClCompile Include="MyForm13.cpp" />
     <ClCompile Include="MySQLDAO.cpp" />
     <ClCompile Include="OS.cpp" />
     <ClCompile Include="OSDAO.cpp" />
