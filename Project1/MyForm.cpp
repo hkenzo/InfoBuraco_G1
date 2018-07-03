@@ -5,7 +5,7 @@
 #include "ServicoComunicacao2.h"
 #include "CadastroFuncionario.h"
 #include "login.h"
-#include "alterarPrioridade.h"
+#include "dashboardRegional.h"
 
 
 namespace Project1 {
@@ -17,7 +17,6 @@ namespace Project1 {
 		Application::EnableVisualStyles();
 		Application::SetCompatibleTextRenderingDefault(false);
 		Application::Run(gcnew alterarPrioridade);
-		//Application::Run(gcnew login);
 		
 	}
 }
