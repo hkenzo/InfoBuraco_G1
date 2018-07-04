@@ -3,6 +3,7 @@
 #include "ServicoComunicacao0.h"
 #include "CadastroFuncionario.h"
 #include "ChefeEquipeTrabalho.h"
+#include "alterarPrioridade.h"
 #include <msclr\marshal_cppstd.h>
 #pragma once
 
@@ -285,7 +286,8 @@ namespace Project1 {
 						
 					}
 					else if (tipo == "Gestor") {
-
+						alterarPrioridade^ aux = gcnew alterarPrioridade();
+						aux->ShowDialog();
 					}
 					else if (tipo == "Chefe da Equipe") {
 						ChefeEquipeTrabalho^ aux = gcnew ChefeEquipeTrabalho(user_S);
