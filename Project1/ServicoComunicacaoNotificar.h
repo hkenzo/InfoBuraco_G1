@@ -99,32 +99,40 @@ namespace Project1 {
 			// 
 			// bt_atualizar
 			// 
-			this->bt_atualizar->Location = System::Drawing::Point(469, 59);
+			this->bt_atualizar->BackColor = System::Drawing::Color::PowderBlue;
+			this->bt_atualizar->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->bt_atualizar->Location = System::Drawing::Point(445, 59);
 			this->bt_atualizar->Name = L"bt_atualizar";
-			this->bt_atualizar->Size = System::Drawing::Size(75, 23);
+			this->bt_atualizar->Size = System::Drawing::Size(99, 47);
 			this->bt_atualizar->TabIndex = 1;
 			this->bt_atualizar->Text = L"Atualizar";
-			this->bt_atualizar->UseVisualStyleBackColor = true;
+			this->bt_atualizar->UseVisualStyleBackColor = false;
 			this->bt_atualizar->Click += gcnew System::EventHandler(this, &ServicoComunicacaoNotificar::bt_atualizar_Click);
 			// 
 			// bt_notificado
 			// 
-			this->bt_notificado->Location = System::Drawing::Point(469, 127);
+			this->bt_notificado->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->bt_notificado->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->bt_notificado->Location = System::Drawing::Point(445, 127);
 			this->bt_notificado->Name = L"bt_notificado";
-			this->bt_notificado->Size = System::Drawing::Size(75, 23);
+			this->bt_notificado->Size = System::Drawing::Size(99, 52);
 			this->bt_notificado->TabIndex = 2;
 			this->bt_notificado->Text = L"Notificado";
-			this->bt_notificado->UseVisualStyleBackColor = true;
+			this->bt_notificado->UseVisualStyleBackColor = false;
 			this->bt_notificado->Click += gcnew System::EventHandler(this, &ServicoComunicacaoNotificar::bt_notificado_Click);
 			// 
 			// bt_fechar
 			// 
-			this->bt_fechar->Location = System::Drawing::Point(469, 205);
+			this->bt_fechar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->bt_fechar->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->bt_fechar->Location = System::Drawing::Point(445, 205);
 			this->bt_fechar->Name = L"bt_fechar";
-			this->bt_fechar->Size = System::Drawing::Size(75, 23);
+			this->bt_fechar->Size = System::Drawing::Size(99, 50);
 			this->bt_fechar->TabIndex = 3;
 			this->bt_fechar->Text = L"Fechar";
-			this->bt_fechar->UseVisualStyleBackColor = true;
+			this->bt_fechar->UseVisualStyleBackColor = false;
 			this->bt_fechar->Click += gcnew System::EventHandler(this, &ServicoComunicacaoNotificar::bt_fechar_Click);
 			// 
 			// listView1

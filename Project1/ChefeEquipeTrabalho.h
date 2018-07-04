@@ -162,7 +162,7 @@ namespace Project1 {
 			this->atualizar_bt->Name = L"atualizar_bt";
 			this->atualizar_bt->Size = System::Drawing::Size(135, 40);
 			this->atualizar_bt->TabIndex = 6;
-			this->atualizar_bt->Text = L"Atualizar OS";
+			this->atualizar_bt->Text = L"Atualizar";
 			this->atualizar_bt->UseVisualStyleBackColor = false;
 			this->atualizar_bt->Click += gcnew System::EventHandler(this, &ChefeEquipeTrabalho::atualizar_bt_Click);
 			// 
@@ -292,7 +292,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 	aux->setStatusD(1, num);
 }
 private: System::Void buraco_bt_Click(System::Object^  sender, System::EventArgs^  e) {
-	String^ str = listView1->CheckedItems[0]->SubItems[5]->Text;
+	String^ str = listView1->CheckedItems[0]->SubItems[0]->Text;
 	
 	VisualizarUmBuraco^ tela = gcnew VisualizarUmBuraco(str);
 	tela->ShowDialog();

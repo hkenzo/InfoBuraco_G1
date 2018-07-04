@@ -1,4 +1,4 @@
-#include "ServicoComunicacao2.h"
+#include "ServicoComunicacao2_Pronto.h"
 #include "buracos.h"
 #include <string>
 #include <msclr\marshal_cppstd.h>
@@ -126,12 +126,14 @@ namespace Project1 {
 			// 
 			// AdicionarFoto
 			// 
+			this->AdicionarFoto->BackColor = System::Drawing::Color::PowderBlue;
+			this->AdicionarFoto->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->AdicionarFoto->Location = System::Drawing::Point(168, 187);
 			this->AdicionarFoto->Name = L"AdicionarFoto";
 			this->AdicionarFoto->Size = System::Drawing::Size(100, 23);
 			this->AdicionarFoto->TabIndex = 38;
 			this->AdicionarFoto->Text = L"Adicionar foto";
-			this->AdicionarFoto->UseVisualStyleBackColor = true;
+			this->AdicionarFoto->UseVisualStyleBackColor = false;
 			this->AdicionarFoto->Click += gcnew System::EventHandler(this, &ServicoComunicacao1::AdicionarFoto_Click);
 			// 
 			// posicao_leito_text
@@ -317,22 +319,28 @@ namespace Project1 {
 			// 
 			// CancelaReg
 			// 
-			this->CancelaReg->Location = System::Drawing::Point(16, 410);
+			this->CancelaReg->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->CancelaReg->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->CancelaReg->Location = System::Drawing::Point(22, 394);
 			this->CancelaReg->Name = L"CancelaReg";
-			this->CancelaReg->Size = System::Drawing::Size(75, 23);
+			this->CancelaReg->Size = System::Drawing::Size(108, 39);
 			this->CancelaReg->TabIndex = 53;
 			this->CancelaReg->Text = L"Cancelar";
-			this->CancelaReg->UseVisualStyleBackColor = true;
+			this->CancelaReg->UseVisualStyleBackColor = false;
 			this->CancelaReg->Click += gcnew System::EventHandler(this, &ServicoComunicacao1::CancelaReg_Click);
 			// 
 			// FinalizarRegistro
 			// 
-			this->FinalizarRegistro->Location = System::Drawing::Point(168, 410);
+			this->FinalizarRegistro->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->FinalizarRegistro->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->FinalizarRegistro->Location = System::Drawing::Point(163, 394);
 			this->FinalizarRegistro->Name = L"FinalizarRegistro";
-			this->FinalizarRegistro->Size = System::Drawing::Size(75, 23);
+			this->FinalizarRegistro->Size = System::Drawing::Size(105, 39);
 			this->FinalizarRegistro->TabIndex = 52;
 			this->FinalizarRegistro->Text = L"Finalizar";
-			this->FinalizarRegistro->UseVisualStyleBackColor = true;
+			this->FinalizarRegistro->UseVisualStyleBackColor = false;
 			this->FinalizarRegistro->Click += gcnew System::EventHandler(this, &ServicoComunicacao1::FinalizarRegistro_Click);
 			// 
 			// ServicoComunicacao1
@@ -373,12 +381,7 @@ namespace Project1 {
 
 		}
 #pragma endregion
-	private: System::Void ProximoCidadao_Click(System::Object^  sender, System::EventArgs^  e) {
-		
-		ServicoComunicacao2 ^ telaNotificacaoCid = gcnew ServicoComunicacao2();
-		telaNotificacaoCid->ShowDialog();
-		this->Close();
-	}
+
 private: System::Void Nome_da_rua_text_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void numero_text_TextChanged(System::Object^  sender, System::EventArgs^  e) {

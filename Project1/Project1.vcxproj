@@ -158,7 +158,6 @@
     <ClCompile Include="CadastroFuncionario.cpp" />
     <ClCompile Include="CaixaDeDialogo.cpp" />
     <ClCompile Include="ChefeEquipeTrabalho.cpp" />
-    <ClCompile Include="ChefeFinalizado.cpp" />
     <ClCompile Include="ChefeFinalizarEquipamento.cpp" />
     <ClCompile Include="ChefeFinalizarEquipe.cpp" />
     <ClCompile Include="ChefeFinalizarMaterial.cpp" />
@@ -208,10 +207,8 @@
     <ClCompile Include="saidaOS.cpp" />
     <ClCompile Include="ServicoComunicacao0.cpp" />
     <ClCompile Include="ServicoComunicacao1.cpp" />
-    <ClCompile Include="ServicoComunicacao2.cpp" />
     <ClCompile Include="ServicoComunicacao2_Pronto.cpp" />
     <ClCompile Include="ServicoComunicacaoNotificar.cpp" />
-    <ClCompile Include="telaEquipe.cpp" />
     <ClCompile Include="usuario.cpp" />
     <ClCompile Include="usuarioDAO.cpp" />
     <ClCompile Include="VisualizarOS.cpp" />
@@ -252,9 +249,6 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ChefeEquipeTrabalho.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="ChefeFinalizado.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ChefeFinalizarEquipamento.h">
@@ -372,16 +366,10 @@
     <ClInclude Include="ServicoComunicacao1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="ServicoComunicacao2.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="ServicoComunicacao2_Pronto.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ServicoComunicacaoNotificar.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="telaEquipe.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="usuario.h" />
@@ -537,17 +525,11 @@
     <EmbeddedResource Include="ServicoComunicacao1.resx">
       <DependentUpon>ServicoComunicacao1.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ServicoComunicacao2.resx">
-      <DependentUpon>ServicoComunicacao2.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ServicoComunicacao2_Pronto.resx">
       <DependentUpon>ServicoComunicacao2_Pronto.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ServicoComunicacaoNotificar.resx">
       <DependentUpon>ServicoComunicacaoNotificar.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="telaEquipe.resx">
-      <DependentUpon>telaEquipe.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VisualizarOS.resx">
       <DependentUpon>VisualizarOS.h</DependentUpon>

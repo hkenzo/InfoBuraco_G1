@@ -74,6 +74,7 @@ namespace Project1 {
 			this->finalizarConsulta = (gcnew System::Windows::Forms::Button());
 			this->listView1 = (gcnew System::Windows::Forms::ListView());
 			this->columnHeader1 = (gcnew System::Windows::Forms::ColumnHeader());
+			this->columnHeader9 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader2 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader3 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader4 = (gcnew System::Windows::Forms::ColumnHeader());
@@ -81,7 +82,6 @@ namespace Project1 {
 			this->columnHeader6 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader7 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader8 = (gcnew System::Windows::Forms::ColumnHeader());
-			this->columnHeader9 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader11 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader12 = (gcnew System::Windows::Forms::ColumnHeader());
 			this->columnHeader13 = (gcnew System::Windows::Forms::ColumnHeader());
@@ -92,12 +92,15 @@ namespace Project1 {
 			// 
 			// finalizarConsulta
 			// 
-			this->finalizarConsulta->Location = System::Drawing::Point(168, 297);
+			this->finalizarConsulta->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->finalizarConsulta->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->finalizarConsulta->Location = System::Drawing::Point(194, 297);
 			this->finalizarConsulta->Name = L"finalizarConsulta";
 			this->finalizarConsulta->Size = System::Drawing::Size(227, 23);
 			this->finalizarConsulta->TabIndex = 0;
 			this->finalizarConsulta->Text = L"Fechar";
-			this->finalizarConsulta->UseVisualStyleBackColor = true;
+			this->finalizarConsulta->UseVisualStyleBackColor = false;
 			this->finalizarConsulta->Click += gcnew System::EventHandler(this, &VizualizarBuracos::finalizarConsulta_Click);
 			// 
 			// listView1
@@ -120,6 +123,11 @@ namespace Project1 {
 			// 
 			this->columnHeader1->Text = L"numBuraco";
 			this->columnHeader1->Width = 69;
+			// 
+			// columnHeader9
+			// 
+			this->columnHeader9->DisplayIndex = 8;
+			this->columnHeader9->Text = L"nomeRua";
 			// 
 			// columnHeader2
 			// 
@@ -158,11 +166,6 @@ namespace Project1 {
 			this->columnHeader8->DisplayIndex = 7;
 			this->columnHeader8->Text = L"statusBuraco";
 			// 
-			// columnHeader9
-			// 
-			this->columnHeader9->DisplayIndex = 8;
-			this->columnHeader9->Text = L"nomeRua";
-			// 
 			// columnHeader11
 			// 
 			this->columnHeader11->Text = L"nomeCidadao";
@@ -185,12 +188,14 @@ namespace Project1 {
 			// 
 			// bt_atualizar
 			// 
+			this->bt_atualizar->BackColor = System::Drawing::Color::PowderBlue;
+			this->bt_atualizar->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->bt_atualizar->Location = System::Drawing::Point(427, 297);
 			this->bt_atualizar->Name = L"bt_atualizar";
 			this->bt_atualizar->Size = System::Drawing::Size(220, 23);
 			this->bt_atualizar->TabIndex = 7;
 			this->bt_atualizar->Text = L"Atualizar";
-			this->bt_atualizar->UseVisualStyleBackColor = true;
+			this->bt_atualizar->UseVisualStyleBackColor = false;
 			this->bt_atualizar->Click += gcnew System::EventHandler(this, &VizualizarBuracos::bt_atualizar_Click);
 			// 
 			// VizualizarBuracos

@@ -68,14 +68,16 @@ namespace Project1 {
 			// 
 			// registroOK
 			// 
+			this->registroOK->BackColor = System::Drawing::Color::PowderBlue;
+			this->registroOK->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->registroOK->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->registroOK->Location = System::Drawing::Point(111, 68);
+			this->registroOK->Location = System::Drawing::Point(83, 68);
 			this->registroOK->Name = L"registroOK";
-			this->registroOK->Size = System::Drawing::Size(75, 44);
+			this->registroOK->Size = System::Drawing::Size(154, 46);
 			this->registroOK->TabIndex = 1;
 			this->registroOK->Text = L"ok";
-			this->registroOK->UseVisualStyleBackColor = true;
+			this->registroOK->UseVisualStyleBackColor = false;
 			this->registroOK->Click += gcnew System::EventHandler(this, &ServicoComunicacao2_Pronto::registroOK_Click);
 			// 
 			// ServicoComunicacao2_Pronto

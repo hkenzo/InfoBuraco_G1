@@ -38,8 +38,7 @@ buracoDAO::buracoDAO(int numBuraco, string nomeRua, int numeroRua, int tamanho, 
 		connection = mysqldao->getConnection();
 		
 	    // quando numBur = 0 ->db coloca numeração sozinho
-		//preparedStatement = connection->prepareStatement("INSERT INTO buraco (numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco, nomeCidadao, canalCidadao, dadoCanal, dataHora, reclamacao)	VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?); ");
-		preparedStatement = connection->prepareStatement("INSERT INTO buraco (numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco, nomeCidadao, canalCidadao, dadoCanal, dataHora, reclamacao)	VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?); ");
+			preparedStatement = connection->prepareStatement("INSERT INTO buraco (numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco, nomeCidadao, canalCidadao, dadoCanal, dataHora, reclamacao)	VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?); ");
 
 		preparedStatement->setInt(1, numBuraco);
 		preparedStatement->setString(2, nomeRua.c_str());
@@ -97,49 +96,7 @@ buracos * buracoDAO::buscarRua(string nomeRua, int numeroRua)
 		log = e.what();
 	}
 	return buraco;
-	/*
-
-
-
-	string log;
-	string nomRuaa;
-	int numRuaa;
-	int temp1;
-	int temp2;
-	int temp3;
-	sql::Connection * connection;
-	sql::PreparedStatement * preparedStatement;
-	sql::ResultSet *resultSet;
-
-	try {
-		MySQLDAO* mysqldao = MySQLDAO::getInstance();
-		connection = mysqldao->getConnection();
-
-		preparedStatement = connection->prepareStatement("select numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco,nomeCidadao,canalCidadao,dadoCanal, dataHora,reclamacao from buraco;");
-
-		//preparedStatement->setString(1, nomRua.c_str());
-		//preparedStatement->setInt(2, numRua);
-
-		resultSet = preparedStatement->executeQuery();
-	}
-	catch (sql::SQLException e)
-	{
-		connection->close();
-		log = e.what();
-	}
-	temp1 = resultSet->getInt(1);
-	temp3 = resultSet->getInt(2);
-	temp2 = resultSet->getInt(3);
-	resultSet->next();
-	temp1 = resultSet->getInt(1);
-	temp3 = resultSet->getInt(2);
-	temp2 = resultSet->getInt(3);
-	int x = temp1;
-	return temp1;
-	connection->close();*/
 }
-
-
 
 
 
@@ -280,25 +237,30 @@ void buracoDAO::setPrioridadeBuraco(int prioridade, string rua, int num)
 	}
 }
 
-buracos*  buracoDAO::getBuraco(int numeroBuraco)
+vector<buracos*>* buracoDAO::getBuraco(int numeroBuraco)
 {
-	string log;
-	buracos * buraco;
 	int num = numeroBuraco;
+	string log;
+	buracos * temp = nullptr;
+	vector<buracos*> *temp2 = nullptr;
 	sql::Connection * connection;
 	sql::PreparedStatement * preparedStatement;
 	sql::ResultSet *resultSet;
 	try {
 		MySQLDAO* mysqldao = MySQLDAO::getInstance();
 		connection = mysqldao->getConnection();
-		preparedStatement = connection->prepareStatement("select numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco,nomeCidadao,canalCidadao,dadoCanal, dataHora,reclamacao from buraco where numeroBuraco = ?;");
-
+		preparedStatement = connection->prepareStatement("select numBuraco, nomeRua, numeroRua, tamanho, posicao, regional, prioridade, numReclamacoes, statusBuraco,nomeCidadao,canalCidadao,dadoCanal, dataHora,reclamacao from buraco where numBuraco in (select numBuraco from OS where numOS = ?);");
+ 
 		preparedStatement->setInt(1, num);
 		resultSet = preparedStatement->executeQuery();
+		
 
-		if (resultSet->next()) {
-			buraco = new buracos(resultSet->getInt(1), resultSet->getString(2).c_str(), resultSet->getInt(3), resultSet->getInt(4), resultSet->getString(5).c_str(), resultSet->getString(6).c_str(), resultSet->getInt(7), resultSet->getInt(8), resultSet->getInt(9), resultSet->getString(10).c_str(), resultSet->getString(11).c_str(), resultSet->getString(12).c_str(), resultSet->getString(13).c_str(), resultSet->getString(14).c_str());
+		temp2 = new vector<buracos*>();
+		while (resultSet->next()) {
+			temp = new buracos(resultSet->getInt(1), resultSet->getString(2).c_str(), resultSet->getInt(3), resultSet->getInt(4), resultSet->getString(5).c_str(), resultSet->getString(6).c_str(), resultSet->getInt(7), resultSet->getInt(8), resultSet->getInt(9), resultSet->getString(10).c_str(), resultSet->getString(11).c_str(), resultSet->getString(12).c_str(), resultSet->getString(13).c_str(), resultSet->getString(14).c_str());
+			
 
+			temp2->push_back(temp);
 		}
 	}
 	catch (sql::SQLException e)
@@ -306,7 +268,7 @@ buracos*  buracoDAO::getBuraco(int numeroBuraco)
 		connection->close();
 		log = e.what();
 	}
-	return buraco;
+	return temp2;
 
 }
 

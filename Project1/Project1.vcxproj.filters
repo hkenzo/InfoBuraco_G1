@@ -36,9 +36,6 @@
     <ClCompile Include="ServicoComunicacao1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ServicoComunicacao2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ServicoComunicacao0.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -192,9 +189,6 @@
     <ClCompile Include="regionalOS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="telaEquipe.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="criarSaida1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -211,9 +205,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="VisualizarUmBuraco.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ChefeFinalizado.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ChefeFinalizarMobilizacao.cpp">
@@ -243,9 +234,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ServicoComunicacao1.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ServicoComunicacao2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ServicoComunicacao0.h">
@@ -407,9 +395,6 @@
     <ClInclude Include="regionalOS.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="telaEquipe.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="criarSaida1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -423,9 +408,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="VisualizarUmBuraco.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ChefeFinalizado.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ChefeFinalizarMobilizacao.h">
@@ -596,6 +578,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="Opening.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChefeFinalizarMobilizacao.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

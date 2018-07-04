@@ -85,32 +85,42 @@ namespace Project1 {
 			// 
 			// VisualizarOS
 			// 
+			this->VisualizarOS->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->VisualizarOS->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->VisualizarOS->Location = System::Drawing::Point(42, 131);
 			this->VisualizarOS->Name = L"VisualizarOS";
 			this->VisualizarOS->Size = System::Drawing::Size(104, 63);
 			this->VisualizarOS->TabIndex = 4;
 			this->VisualizarOS->Text = L"Visualizar buracos";
-			this->VisualizarOS->UseVisualStyleBackColor = true;
+			this->VisualizarOS->UseVisualStyleBackColor = false;
 			this->VisualizarOS->Click += gcnew System::EventHandler(this, &ServicoComunicacao0::VisualizarOS_Click);
 			// 
 			// NotificarFinalizado
 			// 
+			this->NotificarFinalizado->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->NotificarFinalizado->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->NotificarFinalizado->Location = System::Drawing::Point(156, 131);
 			this->NotificarFinalizado->Name = L"NotificarFinalizado";
 			this->NotificarFinalizado->Size = System::Drawing::Size(104, 63);
 			this->NotificarFinalizado->TabIndex = 5;
 			this->NotificarFinalizado->Text = L"Notificar finalizacao de OS";
-			this->NotificarFinalizado->UseVisualStyleBackColor = true;
+			this->NotificarFinalizado->UseVisualStyleBackColor = false;
 			this->NotificarFinalizado->Click += gcnew System::EventHandler(this, &ServicoComunicacao0::NotificarFinalizado_Click);
 			// 
 			// RegistrarNotificacao
 			// 
+			this->RegistrarNotificacao->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->RegistrarNotificacao->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->RegistrarNotificacao->ForeColor = System::Drawing::SystemColors::WindowText;
 			this->RegistrarNotificacao->Location = System::Drawing::Point(42, 60);
 			this->RegistrarNotificacao->Name = L"RegistrarNotificacao";
 			this->RegistrarNotificacao->Size = System::Drawing::Size(218, 65);
 			this->RegistrarNotificacao->TabIndex = 6;
 			this->RegistrarNotificacao->Text = L"Registrar Notificacao";
-			this->RegistrarNotificacao->UseVisualStyleBackColor = true;
+			this->RegistrarNotificacao->UseVisualStyleBackColor = false;
 			this->RegistrarNotificacao->Click += gcnew System::EventHandler(this, &ServicoComunicacao0::RegistrarNotificacao_Click);
 			// 
 			// ServicoComunicacao0
