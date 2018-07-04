@@ -124,3 +124,66 @@ void equipeDAO::criarEquipeSaidaDAO(string identificacaoEquipe, string data, int
 		log = e.what();
 	}
 }
+
+vector<equipe*>* equipeDAO::buscarEquipeSaida(int num, string dat)
+{
+	int id = num;
+	string data = dat;
+	string log;
+	equipe * temp = nullptr;
+	vector<equipe*> *temp2 = nullptr;
+	sql::Connection * connection;
+	sql::PreparedStatement * preparedStatement;
+	sql::ResultSet *resultSet;
+	try {
+		MySQLDAO* mysqldao = MySQLDAO::getInstance();
+		connection = mysqldao->getConnection();
+		preparedStatement = connection->prepareStatement("select identificacaoEquipe, numProfissionais, custoHoraEquipe from equipe where identificacaoEquipe in (select identificacaoEquipe from equipe_saida where data = ? and numOS = ?)");
+
+		preparedStatement->setString(1, data.c_str());
+		preparedStatement->setInt(2, id);
+
+		resultSet = preparedStatement->executeQuery();
+
+		temp2 = new vector<equipe*>();
+		while (resultSet->next()) {
+			temp = new equipe(resultSet->getString(1).c_str(), resultSet->getInt(2), resultSet->getInt(3));
+			temp2->push_back(temp);
+		}
+	}
+	catch (sql::SQLException e)
+	{
+		connection->close();
+		log = e.what();
+	}
+	return temp2;
+}
+
+void equipeDAO::setHorasTrabalho(int horas, int  id, string data, string idE)
+{
+	string log;
+	int h = horas;
+	string ie = idE;
+	int i = id;
+	string d = data;
+	sql::Connection * connection;
+	sql::PreparedStatement * preparedStatement;
+	sql::ResultSet *resultSet;
+	try {
+		MySQLDAO* mysqldao = MySQLDAO::getInstance();
+		connection = mysqldao->getConnection();
+		preparedStatement = connection->prepareStatement("UPDATE equipe_saida SET horasTrabalhadas = ? WHERE numOS = ? and identificacaoEquipe = ? and data = ?");
+
+		preparedStatement->setInt(1, h);
+		preparedStatement->setInt(2, i);
+		preparedStatement->setString(3, ie.c_str());
+		preparedStatement->setString(4, d.c_str());
+
+		resultSet = preparedStatement->executeQuery();
+	}
+	catch (sql::SQLException e)
+	{
+		connection->close();
+		log = e.what();
+	}
+}

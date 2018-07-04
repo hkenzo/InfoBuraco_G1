@@ -266,6 +266,7 @@ namespace Project1 {
 		usuarioDAO * temp = new usuarioDAO();
 		vector<usuario*>* temp2;
 		string user = msclr::interop::marshal_as<std::string>(this->userbox->Text);
+		String ^ user_S = (this->userbox->Text);
 
 		temp2 = temp->buscarUsuario(user);
 		if (temp2->size() == 0) {
@@ -287,7 +288,7 @@ namespace Project1 {
 
 					}
 					else if (tipo == "Chefe da Equipe") {
-						ChefeEquipeTrabalho^ aux = gcnew ChefeEquipeTrabalho();
+						ChefeEquipeTrabalho^ aux = gcnew ChefeEquipeTrabalho(user_S);
 						aux->ShowDialog();
 						this->Close();
 					}

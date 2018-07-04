@@ -210,7 +210,22 @@
     <ClCompile Include="VisualizarOS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Opening.cpp">
+    <ClCompile Include="VisualizarUmBuraco.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChefeFinalizado.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChefeFinalizarMobilizacao.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChefeFinalizarEquipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChefeFinalizarEquipamento.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChefeFinalizarMaterial.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -404,7 +419,22 @@
     <ClInclude Include="VisualizarOS.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Opening.h">
+    <ClInclude Include="VisualizarUmBuraco.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChefeFinalizado.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChefeFinalizarMobilizacao.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChefeFinalizarEquipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChefeFinalizarEquipamento.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChefeFinalizarMaterial.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -545,6 +575,15 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="VisualizarOS.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisualizarUmBuraco.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChefeFinalizarEquipamento.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChefeFinalizarEquipe.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>
