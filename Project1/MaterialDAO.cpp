@@ -122,3 +122,65 @@ void materialDAO::criarMaterialSaidaDAO(string data, int numOS, int sequencial) 
 		log = e.what();
 	}
 }
+
+vector<material*>* materialDAO::buscarMaterialSaida(int num, string dat)
+{
+	int numer = num;
+	string data = dat;
+	string log;
+	material * temp = nullptr;
+	vector<material*> *temp2 = nullptr;
+	sql::Connection * connection;
+	sql::PreparedStatement * preparedStatement;
+	sql::ResultSet *resultSet;
+	try {
+		MySQLDAO* mysqldao = MySQLDAO::getInstance();
+		connection = mysqldao->getConnection();
+		preparedStatement = connection->prepareStatement("select tipoMaterial, unidade, precoUnidade, sequencialMaterial from material where tipoMaterial in (select tipoMaterial from Material_saida where numOS = ? and data = ?)");
+		preparedStatement->setInt(1, numer);
+		preparedStatement->setString(2, data.c_str());
+
+		resultSet = preparedStatement->executeQuery();
+
+		temp2 = new vector<material*>();
+		while (resultSet->next()) {
+			temp = new material(resultSet->getString(1).c_str(), resultSet->getString(2).c_str(), resultSet->getInt(3), resultSet->getInt(4));
+			temp2->push_back(temp);
+		}
+	}
+	catch (sql::SQLException e)
+	{
+		connection->close();
+		log = e.what();
+	}
+	return temp2;
+}
+
+void materialDAO::setQuantidadeMaterial(int qte, int  id, string data, int idE)
+{
+	string log;
+	int h = qte;
+	int ie = idE;
+	int i = id;
+	string d = data;
+	sql::Connection * connection;
+	sql::PreparedStatement * preparedStatement;
+	sql::ResultSet *resultSet;
+	try {
+		MySQLDAO* mysqldao = MySQLDAO::getInstance();
+		connection = mysqldao->getConnection();
+		preparedStatement = connection->prepareStatement("UPDATE Material_saida SET quantidadeMaterial = ? WHERE numOS = ? and sequencialMaterial= ? and data = ?");
+
+		preparedStatement->setInt(1, h);
+		preparedStatement->setInt(2, i);
+		preparedStatement->setInt(3, ie);
+		preparedStatement->setString(4, d.c_str());
+
+		resultSet = preparedStatement->executeQuery();
+	}
+	catch (sql::SQLException e)
+	{
+		connection->close();
+		log = e.what();
+	}
+}

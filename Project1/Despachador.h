@@ -297,6 +297,7 @@ namespace Project1 {
 			this->MainMenuStrip = this->menuStrip1;
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Despachador";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Despachador";
 			this->Load += gcnew System::EventHandler(this, &Despachador::Despachador_Load);
 			this->ResumeLayout(false);

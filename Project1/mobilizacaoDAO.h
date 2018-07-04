@@ -19,6 +19,8 @@ public:
 	void mobilizacaoDAO::deletarMobilizacaoDAO(int idMob);
 	void mobilizacaoDAO::alterarMobilizacaoDAO(int custoKM, int idMob);
 	vector<mobilizacao*>* mobilizacaoDAO::buscarMobilizacao();
+	vector<mobilizacao*>* mobilizacaoDAO::buscarMobilizacaoSaida(int num, string dat);
+	void mobilizacaoDAO::setDuracaoMobilizacao(int dur, int  id, string data, int idE);
 };
 
 #endif

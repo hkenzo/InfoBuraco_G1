@@ -19,6 +19,8 @@ public:
 	void materialDAO::deletarMaterialDAO(int idMaterial);
 	void materialDAO::alterarMaterialDAO(int precoUnidade, int idMaterial);
 	vector<material*>* materialDAO::buscarMaterial();
+	vector<material*>* materialDAO::buscarMaterialSaida(int num, string dat);
+	void materialDAO::setQuantidadeMaterial(int qte, int  id, string data, int idE);
 };
 
 #endif

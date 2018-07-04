@@ -3,6 +3,7 @@
 #include "ServicoComunicacao0.h"
 #include "CadastroFuncionario.h"
 #include "ChefeEquipeTrabalho.h"
+#include "alterarPrioridade.h"
 #include <msclr\marshal_cppstd.h>
 #pragma once
 
@@ -245,6 +246,7 @@ namespace Project1 {
 			this->Controls->Add(this->senhabox);
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"login";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"login";
 			this->Load += gcnew System::EventHandler(this, &login::login_Load);
 			this->ResumeLayout(false);
@@ -281,20 +283,21 @@ namespace Project1 {
 					if (tipo == "Servico de Comunicacao") {
 						ServicoComunicacao0^ aux = gcnew ServicoComunicacao0();
 						aux->ShowDialog();
-						this->Close();
+						
 					}
 					else if (tipo == "Gestor") {
-
+						alterarPrioridade^ aux = gcnew alterarPrioridade();
+						aux->ShowDialog();
 					}
 					else if (tipo == "Chefe da Equipe") {
 						ChefeEquipeTrabalho^ aux = gcnew ChefeEquipeTrabalho(user_S);
 						aux->ShowDialog();
-						this->Close();
+						
 					}
 					else if (tipo == "Despachador") {
 						Despachador^ aux = gcnew Despachador();
 						aux->ShowDialog();
-						this->Close();
+						
 						
 					}
 

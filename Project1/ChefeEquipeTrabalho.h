@@ -9,7 +9,7 @@
 #include "ChefeFinalizarEquipamento.h"
 #include "ChefeFinalizarEquipe.h"
 #include "ChefeFinalizarMobilizacao.h"
-#include "ChefeFinalizarQuantidade.h"
+#include "ChefeFinalizarMaterial.h"
 #include <msclr/marshal.h>
 #include <msclr/marshal_cppstd.h>
 #include <stdlib.h>
@@ -263,7 +263,13 @@ private: System::Void alterarStatus_bt_Click(System::Object^  sender, System::Ev
 	tela2->ShowDialog();
 	this->Close();
 	//material
+	ChefeFinalizarMaterial^ tela3 = gcnew ChefeFinalizarMaterial(str1, str2);
+	tela3->ShowDialog();
+	this->Close();
 	//mobilizacao
+	ChefeFinalizarMobilizacao^ tela4 = gcnew ChefeFinalizarMobilizacao(str1, str2);
+	tela4->ShowDialog();
+	this->Close();
 //#include "ChefeFinalizarMobilizacao.h"
 //#include "ChefeFinalizarQuantidade.h"
 	buracoDAO* aux2 = new buracoDAO();
