@@ -259,9 +259,9 @@ private: System::Void alterarStatus_bt_Click(System::Object^  sender, System::Ev
 	tela->ShowDialog();
 	this->Close();
 	//equipe
-	//ChefeFinalizarEquipe^ tela2 = gcnew ChefeFinalizarEquipe(str1, str2);
-	//tela2->ShowDialog();
-	//this->Close();
+	ChefeFinalizarEquipe^ tela2 = gcnew ChefeFinalizarEquipe(str1, str2);
+	tela2->ShowDialog();
+	this->Close();
 	//material
 	//mobilizacao
 //#include "ChefeFinalizarMobilizacao.h"

@@ -434,6 +434,9 @@
     <EmbeddedResource Include="ChefeFinalizarEquipamento.resx">
       <DependentUpon>ChefeFinalizarEquipamento.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChefeFinalizarEquipe.resx">
+      <DependentUpon>ChefeFinalizarEquipe.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CriarEquipamento.resx">
       <DependentUpon>CriarEquipamento.h</DependentUpon>
     </EmbeddedResource>
