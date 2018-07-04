@@ -4,7 +4,7 @@
 #include <msclr/marshal.h>
 #include <msclr/marshal_cppstd.h>
 #include <vector>
-#include <string>]
+#include <string>
 
 namespace Project1 {
 
@@ -170,7 +170,7 @@ namespace Project1 {
 #pragma endregion
 	private: System::Void create_BT_Click(System::Object^  sender, System::EventArgs^  e) {
 		string valor = msclr::interop::marshal_as<std::string>(this->textBox1->Text);
-		int horas = stoi(valor);
+		int h = stoi(valor);
 
 		String^ str1 = numOS;
 		String^ str2 = data;
@@ -183,7 +183,7 @@ namespace Project1 {
 		int idE = std::stoi(qt);
 
 		materialDAO *aux = new materialDAO();
-		aux->setQuantidadeMaterial(horas, id, data, idE);
+		aux->setQuantidadeMaterial(h, id, data, idE);
 	}
 private: System::Void Confirm_Bt_Click(System::Object^  sender, System::EventArgs^  e) {
 	this->Close();

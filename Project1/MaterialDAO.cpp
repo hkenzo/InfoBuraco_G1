@@ -156,10 +156,10 @@ vector<material*>* materialDAO::buscarMaterialSaida(int num, string dat)
 	return temp2;
 }
 
-void materialDAO::setQuantidadeMaterial(int horas, int  id, string data, int idE)
-{// horas aqui eh a quantidade do material
+void materialDAO::setQuantidadeMaterial(int qte, int  id, string data, int idE)
+{
 	string log;
-	int h = horas;
+	int h = qte;
 	int ie = idE;
 	int i = id;
 	string d = data;

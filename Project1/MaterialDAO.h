@@ -20,7 +20,7 @@ public:
 	void materialDAO::alterarMaterialDAO(int precoUnidade, int idMaterial);
 	vector<material*>* materialDAO::buscarMaterial();
 	vector<material*>* materialDAO::buscarMaterialSaida(int num, string dat);
-	void materialDAO::setQuantidadeMaterial(int horas, int  id, string data, int idE);
+	void materialDAO::setQuantidadeMaterial(int qte, int  id, string data, int idE);
 };
 
 #endif

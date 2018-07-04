@@ -267,6 +267,9 @@ private: System::Void alterarStatus_bt_Click(System::Object^  sender, System::Ev
 	tela3->ShowDialog();
 	this->Close();
 	//mobilizacao
+	ChefeFinalizarMobilizacao^ tela4 = gcnew ChefeFinalizarMobilizacao(str1, str2);
+	tela4->ShowDialog();
+	this->Close();
 //#include "ChefeFinalizarMobilizacao.h"
 //#include "ChefeFinalizarQuantidade.h"
 	buracoDAO* aux2 = new buracoDAO();
