@@ -105,3 +105,9 @@ void buracos::setPrioridade(int novaPri)
 {
 	this->prioridade = novaPri;
 }
+//vector <int>* buracos::getBuracosAbertos()
+//{
+//	vector <int>* abertos = new buracos();
+//	return abertos;
+
+//}

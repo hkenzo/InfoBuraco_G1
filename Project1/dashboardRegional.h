@@ -280,7 +280,7 @@ namespace Project1 {
 		}
 #pragma endregion
 	private: System::Void dashboard_Load(System::Object^  sender, System::EventArgs^  e) {
-		this->listBox3->ReadOnly = true;
+		//this->listBox3->ReadOnly = true;
 	}
 private: System::Void bt_AlterarPrioridade_Click(System::Object^  sender, System::EventArgs^  e) {
 	alterarPrioridade^ alterar = gcnew alterarPrioridade();

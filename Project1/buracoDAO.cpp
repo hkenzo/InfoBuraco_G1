@@ -185,7 +185,7 @@ vector<buracos*>* buracoDAO::buscarBuracosAbertos()
 	try {
 		MySQLDAO* mysqldao = MySQLDAO::getInstance();
 		connection = mysqldao->getConnection();
-		preparedStatement = connection->prepareStatement("select numBuraco from buraco where status ;");
+		preparedStatement = connection->prepareStatement("select numBuraco from buraco where statusBuraco = 1;");
 
 		resultSet = preparedStatement->executeQuery();
 
