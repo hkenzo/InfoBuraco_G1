@@ -190,6 +190,7 @@
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Despachador.cpp" />
     <ClCompile Include="MySQLDAO.cpp" />
+    <ClCompile Include="Opening.cpp" />
     <ClCompile Include="OS.cpp" />
     <ClCompile Include="OSDAO.cpp" />
     <ClCompile Include="regionalOS.cpp" />
@@ -325,6 +326,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MySQLDAO.h" />
+    <ClInclude Include="Opening.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="OS.h" />
     <ClInclude Include="OSDAO.h" />
     <ClInclude Include="regionalOS.h">
@@ -490,6 +494,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Despachador.resx">
       <DependentUpon>Despachador.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Opening.resx">
+      <DependentUpon>Opening.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="regionalOS.resx">
       <DependentUpon>regionalOS.h</DependentUpon>
