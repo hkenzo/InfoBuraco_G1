@@ -1,0 +1,52 @@
+﻿[INFOBURACO GRUPO 1]
+Olá, bem vindo(a) ao Projeto InfoBuraco 2018 da disciplina PCS3443 - Laboratório de Engenharia de Software I
+
+
+Integrantes do Grupo 1:
+Daniel Dias Florentino
+Heitor Kenzo Koga
+Alexandre Warren Feher
+
+
+
+
+Após uma tela de introdução, a primeira tela corresponde ao login, a seguir uma lista de logins para cada função no programa:
+
+
+-Servico de Comunicacao: 
+        Login: servicoComunicacao
+        Senha: pcs
+        Funções:Registrar Notificações,visualizar parâmetros do buraco, notificar finalização de OS
+
+
+obs.: o usuário recebe as informações dos cidadãos que devem ser notificados e podem marcar quais já foram notificados.
+
+
+-Gestor:
+        Login: gestor
+        Senha: pcs
+        Funções:Altera status de OS
+
+
+-Despachador
+        Login: despachador
+        Senha: pcs
+        Funções:Gerencia materiais, equipes, equipamentos, mobilizações, além de alocar estes itens em saídas
+
+
+- Chefe da Equipe
+        Login: chefe
+        Senha: pcs
+        Funções: Informar ao sistema o ocorrido nas saídas em que sua equipe foi designada, como: quantidade de materiais,custo com mobilizações, horas trabalhadas, horas de equipamentos. Atulizar status da OS (finalizada, em obras). Visualizar saídas e buraco correspondente à saída atribuída à equipe.
+
+
+Deve-se atentar que o login não fica restrito a estes informados, há a opção de realizar o cadastro.
+
+
+Em caso de dúvidas, enviar email para algum de nossos integrantes.
+
+
+Atenciosamente,
+
+
+Grupo 01 2018
