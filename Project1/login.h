@@ -282,7 +282,7 @@ namespace Project1 {
 					if (tipo == "Servico de Comunicacao") {
 						ServicoComunicacao0^ aux = gcnew ServicoComunicacao0();
 						aux->ShowDialog();
-						this->Close();
+						
 					}
 					else if (tipo == "Gestor") {
 
@@ -290,12 +290,12 @@ namespace Project1 {
 					else if (tipo == "Chefe da Equipe") {
 						ChefeEquipeTrabalho^ aux = gcnew ChefeEquipeTrabalho(user_S);
 						aux->ShowDialog();
-						this->Close();
+						
 					}
 					else if (tipo == "Despachador") {
 						Despachador^ aux = gcnew Despachador();
 						aux->ShowDialog();
-						this->Close();
+						
 						
 					}
 

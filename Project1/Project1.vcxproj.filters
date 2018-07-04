@@ -228,6 +228,9 @@
     <ClCompile Include="ChefeFinalizarMaterial.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Opening.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CaixaDeDialogo.h">
@@ -437,6 +440,9 @@
     <ClInclude Include="ChefeFinalizarMaterial.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Opening.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CaixaDeDialogo.resx">
@@ -584,6 +590,12 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="ChefeFinalizarEquipe.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChefeFinalizarMaterial.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Opening.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>
