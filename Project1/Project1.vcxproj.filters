@@ -210,6 +210,9 @@
     <ClCompile Include="VisualizarOS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Opening.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CaixaDeDialogo.h">
@@ -401,6 +404,9 @@
     <ClInclude Include="VisualizarOS.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Opening.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CaixaDeDialogo.resx">
@@ -536,6 +542,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="criarSaida2.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisualizarOS.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

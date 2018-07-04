@@ -245,6 +245,7 @@ namespace Project1 {
 			this->Controls->Add(this->senhabox);
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"login";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"login";
 			this->Load += gcnew System::EventHandler(this, &login::login_Load);
 			this->ResumeLayout(false);
