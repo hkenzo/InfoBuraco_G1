@@ -100,7 +100,7 @@ vector<saida*>* saidaDAO::buscarSaidaEquipe(string nome)
 
 		temp2 = new vector<saida*>();
 		while (resultSet->next()) {
-			temp = new saida(resultSet->getString(1).c_str(), resultSet->getInt(2));
+			temp = new saida(resultSet->getString(2).c_str(), resultSet->getInt(1));
 			temp2->push_back(temp);
 		}
 	}

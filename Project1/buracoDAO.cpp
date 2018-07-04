@@ -321,7 +321,7 @@ void buracoDAO::setStatusBur(int statusBuraco, int numeroBuraco)
 	try {
 		MySQLDAO* mysqldao = MySQLDAO::getInstance();
 		connection = mysqldao->getConnection();
-		preparedStatement = connection->prepareStatement("UPDATE buraco SET statusBuraco = ? WHERE noumeroBuraco = ?");
+		preparedStatement = connection->prepareStatement("UPDATE buraco SET statusBuraco = ? WHERE numeroBuraco in(select numeroBuraco from OS where numOS = ?);");
 
 		preparedStatement->setInt(1, status);
 		preparedStatement->setInt(2, numer);

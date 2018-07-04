@@ -115,12 +115,12 @@ namespace Project1 {
 			// 
 			// columnHeader12
 			// 
-			this->columnHeader12->Text = L"Data";
+			this->columnHeader12->Text = L"numOS";
 			this->columnHeader12->Width = 105;
 			// 
 			// columnHeader13
 			// 
-			this->columnHeader13->Text = L"Numero OS";
+			this->columnHeader13->Text = L"Data";
 			this->columnHeader13->Width = 89;
 			// 
 			// fechar_bt
@@ -247,21 +247,21 @@ private: System::Void atualizar_bt_Click(System::Object^  sender, System::EventA
 	}
 }
 private: System::Void alterarStatus_bt_Click(System::Object^  sender, System::EventArgs^  e) {
-	String^ str = listView1->CheckedItems[0]->SubItems[3]->Text;
-	String^ str2 = listView1->CheckedItems[0]->SubItems[5]->Text;
-	std::string nume = msclr::interop::marshal_as<std::string>(str);
-	std::string numeb = msclr::interop::marshal_as<std::string>(str2);
+	String^ str1 = listView1->CheckedItems[0]->SubItems[0]->Text;
+	String^ str2 = listView1->CheckedItems[0]->SubItems[1]->Text;
+	std::string nume = msclr::interop::marshal_as<std::string>(str1);
+	std::string data = msclr::interop::marshal_as<std::string>(str2);
 
 	int num = std::stoi(nume);
-	int num2 = std::stoi(numeb);
+
 	//equipamento
-	ChefeFinalizarEquipamento^ tela = gcnew ChefeFinalizarEquipamento();
+	ChefeFinalizarEquipamento^ tela = gcnew ChefeFinalizarEquipamento(str1, str2);
 	tela->ShowDialog();
 	this->Close();
 	//equipe
-	ChefeFinalizarEquipe^ tela2 = gcnew ChefeFinalizarEquipe();
-	tela2->ShowDialog();
-	this->Close();
+	//ChefeFinalizarEquipe^ tela2 = gcnew ChefeFinalizarEquipe(str1, str2);
+	//tela2->ShowDialog();
+	//this->Close();
 	//material
 	//mobilizacao
 //#include "ChefeFinalizarMobilizacao.h"
@@ -269,7 +269,7 @@ private: System::Void alterarStatus_bt_Click(System::Object^  sender, System::Ev
 	buracoDAO* aux2 = new buracoDAO();
 	OSDAO* aux = new OSDAO();
 	aux->setStatusD(2, num);
-	aux2->setStatusBur(1, num2);
+	aux2->setStatusBur(1, num);
 
 }
 private: System::Void fechar_bt_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -277,7 +277,7 @@ private: System::Void fechar_bt_Click(System::Object^  sender, System::EventArgs
 }
 
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	String^ str = listView1->CheckedItems[0]->SubItems[3]->Text;
+	String^ str = listView1->CheckedItems[0]->SubItems[0]->Text;
 	std::string nume = msclr::interop::marshal_as<std::string>(str);
 
 	int num = std::stoi(nume);

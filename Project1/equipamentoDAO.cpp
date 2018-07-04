@@ -135,7 +135,7 @@ vector<equipamento*>* equipamentoDAO::buscarEquipamentoSaida(int idE, string dat
 	try {
 		MySQLDAO* mysqldao = MySQLDAO::getInstance();
 		connection = mysqldao->getConnection();
-		preparedStatement = connection->prepareStatement("select tipoEquipamento, sequencialEquipamento, custoHoraEquipamento from equipamento_saida where sequencialEquipamento in (select sequencialEquipamento from equipamento_saida where data = ? and numOS = ?)");
+		preparedStatement = connection->prepareStatement("select tipoEquipamento, sequencialEquipamento, custoHoraEquipamento from equipamento where sequencialEquipamento in (select sequencialEquipamento from equipamento_saida where data = ? and numOS = ?)");
 
 		preparedStatement->setString(1, data.c_str());
 		preparedStatement->setInt(2, id);
@@ -156,10 +156,11 @@ vector<equipamento*>* equipamentoDAO::buscarEquipamentoSaida(int idE, string dat
 	return temp2;
 }
 
-void setHorasUso(int horas, int id, string data)
+void equipamentoDAO::setHorasUso(int horas, int id, string data, int idE)
 {
 	string log;
 	int h = horas;
+	int ie = idE;
 	int i = id;
 	string d = data;
 	sql::Connection * connection;
@@ -168,11 +169,12 @@ void setHorasUso(int horas, int id, string data)
 	try {
 		MySQLDAO* mysqldao = MySQLDAO::getInstance();
 		connection = mysqldao->getConnection();
-		preparedStatement = connection->prepareStatement("UPDATE equipamento_saida SET horasUsoEquipamento = ? WHERE sequencialEquipamento = ? and data = ?");
+		preparedStatement = connection->prepareStatement("UPDATE equipamento_saida SET horasUsoEquipamento = ? WHERE numOS = ? and sequencialEquipamento = ? and data = ?");
 
 		preparedStatement->setInt(1, h);
 		preparedStatement->setInt(2, i);
-		preparedStatement->setString(3, d.c_str());
+		preparedStatement->setInt(3, ie);
+		preparedStatement->setString(4, d.c_str());
 
 		resultSet = preparedStatement->executeQuery();
 	}

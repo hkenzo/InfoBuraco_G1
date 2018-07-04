@@ -20,7 +20,7 @@ public:
 	void equipamentoDAO::alterarEquipamentoDAO(int id, int custoHoraEquipamento);
 	vector<equipamento*>* equipamentoDAO::buscarEquipamento();
 	vector<equipamento*>* equipamentoDAO::buscarEquipamentoSaida(int idE, string dataE);
-	void setHorasUso();
+	void setHorasUso(int horas, int id, string data, int idE);
 };
 
 #endif

@@ -3,6 +3,9 @@
 #include "equipamentoDAO.h"
 #include <msclr/marshal.h>
 #include <msclr/marshal_cppstd.h>
+#include <vector>
+#include <string>
+#include <stdlib.h>
 
 namespace Project1 {
 
@@ -19,12 +22,22 @@ namespace Project1 {
 	public ref class ChefeFinalizarEquipamento : public System::Windows::Forms::Form
 	{
 	public:
+		String ^ numOS;
+		String^ data;
 		ChefeFinalizarEquipamento(void)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+		}
+
+		ChefeFinalizarEquipamento(String^ str1, String^ str2)
+		{
+			InitializeComponent();
+			numOS = str1;
+			data = str2;
+			atualizar();
 		}
 
 	protected:
@@ -148,6 +161,7 @@ namespace Project1 {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(134, 20);
 			this->textBox1->TabIndex = 36;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &ChefeFinalizarEquipamento::textBox1_TextChanged);
 			// 
 			// ChefeFinalizarEquipamento
 			// 
@@ -171,10 +185,17 @@ namespace Project1 {
 	}
 
 			 void atualizar() {
+				 String^ str1 = numOS;
+				 String^ str2 = data;
+				 std::string nume = msclr::interop::marshal_as<std::string>(str1);
+				 std::string dat = msclr::interop::marshal_as<std::string>(str2);
+
+				 int num = std::stoi(nume);
+
 				 equipamentoDAO * aux = new equipamentoDAO();
 				 vector<equipamento*>* temp2;
 				 this->listView1->Items->Clear();
-				 temp2 = aux->buscarEquipamentoSaida(1, "1");
+				 temp2 = aux->buscarEquipamentoSaida(num, dat);
 				 for (int j = 0; j < temp2->size(); j++) {
 					 String^ str1 = gcnew String((temp2->at(j)->getTipo()).c_str());
 					 String^ str2 = gcnew String(std::to_string(temp2->at(j)->getId()).c_str());
@@ -190,6 +211,23 @@ namespace Project1 {
 private: System::Void listView1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void create_BT_Click(System::Object^  sender, System::EventArgs^  e) {
+	string valor = msclr::interop::marshal_as<std::string>(this->textBox1->Text);
+	int horas = stoi(valor);
+
+	String^ str1 = numOS;
+	String^ str2 = data;
+	std::string nume = msclr::interop::marshal_as<std::string>(str1);
+	std::string data = msclr::interop::marshal_as<std::string>(str2);
+	int id = std::stoi(nume);
+
+	String^ str3 = listView1->CheckedItems[0]->SubItems[1]->Text;
+	std::string numEr = msclr::interop::marshal_as<std::string>(str3);
+	int idE = std::stoi(numEr);
+
+	equipamentoDAO *aux = new equipamentoDAO();
+	aux->setHorasUso(horas, id, data, idE);
+}
+private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }
