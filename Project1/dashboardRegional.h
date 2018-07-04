@@ -5,6 +5,7 @@
 #include "OS.h"
 #include "VizualizarBuracos.h"
 #include "VisualizarOS.h"
+#include <msclr\marshal_cppstd.h>
 #pragma once
 
 namespace Project1 {
@@ -189,6 +190,7 @@ namespace Project1 {
 			this->listBox3->Name = L"listBox3";
 			this->listBox3->Size = System::Drawing::Size(201, 244);
 			this->listBox3->TabIndex = 11;
+			this->listBox3->SelectedIndexChanged += gcnew System::EventHandler(this, &dashboard::listBox3_SelectedIndexChanged);
 			// 
 			// tempoMedioConserto
 			// 
@@ -278,6 +280,7 @@ namespace Project1 {
 		}
 #pragma endregion
 	private: System::Void dashboard_Load(System::Object^  sender, System::EventArgs^  e) {
+		this->listBox3->ReadOnly = true;
 	}
 private: System::Void bt_AlterarPrioridade_Click(System::Object^  sender, System::EventArgs^  e) {
 	alterarPrioridade^ alterar = gcnew alterarPrioridade();
@@ -294,6 +297,8 @@ private: System::Void btVisualizarBuraco_Click(System::Object^  sender, System::
 private: System::Void btVisualizarOS_Click(System::Object^  sender, System::EventArgs^  e) {
 	VisualizarOS^ verOS = gcnew VisualizarOS();
 	verOS->ShowDialog();
+}
+private: System::Void listBox3_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }

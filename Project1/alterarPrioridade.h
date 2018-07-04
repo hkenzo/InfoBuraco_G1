@@ -24,7 +24,9 @@ namespace Project1 {
 
 	public:
 		String^ aux1;
-		String^ aux2;
+	private: System::Windows::Forms::TextBox^  buracoTbox;
+	public:
+		String ^ aux2;
 
 		alterarPrioridade(void)
 		{
@@ -56,7 +58,7 @@ namespace Project1 {
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::TextBox^  prioridadeTextBox;
-	private: System::Windows::Forms::ComboBox^  BuracoComboBox;
+
 	private: System::Windows::Forms::Button^  bt_calcelarPrioridade;
 	private: System::Windows::Forms::Button^  bt_confirmarPrioridade;
 
@@ -85,9 +87,9 @@ namespace Project1 {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->prioridadeTextBox = (gcnew System::Windows::Forms::TextBox());
-			this->BuracoComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->bt_calcelarPrioridade = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->buracoTbox = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// bt_confirmarPrioridade
@@ -128,14 +130,6 @@ namespace Project1 {
 			this->prioridadeTextBox->Size = System::Drawing::Size(44, 20);
 			this->prioridadeTextBox->TabIndex = 3;
 			// 
-			// BuracoComboBox
-			// 
-			this->BuracoComboBox->FormattingEnabled = true;
-			this->BuracoComboBox->Location = System::Drawing::Point(117, 109);
-			this->BuracoComboBox->Name = L"BuracoComboBox";
-			this->BuracoComboBox->Size = System::Drawing::Size(70, 21);
-			this->BuracoComboBox->TabIndex = 4;
-			// 
 			// bt_calcelarPrioridade
 			// 
 			this->bt_calcelarPrioridade->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
@@ -158,14 +152,21 @@ namespace Project1 {
 			this->label3->TabIndex = 24;
 			this->label3->Text = L"Alterar Prioridade do Buraco";
 			// 
+			// buracoTbox
+			// 
+			this->buracoTbox->Location = System::Drawing::Point(117, 109);
+			this->buracoTbox->Name = L"buracoTbox";
+			this->buracoTbox->Size = System::Drawing::Size(53, 20);
+			this->buracoTbox->TabIndex = 25;
+			// 
 			// alterarPrioridade
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(317, 268);
+			this->Controls->Add(this->buracoTbox);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->bt_calcelarPrioridade);
-			this->Controls->Add(this->BuracoComboBox);
 			this->Controls->Add(this->prioridadeTextBox);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
@@ -181,7 +182,7 @@ namespace Project1 {
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		buracoDAO * aux = new buracoDAO;
 		string prioridade = msclr::interop::marshal_as<std::string>(this->prioridadeTextBox->Text);
-		string buraco = msclr::interop::marshal_as<std::string>(this->BuracoComboBox->Text);
+		string buraco = msclr::interop::marshal_as<std::string>(this->buracoTbox->Text);
 		aux->editarBuracoDAO(std::stoi(prioridade, nullptr, 10), std::stoi(buraco, nullptr, 10));
 		this->Close();
 	}
@@ -193,7 +194,14 @@ namespace Project1 {
 	}
 	private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^  e) {
 		this->prioridadeTextBox->Text = aux1;
-		this->BuracoComboBox->Text = aux2;
+		this->buracoTbox->Text = aux2;
+	}
+	private: Void atualizarOS() {
+		buracoDAO * aux1 = new buracoDAO();
+		vector<buracos*>* temp2;
+		this->buracoTbox->Clear();
+		this->prioridadeTextBox->Clear();
+		temp2 = aux1->buscarBuracos();
 	}
 };
 }
