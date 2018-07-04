@@ -161,8 +161,8 @@
     <ClCompile Include="ChefeFinalizado.cpp" />
     <ClCompile Include="ChefeFinalizarEquipamento.cpp" />
     <ClCompile Include="ChefeFinalizarEquipe.cpp" />
+    <ClCompile Include="ChefeFinalizarMaterial.cpp" />
     <ClCompile Include="ChefeFinalizarMobilizacao.cpp" />
-    <ClCompile Include="ChefeFinalizarQuantidade.cpp" />
     <ClCompile Include="CriarEquipamento.cpp" />
     <ClCompile Include="criarEquipe.cpp" />
     <ClCompile Include="criarMaterial.cpp" />
@@ -262,10 +262,10 @@
     <ClInclude Include="ChefeFinalizarEquipe.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="ChefeFinalizarMobilizacao.h">
+    <ClInclude Include="ChefeFinalizarMaterial.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="ChefeFinalizarQuantidade.h">
+    <ClInclude Include="ChefeFinalizarMobilizacao.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CriarEquipamento.h">
@@ -436,6 +436,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChefeFinalizarEquipe.resx">
       <DependentUpon>ChefeFinalizarEquipe.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChefeFinalizarMaterial.resx">
+      <DependentUpon>ChefeFinalizarMaterial.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CriarEquipamento.resx">
       <DependentUpon>CriarEquipamento.h</DependentUpon>
