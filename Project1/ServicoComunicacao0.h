@@ -85,12 +85,11 @@ namespace Project1 {
 			// 
 			// VisualizarOS
 			// 
-			this->VisualizarOS->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
-				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->VisualizarOS->BackColor = System::Drawing::Color::PowderBlue;
 			this->VisualizarOS->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->VisualizarOS->Location = System::Drawing::Point(42, 131);
+			this->VisualizarOS->Location = System::Drawing::Point(42, 233);
 			this->VisualizarOS->Name = L"VisualizarOS";
-			this->VisualizarOS->Size = System::Drawing::Size(104, 63);
+			this->VisualizarOS->Size = System::Drawing::Size(218, 63);
 			this->VisualizarOS->TabIndex = 4;
 			this->VisualizarOS->Text = L"Visualizar buracos";
 			this->VisualizarOS->UseVisualStyleBackColor = false;
@@ -101,9 +100,9 @@ namespace Project1 {
 			this->NotificarFinalizado->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->NotificarFinalizado->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->NotificarFinalizado->Location = System::Drawing::Point(156, 131);
+			this->NotificarFinalizado->Location = System::Drawing::Point(42, 148);
 			this->NotificarFinalizado->Name = L"NotificarFinalizado";
-			this->NotificarFinalizado->Size = System::Drawing::Size(104, 63);
+			this->NotificarFinalizado->Size = System::Drawing::Size(218, 63);
 			this->NotificarFinalizado->TabIndex = 5;
 			this->NotificarFinalizado->Text = L"Notificar finalizacao de OS";
 			this->NotificarFinalizado->UseVisualStyleBackColor = false;
@@ -127,7 +126,7 @@ namespace Project1 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(298, 206);
+			this->ClientSize = System::Drawing::Size(297, 320);
 			this->Controls->Add(this->RegistrarNotificacao);
 			this->Controls->Add(this->NotificarFinalizado);
 			this->Controls->Add(this->VisualizarOS);
