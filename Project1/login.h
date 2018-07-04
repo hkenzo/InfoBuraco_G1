@@ -102,20 +102,20 @@ namespace Project1 {
 			// 
 			// senhabox
 			// 
-			this->senhabox->Location = System::Drawing::Point(210, 191);
-			this->senhabox->Margin = System::Windows::Forms::Padding(4);
+			this->senhabox->Location = System::Drawing::Point(158, 155);
 			this->senhabox->Name = L"senhabox";
 			this->senhabox->PasswordChar = '*';
-			this->senhabox->Size = System::Drawing::Size(285, 22);
+			this->senhabox->Size = System::Drawing::Size(215, 20);
 			this->senhabox->TabIndex = 6;
 			this->senhabox->TextChanged += gcnew System::EventHandler(this, &login::senhabox_TextChanged);
 			// 
 			// Usuario
 			// 
 			this->Usuario->AutoSize = true;
-			this->Usuario->Location = System::Drawing::Point(52, 128);
+			this->Usuario->Location = System::Drawing::Point(39, 104);
+			this->Usuario->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Usuario->Name = L"Usuario";
-			this->Usuario->Size = System::Drawing::Size(57, 17);
+			this->Usuario->Size = System::Drawing::Size(43, 13);
 			this->Usuario->TabIndex = 7;
 			this->Usuario->Text = L"Usuário";
 			this->Usuario->Click += gcnew System::EventHandler(this, &login::label1_Click);
@@ -123,9 +123,10 @@ namespace Project1 {
 			// Senha
 			// 
 			this->Senha->AutoSize = true;
-			this->Senha->Location = System::Drawing::Point(52, 194);
+			this->Senha->Location = System::Drawing::Point(39, 158);
+			this->Senha->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Senha->Name = L"Senha";
-			this->Senha->Size = System::Drawing::Size(49, 17);
+			this->Senha->Size = System::Drawing::Size(38, 13);
 			this->Senha->TabIndex = 9;
 			this->Senha->Text = L"Senha";
 			this->Senha->Click += gcnew System::EventHandler(this, &login::Senha_Click);
@@ -135,10 +136,10 @@ namespace Project1 {
 			this->cancel_cadastro_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->cancel_cadastro_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->cancel_cadastro_bt->Location = System::Drawing::Point(46, 261);
-			this->cancel_cadastro_bt->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->cancel_cadastro_bt->Location = System::Drawing::Point(34, 212);
+			this->cancel_cadastro_bt->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->cancel_cadastro_bt->Name = L"cancel_cadastro_bt";
-			this->cancel_cadastro_bt->Size = System::Drawing::Size(171, 36);
+			this->cancel_cadastro_bt->Size = System::Drawing::Size(128, 29);
 			this->cancel_cadastro_bt->TabIndex = 13;
 			this->cancel_cadastro_bt->Text = L"Cancelar";
 			this->cancel_cadastro_bt->UseVisualStyleBackColor = false;
@@ -148,10 +149,10 @@ namespace Project1 {
 			// 
 			this->conf_cadastro_bt->BackColor = System::Drawing::Color::PowderBlue;
 			this->conf_cadastro_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->conf_cadastro_bt->Location = System::Drawing::Point(472, 261);
-			this->conf_cadastro_bt->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->conf_cadastro_bt->Location = System::Drawing::Point(354, 212);
+			this->conf_cadastro_bt->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->conf_cadastro_bt->Name = L"conf_cadastro_bt";
-			this->conf_cadastro_bt->Size = System::Drawing::Size(171, 36);
+			this->conf_cadastro_bt->Size = System::Drawing::Size(128, 29);
 			this->conf_cadastro_bt->TabIndex = 14;
 			this->conf_cadastro_bt->Text = L"Confirmar";
 			this->conf_cadastro_bt->UseVisualStyleBackColor = false;
@@ -162,9 +163,10 @@ namespace Project1 {
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(250, 28);
+			this->label5->Location = System::Drawing::Point(188, 23);
+			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(213, 36);
+			this->label5->Size = System::Drawing::Size(172, 29);
 			this->label5->TabIndex = 16;
 			this->label5->Text = L"INFOBURACO";
 			this->label5->Click += gcnew System::EventHandler(this, &login::label5_Click);
@@ -174,18 +176,18 @@ namespace Project1 {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(333, 79);
+			this->label1->Location = System::Drawing::Point(250, 64);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(60, 25);
+			this->label1->Size = System::Drawing::Size(48, 20);
 			this->label1->TabIndex = 17;
 			this->label1->Text = L"Login";
 			// 
 			// userbox
 			// 
-			this->userbox->Location = System::Drawing::Point(210, 125);
-			this->userbox->Margin = System::Windows::Forms::Padding(4);
+			this->userbox->Location = System::Drawing::Point(158, 102);
 			this->userbox->Name = L"userbox";
-			this->userbox->Size = System::Drawing::Size(285, 22);
+			this->userbox->Size = System::Drawing::Size(215, 20);
 			this->userbox->TabIndex = 15;
 			// 
 			// change_Mobilizacao_bt
@@ -193,9 +195,10 @@ namespace Project1 {
 			this->change_Mobilizacao_bt->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->change_Mobilizacao_bt->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->change_Mobilizacao_bt->Location = System::Drawing::Point(256, 261);
+			this->change_Mobilizacao_bt->Location = System::Drawing::Point(183, 212);
+			this->change_Mobilizacao_bt->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->change_Mobilizacao_bt->Name = L"change_Mobilizacao_bt";
-			this->change_Mobilizacao_bt->Size = System::Drawing::Size(186, 36);
+			this->change_Mobilizacao_bt->Size = System::Drawing::Size(140, 29);
 			this->change_Mobilizacao_bt->TabIndex = 18;
 			this->change_Mobilizacao_bt->Text = L"Cadastrar";
 			this->change_Mobilizacao_bt->UseVisualStyleBackColor = false;
@@ -207,9 +210,10 @@ namespace Project1 {
 			this->erroSenha->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->erroSenha->ForeColor = System::Drawing::Color::Red;
-			this->erroSenha->Location = System::Drawing::Point(511, 194);
+			this->erroSenha->Location = System::Drawing::Point(383, 158);
+			this->erroSenha->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->erroSenha->Name = L"erroSenha";
-			this->erroSenha->Size = System::Drawing::Size(124, 17);
+			this->erroSenha->Size = System::Drawing::Size(98, 13);
 			this->erroSenha->TabIndex = 19;
 			this->erroSenha->Text = L"Senha Incorreta";
 			this->erroSenha->Click += gcnew System::EventHandler(this, &login::label2_Click);
@@ -220,19 +224,20 @@ namespace Project1 {
 			this->erroUser->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->erroUser->ForeColor = System::Drawing::Color::Red;
-			this->erroUser->Location = System::Drawing::Point(511, 125);
+			this->erroUser->Location = System::Drawing::Point(383, 102);
+			this->erroUser->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->erroUser->Name = L"erroUser";
-			this->erroUser->Size = System::Drawing::Size(183, 17);
+			this->erroUser->Size = System::Drawing::Size(143, 13);
 			this->erroUser->TabIndex = 20;
 			this->erroUser->Text = L"Usuário não encontrado";
 			this->erroUser->Click += gcnew System::EventHandler(this, &login::label3_Click);
 			// 
 			// login
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
-			this->ClientSize = System::Drawing::Size(700, 340);
+			this->ClientSize = System::Drawing::Size(525, 276);
 			this->Controls->Add(this->erroUser);
 			this->Controls->Add(this->erroSenha);
 			this->Controls->Add(this->change_Mobilizacao_bt);
@@ -244,7 +249,7 @@ namespace Project1 {
 			this->Controls->Add(this->Senha);
 			this->Controls->Add(this->Usuario);
 			this->Controls->Add(this->senhabox);
-			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"login";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"login";

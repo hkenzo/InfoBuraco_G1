@@ -113,6 +113,7 @@ namespace Project1 {
 			this->listView1->TabIndex = 7;
 			this->listView1->UseCompatibleStateImageBehavior = false;
 			this->listView1->View = System::Windows::Forms::View::Details;
+			this->listView1->SelectedIndexChanged += gcnew System::EventHandler(this, &VisualizarUmBuraco::listView1_SelectedIndexChanged);
 			// 
 			// columnHeader1
 			// 
@@ -183,12 +184,15 @@ namespace Project1 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(352, 86);
+			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(192)),
+				static_cast<System::Int32>(static_cast<System::Byte>(192)));
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button1->Location = System::Drawing::Point(339, 86);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->Size = System::Drawing::Size(172, 23);
 			this->button1->TabIndex = 8;
 			this->button1->Text = L"Fechar";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &VisualizarUmBuraco::button1_Click);
 			// 
 			// VisualizarUmBuraco
@@ -210,23 +214,23 @@ namespace Project1 {
 		int num = stoi(numS.c_str());
 
 		buracoDAO* aux = new buracoDAO();
-		buracos * buraco;
+		vector <buracos*> * buraco;
 		buraco = aux->getBuraco(num);
 
-		String^ str1 = gcnew String(std::to_string(buraco->getNum()).c_str());
-		String^ str2 = gcnew String((buraco->getRua()).c_str());
-		String^ str3 = gcnew String(std::to_string(buraco->getRuaNum()).c_str());
-		String^ str4 = gcnew String(std::to_string(buraco->getTamanho()).c_str());
-		String^ str5 = gcnew String((buraco->getPosicao()).c_str());
-		String^ str6 = gcnew String((buraco->getRegional()).c_str());
-		String^ str7 = gcnew String(std::to_string(buraco->getPrioridade()).c_str());
-		String^ str8 = gcnew String(std::to_string(buraco->getNumReclamacoes()).c_str());
-		String^ str9 = gcnew String(std::to_string(buraco->getStatusBuraco()).c_str());
-		String^ str10 = gcnew String((buraco->getNomeCid()).c_str());
-		String^ str11 = gcnew String((buraco->getCanalCid()).c_str());
-		String^ str12 = gcnew String((buraco->getDadoCanal()).c_str());
-		String^ str13 = gcnew String((buraco->getDataHora()).c_str());
-		String^ str14 = gcnew String((buraco->getReclamacao()).c_str());
+		String^ str1 = gcnew String(std::to_string(buraco->at(0)->getNum()).c_str());
+		String^ str2 = gcnew String((buraco->at(0)->getRua()).c_str());
+		String^ str3 = gcnew String(std::to_string(buraco->at(0)->getRuaNum()).c_str());
+		String^ str4 = gcnew String(std::to_string(buraco->at(0)->getTamanho()).c_str());
+		String^ str5 = gcnew String((buraco->at(0)->getPosicao()).c_str());
+		String^ str6 = gcnew String((buraco->at(0)->getRegional()).c_str());
+		String^ str7 = gcnew String(std::to_string(buraco->at(0)->getPrioridade()).c_str());
+		String^ str8 = gcnew String(std::to_string(buraco->at(0)->getNumReclamacoes()).c_str());
+		String^ str9 = gcnew String(std::to_string(buraco->at(0)->getStatusBuraco()).c_str());
+		String^ str10 = gcnew String((buraco->at(0)->getNomeCid()).c_str());
+		String^ str11 = gcnew String((buraco->at(0)->getCanalCid()).c_str());
+		String^ str12 = gcnew String((buraco->at(0)->getDadoCanal()).c_str());
+		String^ str13 = gcnew String((buraco->at(0)->getDataHora()).c_str());
+		String^ str14 = gcnew String((buraco->at(0)->getReclamacao()).c_str());
 
 		listViewItem = gcnew Windows::Forms::ListViewItem(str1);
 		listViewItem->SubItems->Add(str2);
@@ -250,5 +254,7 @@ namespace Project1 {
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Close();
 	}
+private: System::Void listView1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+}
 };
 }
